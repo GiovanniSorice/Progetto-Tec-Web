@@ -1,0 +1,73 @@
+DESCRIZIONE PROBLEMA:
+Si intende realizzare un sito internet che raccoglie informazioni relative film e serie tv,
+in forma di archivio.
+
+REQUISITI: 
+Ogni film/serie deve raccolgliere determinate informazioni che si differenziano a seconda dell'oggetto in questione. 
+	FILM:
+		ogni film archiviato deve disporre delle seguenti informazioni:
+		-titolo
+		-breve descrizione (una frase che riassume il contenuto del film)
+		-trama
+		-regia
+		-sceneggiatori
+		-cast e personaggi
+		-data di uscita(per ogni paese)
+			-la data di uscita mostrata nella scheda del film deve essere quella di interesse dell'utente
+		-durata
+		-generi
+		-PG
+		-lingua originale
+		-distribuzione
+		-valutazione
+			-la valutazione è una media delle valutazioni date dagli utenti su base decimale
+			-la valutazione scelta va da 1 a 10 stelle
+	SERIE TV:
+		ogni serie tv deve disporre delle seguenti informazioni
+			-titolo
+			-durata media episodio
+			-breve descrizione
+			-trama
+			-generi
+			-creatore
+			-attori e personaggi
+			-PG
+			-data inizio distribuzione e data fine distribuzione
+				-nel caso la seria sia in distribuzione, la data fine distribuzione non va mostrata
+			-valutazione
+				-la valutazione è una media delle valutazioni date dagli utenti su base decimale
+				-la valutazione scelta va da 1 a 10 stelle
+		STAGIONE:
+			-la stagione mostra tutti gli episodi relativi 
+			-una descrizione della stagione
+			-data inizio distribuzione e data fine distribuzione
+				-le date sono relative rispettivamente alla data di uscita del primo episodio della stagione e alla data di uscita dell'ultimo episodio della stagione
+				-nel caso la stagione sia in distribuzione, la data fine distribuzione non va mostrata
+		EPISODIO:
+			ogni episodio deve disporre delle seguenti informazioni:
+				-durata
+				-generi
+				-data di uscita
+				-stagione di riferimento
+				-numero episodio
+				-valutazione
+					-la valutazione è una media delle valutazioni date dagli utenti su base decimale
+					-la valutazione scelta va da 1 a 10 stelle
+	UTENTI: 
+	categorie utenti
+		non registrati:
+			Un utente non registrato deve poter visualizzare tutte le informazioni disponibili nel sito.
+		registrati:
+			Un utente registrato invece, avrà un account dedicato che gli permetterà di scrivere recensioni, valutare film e serie tv, salvare preferiti e suggerimento/modifica nuovi film, possibilità di visualizzare contenuti consigliati in base alle preferenze. 
+		moderatore:
+			Moderatore è l'utente con un grado più alto di responsabilità e di modifica del sito nel controllo della politica etica del sito.
+		admin:
+			L'admin infine nomina i moderatori e si occupa dell'inserimento di film/serie tv (anche sotto consiglio degli utenti).
+
+
+	ARTISTA:
+		-deve essere disponibile una pagina per ogni artista, sia esso Regista, Attore.
+
+
+
+
