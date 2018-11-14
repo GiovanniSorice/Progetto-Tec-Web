@@ -1,5 +1,5 @@
 DESCRIZIONE PROBLEMA:
-Il sito web è un social network per scoprire e discutere di serie tv. 
+Il sito web è un social network per scoprire (e discutere di) serie tv. 
 Lo si può usare per tenere traccia e valutare serie tv viste o discutere con altri utenti.
 
 REQUISITI: 
