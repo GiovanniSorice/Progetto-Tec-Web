@@ -31,4 +31,4 @@ Alcune di queste pagine potrebbero essere *restricted* per alcune categorie di u
 
 7. Pagina di supporto con FAQ
 
-8. About
+8. Aboutt
