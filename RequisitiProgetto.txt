@@ -48,8 +48,13 @@ Ogni serie tv deve raccolgliere determinate informazioni.
 			non registrati:
 				Un utente non registrato deve poter VISUALIZZARE tutte le informazioni disponibili nel sito.
 			registrati:
-				Un utente registrato invece, avrà un account dedicato che gli permetterà di scrivere post, commenti e risposte, valutare, salvare preferiti, consigliare/non consigliare. 
-			admin:
+				-Un utente registrato invece, avrà un account dedicato che gli permetterà di scrivere post, commenti e risposte, valutare, salvare preferiti, consigliare/non consigliare. 
+				-Deve avere una lita di serie tv preferite
+				-Segnare come visti gli episodi
+				-Consigliare o meno una serie tv tramite un pollice in giù o in su
+				-Dare una valutazione agli episodi
+
+		admin:
 				Admin è l'utente con un grado più alto di responsabilità e di modifica del sito nel rispetto della politica etica del sito.*
 		
 

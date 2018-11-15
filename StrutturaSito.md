@@ -10,9 +10,12 @@ Alcune di queste pagine potrebbero essere *restricted* per alcune categorie di u
 
 2. Pagina **Serie TV**
   - informazioni sulla serie in generale
+  - consigliato in percentuale
+  - valutazione serie
   - mostra gli attori
   - episodi divisi per stagione 
   - sezione *Post*
+  - 
 3. Pagina **Episodio**
   - informazioni
   - valutazione
