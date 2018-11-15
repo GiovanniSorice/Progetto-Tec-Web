@@ -30,6 +30,7 @@ Ogni serie tv deve raccolgliere determinate informazioni.
 				-data di uscita del paese originale
 				-stagione di riferimento
 				-numero episodio
+				-Ultimo della stagione(true/false)
 				-valutazione
 					-la valutazione è una media delle valutazioni date dagli utenti su base 5
 					-la valutazione scelta va da 0 a 5 stelle
