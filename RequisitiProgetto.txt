@@ -37,21 +37,21 @@ Ogni serie tv deve raccolgliere determinate informazioni.
 				-commenti
 					-agli episodi sono allegati i commenti degli utenti sul singolo episodio
 					-i commenti possono avere delle risposte
-	ATTORI:
-		gli attori hanno una pagina dedicata con le seguenti info:
-		-nome cognome
-		-breve descrizione
-		-serie tv in cui ha avuto ruoli
+		ATTORI:
+			gli attori hanno una pagina dedicata con le seguenti info:
+			-nome cognome
+			-breve descrizione
+			-serie tv in cui ha avuto ruoli
 
-	UTENTI: 
-	categorie utenti
-		non registrati:
-			Un utente non registrato deve poter VISUALIZZARE tutte le informazioni disponibili nel sito.
-		registrati:
-			Un utente registrato invece, avrà un account dedicato che gli permetterà di scrivere post, commenti e risposte, valutare, salvare preferiti, consigliare/non consigliare. 
-		admin:
-			Admin è l'utente con un grado più alto di responsabilità e di modifica del sito nel rispetto della politica etica del sito.*
-	
+		UTENTI: 
+		categorie utenti
+			non registrati:
+				Un utente non registrato deve poter VISUALIZZARE tutte le informazioni disponibili nel sito.
+			registrati:
+				Un utente registrato invece, avrà un account dedicato che gli permetterà di scrivere post, commenti e risposte, valutare, salvare preferiti, consigliare/non consigliare. 
+			admin:
+				Admin è l'utente con un grado più alto di responsabilità e di modifica del sito nel rispetto della politica etica del sito.*
+		
 
 
 
