@@ -11,12 +11,12 @@ Alcune di queste pagine potrebbero essere *restricted* per alcune categorie di u
       - Nuove uscite 
       - Sezione con le migliori, piùvotate, consigliate della community
   - Non loggato: 
-	    - Frase di presentazione/ Sottotitolato
-    	- Immagine
-	    - Invito al login(paragrafo)
+  	- Frase di presentazione/ Sottotitolato
+	- Immagine
+	- Invito al login(paragrafo)
   - Loggato: 
-	    - Scrittura di benvenuto per il loggato(sempre)
-	    - Extra: gli ultimi episodi visti (uno per ogni serie tv)
+  	- Scrittura di benvenuto per il loggato(sempre)
+	- Extra: gli ultimi episodi visti (uno per ogni serie tv)
 
 2. Pagina **Serie TV**
   - informazioni sulla serie in generale
