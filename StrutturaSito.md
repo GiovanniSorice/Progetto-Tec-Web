@@ -41,7 +41,6 @@ Alcune di queste pagine potrebbero essere *restricted* per alcune categorie di u
   - mostra le serie TV inserite tra i preferiti
   - *Extra*: Sezione consigliati in base alle serie viste e preferite dall'utente
 
-
 6. Pagina di **Explore** con **Ricerca Avanzata**
   - si guida l'utente nella ricerca di nuove serie TV
   - si dividono le serie TV in sezioni (tipo per *genere*, *season Premiere*, *season Finale*) 
@@ -49,10 +48,17 @@ Alcune di queste pagine potrebbero essere *restricted* per alcune categorie di u
   - pensata per utenti che non sanno cosa stanno cercando, ma vogliono ad esempio lasciarsi guidare partendo da poche specifiche(filtri)
 
 7. Pagina di **Supporto con FAQ**
-
+	- contatta gli amministratori, trova risposte alle domande nelle faq o invia la tua
+	
 8. Pagina di **About**
+	- pagina che descrive il progetto, elenca gli sviluppatori ecc.
 
 9. Pagina di **Impostazioni account**
+	- cambia username, email e password
+	- visualizza le tue informazioni personali
 
-10. Pagina di **Pagina privacy** (Se non sbalio e' obbligatoria per legge)
-
+10. Pagina di **Pagina privacy** (Se non sbaglio e' obbligatoria per legge)
+	
+11. Pagina **Amministrazione**
+	- gestione delle segnalazioni
+	- gestione degli amministratori
