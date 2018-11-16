@@ -25,17 +25,22 @@ Alcune di queste pagine potrebbero essere *restricted* per alcune categorie di u
   - mostra gli attori
   - episodi divisi per stagione 
   - sezione *Post*
-  - 
+  - *Extra*: Sezione serie TV  con contenuti simili (cioe' generi simili) a quella visualizzata nella pagina
+  
 3. Pagina **Episodio**
   - informazioni
   - valutazione
-  - sezione *Commenti*
+  - sezione *Commenti* (*Extra*: commenti piu' votati in cima)
+  
 4. Pagina **Attore**
   - Informazioni attore
   - Serie TV in cui appare
+  -*Extra* Popolarita' e like ricevuti dall'attore nelle varie serie
 
 5. Pagina di **Preferiti** \[*Restricted*\] 
   - mostra le serie TV inserite tra i preferiti
+  - *Extra*: Sezione consigliati in base alle serie viste e preferite dall'utente
+
 
 6. Pagina di **Explore** con **Ricerca Avanzata**
   - si guida l'utente nella ricerca di nuove serie TV
@@ -48,4 +53,6 @@ Alcune di queste pagine potrebbero essere *restricted* per alcune categorie di u
 8. Pagina di **About**
 
 9. Pagina di **Impostazioni account**
+
+10. Pagina di **Pagina privacy** (Se non sbalio e' obbligatoria per legge)
 
