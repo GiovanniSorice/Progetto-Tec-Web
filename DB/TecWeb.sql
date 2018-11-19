@@ -4,6 +4,7 @@ CREATE TABLE 'utente' (
   'username' char(30) NOT NULL,
   'password' char(30) NOT NULL,
   'email' char(30) NOT NULL,
+  'immagine' varchar(200),
   'nome' char(30) NOT NULL,
   'cognome' char(30) NOT NULL,
   'data_nascita' date NOT NULL,
@@ -12,6 +13,7 @@ CREATE TABLE 'utente' (
 
 CREATE TABLE 'serie' (
   'id' int PRIMARY KEY,
+  'immagine' varchar(200),
   'titolo' char(30) NOT NULL,
   'distribuzione' char(30) NOT NULL,
   'descrizione' varchar(50) NOT NULL,
@@ -58,6 +60,7 @@ CREATE TABLE 'commento' (
   'id' int PRIMARY KEY,
   'id_episodio' int,
   'id_utente' int,
+  'immagine' varchar(200),
   'testo' varchar (200) NOT NULL,
 
   FOREIGN KEY (id_episodio) REFERENCES episodio(id) ,
@@ -138,6 +141,17 @@ CREATE TABLE 'voto' (
   'valutazione' int NOT NULL,
 
   FOREIGN KEY (id_episodio) REFERENCES episodio(id) ,
+  FOREIGN KEY (id_utente) REFERENCES utente(id),
+
+  PRIMARY KEY (id_episodio, id_utente)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE 'segnalazione' (
+  'id' int PRIMARY KEY,
+  'id_ref' int UNIQUE,
+  'id_utente' int,
+  'tipo' enum ('post','commento','risposta'),
+
   FOREIGN KEY (id_utente) REFERENCES utente(id),
 
   PRIMARY KEY (id_episodio, id_utente)
