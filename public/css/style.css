@@ -1,0 +1,61 @@
+/*
+*{
+	background-color: #2f4858;
+}
+*/
+body{
+	margin:0;
+}
+
+header{	
+	/*background: url(../img/header-background.jpeg);*/
+	background-color: #2f4858; 
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	height: 15em;
+}
+
+.header-content{
+	width: 15em;
+	margin: 0 auto;
+	padding-top: 2em;
+}
+
+.header-logo-container{
+	text-align: center;
+}
+header img {
+  height: 8em;
+}
+
+header h1 {
+	font-family: "Times New Roman";
+	color: white;
+  position: relative;
+  text-align: center;
+  margin-bottom: 0.1em;
+  margin-top: 0;
+}
+
+.nav{
+	position: fixed;
+	width: 15em;
+	left: 0;
+	height: 100%;
+}
+
+.content{
+	margin-left: 15em;
+}
+
+.nav__restricted{
+
+}
+
+footer{
+  background-color: #2f4858;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+}
