@@ -7,7 +7,29 @@ body{
 	margin:0;
 }
 
-header{	
+
+/*Navigator section*/
+.nav{
+	position: fixed;
+	overflow: hidden;
+	width: 15em;
+	left: 0;
+	height: 100%;
+}
+
+.nav__restricted{
+
+}
+
+
+/*Page center*/
+.page-center{
+	margin-left: 15em;
+}
+
+
+/*Header section*/
+.header{	
 	/*background: url(../img/header-background.jpeg);*/
 	background-color: #2f4858; 
 	background-size: cover;
@@ -25,11 +47,11 @@ header{
 .header-logo-container{
 	text-align: center;
 }
-header img {
+.header img {
   height: 8em;
 }
 
-header h1 {
+.header h1 {
 	font-family: "Times New Roman";
 	color: white;
   position: relative;
@@ -38,24 +60,45 @@ header h1 {
   margin-top: 0;
 }
 
-.nav{
-	position: fixed;
-	width: 15em;
-	left: 0;
-	height: 100%;
-}
 
+
+
+/*Content section
 .content{
 	margin-left: 15em;
 }
+*/
 
-.nav__restricted{
-
-}
-
-footer{
+/*Footer section*/
+.footer{
   background-color: #2f4858;
   width: 100%;
   bottom: 0;
   position: fixed;
+}
+
+.footer__nav{
+	width: 50%; /*16.1em;*/
+	margin: 0 auto;
+}
+
+.footer ul{
+	padding-left: 0;	
+	list-style: none;
+	/*margin-left: 7em;*/
+	/*text-align: center;*/
+}
+
+	/*Evito che l'ultimo elemento dell'elenco abbia il padding a dx*/
+.footer ul :last-child{
+	padding-right: 0;
+}
+
+.footer li{
+	display: inline-block;
+	padding-right: 2em;
+}
+
+.footer a{
+	color: white;
 }
