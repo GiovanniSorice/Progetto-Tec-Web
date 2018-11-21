@@ -6,7 +6,7 @@ CREATE TABLE utente (
   username char(30) NOT NULL,
   password char(30) NOT NULL,
   email char(30) NOT NULL,
-  immagine varchar(200),
+  immagine varchar(500),
   nome char(30) NOT NULL,
   cognome char(30) NOT NULL,
   data_nascita date NOT NULL,
@@ -18,10 +18,10 @@ CREATE TABLE utente (
 DROP TABLE IF EXISTS serie;
 CREATE TABLE serie (
   id int PRIMARY KEY,
-  immagine varchar(200),
+  immagine varchar(500),
   titolo char(30) NOT NULL,
   distribuzione char(30) NOT NULL,
-  descrizione varchar(50) NOT NULL,
+  descrizione varchar(500) NOT NULL,
   creatore char(30) NOT NULL,
   terminata boolean NOT NULL,
   consigliato int DEFAULT 0,
@@ -60,7 +60,7 @@ CREATE TABLE post (
   id int PRIMARY KEY,
   id_serie int,
   id_utente int,
-  testo varchar (200) NOT NULL,
+  testo varchar (500) NOT NULL,
 
   FOREIGN KEY (id_serie) REFERENCES serie(id) ,
   FOREIGN KEY (id_utente) REFERENCES utente(id)
@@ -71,8 +71,8 @@ CREATE TABLE commento (
   id int PRIMARY KEY,
   id_episodio int,
   id_utente int,
-  immagine varchar(200),
-  testo varchar (200) NOT NULL,
+  immagine varchar(500),
+  testo varchar (500) NOT NULL,
 
   FOREIGN KEY (id_episodio) REFERENCES episodio(id) ,
   FOREIGN KEY (id_utente) REFERENCES utente(id)
@@ -83,7 +83,7 @@ CREATE TABLE risposta (
   id int PRIMARY KEY,
   id_commento int,
   id_utente int,
-  testo varchar (200) NOT NULL,
+  testo varchar (500) NOT NULL,
 
   FOREIGN KEY (id_commento) REFERENCES commento(id) ,
   FOREIGN KEY (id_utente) REFERENCES utente(id)
@@ -130,7 +130,7 @@ DROP TABLE IF EXISTS episodio;
 CREATE TABLE episodio (
   id int PRIMARY KEY,
   titolo char(30) NOT NULL,
-  descrizione varchar(30) NOT NULL,
+  descrizione varchar(500) NOT NULL,
   numero int NOT NULL,
   data date NOT NULL,
   stagione int NOT NULL,
