@@ -2,7 +2,7 @@ SET FOREIGN_KEY_CHECKS=0;
 
 DROP TABLE IF EXISTS utente;
 CREATE TABLE utente (
-  id int PRIMARY KEY,
+  id int  AUTO_INCREMENT PRIMARY KEY,
   username char(30) NOT NULL,
   password char(30) NOT NULL,
   email char(30) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE serie (
   consigliato int DEFAULT 0,
   non_consigliato int DEFAULT 0,
   preferiti int DEFAULT 0,
-  voto int DEFAULT 0
+  voto decimal(2,1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -57,7 +57,7 @@ CREATE TABLE consiglio (
 
 DROP TABLE IF EXISTS post;
 CREATE TABLE post (
-  id int PRIMARY KEY,
+  id int  AUTO_INCREMENT PRIMARY KEY,
   id_serie int,
   id_utente int,
   testo varchar (500) NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE post (
 
 DROP TABLE IF EXISTS commento;
 CREATE TABLE commento (
-  id int PRIMARY KEY,
+  id int  AUTO_INCREMENT PRIMARY KEY,
   id_episodio int,
   id_utente int,
   immagine varchar(500),
@@ -80,7 +80,7 @@ CREATE TABLE commento (
 
 DROP TABLE IF EXISTS risposta;
 CREATE TABLE risposta (
-  id int PRIMARY KEY,
+  id int  AUTO_INCREMENT PRIMARY KEY,
   id_commento int,
   id_utente int,
   testo varchar (500) NOT NULL,
@@ -135,7 +135,7 @@ CREATE TABLE episodio (
   data date NOT NULL,
   stagione int NOT NULL,
   visualizzato int DEFAULT 0,
-  voto int DEFAULT 0, 
+  voto decimal(2,1) DEFAULT 0, 
   id_serie int NOT NULL,
 
   FOREIGN KEY (id_serie) REFERENCES serie(id)
@@ -145,7 +145,6 @@ DROP TABLE IF EXISTS visto;
 CREATE TABLE visto (
   id_episodio int,
   id_utente int,
-  visualizzato boolean NOT NULL,
 
   FOREIGN KEY (id_episodio) REFERENCES episodio(id) ,
   FOREIGN KEY (id_utente) REFERENCES utente(id),
@@ -167,7 +166,7 @@ CREATE TABLE voto (
 
 DROP TABLE IF EXISTS segnalazione;
 CREATE TABLE segnalazione (
-  id int PRIMARY KEY,
+  id int  AUTO_INCREMENT PRIMARY KEY,
   id_ref int UNIQUE,
   id_utente int,
   tipo enum ('post','commento','risposta'),
