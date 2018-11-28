@@ -1,0 +1,150 @@
+.nav{
+	margin: 0;
+    padding: 0;
+	position: fixed;
+	overflow: hidden;
+	width: 18em ;
+	left: 0;
+  	top: 0;
+	height: 100%;
+	background-color: #2f4858;
+	border-right: 2px solid black;
+	overflow-y: scroll;
+}
+
+.nav ul{
+	list-style: none;
+	line-height: 2em;
+}
+
+
+.nav ul:after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 50%;
+    margin: 40px;
+    background: black;
+}
+
+.nav li{
+	padding-left: 1.3em; /*Serve per poter inserire l'icona a lato*/
+}
+
+.nav a{
+	color: #aaa;
+}
+
+.nav__logo-container{
+	text-align: center;
+	padding-top: 2em;	
+	padding-bottom: 2em;
+}
+/*Serve specificare img? non posso spostare questa regola in -nav__logo-container ?*/
+.nav__logo-container img{
+	width: 35%;
+	opacity: 0.85;
+}
+
+@media screen and (max-width: 900px) {
+   .nav{
+	width: 100%;
+	height: 4em;
+	background-color: #2f4858;
+	border-right: 2px solid black;
+	overflow-y: hidden;   
+   }
+   .nav.nav_top-list ul{
+   position: absolute;
+   display: flex;
+   }
+   .nav li{
+        display: inline-block;
+	}
+   .nav__logo-container{
+	text-align: left;
+	padding-top: 0em;	
+	padding-bottom: 0em;
+	width: 4em;
+	height: 4em;	
+	}
+   .nav__logo-container img{
+	width: 100%; /* Possibile centramento immagine */
+	}
+	
+}
+@media screen and (max-width: 400px) {
+   .nav__logo-container img{
+	width: 15%;
+	opacity: 0.85;
+	}
+}
+
+.nav__bottom-list{
+
+}
+
+.nav__esplora:before{
+	content: url("../img/nav/explore.png");
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.8em; /* same as padding-left set on li */
+  vertical-align: middle;
+}
+
+.nav__profilo:before {
+  content: url("../img/nav/profile_avatar.png");
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.8em; /* same as padding-left set on li */
+  vertical-align: middle;
+}
+
+.nav__preferiti:before{
+	content: url("../img/nav/favourites.png");
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.8em; /* same as padding-left set on li */
+  vertical-align: -5px;
+}
+
+.nav__impostazioni:before{
+	content: url("../img/nav/settings.png");
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.8em; /* same as padding-left set on li */
+  vertical-align: -6px;
+}
+
+.nav__faq:before{
+	content: url("../img/nav/faq.png");
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.8em; /* same as padding-left set on li */
+  vertical-align: -6px;
+}
+
+.nav__supporto:before{
+	content: url("../img/nav/support.png");
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.8em; /* same as padding-left set on li */
+  vertical-align: -6px;
+}
+
+.nav__privacy:before{
+	content: url("../img/nav/privacy.png");
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.8em; /* same as padding-left set on li */
+  vertical-align: -6px;
+}
+
+.nav__restricted{
+
+}
+
+
+.nav__social{
+	background-color: white;
+}
