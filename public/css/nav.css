@@ -1,34 +1,29 @@
 .nav{
-	margin: 0;
-    padding: 0;
-	position: fixed;
-	overflow: hidden;
-	width: 20% ;
-	left: 0;
-  	top: 0;
-	height: 100%;
-	background-color: #2f4858;
-	border-right: 2px solid black;
-	overflow-y: scroll;
+     margin: 0;
+     padding: 0;
+     position: fixed;
+     overflow: hidden;
+     width: 20% ;
+     left: 0;
+     top: 0;
+     height: 100%;
+     background-color: #2f4858;
+     border-right: 2px solid black;
+     overflow-y: scroll;
 }
-
-.nav ul{
-	list-style: none;
-	line-height: 2em;
-	padding-left: 3.5em;
-	
+ .nav ul{
+     list-style: none;
+     line-height: 2em;
+     padding-left: 3.5em;
 }
-
-
-.nav ul:after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 75%;
-	background: black;
-	margin-top: 5%;
-	margin-bottom : 5%;
-	
+ .nav ul:after {
+     content: "";
+     display: block;
+     height: 1px;
+     width: 75%;
+     background: black;
+     margin-top: 5%;
+     margin-bottom : 5%;
 }
 	
 .nav li{
@@ -42,9 +37,6 @@
 .nav__logo-container{
 	text-align: center;
 	padding-bottom: 2em;
-	top:16em;
-	margin-top:8%;
-	
 }
 /*Serve specificare img? non posso spostare questa regola in -nav__logo-container ?*/
 .nav__logo-container img{
@@ -101,13 +93,16 @@
 	}
 	
 }
-@media   screen and (max-width: 600px) {
-  .nav__top-list li {display: none;}
-  .nav__icon {
-    float: right;
-    display: block !important;
-    posizion:relative;
-    right:0;
+@media screen and (max-width: 400px) {
+    .nav__top-list li {
+        display: none;
+    }
+    .nav__icon {
+        float: right;
+        display: block !important;
+        posizion:relative;
+        right:0;
+    }
 	}
 }
 @media screen and (max-width: 600px) {
