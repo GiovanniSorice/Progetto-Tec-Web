@@ -42,6 +42,9 @@
 .nav__logo-container{
 	text-align: center;
 	padding-bottom: 2em;
+	top:16em;
+	margin-top:8%;
+	
 }
 /*Serve specificare img? non posso spostare questa regola in -nav__logo-container ?*/
 .nav__logo-container img{
@@ -90,14 +93,15 @@
 		padding-top: 0em;	
 		padding-bottom: 0em;
 		width: 4em;
-		height: 4em;	
+		height: 4em;
+		margin-top:0;			
 	}
    .nav__logo-container img{
 		width: 100%; /* Possibile centramento immagine */
 	}
 	
 }
-@media   screen and (max-width: 400px) {
+@media   screen and (max-width: 600px) {
   .nav__top-list li {display: none;}
   .nav__icon {
     float: right;
@@ -106,7 +110,7 @@
     right:0;
 	}
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
 	.nav__top-list.responsive {position: relative;}
    	.nav__top-list.responsive  .nav__icon {
     position: absolute;
