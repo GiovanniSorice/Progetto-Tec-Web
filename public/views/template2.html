@@ -13,8 +13,8 @@
 		Contro: XHTML5 non esiste -> in xhtml i tag header e footer non esistono.
 
 	-->
-	<div class="nav" >
-		<div class="nav__logo-container">
+	<div class="nav" id="nav">
+		<div class="nav__logo-container" id="nav__logo-container">
 			<a href=""> 
 				<img src="../logo/logo_TVhunter.png" alt="logo del sito, riporta alla homepage">		
 			</a>
@@ -24,7 +24,6 @@
 			<li class="nav__esplora"><a href="" title="Esplora">Esplora</a></li>
 			<li class="nav__restricted nav__profilo"><a href="" title="Profilo">Profilo</a></li>
 			<li class="nav__restricted nav__preferiti"><a href="" title="Preferiti">Preferiti</a></li>
-			<li class="nav__icon">  <a href="javascript:void(0);" onclick="myFunction()"><i class="fa fa-bars"></i></a>
 		</ul>
 
 		<ul class="nav__bottom-list">
@@ -33,11 +32,12 @@
 			<li class="nav__supporto"><a href="" title="Supporto">Supporto </a></li>
 			<li class="nav__privacy"><a href="" title="Privacy"><span xml:lang="EN">Privacy</span></a></li>
 			<li class="nav__about"><a href="" title="About"><span xml:lang="EN">About</span></a></li>
-    		
-			</li>
-		</ul>
+   		</ul>
 
 		<div class="nav__social">
+		</div>
+		<div class="nav__icon">
+			<a href="javascript:void(0);" onclick="myFunction()"><i class="fa fa-bars"></i></a>
 		</div>
 
 	</div>
@@ -46,11 +46,19 @@
 
 <script>
 function myFunction() {
-    var x = document.getElementById("nav__top-list");
-    if (x.className === "nav__top-list") {
+    var x = document.getElementById("nav");
+    var y = document.getElementById("nav__top-list");
+    var z = document.getElementById("nav__logo-container");
+
+
+    if (x.className === "nav") {
         x.className += " responsive";
+        y.className += " responsive";
+        z.className += " responsive";
     } else {
-        x.className = "nav__top-list";
+        x.className = "nav";
+        y.className = "nav__top-list";
+        z.className = "nav__logo-container";
     }
 }
 </script>
