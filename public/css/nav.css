@@ -36,7 +36,8 @@
 
 .nav__logo-container{
 	text-align: center;
-	padding-bottom: 2em;
+	padding-bottom: 1em;
+	margin-top:8%;
 }
 /*Serve specificare img? non posso spostare questa regola in -nav__logo-container ?*/
 .nav__logo-container img{
