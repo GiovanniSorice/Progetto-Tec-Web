@@ -2,6 +2,12 @@ body{
 	min-width:800px;
 	width: auto !important;
 }
+
+/*Footer*/
+.footer{
+  display: none;
+}
+
 .nav{
      margin: 0;
      padding: 0;
@@ -61,7 +67,7 @@ body{
 		display: flex; 
    }
    .nav__top-list {
-		padding-left: 1.5em !important;	
+		padding-left: 2.5em !important;	
 	}
    .nav__bottom-list{
 		display:none;
@@ -74,17 +80,17 @@ body{
    }
    .nav__profilo:before{
    		display: none !important;
-   }
-   .nav__preferiti:before{
+  }
+  .nav__preferiti:before{
    		display: none !important;
-   }
-   .nav ul:after{
+  }
+  .nav ul:after{
    		display: none;
    }
-   .nav li{
-		display: inline-block;
-		padding-left: auto;
-	}
+  .nav li{
+	 display: inline-block;
+	 padding-right: 1.5em;  
+  }
    .nav__logo-container{
 		text-align: left;
 		padding-top: 0em;	
@@ -97,25 +103,63 @@ body{
 		width: 100%; /* Possibile centramento immagine */
 	}
 	
+
+  /*Footer section*/
+  .footer{
+    display: flex;
+    background-color: #2f4858;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+  }
+
+  .footer__nav{
+    margin: 0 auto;
+  }
+
+  .footer ul{
+    padding-left: 0;  
+    list-style: none;
+  }
+
+    /*Evito che l'ultimo elemento dell'elenco abbia il padding a dx*/
+  .footer ul :last-child{
+    padding-right: 0;
+  }
+
+  .footer li{
+    display: inline-block;
+    padding-right: 2em;
+  }
+
+  .footer a{
+    color: #aaa;
+  }
+
 }
-@media screen and (max-width: 500px) and (min-width: 150px){
-    .nav__top-list li {
-        display: none;
-    }
-    .nav__icon {
-        float: right;
-        display: block !important;
-        position:absolute;
-        right:2em;
-        height: 100%;
-		position: fixed;
-		margin-top:1.25em; 
-    }
+@media screen and (max-width: 512px) and (min-width: 150px){
+  .nav__top-list li {
+      display: none;
+  }
+  .nav__icon {
+      float: right;
+      display: block !important;
+      position:absolute;
+      right:2em;
+      height: 100%;
+	position: fixed;
+	margin-top:1.25em; 
+  }
+
+  .footer{
+    display: none;
+  }
 }
-@media screen and (max-width: 500px) and (min-width: 150px){
+@media screen and (max-width: 512px) and (min-width: 150px){
 	.nav.responsive{
 	height: auto;
-}
+  }
 	.nav__top-list.responsive {
 	position: relative;
 	margin-top:0.74em; 
@@ -211,3 +255,4 @@ body{
 .nav__social{
 	background-color: white;
 }
+
