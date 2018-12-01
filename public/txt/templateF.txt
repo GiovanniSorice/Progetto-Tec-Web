@@ -1,0 +1,20 @@
+		</div>
+
+	<!--
+		<div class="footer">
+			<div class="footer__nav">
+				<ul>
+					<li><a href="">Supporto </a></li>
+					<li><a href=""><span xml:lang="EN">Privacy</span></a></li>
+					<li><a href="">About</a></li>
+				</ul>	
+			</div>
+		</div>
+	-->
+	</div>
+
+	
+
+
+</body>
+</html>
