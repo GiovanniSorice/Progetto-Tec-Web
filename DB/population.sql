@@ -4,6 +4,11 @@ TRUNCATE TABLE attore;
 TRUNCATE TABLE serie_attore;
 TRUNCATE TABLE genere;
 TRUNCATE TABLE serie_genere;
+TRUNCATE TABLE consiglio;
+TRUNCATE TABLE voto;
+TRUNCATE TABLE preferiti;
+TRUNCATE TABLE episodio;
+TRUNCATE TABLE visto;
 
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,10 +34,20 @@ INSERT INTO serie VALUES('7', '', 'Mr Robot', 'USA Network', 'Elliot viene avvic
 INSERT INTO serie VALUES('8', '', 'Sherlock', 'BBC', 'La serie è un libero adattamento dei romanzi e dei racconti di Sir Arthur Conan Doyle e vede come protagonista il detective Sherlock Holmes, affiancato dal suo amico e assistente, il dottor John Watson. Le avventure dei due si svolgono però nella Londra odierna, e non in quella presentata da Doyle. Watson è un reduce della guerra in Afghanistan e deve ancora ritrovare il suo posto nella società. Quando un amico gli suggerisce di trovarsi un coinquilino con cui dividere le spese di un appartamento, si ritrova a vivere con Sherlock Holmes, che col passare degli anni diventerà suo compagno di vita.', 'Steven Moffat', '0', '0', '0', '0', '0' );
 
 -- preferiti
--- INSERT INTO preferiti VALUES(id, nome, cognome, bio);
+-- INSERT INTO preferiti VALUES(id_serie, idutente);
+INSERT INTO preferiti VALUES('1', '2');
+INSERT INTO preferiti VALUES('1', '3');
+INSERT INTO preferiti VALUES('1', '4');
 
 -- consiglio
--- INSERT INTO consiglio VALUES(id, nome, cognome, bio);
+-- INSERT INTO consiglio VALUES(idserie, idutente, consigliato);
+INSERT INTO consiglio VALUES('1', '2', '1');
+INSERT INTO consiglio VALUES('1', '3', '1');
+INSERT INTO consiglio VALUES('1', '4', '1');
+INSERT INTO consiglio VALUES('1', '5', '0');
+
+
+
 
 -- post
 -- INSERT INTO post VALUES(id, nome, cognome, bio);
@@ -123,14 +138,28 @@ INSERT INTO episodio VALUES('10', 'Il clan dei Savastano', 'Il controllo di Piet
 INSERT INTO episodio VALUES('11', 'Questione di chimica', 'Dopo la diagnosi di cancro terminale ai polmoni, un insegnante di chimica del liceo si dà alla produzione di metanfetamine per garantire la sopravvivenza della famiglia.', '1', '2008/01/20', '1', '0', '0', '6');
 INSERT INTO episodio VALUES('12', 'Tutto cambia', 'Mentre pianificano una grossa vendita finale di stupefacenti, Walt e Jesse si preoccupano del fatto che possano ucciderli.', '1', '2009/03/08', '2', '0', '0', '6');
 INSERT INTO episodio VALUES('13', 'Ciao amico', 'Elliot Alderson è un ingegnere informatico, vive a New York e lavora presso una azienda di sicurezza informatica AllSafe Security. Soffre di paranoia ed è convinto di essere pedinato.', '1', '2015/06/24', '1', '0', '0', '7');
-INSERT INTO episodio VALUES('14', 'Uno studio in rosa', 'Una donna in rosa è la quarta vittima di una serie di suicidi apparentemente scollegati, ma Sherlock Holmes capisce che in realtà si tratta di terribili omicidi.', '1', '2010/07/25', '1', '0', '0', '8');
+INSERT INTO episodio VALUES('14', 'Uno studio in rosa', 'Una donna in rosa è la quarta vittima di una serie di suicidi apparentemente scollegati, ma Sherlock Holmes capisce che in realtà si tratta di terribili omicidi.', '2', '2010/07/25', '1', '0', '0', '8');
 
 
 -- visto
--- INSERT INTO visto VALUES(id, nome, cognome, bio);
+-- INSERT INTO visto VALUES(idepisodio, idutente);
+INSERT INTO visto VALUES('1', '2');
+INSERT INTO visto VALUES('1', '3');
+INSERT INTO visto VALUES('1', '4');
+INSERT INTO visto VALUES('1', '5');
+INSERT INTO visto VALUES('2', '4');
+INSERT INTO visto VALUES('2', '2');
 
 -- voto
--- INSERT INTO voto VALUES(id, nome, cognome, bio);
+-- INSERT INTO voto VALUES(episodio, utente, voto);
+INSERT INTO voto VALUES('1', '2', '3');
+INSERT INTO voto VALUES('1', '3', '4');
+INSERT INTO voto VALUES('1', '4', '3');
+INSERT INTO voto VALUES('2', '2', '1');
+INSERT INTO voto VALUES('2', '3', '5');
+INSERT INTO voto VALUES('2', '4', '2');
+INSERT INTO voto VALUES('2', '5', '5');
+
 
 -- segnalazione
 -- INSERT INTO segnalazione VALUES(id, nome, cognome, bio);
