@@ -87,6 +87,10 @@ body{
 	color: #aaa;
 }
 
+.nav a:hover{
+  color:white;
+}
+
 .nav__logo-container{
 	text-align: center;
 	padding-bottom: 1em;
