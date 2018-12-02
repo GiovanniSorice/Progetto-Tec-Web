@@ -32,17 +32,47 @@ section > h2{
 }
 
 #esplora ul{
-  overflow: hidden;/*TBfixed*/
+  overflow: hidden; /*per funzionare deve essere settata una altezza*/
+  height: 354px;  /*Vanno bene i pixel? magari usare vh o %*/ 
 }
 
-#esplora ul:last-child{
-    padding-right: 0em;
-  }
+#esplora li:first-child{
+    padding-left: 0em;
+}
 
 #esplora li{
-  overflow: hidden; /*TBfixed*/
+  overflow: hidden; 
   padding-left: 0.5em;
 }
+
+#esplora .show-min a{
+  padding-bottom: 1px; /*is px okay?*/
+}
+
+#esplora img:hover{
+  opacity: 0.8;
+}
+
+#esplora .show-info{
+  padding-left: 8px;
+}
+
+#esplora .show-name{
+  margin-top: 0;
+  margin-bottom:5px; /*is px okay? plus, aggiungere lo stile per i link già cliccati*/ 
+}
+
+#esplora .show-name a{
+  padding: 0;
+  color: black;
+}
+
+#esplora .show-consigliati{
+  font-size: small;
+  margin:0;
+}
+
+
 
 /*Header section*/
 .header{  
