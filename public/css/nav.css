@@ -319,6 +319,7 @@ section > h2{
 	.nav__logo-container.responsive{
 	display:none;
 	}
+  /*    Parametri della barra di ricerca    */
   .nav__ricerca{
           margin-bottom:  2em; 
           margin-top: 2em; 
@@ -331,7 +332,7 @@ section > h2{
 
 /* -------------------------------------------- PROVA BARRA DI RICERCA ---------------------------------- */
 
-.nav__ricerca{                                                         /* Barra di ricerca */
+.nav__ricerca{                                                      
     
     display: flex ;
   justify-content: center;
@@ -405,3 +406,11 @@ section > h2{
 	background-color: white;
 }
 
+/* ------------------------------------    CSS per ABOUT ----------------------------------------------------------------- */
+
+.testo__iniziale{
+    margin-left: 3%; 
+    margin-right: 3%;
+    font-style: italic ; 
+    font-size: 115% ; 
+}
