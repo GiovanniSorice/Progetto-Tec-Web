@@ -319,10 +319,26 @@ section > h2{
 	.nav__logo-container.responsive{
 	display:none;
 	}
+  .nav__ricerca{
+          margin-bottom:  2em; 
+          margin-top: 2em; 
+          right: 1em;
+   }
 }
 .nav__bottom-list{
-
+  margin-right: 4em;
 }
+
+/* -------------------------------------------- PROVA BARRA DI RICERCA ---------------------------------- */
+
+.nav__ricerca{                                                         /* Barra di ricerca */
+    
+    display: flex ;
+  justify-content: center;
+  align-items: center; 
+  margin-left: 20px;
+}
+
 
 .nav__esplora:before{
 	content: url("../img/nav/explore.png");
