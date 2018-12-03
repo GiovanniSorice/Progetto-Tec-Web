@@ -22,8 +22,13 @@
   padding-bottom: 1px; /*is px okay?*/
 }
 
+#esplora img{
+  transition: all .3s ease-in-out;
+}
+
 #esplora img:hover{
-  opacity: 0.8;
+  /*opacity: 0.9;*/
+  transform: scale(1.16);
 }
 
 #esplora .show-info{
