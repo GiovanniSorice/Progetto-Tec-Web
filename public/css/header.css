@@ -1,6 +1,8 @@
 /*Header section*/
 .header{  
   background: url(../img/peaky_blinders.jpg);
+  background-attachment: scroll;
+  background-position: center;
   background-position-y:-6em; 
   background-color: #2f4858;
   background-size: cover;
@@ -34,6 +36,9 @@
 }
 
 @media screen and (max-width: 1024px)and (min-width: 150px){
+  .header{  
+    background-attachment: fixed;
+  }
 }
 
 
