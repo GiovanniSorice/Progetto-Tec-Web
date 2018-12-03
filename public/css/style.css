@@ -20,7 +20,7 @@ body{
   padding: 8px;
 }
 
-/*Page Center section*/
+/*Page-Center section*/
 .page-center{
   margin-left: 20%;
 }
@@ -121,7 +121,7 @@ section > h2{
   padding: 0;
   position: fixed;
   overflow: hidden;
-  width: 20% ;
+  width: 24% ;
   left: 0;
   top: 0;
   height: 100%;

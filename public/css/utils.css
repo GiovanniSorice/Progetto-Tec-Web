@@ -1,0 +1,14 @@
+/*Utils*/
+.list_no-style{
+  list-style: none;
+}
+
+.list-inline li{
+  display: inline;
+  float: left;
+}
+
+.list-inline a{
+  display: block;
+  padding: 8px;
+}

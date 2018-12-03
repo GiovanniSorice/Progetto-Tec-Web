@@ -1,0 +1,11 @@
+/*Page Center section*/
+.page-center{
+  margin-left: 20%;
+}
+
+@media screen and (max-width: 900px){
+  /*page-center section*/
+  .page-center{
+    margin-left: 0;
+  }
+}
