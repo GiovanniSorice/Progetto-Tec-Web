@@ -153,7 +153,7 @@
 		display: flex; 
   	}
   	.nav__top-list {
-		padding-left: 2.5em !important;	
+		padding-left: 1.5em !important;	
 	}
 	.nav__bottom-list{
 		display:none;
