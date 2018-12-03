@@ -1,0 +1,57 @@
+/*Esplora section*/
+
+#esplora section > h2{
+  padding-left: 1em; 
+}
+
+#esplora ul{
+  overflow: hidden; /*per funzionare deve essere settata una altezza*/
+  height: 354px;  /*Vanno bene i pixel? magari usare vh o %*/ 
+}
+
+#esplora li:first-child{
+    padding-left: 0em;
+}
+
+#esplora li{
+  overflow: hidden; 
+  padding-left: 0.5em;
+}
+
+#esplora .show-min a{
+  padding-bottom: 1px; /*is px okay?*/
+}
+
+#esplora img:hover{
+  opacity: 0.8;
+}
+
+#esplora .show-info{
+  padding-left: 8px;
+}
+
+#esplora .show-name{
+  margin-top: 0;
+  margin-bottom:5px; /*is px okay? plus, aggiungere lo stile per i link già cliccati*/ 
+}
+
+#esplora .show-name a{
+  padding: 0;
+  color: black;
+}
+
+#esplora .show-consigliati{
+  font-size: small;
+  margin:0;
+}
+
+@media screen and (max-width: 1024px)and (min-width: 150px){
+}
+
+
+@media screen and (max-width: 1024px)and (min-width: 601px){
+}
+
+@media screen and (max-width: 600px)and (min-width: 150px){
+}
+

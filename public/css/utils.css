@@ -12,3 +12,21 @@
   display: block;
   padding: 8px;
 }
+
+/*body*/
+body{
+  	margin:0;
+	min-width:800px;
+	width: auto !important;
+}
+
+@media screen and (max-width: 1024px)and (min-width: 150px){
+}
+
+
+@media screen and (max-width: 1024px)and (min-width: 601px){
+}
+
+@media screen and (max-width: 600px)and (min-width: 150px){
+}
+

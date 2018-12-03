@@ -1,13 +1,11 @@
-/*Page Center section*/
-.page-center{
-  margin-left: 20%;
+.testo__iniziale{
+    margin-left: 3%; 
+    margin-right: 3%;
+    font-style: italic ; 
+    font-size: 115% ; 
 }
 
 @media screen and (max-width: 1024px)and (min-width: 150px){
-  /*page-center section*/
-  .page-center{
-    margin-left: 0;
-  }
 }
 
 
@@ -16,4 +14,3 @@
 
 @media screen and (max-width: 600px)and (min-width: 150px){
 }
-
