@@ -397,6 +397,15 @@ section > h2{
   	vertical-align: -6px;
 }
 
+.nav__about:before{
+	content: url("../img/nav/about.png");
+  	display: inline-block;
+  	margin-left: -1.3em; /* same as padding-left set on li */
+  	width: 1.8em; /* same as padding-left set on li */
+  	vertical-align: -6px;
+}
+
+
 .nav__restricted{
 
 }
