@@ -131,15 +131,26 @@
 .nav__social{
 	background-color: white;
 }
-/*nav_ricerca chicco*/
+							/*nav_ricerca chicco*/
 .nav__ricerca{                                                      
   display: flex ;
   justify-content: center;
   align-items: center; 
+  text-align: left; 
+  background: white;
+  margin: 20px;
+  border: 1px;
+  border-radius: 25px; 					/*      Rende la barra tonda sugli spigoli     */
 }
 
 .nav__ricerca input{
-  width: 85%;
+  width: 85%; 
+  border: none;
+  border-radius: 25px;
+  margin: 0;
+  outline: none; 
+  box-shadow: none;    
+  background: transparent;
 }
 
 @media screen and (max-width: 1024px)and (min-width: 150px){
