@@ -10,6 +10,7 @@ $db = "db_tecweb";
 $username = "root";
 // password dell'utente
 $password = "";
+
 $connection=new mysqli($host,$username,$password,$db);
 
 if($connection->connect_errno){
