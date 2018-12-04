@@ -9,12 +9,7 @@ function executeQuery($connection,$query, $parameters, $type ){
         // Execute the statement.
         $stmt->execute();
             
-        // Return the result of the query in a statement
-        $finded=$stmt->get_result();
-            
-        $stmt->close();
-            
-        if($finded) return $finded;
+        if($stmt) return $stmt;
         }
         return null;
     }
