@@ -1,9 +1,25 @@
-.testo__iniziale{
-    margin-left: 3%; 
-    margin-right: 3%;
-    font-style: italic ; 
+.pagina-right{
+    margin-left: 3% ; 
     font-size: 115% ; 
 }
+
+.titolo{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    color: #333; 
+}
+
+#immagini-e-info{]
+    flex-direction: row;
+}
+
+.immagine-sviluppatore img{
+    height: 15%;
+    width: 15%;
+}
+
+
 
 @media screen and (max-width: 1024px)and (min-width: 150px){
 }

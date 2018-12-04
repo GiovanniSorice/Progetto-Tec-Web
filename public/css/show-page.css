@@ -1,3 +1,6 @@
+/*Page center*/
+
+
 /*Header*/
 .header{
 	background-image: url(../img/showsBackgrounds/narcos_back.jpg);
@@ -7,6 +10,7 @@
 	color: #161616;
 	padding: 3px;
 	margin-top: 0.5em;
+	text-align: center;
 }
 
 .header .text-container{
@@ -24,51 +28,211 @@
 	margin:0;
 	height: 100%;
 	border-left: 1px solid black;
-	width: 15%;
+	width: 18em;
+	overflow: hidden;
 }
 
-#side-bar__personaggi{
+#side-bar__consigli{
+	margin: 1em;
+	text-align: center;
+}
+
+#side-bar__consigli .pollici{
+	margin-top: 1em;
+}
+
+#side-bar__consigli img:hover{ /*vale per entrambi i pollici*/
+	background-color: #fac100;
+}
+
+#side-bar__consigli .consigliato{ /*classe da inserire dinamicamente in caso il pollice(like o no) sia stato selezionato precedentemente dall'utente */
+	background-color: #fac100;
+}
+
+#side-bar__attori{
 	text-align: center;
 	margin-top: 2em;
 }
 
-#side-bar__personaggi h1{
+#side-bar__attori h2{
 	font-size: large;
 }
 
-.personaggio-min a{
+.attore-min a{
 	padding-bottom: 0;
 }
 
-.personaggio-min img{
+.attore-min img{
 	height: 135px; 
 	border: 1px solid black;
 }
 
-.side-bar .personaggio-info p{
+.side-bar .attore-info p{
 	margin-top: 0;
 }
 
-.side-bar .personaggio-info .nome-personaggio{
+.side-bar .attore-info .nome-personaggio{
 	margin-bottom: 0;
 }
 
-.side-bar .personaggio-info .nome-attore{
+.side-bar .attore-info .nome-attore{
 	font-size: small;
 	padding: 0;
 }
 
-.side-bar .personaggio-info .nome-attore a{
+.side-bar .attore-info .nome-attore a{
 	padding: 0;
 }
 
 /*actual show page*/
 
-#show-page{ /*Questo margine non funziona, deve essere il 15% di tutta la pagina centrale*/
-	margin-right: 15%;
+#show-page{ 
+	margin-right: 18em;
+}
+
+
+#show-page .show-info{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid #fac100;
+	background-color: #f2f2f2;
 }
 
 #show-page .show-descrizione{
 	margin:0;
 	padding: 0;
+	text-align: center;
+}
+
+#show-page .show-seasons{
+	margin-left: 1em;
+}
+
+#show-page .show-seasons h2{
+	color: #aaa;
+}
+
+/* Style The Dropdown Button */
+.selettore-stagione {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1em;
+    margin-left: 2em;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown__stagioni {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown__stagioni a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown__stagioni a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown__stagioni {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .selettore-stagione {
+    background-color: #3e8e41;
+}
+
+
+
+#stagione{
+	text-align: center;
+	margin:auto;
+}
+
+#stagione th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #339400;
+    color: white;
+}
+
+#stagione tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+#stagione tr:hover {
+	background-color: #ddd;
+}
+
+#stagione td a{
+	color: black;
+}
+
+.post-section{
+	border: 1px solid #fac100;
+	margin: 1em;
+	margin-top: 5em;
+}
+
+.post-section h2{
+	color: #aaa;
+	margin: 5px;
+}
+
+.post{
+	border: 1px solid #aaa;
+	margin: 10px;
+}
+
+.post-header{
+	border-bottom: 1px solid #aaa;
+	margin: 5px;
+}
+
+.post-body{
+	margin: 5px;
+}
+
+
+@media screen and (max-width: 1024px)and (min-width: 150px){
+}
+
+
+@media screen and (max-width: 1024px)and (min-width: 601px){
+}
+
+@media screen and (max-width: 600px)and (min-width: 150px){
+	/*Page center*/
+	.page-center{
+		margin-top: 4em;
+	}
+
+	.side-bar{
+		width: 12em;
+	}
+
+	#show-page{
+		margin-right: 12em;
+	}
+
 }
