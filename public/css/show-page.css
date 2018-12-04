@@ -1,3 +1,6 @@
+/*Page center*/
+
+
 /*Header*/
 .header{
 	background-image: url(../img/showsBackgrounds/narcos_back.jpg);
@@ -24,7 +27,25 @@
 	margin:0;
 	height: 100%;
 	border-left: 1px solid black;
-	width: 15%;
+	width: 18em;
+	overflow: hidden;
+}
+
+#side-bar__consigli{
+	margin: 1em;
+	text-align: center;
+}
+
+#side-bar__consigli .pollici{
+	margin-top: 1em;
+}
+
+#side-bar__consigli img:hover{ /*vale per entrambi i pollici*/
+	background-color: #fac100;
+}
+
+#side-bar__consigli .consigliato{ /*classe da inserire dinamicamente in caso il pollice(like o no) sia stato selezionato precedentemente dall'utente */
+	background-color: #fac100;
 }
 
 #side-bar__attori{
@@ -64,11 +85,44 @@
 
 /*actual show page*/
 
-#show-page{ /*Questo margine non funziona, deve essere il 15% di tutta la pagina centrale*/
-	margin-right: 15%;
+#show-page{ 
+	margin-right: 18em;
+}
+
+
+#show-page .show-info{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid #fac100;
+	background-color: #f2f2f2;
 }
 
 #show-page .show-descrizione{
 	margin:0;
 	padding: 0;
+	text-align: center;
+}
+
+
+@media screen and (max-width: 1024px)and (min-width: 150px){
+}
+
+
+@media screen and (max-width: 1024px)and (min-width: 601px){
+}
+
+@media screen and (max-width: 600px)and (min-width: 150px){
+	/*Page center*/
+	.page-center{
+		margin-top: 4em;
+	}
+
+	.side-bar{
+		width: 12em;
+	}
+
+	#show-page{
+		margin-right: 12em;
+	}
+
 }
