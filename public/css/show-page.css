@@ -1,0 +1,74 @@
+/*Header*/
+.header{
+	background-image: url(../img/showsBackgrounds/narcos_back.jpg);
+}
+
+.header-content h2{
+	color: #161616;
+	padding: 3px;
+	margin-top: 0.5em;
+}
+
+.header .text-container{
+	background-color: #fac100;
+	border-radius: 4px;
+}
+
+
+/*Side bar*/
+
+.side-bar{
+	background-color: #f2f2f2;
+	position: absolute;
+	right: 0;
+	margin:0;
+	height: 100%;
+	border-left: 1px solid black;
+	width: 15%;
+}
+
+#side-bar__personaggi{
+	text-align: center;
+	margin-top: 2em;
+}
+
+#side-bar__personaggi h1{
+	font-size: large;
+}
+
+.personaggio-min a{
+	padding-bottom: 0;
+}
+
+.personaggio-min img{
+	height: 135px; 
+	border: 1px solid black;
+}
+
+.side-bar .personaggio-info p{
+	margin-top: 0;
+}
+
+.side-bar .personaggio-info .nome-personaggio{
+	margin-bottom: 0;
+}
+
+.side-bar .personaggio-info .nome-attore{
+	font-size: small;
+	padding: 0;
+}
+
+.side-bar .personaggio-info .nome-attore a{
+	padding: 0;
+}
+
+/*actual show page*/
+
+#show-page{ /*Questo margine non funziona, deve essere il 15% di tutta la pagina centrale*/
+	margin-right: 15%;
+}
+
+#show-page .show-descrizione{
+	margin:0;
+	padding: 0;
+}

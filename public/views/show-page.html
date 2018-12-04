@@ -3,10 +3,14 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/styleProva.css">
+<style type="text/css">@import url("../css/show-page.css");</style>
+
+
+
 <link rel="icon" type="image/png" href="../img/favicomatic/favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="../img/favicomatic/favicon-16x16.png" sizes="16x16" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="">
 </head>
 <body>
 	<!-- Sostituire con tag HTML5 <header>? Vedere pro e contro
@@ -19,7 +23,11 @@
 				<img src="../logo/logo_TVhunter.png" alt="logo del sito, riporta alla homepage">		
 			</a>
 		</div>
-
+		
+		<div class="nav__ricerca">
+			<input type="text" placeholder="Cerca..">
+		</div>
+		
 		<ul class="nav__top-list list_no-style	" id="nav__top-list">
 			<li class="nav__esplora"><a href="" title="Esplora">Esplora</a></li>
 			<li class="nav__restricted nav__profilo"><a href="" title="Profilo">Profilo</a></li>
@@ -37,7 +45,7 @@
 		<div class="nav__social">
 		</div>
 		<div class="nav__icon">
-			<a href="javascript:void(0);" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+			<a href="javascript:void(0);" onclick="myFunction()"><i class=""></i>Pulsante</a> <!-- TODO: aggiungere pulsante icons -->
 		</div>
 
 	</div>
@@ -45,14 +53,72 @@
 	<div class="page-center">
 		<div class="header">
 			<div class="header-content">
-				<h1>TV Hunter</h1>
+				<h1>Narcos</h1> <!--(esempio) Da sostituire col titolo della serie -->
+				<div class="text-container">
+					<h2>Voto medio: <span> 0/10 </span></h2>
+				</div>	
 			</div>
 		</div>
 
 		<div class="content">
-			<!-- Esplora content -->
-			
+			<!-- barra di navigazione laterale, mostra gli attori e altro -->
+			<div class="side-bar">
+				<div id="side-bar__personaggi">
+					<h1>Personaggi principali</h1>
+					<ul class="list_no-style list-inline" id="list-personaggi">
+						<li>
+							<div class="personaggio-min">
+								<a href="">
+									<img src="../img/miniature/attori/wagner-moura_min.jpg" alt="foto dell'attore">
+								</a>
+							</div>
+							<div class="personaggio-info">
+								<p class="nome-personaggio">Pablo Escobar</p>
+								<p class="nome-attore"><a>Wagner Moura</a></p>
+							</div>
+						</li>
+
+						<li>
+							<div class="personaggio-min">
+								<a href="">
+									<img src="../img/miniature/attori/pedro-pascal_min.jpg" alt="foto dell'attore">
+								</a>
+							</div>
+							<div class="personaggio-info">
+								<p class="nome-personaggio">Javier Pena</p>
+								<p class="nome-attore"><a>Pedro Pascal</a></p>
+							</div>
+						</li>
+
+						<li>
+							<div class="personaggio-min">
+								<a href="">
+									<img src="../img/miniature/attori/boyd-holbrook_min.jpg" alt="foto dell'attore">
+								</a>
+							</div>
+							<div class="personaggio-info">
+								<p class="nome-personaggio">Steve Murphy</p>
+								<p class="nome-attore"><a>Boyd Holbrook</a></p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- contenuto effettivo della pagina -->
+			<div id="show-page">
+				<!-- Mi serve un contenitore per le informazioni della serie -->
+				<div class="show-info">
+					<p class="show-descrizione">
+						Ambientata in Colombia della fine anni 70, la storia racconta le avventure del famoso signore della droga Pablo Escobar, dalla sua nascita come spacciatore di città alla sua brutale fine.
+					</p>
+				</div>
+
+			</div>
 		</div>
+
+
+
 	</div>
 
 	<div class="footer">
