@@ -17,6 +17,15 @@
 	color: white;
 }
 
+.login-bar .non-logged-user button{ 
+
+}
+
+.login-bar .non-logged-user a{ 
+	color: black;
+	text-decoration:none;
+}
+
 .login-bar .user-name a{
 	color: white;
 	text-decoration: none;
