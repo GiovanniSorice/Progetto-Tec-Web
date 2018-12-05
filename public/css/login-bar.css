@@ -1,0 +1,40 @@
+.login-bar{
+	width: 100%;
+	background: #14181c url(../img/background-dark.png) 0 -1px repeat-x;
+	height: 2.2em;
+	border-bottom: 1px solid black;
+}
+
+.login-bar a{
+	color: #fac100;
+}
+
+.login-bar .non-logged-user{
+	color: white;
+}
+
+.login-bar .logged-user{
+	color: white;
+}
+
+.login-bar .user-name a{
+	color: white;
+	text-decoration: none;
+}
+
+
+/*Utils*/
+.vertical-center{
+	display: flex;
+	align-items: center;
+}
+
+.align-right{
+	position: absolute;
+	right: 0;
+	margin-right: 5%;
+}
+
+.display-none{
+	display: none;
+}
