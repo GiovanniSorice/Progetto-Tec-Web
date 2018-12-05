@@ -10,15 +10,15 @@
     color: #333; 
 }
 
-#immagini-e-info{
-    flex-direction: row;
+.show{
+     display: inline;
 }
+
 
 .immagine-sviluppatore img{
-    height: 15%;
-    width: 15%;
+    height: 12em;
+    width: 12em;
 }
-
 
 
 @media screen and (max-width: 1024px)and (min-width: 150px){
