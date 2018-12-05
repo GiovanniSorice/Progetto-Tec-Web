@@ -3,10 +3,10 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS utente;
 CREATE TABLE utente (
   id int  AUTO_INCREMENT PRIMARY KEY,
-  username char(30) NOT NULL,
+  username char(30) UNIQUE NOT NULL,
   password char(30) NOT NULL,
   email char(30) NOT NULL,
-  immagine varchar(500),
+  foto_profilo varchar(500),
   nome char(30) NOT NULL,
   cognome char(30) NOT NULL,
   data_nascita date NOT NULL,
@@ -18,10 +18,11 @@ CREATE TABLE utente (
 DROP TABLE IF EXISTS serie;
 CREATE TABLE serie (
   id int PRIMARY KEY,
-  immagine varchar(500),
+  miniatura varchar(500),
+  background varchar(500),
   titolo char(30) NOT NULL,
   distribuzione char(30) NOT NULL,
-  descrizione varchar(500) NOT NULL,
+  descrizione varchar(1000) NOT NULL,
   creatore char(30) NOT NULL,
   terminata boolean NOT NULL,
   consigliato int DEFAULT 0,
@@ -92,9 +93,10 @@ CREATE TABLE risposta (
 DROP TABLE IF EXISTS attore;
 CREATE TABLE attore (
   id int PRIMARY KEY,
+  immagine varchar(500),
   nome char(30) NOT NULL,
   cognome char(30) NOT NULL,
-  bio varchar(100) NOT NULL
+  bio varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS serie_attore;
