@@ -54,32 +54,23 @@
 				<h1>TV Hunter</h1>
 			</div>
 		</div>
-		<div id="login" class="content">	
-    		 <div id="login__top" class="login">
-                <form action="login_action.php">
-                    <div class="login__riga">
-                      <h2>Effettua il <span xml:lang="EN">login</span> con un social a scelta oppure manualmente</h2>
-                                          
-                      <div class="login__colonna">
-                        <a  href="javascript:void(0);" class="fb btn" onclick="loginSocial()">
-                          <i class="fa fa-facebook fa-fw"></i><span xml:lang="EN">Login</span> con <span xml:lang="EN">Facebook</span><!-- TODO: aggiungere icona social -->
-                        </a>
-                        <a href="javascript:void(0);" class="twitter btn" onclick="loginSocial()">
-                          <i class="fa fa-twitter fa-fw"></i><span xml:lang="EN">Login</span> con <span xml:lang="EN">Twitter</span><!-- TODO: aggiungere icona social -->
-                        </a>
-                        <a href="javascript:void(0);" class="google btn" onclick="loginSocial()">
-                          <i class="fa fa-google fa-fw"></i><span xml:lang="EN">Login</span> con <span xml:lang="EN">Google+</span><!-- TODO: aggiungere icona social -->
-                        </a>
-                      </div>
-                    
-                      <div class="login__colonna">
+		<div id="signup" class="content">	
+    		 <div id="signup__top" class="signup">
+                <form action="signup_action.php">
+                    <div class="signup__riga">
+                      <h2>Registrati</h2>
+                      <div class="signup__colonna">
                         <!-- div class="hide-md-lg">
                           <p>Or sign in manually:</p>
                         </div>
                      -->
                         <input type="text" name="username" placeholder="Username" required>
                         <input type="password" name="password" placeholder="Password" required>
-                        <input type="submit" value="Login">
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="text" name="nome" placeholder="Nome" required>
+                        <input type="text" name="cognome" placeholder="Cognome" required>
+                        <input type="date" name="datanascita" placeholder="Data di nascita (es. 10/02/1997)" required>                        
+                        <input type="submit" value="signup">
                       </div>
                     
                     </div>
@@ -87,11 +78,11 @@
     		</div>
     
             <div class="bottom-container">
-              <div class="login__riga">
-                <div class="login__colonna">
-                  <a href="signup.php" style="color:white" class="btn"><span xml:lang="EN">Sign up</span></a>
+              <div class="signup__riga">
+                <div class="signup__colonna">
+                  <a href="login.php" style="color:white" class="btn"><span xml:lang="EN">Login</span></a>
                 </div>
-                <div class="login__colonna">
+                <div class="signup__colonna">
                   <a href="#" style="color:white" class="btn">Forgot password?</a>
                 </div>
               </div>
@@ -108,18 +99,6 @@
 			</ul>	
 		</div>
 	</div>
-
-	
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <a href="javascript:void(0);" onclick="closeModal()"><span class="close">&times;</span></a>
-    <p>Siamo spiacenti ma la funzione di <span xml:lang="EN">login</span> tramite <spanxml:lang="EN">social</span> verr&agrave;  introdotta nelle versioni successive</p>
-  </div>
-
-</div>
 
 <script>
 var modal = document.getElementById('myModal');
@@ -140,20 +119,6 @@ function myFunction() {
         z.className = "nav__logo-container";
     }
 }
-/*TODO: aggiustare il modal*/
-function loginSocial(){
-	modal.style.display = "block";
-}
-function closeModal(){
-	modal.style.display = "none";
-}
-//When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
 
 </script>
 
