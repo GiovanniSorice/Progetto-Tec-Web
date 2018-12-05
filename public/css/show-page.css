@@ -28,6 +28,7 @@
 	margin:0;
 	height: 100%;
 	border-left: 1px solid black;
+	border-bottom: 1px solid black;
 	width: 18em;
 	overflow: hidden;
 }
