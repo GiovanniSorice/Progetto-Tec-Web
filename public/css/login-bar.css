@@ -47,3 +47,7 @@
 .display-none{
 	display: none;
 }
+
+.login-bar .non-logged-user a:active{
+	color: white;
+}
