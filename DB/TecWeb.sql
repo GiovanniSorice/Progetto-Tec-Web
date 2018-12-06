@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS utente;
 CREATE TABLE utente (
   id int  AUTO_INCREMENT PRIMARY KEY,
   username char(30) UNIQUE NOT NULL,
-  password char(30) NOT NULL,
+  password char(64) NOT NULL,
   email char(30) NOT NULL,
   foto_profilo varchar(500),
   nome char(30) NOT NULL,
