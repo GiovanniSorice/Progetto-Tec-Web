@@ -17,6 +17,14 @@
 	color: white;
 }
 
+.login-bar .logged-user span:before{
+	content: url("../img/nav/user-unisex.png");
+  display: inline-block;
+	margin-left: -1.3em; /* same as padding-left set on li */
+	width: 1.8em; /* same as padding-left set on li */
+  vertical-align: -6px;
+}
+
 .login-bar .non-logged-user button{ 
 
 }
