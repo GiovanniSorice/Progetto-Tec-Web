@@ -55,3 +55,28 @@
 .display-none{
 	display: none;
 }
+
+.login-bar{
+		display: auto;	
+	}
+
+@media screen and (max-width: 1024px)and (min-width: 150px){
+}
+
+
+@media screen and (max-width: 1024px)and (min-width: 601px){
+	.login-bar{
+		margin-top: 0em;
+		display: auto;	
+	}
+}
+
+@media screen and (max-width: 600px)and (min-width: 150px){
+	.login-bar{
+		display: none;	
+	}
+.login-bar.responsive{
+		margin-top: 7.2em;
+		display: block;	
+	}
+}

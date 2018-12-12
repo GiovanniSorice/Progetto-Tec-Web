@@ -57,7 +57,7 @@
 		</div>
 
 		<!--Login bar-->
-		<div class="login-bar vertical-center">
+		<div id="login-bar" class="login-bar vertical-center">
 			<div class="non-logged-user align-right">
 				<span>Accesso non effettuato.</span>
 				<button><a href="">Accedi</a></button>
@@ -386,15 +386,18 @@ function myFunction() {
     var y = document.getElementById("nav__top-list");
     var z = document.getElementById("nav__logo-container");
 
+   	var loginBar = document.getElementById("login-bar");
 
     if (x.className === "nav") {
         x.className += " responsive";
         y.className += " responsive";
         z.className += " responsive";
+        loginBar.className += " responsive";
     } else {
         x.className = "nav";
         y.className = "nav__top-list";
         z.className = "nav__logo-container";
+    	loginBar.className = "login-bar vertical-center";
     }
 }
 </script>

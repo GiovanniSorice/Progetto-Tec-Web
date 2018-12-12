@@ -97,10 +97,10 @@
 
 .nav__faq:before{
 	content: url("../img/nav/faq.png");
-  	display: inline-block;
+  display: inline-block;
 	margin-left: -1.3em; /* same as padding-left set on li */
 	width: 1.8em; /* same as padding-left set on li */
-  	vertical-align: -6px;
+  vertical-align: -6px;
 }
 
 .nav__supporto:before{
