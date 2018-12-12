@@ -17,7 +17,12 @@ if($stmt!=null){
         $_SESSION['user_id']=$row['id'];
         $_SESSION['user_username']=$row['username'];
         $_SESSION['user_tipo']=$row['tipo'];
-        echo 'user_id '.$_SESSION['user_id'].' user_username '.$_SESSION['user_username'].' user_tipo '.$_SESSION['user_tipo'];
+        
+        /* Redirect to a different page in the current directory that was requested */
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $extra = 'prova.php';
+        header("Location: http://$host$uri/$extra");
     }else{
         //TODO : se entra qui non ha trovato nessuna corrispondenza tra username e passward, dire di reinserire i dati
         echo $result->num_rows;

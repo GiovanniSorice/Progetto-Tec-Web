@@ -14,10 +14,37 @@
      display: inline;
 }
 
+.descrizione-sviluppatore{
+   font-size: 75%;	
+   margin-bottom: 0; 
+   margin-top: 0; 
+}
 
-.immagine-sviluppatore img{
+#sviluppatori{
+   margin-bottom: 2em;
+}
+.nome-sviluppatore{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 95%; 
+    margin-bottom: 0; 
+    margin-top: 0; 
+}
+
+.informazioni-sviluppatore{
+    margin-left: 0.5em;
+    width: 12em; 
+}
+
+.paragrafo-sviluppatore{
+   width: 12em; 
+   margin-left: 1em; 
+   margin-right: 1em; 
+}
+
+.paragrafo-sviluppatore img{
     height: 12em;
     width: 12em;
+    margin-bottom: 0; 
 }
 
 

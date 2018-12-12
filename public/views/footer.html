@@ -1,0 +1,33 @@
+	<div class="footer">
+		<div class="footer__nav">
+			<ul class="list_no-style">
+				<li><a href="">Supporto </a></li>
+				<li><a href=""><span xml:lang="EN">Privacy</span></a></li>
+				<li><a href="">About</a></li>
+			</ul>	
+		</div>
+	</div>
+
+	
+
+<script>
+function myFunction() {
+    var x = document.getElementById("nav");
+    var y = document.getElementById("nav__top-list");
+    var z = document.getElementById("nav__logo-container");
+
+
+    if (x.className === "nav") {
+        x.className += " responsive";
+        y.className += " responsive";
+        z.className += " responsive";
+    } else {
+        x.className = "nav";
+        y.className = "nav__top-list";
+        z.className = "nav__logo-container";
+    }
+}
+</script>
+
+</body>
+</html>
