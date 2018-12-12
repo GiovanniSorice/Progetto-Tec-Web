@@ -1,8 +1,17 @@
-.pagina-right{
+  .pagina-right{
     margin-left: 3% ; 
     font-size: 115% ; 
 }
 
+#about.header{
+  background: #14181c url(../img/immagineAbout.jpg) 0 -1px repeat-x;
+    background-attachment: scroll;
+    background-position: center;
+    background-position-y: -6em;
+    background-color: #2f4858;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .titolo{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 25px;
@@ -36,9 +45,11 @@
 }
 
 .paragrafo-sviluppatore{
-   width: 12em; 
+   width: 12em;
+   height: 12em;
    margin-left: 1em; 
    margin-right: 1em; 
+   margin-bottom: 4em;
 }
 
 .paragrafo-sviluppatore img{
