@@ -6,7 +6,7 @@ $username=$_GET['username'];
 $password=hash("sha256",$_GET['password']);
 
 $query="select * from utente where username=? and password=?";
-$stmt=executeQuery($connection,$query,array(&$username,&$password),array("ss"));
+$stmt=executeQuery($query,array(&$username,&$password),array("ss"));
 if($stmt!=null){   
     $result=$stmt->get_result();
     $stmt->close();
@@ -21,7 +21,7 @@ if($stmt!=null){
         /* Redirect to a different page in the current directory that was requested */
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-        $extra = 'prova.php';
+        $extra = 'esplora.php';
         header("Location: http://$host$uri/$extra");
     }else{
         //TODO : se entra qui non ha trovato nessuna corrispondenza tra username e passward, dire di reinserire i dati

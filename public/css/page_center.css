@@ -1,13 +1,15 @@
 /*Page Center section*/
 .page-center{
-  margin-left: 20%;
+width: 80%;
+position:absolute;
+right:0;
 }
 
 @media screen and (max-width: 1024px)and (min-width: 150px){
   /*page-center section*/
   .page-center{
-    margin-left: 0;
-    margin-top: 4em;
+  	width: 100%;
+  	position:unset;
   }
 }
 
@@ -20,7 +22,6 @@
 
 @media screen and (max-width: 600px)and (min-width: 150px){
 	.page-center{
-		margin-top: 5em;
 	}
 }
 

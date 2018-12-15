@@ -1,7 +1,10 @@
 <?php 
 include_once 'DBConnection.php';
     /*Utilizzato per le query con output esterni*/
-    function executeQuery($connection,$query, $parameters, $type ){
+    function executeQuery($query, $parameters, $type ){
+        
+        global $connection;
+        
         if ($stmt = $connection->prepare($query)) {
     
             $params=array_merge($type, $parameters);
@@ -29,6 +32,12 @@ include_once 'DBConnection.php';
     
     function printPageEsplora($output){
         global $connection;
+        
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $extra = 'serie.php?serie_id=';
+        
+        
         $genere_page = implode("",file("../txt/genere.txt"));
         $show_page = implode("",file("../txt/show.txt"));
         $query="select distinct id, nome from genere a join serie_genere b on a.id=b.id_genere";
@@ -60,6 +69,8 @@ include_once 'DBConnection.php';
                 $show=preg_replace("/<!-- Id -->/i",$series[$j]["id"] , $show );
                 $show=preg_replace("/<!-- Titolo -->/i",$series[$j]["titolo"] , $show );
                 $show=preg_replace("/<!-- Consigliato -->/i",$series[$j]["consigliato"] , $show );
+                $show=preg_replace("/<!-- Url_Show -->/i","http://$host$uri/$extra".$series[$j]["id"] , $show );
+                
                 
             }
             $show=preg_replace("/<!-- Successiva -->/i","" , $show );
@@ -80,5 +91,114 @@ include_once 'DBConnection.php';
         return $output;
         
     }
+    
+    function printPageSerie($output){
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $extra = 'esplora.php';
+        
+        if(array_key_exists('serie_id',$_SESSION) && !empty($_SESSION['serie_id'])) {
+            /* Redirect to a different page in the current directory that was requested */
+            header("Location: http://$host$uri/$extra");
+            
+        }
+        
+        global $connection;
+        $side_serie_block = implode("",file("../txt/serie/side_bar_serie.txt"));
+        $attore_block = implode("",file("../txt/serie/attore.txt"));
+        $post_block = implode("",file("../txt/serie/post.txt"));
+        $serie_block = implode("",file("../txt/serie/serie.txt"));
+        
+        //Parte side-bar
+        $query="select a.id, a.nome, a.cognome from attore a join serie_attore b on a.id=b.id_attore where id_serie=?"; //TODO: aggiungere immagine
+
+        $stmt=executeQuery($query,array(&$_GET["serie_id"]),array("i"));
+        $attori=resultQueryToTable($stmt->get_result());
+        $stmt->close();
+        
+        $attore_collect="<!-- Successivo -->";
+        
+        
+        foreach ($attori as $attore) {
+            $attore_collect=preg_replace("/<!-- Successivo -->/i",$attore_block." <!-- Successivo -->" , $attore_collect );
+            $attore_collect=preg_replace("/<!-- Immagine -->/i","../img/miniature/attori/wagner-moura_min.jpg" , $attore_collect );//TODO: da aggiungere al db
+            $attore_collect=preg_replace("/<!-- Nome_Cognome_Attore -->/i",$attore["nome"]." ".$attore["cognome"] , $attore_collect );      
+        }
+        $attore_collect=preg_replace("/<!-- Successivo -->/i","" , $attore_collect );
+        $output = preg_replace("/<!-- Side_Bar -->/i", $attore_collect, $output );
+        
+        //Parte centro stagioni ed episodi 
+        
+        
+        $query="select immagine,titolo,distribuzione,descrizione,creatore,consigliato,non_consigliato,voto from serie where id=".$_GET["serie_id"];
+        $serie=resultQueryToTable($connection->query($query));
+        
+        $serie_block=preg_replace("/<!-- Descrizione -->/i",$serie[0]["descrizione"] , $serie_block );
+        
+        $numero_stagioni=mysqli_fetch_assoc(
+            $connection->query(
+                "select count(*) as totale_stagioni from serie a join episodio b on a.id=b.id_serie where a.id=".$_GET["serie_id"]
+                )
+            )["totale_stagioni"];
+        
+        $stagione_collect="<!-- Successivo -->";
+        
+        $extra="stagione.php?serie_id";
+            for ($i = 0; $i < $numero_stagioni; $i++) {
+                
+                $stagione_collect=preg_replace("/<!-- Successivo -->/i","<a href='http://$host$uri/$extra".$_GET["serie_id"].
+                    "&stagione_id=$i'>Stagione $i</a>"." <!-- Successivo -->" , $stagione_collect );
+                
+            }
+        $stagione_collect=preg_replace("/<!-- Successivo -->/i","" , $stagione_collect );
+            
+        $serie_block=preg_replace("/<!-- Stagione -->/i",$stagione_collect , $serie_block );
+        
+        $query="select b.id, b.titolo,b.descrizione, b.numero,b.data,b.visualizzato from serie a join episodio b on a.id=b.id_serie where b.stagione=1  and a.id=".$_GET["serie_id"];
+        
+        $episodi=resultQueryToTable($connection->query($query));
+
+        $episodio_collect="<!-- Successivo -->";
+        
+        foreach ($episodi as $episodio) {
+            $episodio_collect=preg_replace("/<!-- Successivo -->/i", 
+            '<tr> '
+            .'<td>'.$episodio["numero"].'</td>'
+                .'<td><a xml:lang="EN" href="">'.$episodio["titolo"].'</a></td>' //TODO: agggiungere href episodio
+            .'<td>'.date("d-m-Y", strtotime($episodio["data"])).'</td>'
+            .'<td>'.($episodio["titolo"]==1?'Si':'NO').'</td>'
+            .'</tr>'
+            .'<!-- Successivo -->'
+                , $episodio_collect );
+        }
+        $episodio_collect=preg_replace("/<!-- Successivo -->/i","" , $episodio_collect );
+        $serie_block=preg_replace("/<!-- Episodio -->/i",$episodio_collect, $serie_block );
+        
+        //parte centro post per ogni serie
+        
+        $query="select b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where a.id=".$_GET["serie_id"];
+        $posts=resultQueryToTable($connection->query($query));
+        
+        $post_collect="<!-- Successivo -->";
+        
+        foreach ($posts as $post) {
+            $post_collect=preg_replace("/<!-- Successivo -->/i",$post_block."<!-- Successivo -->", $post_collect );
+            $post_collect=preg_replace("/<!-- Username_Autore -->/i",$post["username"], $post_collect );
+            $post_collect=preg_replace("/<!-- Testo -->/i",$post["testo"], $post_collect );
+            
+            
+        }
+        $post_collect=preg_replace("/<!-- Successivo -->/i","" , $post_collect );
+        $serie_block=preg_replace("/<!-- Post -->/i",$post_collect, $serie_block );
+        
+        
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "show-page", $output );
+        $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $serie_block, $output );
+        
+        
+        return $output;
+        
+    }
+    
     
     ?>

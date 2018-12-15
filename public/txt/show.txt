@@ -1,6 +1,6 @@
 						<li class="show">
 							<div class="show-min">
-								<a href="show/show_id" title="vai alla pagina della serie">
+								<a href="<!-- Url_Show -->" title="vai alla pagina della serie">
 									<img src="<!-- Immagine -->" alt="poster della serie">
 								</a>
 							</div>

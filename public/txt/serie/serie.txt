@@ -1,0 +1,33 @@
+				<!-- Mi serve un contenitore per le informazioni della serie -->
+				<div class="show-info">
+					<p class="show-descrizione">
+						<!-- Descrizione -->
+					</p>
+				</div>
+
+				<div class="show-seasons">
+					<h2>Episodi</h2>
+					<div class="dropdown">
+					  <button class="selettore-stagione">Stagione</button>
+					  <div class="dropdown__stagioni">
+						<!-- Stagione -->
+					  </div>
+					</div> 
+
+					<table id="stagione">
+						<tr>
+							<th>Numero Episodio</th>
+							<th>Nome Episodio</th>
+							<th>Data Rilascio</th>
+							<th>Visto</th>
+						</tr>
+						<!-- Episodio -->
+					</table>
+				</div>
+			
+				<div class="post-section">
+					<h2>Post</h2>
+					
+					<!-- Post -->
+					
+				</div>
