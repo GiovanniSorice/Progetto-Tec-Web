@@ -90,7 +90,7 @@ INSERT INTO commento VALUES('6', '3', '2', '', 'Ma pablo non c\'&egrave;');
 
 -- attore
 -- INSERT INTO attore VALUES(id, miniatura, nome, cognome, bio);
-INSERT INTO attore VALUES('1', 'http://tvhunter.altervista.org/public/img/miniature/attori/wagner-moura_min.jpg', 'Wagner', 'Moura', 'Wagner Manicoba de Moura (Rodelas, 27 giugno 1976), &egrave; un attore brasiliano.');
+INSERT INTO attore VALUES('1', '../public/img/miniature/attori/wagner-moura_min.jpg', 'Wagner', 'Moura', 'Wagner Manicoba de Moura (Rodelas, 27 giugno 1976), &egrave; un attore brasiliano.');
 INSERT INTO attore VALUES('2', 'http://tvhunter.altervista.org/public/img/miniature/attori/pedro-pascal_min.jpg', 'Pedro', 'Pascal', 'Jose Pedro Balmaceda Pascal (Santiago del Cile, 2 aprile 1975) &egrave; un attore cileno naturalizzato statunitense.');
 INSERT INTO attore VALUES('3', '', 'Charli', 'Cox', 'Charlie Thomas Cox, meglio noto come Charlie Cox (Londra, 15 dicembre 1982), &egrave; un attore britannico, principalmente noto per aver interpretato Matt Murdock/Daredevil nella serie televisiva Daredevil');
 INSERT INTO attore VALUES('4', '', 'Deborah', 'Ann Woll', 'Deborah Ann Woll (Brooklyn, 7 febbraio 1985) &egrave; una attrice statunitense');

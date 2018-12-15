@@ -16,10 +16,7 @@
 		</div>
 
 		<div class="content">
-			<!-- barra di navigazione laterale -->
-			<div class="side-bar">
 			<!-- Side_Bar -->
-			</div>
 
 			<!-- contenuto effettivo della pagina -->
 			<div id="<!-- Nome_Pagina -->">

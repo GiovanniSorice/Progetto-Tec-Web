@@ -104,13 +104,15 @@ include_once 'DBConnection.php';
         }
         
         global $connection;
+        $side_block = implode("",file("../txt/side_bar.txt"));
         $side_serie_block = implode("",file("../txt/serie/side_bar_serie.txt"));
         $attore_block = implode("",file("../txt/serie/attore.txt"));
         $post_block = implode("",file("../txt/serie/post.txt"));
-        $serie_block = implode("",file("../txt/serie/serie.txt"));
+        $serie_block = implode("",file("../txt/serie/serie.txt"));        
         
-        //Parte side-bar
-        $query="select a.id, a.nome, a.cognome from attore a join serie_attore b on a.id=b.id_attore where id_serie=?"; //TODO: aggiungere immagine
+        //Parte side-bar        
+        
+        $query="select a.id, a.nome, a.cognome, a.miniatura from attore a join serie_attore b on a.id=b.id_attore where id_serie=?";
 
         $stmt=executeQuery($query,array(&$_GET["serie_id"]),array("i"));
         $attori=resultQueryToTable($stmt->get_result());
@@ -121,16 +123,17 @@ include_once 'DBConnection.php';
         
         foreach ($attori as $attore) {
             $attore_collect=preg_replace("/<!-- Successivo -->/i",$attore_block." <!-- Successivo -->" , $attore_collect );
-            $attore_collect=preg_replace("/<!-- Immagine -->/i","../img/miniature/attori/wagner-moura_min.jpg" , $attore_collect );//TODO: da aggiungere al db
+            $attore_collect=preg_replace("/<!-- Immagine -->/i",$attore["miniatura"] , $attore_collect );
             $attore_collect=preg_replace("/<!-- Nome_Cognome_Attore -->/i",$attore["nome"]." ".$attore["cognome"] , $attore_collect );      
         }
         $attore_collect=preg_replace("/<!-- Successivo -->/i","" , $attore_collect );
-        $output = preg_replace("/<!-- Side_Bar -->/i", $attore_collect, $output );
+        $side_block = preg_replace("/<!-- Side_Bar_Contnent -->/i", $attore_collect, $side_block );
+        $output = preg_replace("/<!-- Side_Bar -->/i", $side_block, $output );
         
         //Parte centro stagioni ed episodi 
         
         
-        $query="select immagine,titolo,distribuzione,descrizione,creatore,consigliato,non_consigliato,voto from serie where id=".$_GET["serie_id"];
+        $query="select miniatura,titolo,distribuzione,descrizione,creatore,consigliato,non_consigliato,voto from serie where id=".$_GET["serie_id"];
         $serie=resultQueryToTable($connection->query($query));
         
         $serie_block=preg_replace("/<!-- Descrizione -->/i",$serie[0]["descrizione"] , $serie_block );
