@@ -52,7 +52,7 @@ include_once 'DBConnection.php';
             $genere_id=$generi[$i]["id"];
             $genere_nome=$generi[$i]["nome"];
             
-            $query="select id,immagine,titolo, consigliato from serie a join serie_genere b on a.id=b.id_serie where b.id_genere=$genere_id";
+            $query="select id,miniatura,titolo, consigliato from serie a join serie_genere b on a.id=b.id_serie where b.id_genere=$genere_id";
             //Seleziono la lista delle serie tv di un determinato genere già in una tabella
             $series=resultQueryToTable($connection->query($query));
             
@@ -65,7 +65,7 @@ include_once 'DBConnection.php';
             for ($j = 0; $j < count($series); $j++) {
                 
                 $show=preg_replace("/<!-- Successiva -->/i",$show_page." <!-- Successiva -->" , $show );
-                $show=preg_replace("/<!-- Immagine -->/i",$series[$j]["immagine"] , $show );
+                $show=preg_replace("/<!-- Immagine -->/i",$series[$j]["miniatura"] , $show );
                 $show=preg_replace("/<!-- Id -->/i",$series[$j]["id"] , $show );
                 $show=preg_replace("/<!-- Titolo -->/i",$series[$j]["titolo"] , $show );
                 $show=preg_replace("/<!-- Consigliato -->/i",$series[$j]["consigliato"] , $show );
