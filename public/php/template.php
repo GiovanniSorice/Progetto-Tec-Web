@@ -13,13 +13,15 @@
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         if(array_key_exists('user_username',$_SESSION) && !empty($_SESSION['user_username'])) {
             $extra="logout_action.php";
-            $output = preg_replace("/<!-- Name -->/i",$_SESSION["user_username"], $file_content);
+            $output = preg_replace("/<!-- Nome -->/i",'<a href="#">'.$_SESSION["user_username"].'</a>', $file_content);//TODO: aggiungere il link al profilo            
             $output = preg_replace("/<!-- Log -->/i", "Logout", $output );
-            $output = preg_replace("/<!-- url_log -->/i", "http://$host$uri/$extra", $output );
+            $output = preg_replace("/<!-- Url_Log -->/i", "http://$host$uri/$extra", $output );
         }else{
             $extra="login.php";
-            $output = preg_replace("/<!-- Log -->/i", "Login", $file_content );
-            $output = preg_replace("/<!-- url_log -->/i", "http://$host$uri/$extra", $output );
+            $output = preg_replace("/<!-- Nome -->/i","Accesso non effettuato.", $file_content);            
+            $output = preg_replace("/<!-- Log -->/i", "Login", $output );
+            $output = preg_replace("/<!-- Url_Log -->/i", "http://$host$uri/$extra", $output );
+            
         }
         
         //Parte personalizzata per tutte le pagine
