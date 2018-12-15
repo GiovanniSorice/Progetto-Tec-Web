@@ -127,7 +127,8 @@ include_once 'DBConnection.php';
             $attore_collect=preg_replace("/<!-- Nome_Cognome_Attore -->/i",$attore["nome"]." ".$attore["cognome"] , $attore_collect );      
         }
         $attore_collect=preg_replace("/<!-- Successivo -->/i","" , $attore_collect );
-        $side_block = preg_replace("/<!-- Side_Bar_Contnent -->/i", $attore_collect, $side_block );
+        $side_serie_block=preg_replace("/<!-- Attore -->/i",$attore_collect , $side_serie_block );
+        $side_block = preg_replace("/<!-- Side_Bar_Contnent -->/i", $side_serie_block, $side_block );
         $output = preg_replace("/<!-- Side_Bar -->/i", $side_block, $output );
         
         //Parte centro stagioni ed episodi 
