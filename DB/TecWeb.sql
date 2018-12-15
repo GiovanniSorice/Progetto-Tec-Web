@@ -93,7 +93,7 @@ CREATE TABLE risposta (
 DROP TABLE IF EXISTS attore;
 CREATE TABLE attore (
   id int PRIMARY KEY,
-  immagine varchar(500),
+  miniatura varchar(500),
   nome char(30) NOT NULL,
   cognome char(30) NOT NULL,
   bio varchar(500) NOT NULL
