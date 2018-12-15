@@ -12,7 +12,7 @@ if (strlen($q)>0) {
     
     $query="select id, titolo from serie where titolo like concat('%',?,'%')";
     //Seleziono la lista dei generi già in una tabella
-    $stmt=executeQuery($connection,$query,array(&$q),array("s"));
+    $stmt=executeQuery($query,array(&$q),array("s"));
     $series=resultQueryToTable($stmt->get_result());
     $stmt->close();
     foreach ($series as $serie) {

@@ -12,7 +12,7 @@ $datanascita=$_GET['datanascita'];
 $datanascita= date("Y-m-d",strtotime($datanascita));
 
 $query="insert into utente (username,password,email,nome,cognome,data_nascita) values (?,?,?,?,?,?)";
-$stmt=executeQuery($connection,$query,array(&$username,&$password,&$email,&$nome,&$cognome,&$datanascita),array("ssssss"));
+$stmt=executeQuery($query,array(&$username,&$password,&$email,&$nome,&$cognome,&$datanascita),array("ssssss"));
 if($stmt->errno===0){     
     $stmt->close();
     $query="select id,tipo from utente where username=?";

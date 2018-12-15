@@ -28,6 +28,10 @@
                 echo printPageEsplora($output);
             break;
             
+            case "serie":
+                echo printPageSerie($output);
+                break;
+                
             default:
                 ;
             break;
