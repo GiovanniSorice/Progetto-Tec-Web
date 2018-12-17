@@ -1,8 +1,6 @@
 	<div class="page-center">
 		<div class="header">
-			<div class="header-content">
-				<h1>TV Hunter</h1>
-			</div>
+				<!-- Page_Head -->
 		</div>
 		<div class="login-bar vertical-center">
 			<div class="non-logged-user align-right">

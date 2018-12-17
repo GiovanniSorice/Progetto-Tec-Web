@@ -1,5 +1,5 @@
 				<div id="side-bar__consigli">
-					<span>Consigliata dal <!-- Percentuale_Consigliati --> degli utenti</span>
+					<span>Consigliata dal <!-- Percentuale_Consigliati -->% degli utenti</span>
 					<div class="pollici">
 						<a href="" title="consiglia la serie"><img id="like" src="../img/consigliati/like.png"></a>			
 						<a href="" title="sconsiglia la serie"><img id="dislike" src="../img/consigliati/dislike.png"></a>

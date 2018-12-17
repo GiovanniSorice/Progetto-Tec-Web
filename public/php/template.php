@@ -4,7 +4,6 @@
     //Parte standard per tutte le pagine
     function createPage($namePage){
         readfile('../txt/head.txt');
-       // readfile('../txt/nav.txt');
         echo printNavbar($namePage);
 
         session_start();

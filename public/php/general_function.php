@@ -88,7 +88,7 @@ include_once 'DBConnection.php';
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = 'serie.php?serie_id=';
         
-        
+        $head_page = implode("",file("../txt/pagehead.txt"));
         $genere_page = implode("",file("../txt/genere.txt"));
         $show_page = implode("",file("../txt/show.txt"));
         $query="select distinct id, nome from genere a join serie_genere b on a.id=b.id_genere";
@@ -137,6 +137,7 @@ include_once 'DBConnection.php';
         $genere_show_collect=preg_replace("/<!-- Successivo -->/i","" , $genere_show_collect );
         
         $output = preg_replace("/<!-- Nome_Pagina -->/i", "esplora", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
         $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $genere_show_collect, $output );
         
         return $output;
@@ -159,7 +160,8 @@ include_once 'DBConnection.php';
         $side_serie_block = implode("",file("../txt/serie/side_bar_serie.txt"));
         $attore_block = implode("",file("../txt/serie/attore.txt"));
         $post_block = implode("",file("../txt/serie/post.txt"));
-        $serie_block = implode("",file("../txt/serie/serie.txt"));        
+        $serie_block = implode("",file("../txt/serie/serie.txt")); 
+        $title = implode("",file("../txt/serie/pagehead_serie.txt"));       
         
         //Parte side-bar        
         
@@ -182,9 +184,21 @@ include_once 'DBConnection.php';
         $side_block = preg_replace("/<!-- Side_Bar_Contnent -->/i", $side_serie_block, $side_block );
         $output = preg_replace("/<!-- Side_Bar -->/i", $side_block, $output );
         
+        //Titolo, voto e consiglio
+        $output = preg_replace("/<!-- Page_Head -->/i", $title, $output );
+        $query = "select titolo,voto,consigliato,non_consigliato,preferiti from serie where id=".$_GET["serie_id"];
+        $result = resultQueryToTable($connection->query($query));
+        $output = preg_replace("/<!-- Titolo -->/i",$result[0]["titolo"] , $output );
+        $output = preg_replace("/<!-- Voto -->/i",$result[0]["voto"] , $output );
+
+        if (($result[0]["consigliato"] + $result[0]["non_consigliato"]) == 0)
+            $percentuale = 0;
+        else
+            $percentuale = ($result[0]["consigliato"] / ($result[0]["consigliato"] + $result[0]["non_consigliato"])) * 100;
+
+        $output = preg_replace("/<!-- Percentuale_Consigliati -->/i",$percentuale , $output );
+
         //Parte centro stagioni ed episodi 
-        
-        
         $query="select miniatura,titolo,distribuzione,descrizione,creatore,consigliato,non_consigliato,voto from serie where id=".$_GET["serie_id"];
         $serie=resultQueryToTable($connection->query($query));
         
