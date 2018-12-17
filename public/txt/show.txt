@@ -6,7 +6,7 @@
 							</div>
 							<div class="show-info">
 								<p class="show-name">
-									<a href="show/<!-- Id -->"><!-- Titolo --></a></p>
+									<a href="<!-- Url_Show -->"><!-- Titolo --></a></p>
 								<p class="show-consigliati">consigliato da <!-- Consigliato --> persone</p>
 							</div>
 						</li>
