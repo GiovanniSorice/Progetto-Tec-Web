@@ -6,20 +6,12 @@
 		</div>
 		<div class="login-bar vertical-center">
 			<div class="non-logged-user align-right">
-				<span class="user-name"><a href=""><!-- Name --></a></span>
-				(<a href="<!-- url_log -->"><!-- Log --></a>)
-			</div>
-			<div class="logged-user align-right display-none">
-				<span class="user-name"><a href=""><!-- Name --></a></span>
-				(<a href=""><!-- Log --></a>)
+				<span class="user-name"> <!-- Nome --> </span>
+				<button onClick="window.location.href='<!-- Url_Log -->'"><!-- Log --></button>
 			</div>
 		</div>
-
 		<div class="content">
-			<!-- barra di navigazione laterale -->
-			<div class="side-bar">
 			<!-- Side_Bar -->
-			</div>
 
 			<!-- contenuto effettivo della pagina -->
 			<div id="<!-- Nome_Pagina -->">

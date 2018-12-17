@@ -5,7 +5,7 @@
 // nome di host
 $host = "localhost";
 // nome del database
-$db = "db_tecweb";
+$db = "my_tvhunter";
 // username dell'utente in connessione
 $username = "root";
 // password dell'utente
