@@ -29,6 +29,57 @@ include_once 'DBConnection.php';
         
         return $table;
     }
+
+
+    function printNavbar($currentPage){  
+        $nav = implode("",file("../txt/nav.txt"));
+        switch ($currentPage) {
+            case "esplora":
+                $nav = preg_replace("/<!-- refEsplora -->/i", "#", $nav);
+                break;
+
+            case "profilo":
+                $nav = preg_replace("/<!-- refProfilo -->/i", "#", $nav);
+                break;
+
+            case "preferiti":
+                $nav = preg_replace("/<!-- refPreferiti -->/i", "#", $nav);
+                break;
+
+            case "impostazioni":
+                $nav = preg_replace("/<!-- refImpostazioni -->/i", "#", $nav);
+                break;
+
+            case "faq":
+                $nav = preg_replace("/<!-- refFaq -->/i", "#", $nav);
+                break;
+
+            case "supporto":
+                $nav = preg_replace("/<!-- refSupporto -->/i", "#", $nav);
+                break;
+
+            case "privacy":
+                $nav = preg_replace("/<!-- refPrivacy -->/i", "#", $nav);
+                break;
+
+            case "about":
+                $nav = preg_replace("/<!-- refAbout -->/i", "#", $nav);
+                break;
+            
+            default:
+                break;
+        }
+
+        $nav = preg_replace("/<!-- refEsplora -->/i", "esplora.php", $nav);
+        $nav = preg_replace("/<!-- refProfilo -->/i", "profilo.php", $nav);
+        $nav = preg_replace("/<!-- refPreferiti -->/i", "preferiti.php", $nav);
+        $nav = preg_replace("/<!-- refImpostazioni -->/i", "impostazioni.php", $nav);
+        $nav = preg_replace("/<!-- refFaq -->/i", "faq.php", $nav);
+        $nav = preg_replace("/<!-- refSupporto -->/i", "supporto.php", $nav);
+        $nav = preg_replace("/<!-- refPrivacy -->/i", "privacy.php", $nav);
+        $nav = preg_replace("/<!-- refAbout -->/i", "about.php", $nav);
+        return $nav;
+    }
     
     function printPageEsplora($output){
         global $connection;

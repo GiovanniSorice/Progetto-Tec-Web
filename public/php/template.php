@@ -4,13 +4,15 @@
     //Parte standard per tutte le pagine
     function createPage($namePage){
         readfile('../txt/head.txt');
-        readfile('../txt/nav.txt');//TODO: sistemare link navbar
-        
+       // readfile('../txt/nav.txt');
+        echo printNavbar($namePage);
+
         session_start();
         
         $file_content = implode("",file("../txt/pagecenter.txt"));
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        
         if(array_key_exists('user_username',$_SESSION) && !empty($_SESSION['user_username'])) {
             $extra="logout_action.php";
             $output = preg_replace("/<!-- Nome -->/i",'<a href="#">'.$_SESSION["user_username"].'</a>', $file_content);//TODO: aggiungere il link al profilo            
