@@ -149,7 +149,7 @@ include_once 'DBConnection.php';
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = 'esplora.php';
         
-        if(array_key_exists('serie_id',$_SESSION) && !empty($_SESSION['serie_id'])) {
+        if(!array_key_exists('serie_id',$_GET) && empty($_GET['serie_id'])) { 
             /* Redirect to a different page in the current directory that was requested */
             header("Location: http://$host$uri/$extra");
             
@@ -212,12 +212,12 @@ include_once 'DBConnection.php';
         
         $stagione_collect="<!-- Successivo -->";
         
-        $extra="stagione.php?serie_id";
-            for ($i = 0; $i < $numero_stagioni; $i++) {
+        $extra="stagione.php?serie_id="; 
+        for ($i = 0; $i < $numero_stagioni; $i++) {
                 
-                $stagione_collect=preg_replace("/<!-- Successivo -->/i","<a href='http://$host$uri/$extra".$_GET["serie_id"].
-                    "&stagione_id=$i'>Stagione $i</a>"." <!-- Successivo -->" , $stagione_collect );
-                
+            $link=(string)"http://".$host.$uri."/".$extra.$_GET["serie_id"]."&stagione_numero=".($i+1);
+            $stagione_collect=preg_replace("/<!-- Successivo -->/i","<a href=javascript:episodi('$link') >Stagione".($i+1)."</a>"." <!-- Successivo -->" , $stagione_collect );
+            
             }
         $stagione_collect=preg_replace("/<!-- Successivo -->/i","" , $stagione_collect );
             
