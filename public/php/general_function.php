@@ -88,6 +88,9 @@ include_once 'DBConnection.php';
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = 'serie.php?serie_id=';
         
+        //$background = implode("", file("../txt/head_background.txt"));
+        //$output = preg_replace("/<!-- Url_Back -->/i", "../img/showsBackgrounds/narcos_back.jpg", $background);
+
         $head_page = implode("",file("../txt/pagehead.txt"));
         $genere_page = implode("",file("../txt/genere.txt"));
         $show_page = implode("",file("../txt/show.txt"));
@@ -161,7 +164,15 @@ include_once 'DBConnection.php';
         $attore_block = implode("",file("../txt/serie/attore.txt"));
         $post_block = implode("",file("../txt/serie/post.txt"));
         $serie_block = implode("",file("../txt/serie/serie.txt")); 
-        $title = implode("",file("../txt/serie/pagehead_serie.txt"));       
+        $title = implode("",file("../txt/serie/pagehead_serie.txt"));
+        
+
+        //Imposta immagine di background personalizzata
+
+        $query = "select background from serie where id=".$_GET["serie_id"];
+        $result = resultQueryToTable($connection->query($query));
+        $title = preg_replace("/<--! Url_Back -->/i", $result[0]["background"], $title);
+        $output = preg_replace("/<!-- Page_Head -->/i", $title, $output );
         
         //Parte side-bar        
         
@@ -185,6 +196,7 @@ include_once 'DBConnection.php';
         $output = preg_replace("/<!-- Side_Bar -->/i", $side_block, $output );
         
         //Titolo, voto e consiglio
+
         $output = preg_replace("/<!-- Page_Head -->/i", $title, $output );
         $query = "select titolo,voto,consigliato,non_consigliato,preferiti from serie where id=".$_GET["serie_id"];
         $result = resultQueryToTable($connection->query($query));

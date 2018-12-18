@@ -1,6 +1,6 @@
 /*Header section*/
 .header{  
-  background: url(../img/peaky_blinders.jpg);
+  background-image: url(../img/peaky_blinders.jpg);
   background-attachment: scroll;
   background-position: center;
   background-position-y:-6em; 

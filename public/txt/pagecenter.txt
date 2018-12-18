@@ -1,5 +1,5 @@
 	<div class="page-center">
-		<div class="header">
+		<div class="header" id = "header">
 				<!-- Page_Head -->
 		</div>
 		<div class="login-bar vertical-center">

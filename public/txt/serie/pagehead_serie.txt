@@ -4,3 +4,8 @@
 					<h2>Voto medio: <span> <!-- Voto -->/5 </span></h2>
 				</div>	 
 			</div>
+			<script>
+                document.getElementById("header").style.backgroundImage = "url(<--! Url_Back -->)";
+            </script>
+			
+			
