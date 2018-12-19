@@ -35,8 +35,12 @@
                 echo printPageSerie($output);
                 break;
                 
+            case "about":
+                echo printPageAbout($output);
+                break;
+
             default:
-                ;
+                
             break;
         }
         

@@ -87,9 +87,6 @@ include_once 'DBConnection.php';
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = 'serie.php?serie_id=';
-        
-        //$background = implode("", file("../txt/head_background.txt"));
-        //$output = preg_replace("/<!-- Url_Back -->/i", "../img/showsBackgrounds/narcos_back.jpg", $background);
 
         $head_page = implode("",file("../txt/pagehead.txt"));
         $genere_page = implode("",file("../txt/genere.txt"));
@@ -279,6 +276,22 @@ include_once 'DBConnection.php';
         
         return $output;
         
+    }
+
+    function printPageAbout($output){
+        global $connection;
+        
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+
+        $head_page = implode("", file("../txt/pagehead.txt"));
+        $about = implode("", file("../txt/about.txt"));
+
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "about", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $about , $output );
+
+        return $output;
     }
     
     
