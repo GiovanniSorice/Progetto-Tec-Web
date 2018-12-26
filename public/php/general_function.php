@@ -215,17 +215,18 @@ include_once 'DBConnection.php';
         
         $numero_stagioni=mysqli_fetch_assoc(
             $connection->query(
-                "select count(*) as totale_stagioni from serie a join episodio b on a.id=b.id_serie where a.id=".$_GET["serie_id"]
+                "select count(*) as totale_stagioni from (select distinct b.stagione from serie a join episodio b on a.id=b.id_serie
+                 where a.id=".$_GET["serie_id"].") as stagioni"
                 )
             )["totale_stagioni"];
         
         $stagione_collect="<!-- Successivo -->";
         
         $extra="stagione.php?serie_id="; 
-        for ($i = 0; $i < $numero_stagioni; $i++) {
+        for ($i = 1; $i <= $numero_stagioni; $i++) {
                 
-            $link=(string)"http://".$host.$uri."/".$extra.$_GET["serie_id"]."&stagione_numero=".($i+1);
-            $stagione_collect=preg_replace("/<!-- Successivo -->/i","<a href=javascript:episodi('$link') >Stagione".($i+1)."</a>"." <!-- Successivo -->" , $stagione_collect );
+            $link=(string)"http://".$host.$uri."/".$extra.$_GET["serie_id"]."&stagione_numero=".($i);
+            $stagione_collect=preg_replace("/<!-- Successivo -->/i","<a href=javascript:episodi('$link') >Stagione".($i)."</a>"." <!-- Successivo -->" , $stagione_collect );
             
             }
         $stagione_collect=preg_replace("/<!-- Successivo -->/i","" , $stagione_collect );
