@@ -9,6 +9,9 @@
 			</div>
 		</div>
 		<div class="content">
+			<div id="risultati-ricerca">
+				
+			</div>
 			<!-- Side_Bar -->
 
 			<!-- contenuto effettivo della pagina -->
