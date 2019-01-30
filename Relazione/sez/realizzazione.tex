@@ -1,18 +1,26 @@
 \newpage
 \section{Realizzazione}
 Per la realizzazione del sito si è fatto riferimento ad alcune linee guida che ci hanno permesso di impostare il lavoro fin da subito, permettendo una scrittura agevole e relativamente semplice del codice.
+
+\subsection{Responsive Design}
+Dire che abbiamo scelto di implentare in primis il codice per la versione mobile in quanto più responsive
+
 \subsection{Linguaggi e strumenti}
+
 \subsubsection{XHTML 1.0 Strict}
-Abbiamo deciso di utilizzare lo standard XHTML 1.0 Strict principalmente a causa del target a cui il nostro sito si rivolge: un'utenza dal livello informatico principalmente basso e con scarse pretese di stile, al fronte di fruibilità immediata e raggiungibile da moltissimi mezzi anche vetusti.
+Html 5, versione Html 
+
 \subsubsection{PHP}
 L'utilizzo di PHP è stato esteso soprattutto nella parte dinamica delle pagine, ed è stato in buona parte preferito rispetto a JavaScript per il fatto che esso risiede nel server e non richiede prerequisiti da parte del client che poi vuole fruire la pagina.
+
 \subsubsection{JavaScript}
-JavaScript è stato usato minimamente nella parte del sito relativo all'utente generico per i motivi descritti poco prima. In particolare, si occupa di renderizzare il menù a comparsa nei dispositivi mobili. Qualora non fosse disponibile, un menù a fondo pagina è comunque raggiungibile con un'ancora dalla barra di navigazione. Invece è stato sfruttato di più nella parte di amministrazione, in quanto è una componente fondamentale nella generazione degli ordini. In particolare, si è previsto che un amministratore appartenga ad una classe di utenza sulla quale il proprietario del sito può avere un certo controllo, che quindi si premurerà di impostare il computer in maniera tale che JavaScript possa funzionare senza problemi.
-\subsection{Divisione tra presentazione, struttura e comportamento}
-Si è puntato ad una più completa suddivisione tra struttura, comportamento e presentazione.
+Utilizzato 
+
 \subsubsection{Struttura}
 Tutta la parte strutturale è stata mantenuta all'interno dei files html oppure php dentro la cartella HTML. La parte presentazionale invece è stata posta all'interno della cartella CSS, le immagini all'interno della cartella images, mentre tutti gli altri file di utilità sono stati posti in cartelle più specifiche. La struttura scelta dal gruppo è quella gerarchica, in quanto tutte le informazioni sono disponibili a partire da una barra di navigazione sempre visibile.
+
 \subsection{Presentazione}
+
 \subsection{Comportamento}
 
 Per quanto riguarda la parte dell'utenza generica si è deciso di utilizzare quanto meno possibile elementi JavaScript, prediligendo piuttosto la parte php. Questo ha permesso un comportamento quasi completamente predicibile - in quanto sottoposto a meno variabili di contorno dettate dal client - ed è stato sfruttato principalmente per mostrare a schermo le informazioni contenute nel database.
