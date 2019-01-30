@@ -1,8 +1,26 @@
+/*Utils*/
+.vertical-center{
+	display: flex;
+	align-items: center;
+}
+
+.align-right{
+	position: absolute;
+	right: 0;
+	margin-right: 5%;
+}
+
+.display-none{
+	display: none;
+}
+/*End utils*/
+
 .login-bar{
 	width: 100%;
-	background: #14181c url(../img/background-dark.png) 0 -1px repeat-x;
+	background: #14181c url(../img/background-dark.png) 0 -50px repeat-x;
 	height: 2.2em;
 	border-bottom: 1px solid black;
+	margin-top: 4em;
 }
 
 .login-bar a{
@@ -40,46 +58,21 @@
 }
 
 
-/*Utils*/
-.vertical-center{
-	display: flex;
-	align-items: center;
-}
-
-.align-right{
-	position: absolute;
-	right: 0;
-	margin-right: 5%;
-}
-
-.display-none{
-	display: none;
-}
-
-<<<<<<< HEAD
-.login-bar{
-		display: auto;	
-	}
-
-@media screen and (max-width: 1024px)and (min-width: 150px){
-}
-
-
-@media screen and (max-width: 1024px)and (min-width: 601px){
+@media screen and (min-width: 751px) and (max-width: 1024px){
 	.login-bar{
+		display: flex;	
 		margin-top: 0em;
-		display: auto;	
+
 	}
+	.non-logged-user a:active{
+		color: white;
+	}	
 }
 
-@media screen and (max-width: 600px)and (min-width: 150px){
+@media screen and (min-width: 1025px){
 	.login-bar{
-		display: none;	
+		display: flex;	
+		margin-top: 0em;
+
 	}
-.login-bar.responsive{
-		margin-top: 7.2em;
-		display: block;	
-	}
-.login-bar .non-logged-user a:active{
-	color: white;
 }
