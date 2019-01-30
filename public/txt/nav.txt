@@ -31,7 +31,7 @@
 		<div class="nav__social">
 		</div>
 		<div class="nav__icon">
-			<a href="javascript:void(0);" onclick="myFunction()"><i class=""></i>Pulsante</a> <!-- TODO: aggiungere pulsante icons -->
+			<a href="#footer-responsive-menu"><i class=""></i>Menu</a> <!-- TODO: aggiungere pulsante icons -->
 		</div>
 
 	</div>

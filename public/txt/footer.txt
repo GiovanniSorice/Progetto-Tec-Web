@@ -8,6 +8,24 @@
 		</div>
 	</div>
 
+	<div id="footer-responsive-menu">
+		<ul class="list_no-style">
+			<li><a href="<!-- refEsplora -->" title="Esplora">Esplora</a></li>
+			<li><a href="<!-- refProfilo -->" title="Profilo">Profilo</a></li>
+			<li><a href="<!-- refPreferiti -->" title="Preferiti">Preferiti</a></li>
+			<li><a href="">Supporto </a></li>
+			<li><a href=""><span xml:lang="EN">Privacy</span></a></li>
+			<li><a href="">About</a></li>
+		</ul>	
+	</div>
+
+	<div id="torna-su">
+		<a href="#">Torna su</a>
+	</div>
+
+
+	</div>
+
 
 <script>
 function myFunction() {
