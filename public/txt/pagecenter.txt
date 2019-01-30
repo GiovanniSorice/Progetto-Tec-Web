@@ -1,0 +1,22 @@
+	<div class="page-center">
+		<div class="header" id = "header">
+				<!-- Page_Head -->
+		</div>
+		<div class="login-bar vertical-center">
+			<div class="non-logged-user align-right">
+				<span class="user-name"> <!-- Nome --> </span>
+				<button onClick="window.location.href='<!-- Url_Log -->'"><!-- Log --></button>
+			</div>
+		</div>
+		<div class="content">
+			<div id="risultati-ricerca">
+				
+			</div>
+			<!-- Side_Bar -->
+
+			<!-- contenuto effettivo della pagina -->
+			<div id="<!-- Nome_Pagina -->">
+				<!-- Contenuto_Effettivo -->
+			</div>
+		</div>
+	</div>

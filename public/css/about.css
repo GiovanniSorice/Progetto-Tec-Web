@@ -1,0 +1,67 @@
+@media screen and (min-width: 1025px){
+  .pagina-right{
+    margin-left: 3% ; 
+    font-size: 115% ; 
+  }
+
+  #about.header{
+    background: #14181c url(../img/immagineAbout.jpg) 0 -1px repeat-x;
+      background-attachment: scroll;
+      background-position: center;
+      background-position-y: -6em;
+      background-color: #2f4858;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  .titolo{
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 25px;
+      font-weight: 600;
+      color: #333; 
+  }
+
+  .show{
+       display: inline;
+  }
+
+  .descrizione-sviluppatore{
+     font-size: 75%;  
+     margin-bottom: 0; 
+     margin-top: 0; 
+  }
+
+  #sviluppatori{
+     margin-bottom: 2em;
+  }
+  .nome-sviluppatore{
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 95%; 
+      margin-bottom: 0; 
+      margin-top: 0; 
+  }
+
+  .informazioni-sviluppatore{
+      margin-left: 0.5em;
+      width: 12em; 
+  }
+
+  .paragrafo-sviluppatore{
+     width: 12em;
+     height: 12em;
+     margin-left: 1em; 
+     margin-right: 1em; 
+     margin-bottom: 4em;
+  }
+
+  .paragrafo-sviluppatore img{
+      height: 12em;
+      width: 12em;
+      margin-bottom: 0; 
+  }
+}
+
+@media screen and (min-width: 150px) and (max-width: 600px){
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px){
+}

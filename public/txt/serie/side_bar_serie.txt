@@ -1,0 +1,14 @@
+				<div id="side-bar__consigli">
+					<span>Consigliata dal <!-- Percentuale_Consigliati -->% degli utenti</span>
+					<div class="pollici">
+						<a href="" title="consiglia la serie"><img id="like" src="../img/consigliati/like.png"></a>			
+						<a href="" title="sconsiglia la serie"><img id="dislike" src="../img/consigliati/dislike.png"></a>
+					</div>					
+				</div>
+				<div id="side-bar__attori">
+					<h2>Attori</h2>
+					<ul class="list_no-style list-inline" id="list-attori">
+						<!-- Attore -->
+					</ul>
+				</div>
+				

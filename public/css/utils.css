@@ -1,0 +1,28 @@
+/*Utils*/
+.list_no-style{
+  list-style: none;
+}
+
+.list-inline li{
+  display: inline;
+  float: left;
+}
+
+.list-inline a{
+  display: block;
+  padding: 8px;
+}
+
+/*body*/
+body{
+  	margin:0;
+	width: auto !important;
+	height: 100%;
+}
+
+
+@media screen and (max-width: 1024px) and (min-width: 721px){ /*stile tablet*/
+}
+
+@media screen and (min-width: 1025px){ /*stile desktop*/
+}

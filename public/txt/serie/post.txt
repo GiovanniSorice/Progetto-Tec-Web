@@ -1,0 +1,12 @@
+					<div class="post">
+						<div class="post-header">
+							<p>
+								Autore: <!-- Username_Autore -->
+							</p>
+						</div>
+						<div class="post-body">
+							<p>
+							<!-- Testo -->
+							</p>
+						</div>
+					</div>	

@@ -4,9 +4,9 @@ DROP TABLE IF EXISTS utente;
 CREATE TABLE utente (
   id int  AUTO_INCREMENT PRIMARY KEY,
   username char(30) UNIQUE NOT NULL,
-  password char(30) NOT NULL,
+  password char(64) NOT NULL,
   email char(30) NOT NULL,
-  immagine varchar(500),
+  foto_profilo varchar(500),
   nome char(30) NOT NULL,
   cognome char(30) NOT NULL,
   data_nascita date NOT NULL,
@@ -18,7 +18,8 @@ CREATE TABLE utente (
 DROP TABLE IF EXISTS serie;
 CREATE TABLE serie (
   id int PRIMARY KEY,
-  immagine varchar(1000),
+  miniatura varchar(500),
+  background varchar(500),
   titolo char(30) NOT NULL,
   distribuzione char(30) NOT NULL,
   descrizione varchar(1000) NOT NULL,
@@ -92,6 +93,7 @@ CREATE TABLE risposta (
 DROP TABLE IF EXISTS attore;
 CREATE TABLE attore (
   id int PRIMARY KEY,
+  miniatura varchar(500),
   nome char(30) NOT NULL,
   cognome char(30) NOT NULL,
   bio varchar(500) NOT NULL
