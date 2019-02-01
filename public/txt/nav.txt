@@ -5,7 +5,7 @@
 	-->
 	<div class="nav" id="nav">
 		<div class="nav__logo-container" id="nav__logo-container">
-			<a href="home.php"> 
+			<a href="<!-- refHome -->"> 
 				<img src="../logo/logo_TVhunter.png" alt="logo del sito, riporta alla homepage">		
 			</a>
 		</div>

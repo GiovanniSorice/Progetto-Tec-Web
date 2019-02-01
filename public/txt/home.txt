@@ -1,0 +1,66 @@
+
+
+
+<body>
+
+			<!-- contenuto effettivo della pagina -->
+			<div id="content__homepage">
+				<div class="homepage__welcome">
+					<h2 class="welcome__text">
+						Il social delle serie TV che stavi aspettando
+					</h2>
+				</div>
+
+				<div class="homepage__consigliati">
+					<h3>
+						Dai un'occhiata ai titoli del momento
+					</h3>
+
+					
+					<!-- Titoli_Momento -->
+
+				</div>
+
+			<div class="iscriviti">
+				<p>
+					Per interagire con la community, per votare le tue serie TV preferite e molto altro, <a href="sign-up.php" title="iscriviti">ISCRIVITI</a> oppure <a href="login.php" title="accedi">EFFETTUA IL <span xml:lang="EN">LOGIN</span></a>
+				</p>
+			</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="footer__nav">
+			<ul class="list_no-style">
+				<li><a href="">Supporto </a></li>
+				<li><a href=""><span xml:lang="EN">Privacy</span></a></li>
+				<li><a href="">About</a></li>
+			</ul>	
+		</div>
+	</div>
+
+	
+
+<script>
+function myFunction() {
+    var x = document.getElementById("nav");
+    var y = document.getElementById("nav__top-list");
+    var z = document.getElementById("nav__logo-container");
+
+
+    if (x.className === "nav") {
+        x.className += " responsive";
+        y.className += " responsive";
+        z.className += " responsive";
+    } else {
+        x.className = "nav";
+        y.className = "nav__top-list";
+        z.className = "nav__logo-container";
+    }
+}
+</script>								
+</body>
+
+

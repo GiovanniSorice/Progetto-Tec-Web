@@ -64,9 +64,9 @@
                           <p>Or sign in manually:</p>
                         </div>
                      -->
-                        <input type="text" name="username" placeholder="Username" required>
-                        <input type="password" name="password" placeholder="Password" required>
-                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="text" name="username" placeholder="Username" required pattern=".{8,20}" title="Deve contenere almeno 8 caratteri">
+                        <input type="password" name="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" title="Deve contenere almeno 8 caratteri, un numero, una lettera maiuscola e una minuscola">
+                        <input type="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                         <input type="text" name="nome" placeholder="Nome" required>
                         <input type="text" name="cognome" placeholder="Cognome" required>
                         <input type="date" name="datanascita" placeholder="Data di nascita (es. 10/02/1997)" required>                        

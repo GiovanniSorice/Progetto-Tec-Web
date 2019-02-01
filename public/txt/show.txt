@@ -7,6 +7,6 @@
 							<div class="show-info">
 								<p class="show-name">
 									<a href="<!-- Url_Show -->"><!-- Titolo --></a></p>
-								<p class="show-consigliati">consigliato da <!-- Consigliato --> persone</p>
+								<p class="show-consigliati">consigliato da <!-- Consigliato --> utenti</p>
 							</div>
 						</li>

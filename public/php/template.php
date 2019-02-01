@@ -39,6 +39,9 @@
                 echo printPageAbout($output);
                 break;
 
+            case "home":
+                echo printPageHome($output);
+
             default:
                 
             break;
