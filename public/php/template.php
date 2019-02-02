@@ -41,6 +41,11 @@
 
             case "home":
                 echo printPageHome($output);
+                break;
+
+            case "privacy":
+                echo printPagePrivacy($output);
+                break;
 
             default:
                 

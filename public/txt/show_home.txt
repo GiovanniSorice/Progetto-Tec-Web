@@ -10,7 +10,7 @@
 								<!-- Descrizione -->
 							</p>
 							<p class="info__consigliati">
-								Consigliato da <!-- Consigliato --> utenti
+								Consigliato dal <!-- Consigliato -->% degli utenti
 							</p>
 						</div>
 					</div>

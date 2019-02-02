@@ -17,7 +17,7 @@
 	-->
 	<div class="nav" id="nav">
 		<div class="nav__logo-container" id="nav__logo-container">
-			<a href=""> 
+			<a href="home.php" title="Homepage"> 
 				<img src="../logo/logo_TVhunter.png" alt="logo del sito, riporta alla homepage">		
 			</a>
 		</div>
@@ -27,17 +27,17 @@
 		</div>
 		
 		<ul class="nav__top-list list_no-style	" id="nav__top-list">
-			<li class="nav__esplora"><a href="" title="Esplora">Esplora</a></li>
-			<li class="nav__restricted nav__profilo"><a href="" title="Profilo">Profilo</a></li>
-			<li class="nav__restricted nav__preferiti"><a href="" title="Preferiti">Preferiti</a></li>
+			<li class="nav__esplora"><a href="esplora.php" title="Esplora">Esplora</a></li>
+			<li class="nav__restricted nav__profilo"><a href="profilo.php" title="Profilo">Profilo</a></li>
+			<li class="nav__restricted nav__preferiti"><a href="preferiti.php" title="Preferiti">Preferiti</a></li>
 		</ul>
 
 		<ul class="nav__bottom-list list_no-style">
-			<li class="nav__restricted nav__impostazioni"><a href="" title="Impostazioni">Impostazioni</a></li>
-			<li class="nav__faq"><a href=""><acronym title="Frequently Asked Questions">FAQ</acronym></a></li>
-			<li class="nav__supporto"><a href="" title="Supporto">Supporto </a></li>
-			<li class="nav__privacy"><a href="" title="Privacy"><span xml:lang="EN">Privacy</span></a></li>
-			<li class="nav__about"><a href="" title="About"><span xml:lang="EN">About</span></a></li>
+			<li class="nav__restricted nav__impostazioni"><a href="impostazioni.php" title="Impostazioni">Impostazioni</a></li>
+			<li class="nav__faq"><a href="faq.php"><acronym title="Frequently Asked Questions">FAQ</acronym></a></li>
+			<li class="nav__supporto"><a href="supporto.php" title="Supporto">Supporto </a></li>
+			<li class="nav__privacy"><a href="privacy.php" title="Privacy"><span xml:lang="EN">Privacy</span></a></li>
+			<li class="nav__about"><a href="about.php" title="About"><span xml:lang="EN">About</span></a></li>
    		</ul>
 
 		<div class="nav__social">

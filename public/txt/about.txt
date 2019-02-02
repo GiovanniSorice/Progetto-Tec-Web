@@ -1,8 +1,6 @@
 
 
 
-<body>
-
 					<!-- Introduzione al funzionamento/scopo del sito -->
 
 		<div class = "pagina-right">	 
@@ -89,7 +87,7 @@
 						
 					</li>
 				</ul>  
-			</div>								
-</body>
+			</div>	
+		</div>							
 
 

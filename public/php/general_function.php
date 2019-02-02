@@ -103,7 +103,7 @@ include_once 'DBConnection.php';
         $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
 
 
-        $query="select id,titolo,miniatura,descrizione,consigliato from serie order by consigliato DESC LIMIT 3";
+        $query="select id,titolo,miniatura,descrizione,consigliato,non_consigliato, CAST((consigliato)/(consigliato+non_consigliato)*100 AS int) AS perc_consigliato from serie order by perc_consigliato DESC LIMIT 3";
             //Seleziono la lista delle serie tv del momento
             $shows=resultQueryToTable($connection->query($query));
             
@@ -115,7 +115,7 @@ include_once 'DBConnection.php';
                 $show_collect=preg_replace("/<!-- Immagine -->/i",$shows["miniatura"] , $show_collect );
                 $show_collect=preg_replace("/<!-- Titolo -->/i",$shows["titolo"] , $show_collect );
                 $show_collect=preg_replace("/<!-- Descrizione -->/i",$shows["descrizione"] , $show_collect );
-                $show_collect=preg_replace("/<!-- Consigliato -->/i",$shows["consigliato"] , $show_collect );
+                $show_collect=preg_replace("/<!-- Consigliato -->/i", $shows["perc_consigliato"] , $show_collect );
                 $show_collect=preg_replace("/<!-- Url_Show -->/i","http://$host$uri/$extra".$shows["id"] , $show_collect );  
             }
             $show=preg_replace("/<!-- Successiva -->/i","" , $show );
@@ -241,17 +241,17 @@ include_once 'DBConnection.php';
         //Titolo, voto e consiglio
 
         $output = preg_replace("/<!-- Page_Head -->/i", $title, $output );
-        $query = "select titolo,voto,consigliato,non_consigliato,preferiti from serie where id=".$_GET["serie_id"];
+        $query = "select titolo,voto,consigliato,non_consigliato,preferiti,CAST((consigliato)/(consigliato+non_consigliato)*100 AS int) AS perc_consigliato from serie where id=".$_GET["serie_id"];
         $result = resultQueryToTable($connection->query($query));
         $output = preg_replace("/<!-- Titolo -->/i",$result[0]["titolo"] , $output );
         $output = preg_replace("/<!-- Voto -->/i",$result[0]["voto"] , $output );
 
-        if (($result[0]["consigliato"] + $result[0]["non_consigliato"]) == 0)
-            $percentuale = 0;
+        if ($result[0]["perc_consigliato"] > 0)
+            $output = preg_replace("/<!-- Percentuale_Consigliati -->/i",$result[0]["perc_consigliato"] , $output );
         else
-            $percentuale = ($result[0]["consigliato"] / ($result[0]["consigliato"] + $result[0]["non_consigliato"])) * 100;
+            $output = preg_replace("/<!-- Percentuale_Consigliati -->/i", '0' , $output );
 
-        $output = preg_replace("/<!-- Percentuale_Consigliati -->/i",$percentuale , $output );
+        
 
         //Parte centro stagioni ed episodi 
         $query="select miniatura,titolo,distribuzione,descrizione,creatore,consigliato,non_consigliato,voto from serie where id=".$_GET["serie_id"];
@@ -323,6 +323,23 @@ include_once 'DBConnection.php';
         
         return $output;
         
+    }
+
+
+    function printPagePrivacy($output){
+        global $connection;
+        
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+
+        $head_page = implode("", file("../txt/pagehead.txt"));
+        $privacy = implode("", file("../txt/privacy.txt"));
+
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "privacy", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $privacy , $output );
+
+        return $output;
     }
 
     function printPageAbout($output){
