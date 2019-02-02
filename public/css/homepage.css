@@ -1,6 +1,11 @@
 html, body{
 	height: 100%
 }
+
+.content{
+	scroll-behavior: smooth;
+}
+
 #content__homepage{
 	height: 100%;
 	background: #14181c url(../img/background-dark.png) 0 -1px repeat-x;
@@ -21,6 +26,16 @@ html, body{
 	text-align: center;
 	margin: auto;
 }
+
+#homepage-advice a{
+	text-decoration: none;
+	color: #aaa;
+}
+
+#homepage-advice a:active{
+	color: #aaa;
+}
+
 
 .homepage__consigliati > h3{
 	color: #aaa;
@@ -48,12 +63,10 @@ html, body{
 	color: white;
 }
 
-.consigliati__show .info__consigliati{
-}
-
 .homepage__consigliati .show__info{
 	padding-left: 1em;
 	color: #aaa;
+	overflow-y: scroll;
 }
 
 #content__homepage .iscriviti{
