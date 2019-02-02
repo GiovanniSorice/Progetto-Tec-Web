@@ -1,14 +1,6 @@
 
 
 
-<body>
-	<!-- Sostituire con tag HTML5 <header>? Vedere pro e contro
-		Contro: XHTML5 non esiste -> in xhtml i tag header e footer non esistono.
-
-	-->
-
-
-
 					<!-- Introduzione al funzionamento/scopo del sito -->
 
 		<div class = "pagina-right">	 
@@ -95,7 +87,7 @@
 						
 					</li>
 				</ul>  
-			</div>								
-</body>
+			</div>	
+		</div>							
 
 

@@ -1,0 +1,29 @@
+
+
+
+			<!-- contenuto effettivo della pagina -->
+			<div id="content__homepage">
+				<div class="homepage__welcome">
+					<h2 class="welcome__text">
+						Il social delle serie TV che stavi aspettando
+					</h2>
+				</div>
+
+				<div class="homepage__consigliati">
+					<h3>
+						Dai un'occhiata ai titoli del momento
+					</h3>
+
+					
+					<!-- Titoli_Momento -->
+
+				</div>
+
+			<div class="iscriviti">
+				<p>
+					Per interagire con la community, per votare le tue serie TV preferite e molto altro, <a href="sign-up.php" title="iscriviti">ISCRIVITI</a> oppure <a href="login.php" title="accedi">EFFETTUA IL <span xml:lang="EN">LOGIN</span></a>
+				</p>
+			</div>
+
+			</div>
+
