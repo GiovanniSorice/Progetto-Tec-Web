@@ -36,7 +36,6 @@ html, body{
 	color: #aaa;
 }
 
-
 .homepage__consigliati > h3{
 	color: #aaa;
 	text-align: center;
@@ -63,6 +62,10 @@ html, body{
 	color: white;
 }
 
+.consigliati__show a{
+	text-decoration: underline dotted #aaa; 
+}
+
 .homepage__consigliati .show__info{
 	padding-left: 1em;
 	color: #aaa;
@@ -79,4 +82,11 @@ html, body{
 	color: white;
 	margin: auto;
 	text-align: center;
+}
+
+
+@media screen and (min-width: 1025px){
+	#homepage-advice a:hover{
+	color: #999999;
+	}	
 }
