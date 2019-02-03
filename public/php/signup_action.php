@@ -10,6 +10,7 @@ $cognome=$_GET['cognome'];
 $datanascita=$_GET['datanascita'];
 
 $datanascita= date("Y-m-d",strtotime($datanascita));
+session_start();
 
 $query="insert into utente (username,password,email,nome,cognome,data_nascita) values (?,?,?,?,?,?)";
 $stmt=executeQuery($query,array(&$username,&$password,&$email,&$nome,&$cognome,&$datanascita),array("ssssss"));
@@ -23,7 +24,6 @@ if($stmt->errno===0){
     if($result->num_rows==1){
         //Inizializzo la sessione
         $row = $result->fetch_array(MYSQLI_ASSOC);
-        session_start();
         $_SESSION['user_id']=$row['id'];
         $_SESSION['user_username']=$username;
         $_SESSION['user_tipo']=$row['tipo'];
@@ -35,8 +35,13 @@ if($stmt->errno===0){
     
     header("Location: http://$host$uri/$extra");
     }else{
-    echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;    
-}
+        $_SESSION['errore_signup']="Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $extra = 'signup.php';
+        
+        header("Location: http://$host$uri/$extra");
+    }
     
 
 ?>

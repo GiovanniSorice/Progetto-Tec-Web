@@ -49,7 +49,9 @@
             case "login":
                 echo printPageLogin($output);
                 break;
-                
+            case "signup":
+                echo printPageSignUp($output);
+                break;
             default:
                 
             break;
