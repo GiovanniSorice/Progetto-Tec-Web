@@ -12,9 +12,10 @@ include_once 'DBConnection.php';
             call_user_func_array(array($stmt, "bind_param"), $params);            
             // Execute the statement.
             $stmt->execute();
-                
+             
             if($stmt) return $stmt;
             }
+            echo "no";
             return null;
         }
                    
@@ -368,6 +369,43 @@ include_once 'DBConnection.php';
         return $output;
     }
 
+    function printPageLogin($output){
+        global $connection;
+        
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        
+        $head_page = implode("", file("../txt/pagehead.txt"));
+        $login = implode("", file("../txt/login.txt"));
+        
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "login", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $login , $output );
+        
+        return $output;
+    }
+    
+    function printPageSignUp($output){
+        global $connection;
+        
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        
+        $head_page = implode("", file("../txt/pagehead.txt"));
+        $signup = implode("", file("../txt/signup.txt"));
+        
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "signup", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        
+        if(array_key_exists('errore_signup',$_SESSION) && !empty($_SESSION['errore_signup'])){
+            $signup = preg_replace("/<!-- Errore -->/i", "Usename gi&agrave; in uso, cambiare username. ", $signup );
+            unset($_SESSION['errore_signup']);
+        }
+        $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $signup , $output );
+        
+        return $output;
+    }
+    
     
     
     ?>

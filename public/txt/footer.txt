@@ -45,6 +45,23 @@ function myFunction() {
     }
 }
 
+//Parte modal
+var modal = document.getElementById('modal-login-social');
+
+function loginSocial(){
+	modal.style.display = "block";
+}
+function closeModal(){
+	modal.style.display = "none";
+}
+//When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
 //Parte Stagione->Episodio 
 function episodi(link) { 
 	  if (window.XMLHttpRequest) { 
