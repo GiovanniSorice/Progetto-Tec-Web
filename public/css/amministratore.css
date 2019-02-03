@@ -9,36 +9,88 @@
 .pagina-amministratore{
 	margin-right: 3% ;
     margin-left: 3% ; 
-    font-size: 115% ; 
+    font-size: 1.5em ; 
 }
 
 .pagina-amministratore h1{
 	font-style: italic;
-	font-size: 130%;
+	font-size: 1.5em;
 	font-weight: bolder;
 }
 
 .pagina-amministratore h2{
-	font-family: "Times New Roman", Times, serif;
-	font-size: 110%;
+	font-family: "Times New Roman", Times, serif; 
+	font-size: 80%;
 	font-weight: normal;
-
+	
 }
 
-#descrizione-amministratore{
-	font-size: 100%;
-	font-style: italic;
+.parte-segnalazioni{
+	margin-top: 5em;
+}
+
+#segnalazioni{	
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  	border-collapse: collapse;
+  	width: 90%;	
+}
+
+#segnalazioni td, #segnalazioni th {
+  border: 1px solid #ddd; 
+  padding: 8px;
+}
+
+#segnalazioni tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+#segnalazioni tr:hover{
+	background-color: #ddd;
+}
+
+#segnalazioni th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2f4858;
+  color: white;
+}
+
+.nome-utente{	
+	width: 7em;
+	font-weight: 500;
+	font-size: 90%;
+}
+
+.tipo-segnalazione{	
+	width: 9em;
+	color: red;
+	font-size: 90%;
+}
+
+.elimina-commento{
+	font-size: 90%;
+	width: 3em;	
+	background-image: url("../img/admin/trash.png");
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 @media screen and (max-width: 1024px) and (min-width: 721px) {
 	.header{
+		position: absolute;
 		overflow: hidden;
 		height: 0;
 	}	
 }
 
 @media screen and (min-width: 1025px){
+	
+	.pagina-amministratore h2{
+		font-size: 95%;
+	}
 	.header{
+		position: absolute;
 		overflow: hidden;
 		height: 0;
 	}    
