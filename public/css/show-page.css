@@ -58,11 +58,12 @@
 	font-size: large;
 }
 
-.attore-min a{
-	padding-bottom: 0;
+#list-attori li{
+	margin-right: 5%;
 }
 
 .attore-min img{
+	padding-bottom: 0;
 	height: 135px; 
 	border: 1px solid black;
 }
