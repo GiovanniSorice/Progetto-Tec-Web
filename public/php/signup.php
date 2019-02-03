@@ -17,7 +17,7 @@
 	-->
 	<div class="nav" id="nav">
 		<div class="nav__logo-container" id="nav__logo-container">
-			<a href=""> 
+			<a href="home.php"> 
 				<img src="../logo/logo_TVhunter.png" alt="logo del sito, riporta alla homepage">		
 			</a>
 		</div>
