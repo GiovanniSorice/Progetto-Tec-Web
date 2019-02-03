@@ -10,10 +10,9 @@
 				</div>
 
 				<div class="homepage__consigliati">
-					<h3>
-						Dai un'occhiata ai titoli del momento
+					<h3 id="homepage-advice">
+						<a href="#first-show-anchor">Dai un'occhiata ai titoli del momento</a>
 					</h3>
-
 					
 					<!-- Titoli_Momento -->
 
