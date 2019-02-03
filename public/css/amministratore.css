@@ -1,0 +1,56 @@
+/* Parto con la versione mobile, poi tablet e infine computer */
+
+.header{
+	position: absolute;
+	overflow: hidden;
+	height: 0;
+}
+
+.pagina-amministratore{
+	margin-right: 3% ;
+    margin-left: 3% ; 
+    font-size: 115% ; 
+}
+
+.pagina-amministratore h1{
+	font-style: italic;
+	font-size: 130%;
+	font-weight: bolder;
+}
+
+.pagina-amministratore h2{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 110%;
+	font-weight: normal;
+
+}
+
+#descrizione-amministratore{
+	font-size: 100%;
+	font-style: italic;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 721px) {
+	.header{
+		overflow: hidden;
+		height: 0;
+	}	
+}
+
+@media screen and (min-width: 1025px){
+	.header{
+		overflow: hidden;
+		height: 0;
+	}    
+}
+
+
+
+
+
+
+
+
+
+
+
