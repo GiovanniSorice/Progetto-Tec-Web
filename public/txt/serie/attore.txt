@@ -1,8 +1,6 @@
 						<li>
 							<div class="attore-min">
-								<a href="">
-									<img src="<!-- Immagine -->" alt="foto dell'attore <!-- Nome_Cognome_Attore --> ">
-								</a>
+								<img src="<!-- Immagine -->" alt="foto"/> 
 							</div>
 							<div class="attore-info">
 								<p class="nome-attore"><a><!-- Nome_Cognome_Attore --></a></p>

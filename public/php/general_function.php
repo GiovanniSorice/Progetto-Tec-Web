@@ -109,6 +109,7 @@ include_once 'DBConnection.php';
             
             //Scrivo le serie tv
             $show_collect ="<!-- Successiva -->";
+            $first = 1;
 
             foreach ($shows as $shows) {
                 $show_collect=preg_replace("/<!-- Successiva -->/i",$show." <!-- Successiva -->" , $show_collect );
@@ -117,6 +118,15 @@ include_once 'DBConnection.php';
                 $show_collect=preg_replace("/<!-- Descrizione -->/i",$shows["descrizione"] , $show_collect );
                 $show_collect=preg_replace("/<!-- Consigliato -->/i", $shows["perc_consigliato"] , $show_collect );
                 $show_collect=preg_replace("/<!-- Url_Show -->/i","http://$host$uri/$extra".$shows["id"] , $show_collect );  
+                if($first == 1){
+                    $show_collect=preg_replace("/<!-- Div_Consigliati -->/i", "<div class=\"consigliati__show\" id=\"first-show-anchor\">" , 
+                        $show_collect );
+                    $first = 0;
+                }
+                else{
+                    $show_collect=preg_replace("/<!-- Div_Consigliati -->/i", "<div class=\"consigliati__show\">" , 
+                        $show_collect );
+                }
             }
             $show=preg_replace("/<!-- Successiva -->/i","" , $show );
             $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $home , $output );
