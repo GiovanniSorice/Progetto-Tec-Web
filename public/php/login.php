@@ -11,10 +11,6 @@
 <link rel="stylesheet" href="">
 </head>
 <body>
-	<!-- Sostituire con tag HTML5 <header>? Vedere pro e contro
-		Contro: XHTML5 non esiste -> in xhtml i tag header e footer non esistono.
-
-	-->
 	<div class="nav" id="nav">
 		<div class="nav__logo-container" id="nav__logo-container">
 			<a href="home.php" title="Homepage"> 
@@ -55,48 +51,41 @@
 			</div>
 		</div>
 		<div id="login" class="content">	
-    		 <div id="login__top" class="login">
-                <form action="login_action.php">
-                    <div class="login__riga">
-                      <h2>Effettua il <span xml:lang="EN">login</span> con un social a scelta oppure manualmente</h2>
-                                          
-                      <div class="login__colonna">
-                        <a  href="javascript:void(0);" class="fb btn" onclick="loginSocial()">
-                          <i class="fa fa-facebook fa-fw"></i><span xml:lang="EN">Login</span> con <span xml:lang="EN">Facebook</span><!-- TODO: aggiungere icona social -->
-                        </a>
-                        <a href="javascript:void(0);" class="twitter btn" onclick="loginSocial()">
-                          <i class="fa fa-twitter fa-fw"></i><span xml:lang="EN">Login</span> con <span xml:lang="EN">Twitter</span><!-- TODO: aggiungere icona social -->
-                        </a>
-                        <a href="javascript:void(0);" class="google btn" onclick="loginSocial()">
-                          <i class="fa fa-google fa-fw"></i><span xml:lang="EN">Login</span> con <span xml:lang="EN">Google+</span><!-- TODO: aggiungere icona social -->
-                        </a>
-                      </div>
-                    
-                      <div class="login__colonna">
-                        <!-- div class="hide-md-lg">
-                          <p>Or sign in manually:</p>
-                        </div>
-                     -->
-                        <input type="text" name="username" placeholder="Username" required>
-                        <input type="password" name="password" placeholder="Password" required>
-                        <input type="submit" value="Login">
-                      </div>
-                    
-                    </div>
-                </form>
-    		</div>
+		  <div id="login__top" class="login">
+        <form action="login_action.php">
+          <div class="login__riga">
+            <h2>Effettua l'accesso con un <span xml:lang="EN">social</span> a scelta oppure manualmente</h2>                   
+            <div class="login__colonna">
+              <a  href="javascript:void(0);" class="fb btn" onclick="loginSocial()">
+                <i class="fa fa-facebook fa-fw"></i><span xml:lang="EN">Login</span> con <span xml:lang="EN">Facebook</span><!-- TODO: aggiungere icona social -->
+              </a>
+              <a href="javascript:void(0);" class="twitter btn" onclick="loginSocial()">
+                <i class="fa fa-twitter fa-fw"></i><span xml:lang="EN">Login</span> con <span xml:lang="EN">Twitter</span><!-- TODO: aggiungere icona social -->
+              </a>
+              <a href="javascript:void(0);" class="google btn" onclick="loginSocial()">
+                <i class="fa fa-google fa-fw"></i><span xml:lang="EN">Login</span> con <span xml:lang="EN">Google+</span><!-- TODO: aggiungere icona social -->
+              </a>
+            </div>
+            <div class="login__colonna">
+              <input type="text" name="username" placeholder="Nome utente" required>
+              <input type="password" name="password" placeholder="Password" required>
+              <input type="submit" value="Accedi">
+            </div>
+          </div>
+        </form>
+		  </div>
     
-            <div class="bottom-container">
-              <div class="login__riga">
-                <div class="login__colonna">
-                  <a href="signup.php" style="color:white" class="btn"><span xml:lang="EN">Sign up</span></a>
-                </div>
-                <div class="login__colonna">
-                  <a href="#" style="color:white" class="btn">Forgot password?</a>
-                </div>
-              </div>
-            </div> 
-         </div>
+      <div class="bottom-container">
+        <div class="login__riga">
+          <div class="login__colonna">
+            <a href="signup.php" class="btn">Iscriviti</a>
+          </div>
+          <div class="login__colonna">
+            <a href="#" class="btn">Password dimenticata?</a>
+          </div>
+        </div>
+      </div> 
+    </div>
 	</div>
 
 	<div class="footer">
@@ -112,13 +101,11 @@
 	
 <!-- The Modal -->
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modal-content">
     <a href="javascript:void(0);" onclick="closeModal()"><span class="close">&times;</span></a>
-    <p>Siamo spiacenti ma la funzione di <span xml:lang="EN">login</span> tramite <spanxml:lang="EN">social</span> verr&agrave;  introdotta nelle versioni successive</p>
+    <p>Siamo spiacenti ma la funzione di accesso tramite <span xml:lang="EN">social</span> verr&agrave;  introdotta nelle versioni successive</p>
   </div>
-
 </div>
 
 <script>
@@ -153,8 +140,6 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
-
 </script>
 
 </body>

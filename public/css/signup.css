@@ -1,21 +1,21 @@
-#signup * {box-sizing: border-box}
+#signup *{
+  box-sizing: border-box;
+}
 
 /* style the container */
 #signup .signup {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px 0 30px 0;
+  padding: 1em 0 2em 0;
 }
 #signup h2{
-	text-align:center
+	text-align:center;
 }
 
 /* style inputs and link buttons */
 #signup input,
-.btn {
+#signup .btn {
   width: 100%;
   padding: 12px;
-  border: none;
+  border: 1px solid #aaa;
   border-radius: 4px;
   margin: 5px 0;
   opacity: 0.85;
@@ -48,13 +48,9 @@
 
 /* style the submit button */
 #signup input[type=submit] {
-  background-color: #4CAF50;
+  background-color: #fac100;
   color: white;
   cursor: pointer;
-}
-
-#signup input[type=submit]:hover {
-  background-color: #45a049;
 }
 
 /* Two-column layout */
@@ -62,8 +58,7 @@
   float: left;
   width: 100%;
   margin: auto;
-  padding: 0 50px;
-  margin-top: 6px;
+  padding: 0 5%;
 }
 
 /* Clear floats after the columns */
@@ -73,27 +68,17 @@
   clear: both;
 }
 
-/* text inside the vertical line */
-#signup .inner {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  padding: 8px 10px;
-}
-
-/* hide some text on medium and large screens */
-#signup .hide-md-lg {
-  display: none;
-}
-
 /* bottom container */
 #signup .bottom-container {
   text-align: center;
-  background-color: #666;
+  background-color: #1f262d;
   border-radius: 0px 0px 4px 4px;
+}
+
+#signup .bottom-container a{
+  opacity: 1;
+  color: white;
+  border: none;
 }
 
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
@@ -101,10 +86,5 @@
   #signup .signup__colonna {
     width: 100%;
     margin-top: 0;
-  }
-  /* show the hidden text on small screens */
-  #signup .hide-md-lg {
-    display: block;
-    text-align: center;
   }
 }

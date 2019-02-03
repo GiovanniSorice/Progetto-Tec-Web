@@ -1,13 +1,12 @@
-#login * {box-sizing: border-box}
+#login *{
+  box-sizing: border-box;
+}
 
-/* style the container */
 #login .login {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px 0 30px 0;
+  padding: 1em 0 2em 0;
 }
 #login h2{
-	text-align:center
+	text-align:center;
 }
 #login__top .login__colonna:first-of-type{
 	border-right: 2px solid black;
@@ -15,15 +14,15 @@
 
 /* style inputs and link buttons */
 #login input,
-.btn {
+#login .btn {
   width: 100%;
   padding: 12px;
-  border: none;
+  border: 1px solid #aaa;
   border-radius: 4px;
   margin: 5px 0;
   opacity: 0.85;
   display: inline-block;
-  font-size: 17px;
+  font-size: 1em;
   line-height: 20px;
   text-decoration: none; /* remove underline from anchors */
 }
@@ -51,13 +50,9 @@
 
 /* style the submit button */
 #login input[type=submit] {
-  background-color: #4CAF50;
+  background-color: #fac100;
   color: white;
   cursor: pointer;
-}
-
-#login input[type=submit]:hover {
-  background-color: #45a049;
 }
 
 /* Two-column layout */
@@ -65,8 +60,7 @@
   float: left;
   width: 50%;
   margin: auto;
-  padding: 0 50px;
-  margin-top: 6px;
+  padding: 0 5%;
 }
 
 /* Clear floats after the columns */
@@ -76,42 +70,26 @@
   clear: both;
 }
 
-/* text inside the vertical line */
-#login .inner {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  padding: 8px 10px;
-}
-
-/* hide some text on medium and large screens */
-#login .hide-md-lg {
-  display: none;
-}
-
 /* bottom container */
 #login .bottom-container {
   text-align: center;
-  background-color: #666;
+  background-color: #1f262d;
   border-radius: 0px 0px 4px 4px;
 }
 
-/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+#login .bottom-container a{
+  color: white;
+  opacity: 1;
+  border: none;
+}
+
+/* Responsive layout - when the screen is less than 751px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 751px) {
   #login .login__colonna {
     width: 100%;
     margin-top: 0;
   }
-  /* show the hidden text on small screens */
-  #login .hide-md-lg {
-    display: block;
-    text-align: center;
-  }
   #login__top .login__colonna:first-of-type{
 	border-right: 0px;
-	border-bottom: 1px solid #c3bebe;
 	}  
 }
