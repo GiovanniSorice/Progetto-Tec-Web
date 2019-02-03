@@ -55,35 +55,30 @@
 			</div>
 		</div>
 		<div id="signup" class="content">	
-    		 <div id="signup__top" class="signup">
-                <form action="signup_action.php">
-                    <div class="signup__riga">
-                      <h2>Registrati</h2>
-                      <div class="signup__colonna">
-                        <!-- div class="hide-md-lg">
-                          <p>Or sign in manually:</p>
-                        </div>
-                     -->
-                        <input type="text" name="username" placeholder="Username" required pattern=".{8,20}" title="Deve contenere almeno 8 caratteri">
-                        <input type="password" name="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" title="Deve contenere almeno 8 caratteri, un numero, una lettera maiuscola e una minuscola">
-                        <input type="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                        <input type="text" name="nome" placeholder="Nome" required>
-                        <input type="text" name="cognome" placeholder="Cognome" required>
-                        <input type="date" name="datanascita" placeholder="Data di nascita (es. 10/02/1997)" required>                        
-                        <input type="submit" value="signup">
-                      </div>
-                    
-                    </div>
-                </form>
-    		</div>
+		<div id="signup__top" class="signup">
+		  <form action="signup_action.php">
+		      <div class="signup__riga">
+		        <h2>Registrati</h2>
+		        <div class="signup__colonna">
+		          <input type="text" name="username" placeholder="Nome utente" required pattern=".{8,20}" title="Deve contenere almeno 8 caratteri">
+		          <input type="password" name="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" title="Deve contenere almeno 8 caratteri, un numero, una lettera maiuscola e una minuscola">
+		          <input type="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+		          <input type="text" name="nome" placeholder="Nome" required>
+		          <input type="text" name="cognome" placeholder="Cognome" required>
+		          <input type="date" name="datanascita" placeholder="Data di nascita (es. 10/02/1997)" required>                  
+		          <input type="submit" value="Invia">
+		        </div>
+		      </div>
+		  </form>
+		</div>
     
             <div class="bottom-container">
               <div class="signup__riga">
                 <div class="signup__colonna">
-                  <a href="login.php" style="color:white" class="btn"><span xml:lang="EN">Login</span></a>
+                  <a href="login.php" class="btn">Accedi</a>
                 </div>
                 <div class="signup__colonna">
-                  <a href="#" style="color:white" class="btn">Forgot password?</a>
+                  <a href="#" class="btn"><span xml:lang="EN">Password</span> dimenticata?</a>
                 </div>
               </div>
             </div> 

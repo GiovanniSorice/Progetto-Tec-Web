@@ -1,11 +1,12 @@
 #login *{
-  box-sizing: border-box
+  box-sizing: border-box;
 }
+
 #login .login {
   padding: 1em 0 2em 0;
 }
 #login h2{
-	text-align:center
+	text-align:center;
 }
 #login__top .login__colonna:first-of-type{
 	border-right: 2px solid black;
@@ -13,7 +14,7 @@
 
 /* style inputs and link buttons */
 #login input,
-.btn {
+#login .btn {
   width: 100%;
   padding: 12px;
   border: 1px solid #aaa;
@@ -78,6 +79,8 @@
 
 #login .bottom-container a{
   color: white;
+  opacity: 1;
+  border: none;
 }
 
 /* Responsive layout - when the screen is less than 751px wide, make the two columns stack on top of each other instead of next to each other */
