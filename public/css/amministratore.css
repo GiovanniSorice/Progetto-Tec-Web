@@ -1,12 +1,8 @@
 /* Parto con la versione mobile, poi tablet e infine computer */
 
-.header{
-	position: absolute;
-	overflow: hidden;
-	height: 0;
-}
 
 .pagina-amministratore{
+	font-family: "Times New Roman", Times, serif; 
 	margin-right: 3% ;
     margin-left: 3% ; 
     font-size: 1.5em ; 
@@ -29,6 +25,10 @@
 	margin-top: 5em;
 }
 
+#descrizione-tabella-segnalazioni{
+	font-size: 0.7em;
+}
+
 #segnalazioni{	
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   	border-collapse: collapse;
@@ -38,6 +38,7 @@
 #segnalazioni td, #segnalazioni th {
   border: 1px solid #ddd; 
   padding: 8px;
+  font-size: 1em;
 }
 
 #segnalazioni tr:nth-child(even){
@@ -54,6 +55,7 @@
   text-align: left;
   background-color: #2f4858;
   color: white;
+  font-size: 82%;
 }
 
 .nome-utente{	
@@ -69,31 +71,26 @@
 }
 
 .elimina-commento{
-	font-size: 90%;
-	width: 3em;	
+	font-size: 80%;
+	width: 1.5em;	
 	background-image: url("../img/admin/trash.png");
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-@media screen and (max-width: 1024px) and (min-width: 721px) {
-	.header{
-		position: absolute;
-		overflow: hidden;
-		height: 0;
-	}	
+@media screen and (max-width: 1024px) and (min-width: 751px) {	
+	#segnalazioni td, #segnalazioni th {	
+  		font-size: 80	%;
+	}
 }
 
 @media screen and (min-width: 1025px){
-	
+	#segnalazioni td, #segnalazioni th {	
+  		font-size: 65%;
+	}
 	.pagina-amministratore h2{
 		font-size: 95%;
 	}
-	.header{
-		position: absolute;
-		overflow: hidden;
-		height: 0;
-	}    
 }
 
 

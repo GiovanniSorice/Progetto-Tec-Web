@@ -12,48 +12,45 @@
 </head>
 
 <body>
-    <!-- Sostituire con tag HTML5 <header>? Vedere pro e contro
+    <body>
+	<!-- Sostituire con tag HTML5 <header>? Vedere pro e contro
 		Contro: XHTML5 non esiste -> in xhtml i tag header e footer non esistono.
 
 	-->
-    <div class="nav" id="nav">
-        <div class="nav__logo-container" id="nav__logo-container">
-            <a href="">
-                <img src="../logo/logo_TVhunter.png" alt="logo del sito, riporta alla homepage">
-            </a>
-        </div>
+	<div class="nav" id="nav">
+		<div class="nav__logo-container" id="nav__logo-container">
+			<a href="<!-- refHome -->" title="Homepage"> 
+				<img src="../logo/logo_TVhunter.png" alt="logo del sito, riporta alla homepage">		
+			</a>
+		</div>
+		
+		<div class="nav__ricerca">
+			<input type="text" placeholder="Cerca..">
+		</div>
+		
+		<ul class="nav__top-list list_no-style	" id="nav__top-list">
+			<li class="nav__esplora"><a href="<!-- refEsplora -->" title="Esplora">Esplora</a></li>
+			<li class="nav__restricted nav__profilo"><a href="<!-- refProfilo -->" title="Profilo">Profilo</a></li>
+			<li class="nav__restricted nav__preferiti"><a href="<!-- refPreferiti -->" title="Preferiti">Preferiti</a></li>
+		</ul>
 
-        <div class="nav__ricerca">
-            <input type="text" placeholder="Cerca..">
-        </div>
+		<ul class="nav__bottom-list list_no-style">
+			<li class="nav__restricted nav__impostazioni"><a href="<!-- refImpostazioni -->" title="Impostazioni">Impostazioni</a></li>
+			<li class="nav__faq"><a href="<!-- refFaq -->"><acronym title="Frequently Asked Questions">FAQ</acronym></a></li>
+			<li class="nav__supporto"><a href="<!-- refSupporto -->" title="Supporto">Supporto </a></li>
+			<li class="nav__privacy"><a href="<!-- refPrivacy -->" title="Privacy"><span xml:lang="EN">Privacy</span></a></li>
+			<li class="nav__about"><a href="<!-- refAbout -->" title="About"><span xml:lang="EN">About</span></a></li>
+   		</ul>
 
-        <ul class="nav__top-list list_no-style	" id="nav__top-list">
-            <li class="nav__esplora"><a href="" title="Esplora">Esplora</a></li>
-            <li class="nav__restricted nav__profilo"><a href="" title="Profilo">Profilo</a></li>
-            <li class="nav__restricted nav__preferiti"><a href="" title="Preferiti">Preferiti</a></li>
-        </ul>
+		<div class="nav__social">
+		</div>
+		<div class="nav__icon">
+			<a href="#footer-responsive-menu"><i class=""></i>Menu</a> <!-- TODO: aggiungere pulsante icons -->
+		</div>
 
-        <ul class="nav__bottom-list list_no-style">
-            <li class="nav__restricted nav__impostazioni"><a href="" title="Impostazioni">Impostazioni</a></li>
-            <li class="nav__faq"><a href=""><acronym title="Frequently Asked Questions">FAQ</acronym></a></li>
-            <li class="nav__supporto"><a href="" title="Supporto">Supporto </a></li>
-            <li class="nav__privacy"><a href="" title="Privacy"><span xml:lang="EN">Privacy</span></a></li>
-            <li class="nav__about"><a href="" title="About"><span xml:lang="EN">About</span></a></li>
-        </ul>
+	</div>
 
-        <div class="nav__social">
-        </div>
-        <div class="nav__icon">
-            <a href="javascript:void(0);" onclick="myFunction()"><i class=""></i>Pulsante</a>
-            <!-- TODO: aggiungere pulsante icons -->
-        </div>
-
-    </div>
-
-    <div class="page-center">
-        <div class="header">
-            <div class="header-content"></div>
-        </div>
+    <div class="page-center">       
         <div id="login-bar" class="login-bar vertical-center">
             <div class="non-logged-user align-right">
                 <span>Accesso non effettuato.</span>
@@ -81,14 +78,16 @@
 					<table id="segnalazioni">			
 						<tr>
     						<th>Nome Utente</th>
-    						<th>Tipo segnalazione</th>
-    						<th>Elimina</th>
+    						<th>Commento</th>
+    						<th>Elimina commento</th>
   						</tr>
 
   						<tr>
     						<td class="nome-utente">Nome utente</td>
     						<td class="tipo-segnalazione">Tipo segnalazione</td>
-    						<td class="elimina-commento"> </td>
+    						<td class="elimina-commento">
+    							
+    						</td>
   						</tr>
 					</table>
 				</div>
@@ -96,12 +95,7 @@
             <div id="privacy-content"></div>
         </div>
     </div>
-
-   
-
-
-    </div>
-    	<div class="footer">
+	<div class="footer">
 		<div class="footer__nav">
 			<ul class="list_no-style">
 				<li><a href="">Supporto </a></li>
@@ -164,11 +158,36 @@ function episodi(link) {
 	  xmlhttp.open("GET",String(link),true); 
 	  xmlhttp.send(); 
 	} 
+
+//Parte searchBar
+function showResult(str) {
+	  if (str.length==0) {
+	    document.getElementById("risultati-ricerca").innerHTML="";
+	    document.getElementById("risultati-ricerca").style.border="0px";
+	    return;
+	  }
+	  if (window.XMLHttpRequest) {
+	    // code for IE7+, Firefox, Chrome, Opera, Safari
+	    xmlhttp=new XMLHttpRequest();
+	  } else {  // code for IE6, IE5
+	    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	  xmlhttp.onreadystatechange=function() {
+	    if (this.readyState==4 && this.status==200) {
+	      document.getElementById("risultati-ricerca").innerHTML=this.responseText;
+	      document.getElementById("risultati-ricerca").style.border="1px solid #A5ACB2";
+	    }
+	  }
+	  xmlhttp.open("GET","../php/livesearch.php?q="+str,true);
+	  xmlhttp.send();
+	}
+	
+
 </script>
 
 </body>
 </html>
+   
 
-</body>
 
-</html>
+    
