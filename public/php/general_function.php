@@ -12,9 +12,10 @@ include_once 'DBConnection.php';
             call_user_func_array(array($stmt, "bind_param"), $params);            
             // Execute the statement.
             $stmt->execute();
-                
+             
             if($stmt) return $stmt;
             }
+            echo "no";
             return null;
         }
                    

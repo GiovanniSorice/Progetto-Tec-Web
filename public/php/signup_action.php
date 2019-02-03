@@ -1,7 +1,7 @@
 <?php
 include_once 'general_function.php';
 
-//TODO: aggiustare password con md5password
+//TODO: aggiustare password con sha256password
 $username=$_GET['username'];
 $password=hash("sha256",$_GET['password']);
 $email=$_GET['email'];
@@ -16,7 +16,8 @@ $stmt=executeQuery($query,array(&$username,&$password,&$email,&$nome,&$cognome,&
 if($stmt->errno===0){     
     $stmt->close();
     $query="select id,tipo from utente where username=?";
-    $stmt=executeQuery($connection,$query,array(&$username),array("s"));
+    echo $username;
+    $stmt=executeQuery($query,array(&$username),array("s"));
     $result=$stmt->get_result();
     $stmt->close();
     if($result->num_rows==1){
@@ -26,11 +27,14 @@ if($stmt->errno===0){
         $_SESSION['user_id']=$row['id'];
         $_SESSION['user_username']=$username;
         $_SESSION['user_tipo']=$row['tipo'];
-        echo 'user_id '.$_SESSION['user_id'].' user_username '.$_SESSION['user_username'].' user_tipo '.$_SESSION['user_tipo'];
+        
     }
-    //TODO : aggiungere rinvio a pagina principale
-    echo "username has registered. You are npw logged in.";
-}else{
+    $host  = $_SERVER['HTTP_HOST'];
+    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = 'esplora.php';
+    
+    header("Location: http://$host$uri/$extra");
+    }else{
     echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;    
 }
     
