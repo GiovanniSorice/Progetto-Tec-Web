@@ -368,6 +368,21 @@ include_once 'DBConnection.php';
         return $output;
     }
 
+    function printPageLogin($output){
+        global $connection;
+        
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        
+        $head_page = implode("", file("../txt/pagehead.txt"));
+        $login = implode("", file("../txt/login.txt"));
+        
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "login", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $login , $output );
+        
+        return $output;
+    }
     
     
     ?>
