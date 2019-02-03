@@ -31,13 +31,15 @@
 	margin-bottom: 0.7em
 }
 
+/*	Tabella dei commenti segnalati */
+
 #segnalazioni{	
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   	border-collapse: collapse;
   	width: 90%;	
 }
 
-#segnalazioni td, #segnalazioni th {
+#segnalazioni td{
   	border: 1px solid #ddd; 
   	padding: 8px;
   	font-size: 1em;
@@ -52,8 +54,8 @@
 }
 
 #segnalazioni th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   text-align: left;
   background-color: #2f4858;
   color: white;
@@ -71,7 +73,7 @@
 }
 
 .tipo-segnalazione{	
-	width: 9em;
+	width: 19em;
 	color: red;
 	font-size: 90%;
 }
@@ -87,26 +89,87 @@
 }
 
 #messaggi{
+	max-width: 100%;
 	margin-top: 2em;
 }
 
 #descrizione-tabella-messaggi{
 	font-size: 0.7em;
-	margin-bottom: 1.4em;
+	margin-bottom: 0.7em;
 }
 
+/*  	Tabella dei messaggi ricevuti   	*/
+
+#tabella-messaggi{	
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  	border-collapse: collapse;
+  	width: 90%;	
+}
+
+/* Header della tabella dei messaggi */
+
+#tabella-messaggi th {
+  padding-top: 0.6em;
+  padding-bottom: 0.5em;
+  text-align: center;
+  background-color: #2f4858;
+  color: white;
+  font-size: 0.7em;
+}
+
+/* Contenuti generali presenti nella tabella*/
+
+#tabella-messaggi td{
+  	border: 1px solid #ddd; 
+  	padding: 8px;
+  	font-size: 0.6em;
+}
+
+#tabella-messaggi tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+#tabella-messaggi tr:hover{
+	background-color: #ddd;
+}
+	
+.messaggio-inviato{	
+	white-space: pre;
+	width: 19em;
+	font-size: 90%;
+}
+
+
 @media screen and (max-width: 1024px) and (min-width: 751px) {	
-	#segnalazioni td, #segnalazioni th {	
-  		font-size: 80%;
+	#segnalazioni td{
+		font-size: 0.6em;
+	}
+	#segnalazioni th {	
+  		font-size: 0.75em;
+	}
+	#tabella-messaggi td{
+		font-size: 0.6em;
+	}
+	#tabella-messaggi th{
+		font-size: 0.75em;
 	}
 }
 
 @media screen and (min-width: 1025px){
-	#segnalazioni td, #segnalazioni th {	
-  		font-size: 65%;
+	#segnalazioni th{
+		font-size: 0.7em;
+	}
+	#segnalazioni td{	
+  		font-size: 0.6em;
+	}
+	#tabella-messaggi td{
+		font-size: 0.6em;
+	}
+	#tabella-messaggi th{
+		font-size: 0.7em;
 	}
 	.pagina-amministratore h2{
-		font-size: 95%;
+		font-size: 0.85em;
 	}
 }
 
