@@ -3,12 +3,12 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS utente;
 CREATE TABLE utente (
   id int  AUTO_INCREMENT PRIMARY KEY,
-  username char(30) UNIQUE NOT NULL,
+  username char(100) UNIQUE NOT NULL,
   password char(64) NOT NULL,
-  email char(30) NOT NULL,
+  email char(100) NOT NULL,
   foto_profilo varchar(500),
-  nome char(30) NOT NULL,
-  cognome char(30) NOT NULL,
+  nome char(64) NOT NULL,
+  cognome char(64) NOT NULL,
   data_nascita date NOT NULL,
   tipo enum('admin','user') NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -20,10 +20,10 @@ CREATE TABLE serie (
   id int PRIMARY KEY,
   miniatura varchar(500),
   background varchar(500),
-  titolo char(30) NOT NULL,
-  distribuzione char(30) NOT NULL,
+  titolo char(100) NOT NULL,
+  distribuzione char(100) NOT NULL,
   descrizione varchar(1000) NOT NULL,
-  creatore char(30) NOT NULL,
+  creatore varchar(100) NOT NULL,
   terminata boolean NOT NULL,
   consigliato int DEFAULT 0,
   non_consigliato int DEFAULT 0,
@@ -94,8 +94,8 @@ DROP TABLE IF EXISTS attore;
 CREATE TABLE attore (
   id int PRIMARY KEY,
   miniatura varchar(500),
-  nome char(30) NOT NULL,
-  cognome char(30) NOT NULL,
+  nome char(100) NOT NULL,
+  cognome char(100) NOT NULL,
   bio varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -113,7 +113,7 @@ CREATE TABLE serie_attore (
 DROP TABLE IF EXISTS genere;
 CREATE TABLE genere (
   id int PRIMARY KEY,
-  nome char(30) NOT NULL
+  nome char(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS serie_genere;
@@ -131,7 +131,7 @@ CREATE TABLE serie_genere (
 DROP TABLE IF EXISTS episodio;
 CREATE TABLE episodio (
   id int PRIMARY KEY,
-  titolo char(30) NOT NULL,
+  titolo char(100) NOT NULL,
   descrizione varchar(500) NOT NULL,
   numero int NOT NULL,
   data date NOT NULL,
