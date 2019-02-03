@@ -2,9 +2,10 @@
 
 #pagina-amministratore{
 	font-family: "Times New Roman", Times, serif; 
-	margin-right: 3% ;
-    margin-left: 3% ; 
-    font-size: 1.5em ; 
+	margin-top: 1em;
+	margin-right: 1em ;
+	margin-left: 1em;
+    font-size: 2.5em ; 
     height: 100vh;
 }
 
@@ -16,17 +17,18 @@
 
 #pagina-amministratore h2{
 	font-family: "Times New Roman", Times, serif; 
-	font-size: 80%;
+	font-size: 0.8em;
 	font-weight: normal;
 	
 }
 
 .parte-segnalazioni{
-	margin-top: 5em;
+	margin-top: 2em;
 }
 
 #descrizione-tabella-segnalazioni{
 	font-size: 0.7em;
+	margin-bottom: 0.7em
 }
 
 #segnalazioni{	
@@ -36,9 +38,9 @@
 }
 
 #segnalazioni td, #segnalazioni th {
-  border: 1px solid #ddd; 
-  padding: 8px;
-  font-size: 1em;
+  	border: 1px solid #ddd; 
+  	padding: 8px;
+  	font-size: 1em;
 }
 
 #segnalazioni tr:nth-child(even){
@@ -58,6 +60,10 @@
   font-size: 82%;
 }
 
+#segnalazioni th{
+	text-align: center;
+}
+
 .nome-utente{	
 	width: 7em;
 	font-weight: 500;
@@ -70,17 +76,28 @@
 	font-size: 90%;
 }
 
+.spazio-eliminazione{
+	width: 1.5em;
+}
+
 .elimina-commento{
-	font-size: 80%;
-	width: 1.5em;	
-	background-image: url("../img/admin/trash.png");
-	background-repeat: no-repeat;
-	background-position: center;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+}
+
+#messaggi{
+	margin-top: 2em;
+}
+
+#descrizione-tabella-messaggi{
+	font-size: 0.7em;
+	margin-bottom: 1.4em;
 }
 
 @media screen and (max-width: 1024px) and (min-width: 751px) {	
 	#segnalazioni td, #segnalazioni th {	
-  		font-size: 80	%;
+  		font-size: 80%;
 	}
 }
 
