@@ -46,10 +46,24 @@
             case "privacy":
                 echo printPagePrivacy($output);
                 break;
+
             case "login":
                 echo printPageLogin($output);
                 break;
-                
+
+            case "signup":
+                echo printPageSignUp($output);
+                break;
+
+            case "preferiti":
+                echo printPagePreferiti($output);
+                break;
+
+             case "profilo":
+                echo printPageProfilo($output);
+                break;
+
+
             default:
                 
             break;

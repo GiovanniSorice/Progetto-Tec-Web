@@ -1,0 +1,21 @@
+
+			<!-- contenuto effettivo della pagina -->
+			<div id="content__homepage">
+				<div class="homepage__welcome">
+					<h1>
+						Preferiti
+					</h1>
+				</div>
+
+				<div>
+					
+					<!-- Preferiti_Show -->
+
+				</div>
+
+				<!-- Registrati -->
+
+			</div>
+
+
+

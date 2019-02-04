@@ -12,9 +12,10 @@ include_once 'DBConnection.php';
             call_user_func_array(array($stmt, "bind_param"), $params);            
             // Execute the statement.
             $stmt->execute();
-                
+             
             if($stmt) return $stmt;
             }
+            echo "no";
             return null;
         }
                    
@@ -132,7 +133,18 @@ include_once 'DBConnection.php';
             $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $home , $output );
             $output = preg_replace("/<!-- Titoli_Momento -->/i" , $show_collect , $output);
             
-
+            if(array_key_exists('user_username',$_SESSION) && !empty($_SESSION['user_username'])){
+                $output = preg_replace("/<!-- Registrati -->/i", "" , $output );
+            }
+            else{
+                $Registrati =  
+                "<div class=\"iscriviti\">
+                    <p>
+                        Per interagire con la community, per votare le tue serie TV preferite e molto altro <a href=\"signup.php\" title=\"registrati\">REGISTRATI</a> oppure <a href=\"login.php\" title=\"accedi\">EFFETTUA IL <span xml:lang=\"EN\">LOGIN</span></a>
+                    </p>
+                </div>";
+                $output = preg_replace("/<!-- Registrati -->/i", $Registrati , $output );
+            }
 
         return $output;
     }
@@ -335,6 +347,107 @@ include_once 'DBConnection.php';
         
     }
 
+    function printPagePreferiti($output){
+
+        global $connection;
+
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $extra = 'serie.php?serie_id=';
+
+        $head_page = implode("", file("../txt/pagehead.txt"));
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "preferiti", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        $preferiti = implode("", file("../txt/preferiti.txt"));
+        
+        if(array_key_exists('user_username',$_SESSION) && !empty($_SESSION['user_username'])){
+
+            $show = implode("", file("../txt/show_preferiti.txt"));
+
+            $id_utente = $_SESSION["user_id"];
+
+            $query="select serie.id,serie.titolo,serie.miniatura from serie JOIN preferiti ON serie.id = preferiti.id_serie JOIN utente ON utente.id = ".$id_utente." group by serie.id";
+
+            $shows=resultQueryToTable($connection->query($query));
+
+            $show_collect ="<!-- Successiva -->";
+
+            foreach ($shows as $shows) {
+                $show_collect=preg_replace("/<!-- Successiva -->/i",$show." <!-- Successiva -->" , $show_collect );
+                $show_collect=preg_replace("/<!-- Immagine -->/i",$shows["miniatura"] , $show_collect );
+                $show_collect=preg_replace("/<!-- Titolo -->/i",$shows["titolo"] , $show_collect );
+                $show_collect=preg_replace("/<!-- Url_Show -->/i","http://$host$uri/$extra".$shows["id"] , $show_collect );  
+            }
+
+            $show=preg_replace("/<!-- Successiva -->/i","" , $show );
+            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $preferiti , $output );
+            $output = preg_replace("/<!-- Registrati -->/i", "" , $output );
+            $output = preg_replace("/<!-- Preferiti_Show -->/i" , $show_collect , $output);
+
+        }
+
+        else{
+                $Registrati =  
+                "<div class=\"iscriviti\">
+                    <p>
+                        Per vedere l'elenco delle tue serie TV preferite <a href=\"signup.php\" title=\"registrati\">REGISTRATI</a> oppure <a href=\"login.php\" title=\"accedi\">EFFETTUA IL <span xml:lang=\"EN\">LOGIN</span></a>
+                    </p>
+                </div>";
+
+            $preferiti = preg_replace("/<!-- Registrati -->/i", $Registrati , $preferiti );
+            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $preferiti , $output );
+        }
+
+        return $output;  
+    }
+
+    function printPageProfilo($output){
+
+        global $connection;
+
+        $host  = $_SERVER['HTTP_HOST'];
+
+        $head_page = implode("", file("../txt/pagehead.txt"));
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "profilo", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        $profilo = implode("", file("../txt/profilo.txt"));
+        
+        if(array_key_exists('user_username',$_SESSION) && !empty($_SESSION['user_username'])){
+
+            $id_utente = $_SESSION["user_id"];
+
+            $query="select foto_profilo, nome, cognome, data_nascita, email, username from utente WHERE id = ".$id_utente."";
+
+            $info=resultQueryToTable($connection->query($query));
+
+            $profilo=preg_replace("/<!-- Foto -->/i",$info[0]["foto_profilo"] , $profilo );
+            $profilo=preg_replace("/<!-- Nome -->/i", $info[0]["nome"] , $profilo );
+            $profilo=preg_replace("/<!-- Cognome -->/i", $info[0]["cognome"] , $profilo );
+            $datanascita= date("d-m-Y",strtotime($info[0]["data_nascita"]));
+            $profilo=preg_replace("/<!-- Data -->/i", $datanascita , $profilo );
+            $profilo=preg_replace("/<!-- User -->/i", $info[0]["username"] , $profilo );
+            $profilo=preg_replace("/<!-- Email -->/i", $info[0]["email"] , $profilo );
+
+
+            $output = preg_replace("/<!-- Registrati -->/i", "" , $output );
+            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $profilo , $output );
+        }
+
+        else{
+                $Registrati =  
+                "<div class=\"iscriviti\">
+                    <p>
+                        Per accedere alla tua area personale <a href=\"signup.php\" title=\"registrati\">REGISTRATI</a> oppure <a href=\"login.php\" title=\"accedi\">EFFETTUA IL <span xml:lang=\"EN\">LOGIN</span></a>
+                    </p>
+                </div>";
+
+            $profilo = preg_replace("/<!-- Registrati -->/i", $profilo , $Registrati );
+            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $profilo , $output );
+        }
+
+        return $output;  
+    }
+
 
     function printPagePrivacy($output){
         global $connection;
@@ -383,6 +496,28 @@ include_once 'DBConnection.php';
         
         return $output;
     }
+    
+    function printPageSignUp($output){
+        global $connection;
+        
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        
+        $head_page = implode("", file("../txt/pagehead.txt"));
+        $signup = implode("", file("../txt/signup.txt"));
+        
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "signup", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        
+        if(array_key_exists('errore_signup',$_SESSION) && !empty($_SESSION['errore_signup'])){
+            $signup = preg_replace("/<!-- Errore -->/i", "Usename gi&agrave; in uso, cambiare username. ", $signup );
+            unset($_SESSION['errore_signup']);
+        }
+        $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $signup , $output );
+        
+        return $output;
+    }
+    
     
     
     ?>

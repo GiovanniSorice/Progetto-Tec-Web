@@ -18,11 +18,7 @@
 
 				</div>
 
-			<div class="iscriviti">
-				<p>
-					Per interagire con la community, per votare le tue serie TV preferite e molto altro, <a href="sign-up.php" title="iscriviti">ISCRIVITI</a> oppure <a href="login.php" title="accedi">EFFETTUA IL <span xml:lang="EN">LOGIN</span></a>
-				</p>
-			</div>
+			<!-- Registrati -->
 
 			</div>
 
