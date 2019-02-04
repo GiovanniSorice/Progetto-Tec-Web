@@ -1,0 +1,26 @@
+
+
+
+			<!-- contenuto effettivo della pagina -->
+			<div>
+					<h2>
+						Profilo
+					</h2>
+
+			<div>
+				<img src="<!-- Foto -->" alt="foto profilo dell'utente"/>
+			</div>
+
+			<ul>
+				<li>Nome: <!-- Nome --> </li>
+				<li>Cognome: <!-- Cognome --> </li>
+				<li>Data di nascita: <!-- Data --> </li>
+				<li>Username: <!-- User --> </li>
+				<li>Email: <!-- Email --> </li>
+			</ul>
+
+
+			<!-- Registrati -->
+
+			</div>
+
