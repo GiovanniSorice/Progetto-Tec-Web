@@ -423,7 +423,8 @@ include_once 'DBConnection.php';
             $profilo=preg_replace("/<!-- Foto -->/i",$info[0]["foto_profilo"] , $profilo );
             $profilo=preg_replace("/<!-- Nome -->/i", $info[0]["nome"] , $profilo );
             $profilo=preg_replace("/<!-- Cognome -->/i", $info[0]["cognome"] , $profilo );
-            $profilo=preg_replace("/<!-- Data -->/i", $info[0]["data_nascita"] , $profilo );
+            $datanascita= date("d-m-Y",strtotime($info[0]["data_nascita"]));
+            $profilo=preg_replace("/<!-- Data -->/i", $datanascita , $profilo );
             $profilo=preg_replace("/<!-- User -->/i", $info[0]["username"] , $profilo );
             $profilo=preg_replace("/<!-- Email -->/i", $info[0]["email"] , $profilo );
 
