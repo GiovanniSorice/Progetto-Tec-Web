@@ -216,11 +216,16 @@ include_once 'DBConnection.php';
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = 'esplora.php';
+        $extra2 = 'preferiti_action.php?serie_id=';
+        $extra3 = 'rimuoviPref_action.php?serie_id=';
+        $extra4 = 'consigliati_action.php?serie_id=';
+        $extra5 = 'rimuoviCons_action.php?serie_id=';
+        $extra6 = 'modificaCons_action.php?consigliato=';
+        
         
         if(!array_key_exists('serie_id',$_GET) && empty($_GET['serie_id'])) { 
             /* Redirect to a different page in the current directory that was requested */
             header("Location: http://$host$uri/$extra");
-            
         }
         
         global $connection;
@@ -256,6 +261,59 @@ include_once 'DBConnection.php';
             $attore_collect=preg_replace("/<!-- Nome_Cognome_Attore -->/i",$attore["nome"]." ".$attore["cognome"] , $attore_collect );      
         }
         $attore_collect=preg_replace("/<!-- Successivo -->/i","" , $attore_collect );
+
+
+
+        if(array_key_exists('user_username',$_SESSION) && !empty($_SESSION['user_username'])){
+            $id_utente = $_SESSION["user_id"];
+            $query = "select * from preferiti where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente;
+            $isPreferito = resultQueryToTable($connection->query($query));
+            if(empty($isPreferito)){
+                $side_serie_block=preg_replace("/<!-- Add-Rem -->/i", "Aggiungi ai preferiti" , $side_serie_block );
+                $side_serie_block=preg_replace("/<!-- Add_Preferitio -->/i", "http://$host$uri/$extra2".$_GET["serie_id"]."&user_id=".$id_utente , 
+                $side_serie_block );
+            }
+            else{
+                $side_serie_block=preg_replace("/<!-- Add-Rem -->/i", "Rimuovi dai preferiti" , $side_serie_block );
+                $side_serie_block=preg_replace("/<!-- Add_Preferitio -->/i", "http://$host$uri/$extra3".$_GET["serie_id"]."&user_id=".$id_utente , 
+                $side_serie_block );
+            }
+
+
+            $query = "select * from consiglio where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente;
+            $isPresent = resultQueryToTable($connection->query($query));
+            if(empty($isPresent)){
+                $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&user_id=".$id_utente."&consigliato=1" , $side_serie_block );
+                $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&user_id=".$id_utente."&consigliato=0" , $side_serie_block );
+            }
+            else{
+                $query = "select * from consiglio where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente." and consigliato=1";
+                $isConsigliato = resultQueryToTable($connection->query($query));
+
+                if(empty($isConsigliato)){
+                    $side_serie_block=preg_replace("/<!-- Scons_Color -->/i", "#fac100" , $side_serie_block );
+                    $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra6"."1"."&serie_id=".$_GET["serie_id"].
+                        "&user_id=".$id_utente , $side_serie_block );
+                    $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra5".$_GET["serie_id"]."&user_id=".$id_utente , 
+                        $side_serie_block );
+                }
+                else{
+                    $side_serie_block=preg_replace("/<!-- Cons_Color -->/i", "#fac100" , $side_serie_block );
+                    $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra5".$_GET["serie_id"]."&user_id=".$id_utente , 
+                        $side_serie_block );
+                    $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra6"."0"."&serie_id=".
+                        $_GET["serie_id"]."&user_id=".$id_utente , $side_serie_block );
+                }
+            }
+        }
+        else{
+            $side_serie_block=preg_replace("/<!-- Add-Rem -->/i", "Aggiungi ai preferiti" , $side_serie_block );
+            $side_serie_block=preg_replace("/<!-- Add_Preferitio -->/i", "http://$host$uri/login.php", $side_serie_block );
+
+            $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/login.php" , $side_serie_block );
+            $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/login.php" , $side_serie_block );
+        }
+
         $side_serie_block=preg_replace("/<!-- Attore -->/i",$attore_collect , $side_serie_block );
         $side_block = preg_replace("/<!-- Side_Bar_Contnent -->/i", $side_serie_block, $side_block );
         $output = preg_replace("/<!-- Side_Bar -->/i", $side_block, $output );
@@ -492,6 +550,12 @@ include_once 'DBConnection.php';
         
         $output = preg_replace("/<!-- Nome_Pagina -->/i", "login", $output );
         $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        if(array_key_exists('errore_login',$_SESSION) && !empty($_SESSION['errore_login'])){
+            $login = preg_replace("/<!-- Errore -->/i", "Errore login, reinserisci i dati. ", $login );
+            unset($_SESSION['errore_login']);
+        }
+        
+        
         $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $login , $output );
         
         return $output;
@@ -518,6 +582,66 @@ include_once 'DBConnection.php';
         return $output;
     }
     
-    
+    function printPageGenere($output){
+        global $connection;
+        
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $extra = 'serie.php?serie_id=';
+        
+        $head_page = implode("", file("../txt/pagehead.txt"));
+        $genere_page = implode("",file("../txt/genere.txt"));
+        $show_page = implode("",file("../txt/show.txt"));
+        $query="select distinct id, nome from genere where id=".$_GET["genere_id"];
+        //Seleziono la lista dei generi già in una tabella
+        $generi=resultQueryToTable($connection->query($query));
+        if(count($generi)<=0){
+            $output = preg_replace("/<!-- Nome_Pagina -->/i", "genere", $output );
+            $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", "Nessun genere esistente", $output );
+            
+            return $output;
+        }
+        $genere_show_collect="<!-- Successivo -->";
+        
+            $genere_id=$generi[0]["id"];
+            $genere_nome=$generi[0]["nome"];
+            
+            $query="select id,miniatura,titolo, consigliato from serie a join serie_genere b on a.id=b.id_serie where b.id_genere=$genere_id";
+            //Seleziono la lista delle serie tv di un determinato genere già in una tabella
+            $series=resultQueryToTable($connection->query($query));
+            
+            //Scrivo le serie tv
+            $show="<!-- Successiva -->";
+            
+            for ($j = 0; $j < count($series); $j++) {
+                
+                $show=preg_replace("/<!-- Successiva -->/i",$show_page." <!-- Successiva -->" , $show );
+                $show=preg_replace("/<!-- Immagine -->/i",$series[$j]["miniatura"] , $show );
+                $show=preg_replace("/<!-- Id -->/i",$series[$j]["id"] , $show );
+                $show=preg_replace("/<!-- Titolo -->/i",$series[$j]["titolo"] , $show );
+                $show=preg_replace("/<!-- Consigliato -->/i",$series[$j]["consigliato"] , $show );
+                $show=preg_replace("/<!-- Url_Show -->/i","http://$host$uri/$extra".$series[$j]["id"] , $show );
+                
+                
+            }
+            $show=preg_replace("/<!-- Successiva -->/i","" , $show );
+            
+            //Inserisco le serie nel div del genere e completo il div con le informazioni mancanti
+            $genere_show_collect=preg_replace("/<!-- Successivo -->/i",$genere_page." <!-- Successivo -->" , $genere_show_collect );
+            $genere_show_collect=preg_replace("/<!-- Genere -->/i",$genere_nome , $genere_show_collect );
+            $genere_show_collect=preg_replace("/<!-- Mostra_Tutto_Genere -->/i",'<a href="http://'.$host.$uri.'/genere.php?genere_id='.$genere_id.'"><h3 id="mostra-tutto">mostra tutto</h3></a>' , $genere_show_collect );
+            $genere_show_collect=preg_replace("/<!-- Genere_Titolo -->/i",$genere_nome , $genere_show_collect );
+            $genere_show_collect=preg_replace("/<!-- Show -->/i",$show , $genere_show_collect );
+            //echo " genere_show_collect /n ".$genere_show_collect." /n ";
+            
+        $genere_show_collect=preg_replace("/<!-- Successivo -->/i","" , $genere_show_collect );
+        
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "genere", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $genere_show_collect, $output );
+        
+        return $output;
+        }
     
     ?>

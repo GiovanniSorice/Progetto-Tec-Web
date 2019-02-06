@@ -41,13 +41,11 @@
 
 #side-bar__consigli .pollici{
 	margin-top: 1em;
+	display: inline-block;
+	border-style: outset;
 }
 
-#side-bar__consigli img:hover{ /*vale per entrambi i pollici*/
-	background-color: #fac100;
-}
-
-#side-bar__consigli .consigliato{ /*classe da inserire dinamicamente in caso il pollice(like o no) sia stato selezionato precedentemente dall'utente */
+#side-bar__consigli .pollici:hover{ /*vale per entrambi i pollici*/
 	background-color: #fac100;
 }
 
@@ -242,7 +240,7 @@
 	}
 	#side-bar__consigli{
 		float: none;
-		margin: 1em;
+		margin: 2em;
 		text-align: center;
 	}
 	#side-bar__attori{
@@ -275,7 +273,7 @@
 	}
 	#side-bar__consigli{
 		float: none;
-		margin: 1em;
+		margin: 2em;
 		text-align: center;
 	}
 	#side-bar__attori{
