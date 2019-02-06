@@ -197,7 +197,6 @@ include_once 'DBConnection.php';
             //Inserisco le serie nel div del genere e completo il div con le informazioni mancanti
             $genere_show_collect=preg_replace("/<!-- Successivo -->/i",$genere_page." <!-- Successivo -->" , $genere_show_collect );
             $genere_show_collect=preg_replace("/<!-- Genere -->/i",$genere_nome , $genere_show_collect );
-            $genere_show_collect=preg_replace("/<!-- Mostra_Tutto_Genere -->/i",'<a href="http://'.$host.$uri.'/genere.php?genere_id='.$genere_id.'"><h3 id="mostra-tutto">mostra tutto</h3></a>' , $genere_show_collect );
             $genere_show_collect=preg_replace("/<!-- Genere_Titolo -->/i",$genere_nome , $genere_show_collect );
             $genere_show_collect=preg_replace("/<!-- Show -->/i",$show , $genere_show_collect );
             //echo " genere_show_collect /n ".$genere_show_collect." /n ";
@@ -425,7 +424,7 @@ include_once 'DBConnection.php';
 
             $id_utente = $_SESSION["user_id"];
 
-            $query="select serie.id,serie.titolo,serie.miniatura from serie JOIN preferiti ON serie.id = preferiti.id_serie JOIN utente ON utente.id = ".$id_utente." group by serie.id";
+            $query="select serie.id,serie.titolo,serie.miniatura from serie JOIN preferiti ON serie.id = preferiti.id_serie JOIN utente ON utente.id = preferiti.id_utente where preferiti.id_utente=".$id_utente." group by serie.id";
 
             $shows=resultQueryToTable($connection->query($query));
 
@@ -577,67 +576,6 @@ include_once 'DBConnection.php';
         return $output;
     }
     
-    function printPageGenere($output){
-        global $connection;
-        
-        $host  = $_SERVER['HTTP_HOST'];
-        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-        $extra = 'serie.php?serie_id=';
-        
-        $head_page = implode("", file("../txt/pagehead.txt"));
-        $genere_page = implode("",file("../txt/genere.txt"));
-        $show_page = implode("",file("../txt/show.txt"));
-        $query="select distinct id, nome from genere where id=".$_GET["genere_id"];
-        //Seleziono la lista dei generi già in una tabella
-        $generi=resultQueryToTable($connection->query($query));
-        if(count($generi)<=0){
-            $output = preg_replace("/<!-- Nome_Pagina -->/i", "genere", $output );
-            $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
-            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", "Nessun genere esistente", $output );
-            
-            return $output;
-        }
-        $genere_show_collect="<!-- Successivo -->";
-        
-            $genere_id=$generi[0]["id"];
-            $genere_nome=$generi[0]["nome"];
-            
-            $query="select id,miniatura,titolo, consigliato from serie a join serie_genere b on a.id=b.id_serie where b.id_genere=$genere_id";
-            //Seleziono la lista delle serie tv di un determinato genere già in una tabella
-            $series=resultQueryToTable($connection->query($query));
-            
-            //Scrivo le serie tv
-            $show="<!-- Successiva -->";
-            
-            for ($j = 0; $j < count($series); $j++) {
-                
-                $show=preg_replace("/<!-- Successiva -->/i",$show_page." <!-- Successiva -->" , $show );
-                $show=preg_replace("/<!-- Immagine -->/i",$series[$j]["miniatura"] , $show );
-                $show=preg_replace("/<!-- Id -->/i",$series[$j]["id"] , $show );
-                $show=preg_replace("/<!-- Titolo -->/i",$series[$j]["titolo"] , $show );
-                $show=preg_replace("/<!-- Consigliato -->/i",$series[$j]["consigliato"] , $show );
-                $show=preg_replace("/<!-- Url_Show -->/i","http://$host$uri/$extra".$series[$j]["id"] , $show );
-                
-                
-            }
-            $show=preg_replace("/<!-- Successiva -->/i","" , $show );
-            
-            //Inserisco le serie nel div del genere e completo il div con le informazioni mancanti
-            $genere_show_collect=preg_replace("/<!-- Successivo -->/i",$genere_page." <!-- Successivo -->" , $genere_show_collect );
-            $genere_show_collect=preg_replace("/<!-- Genere -->/i",$genere_nome , $genere_show_collect );
-            $genere_show_collect=preg_replace("/<!-- Genere_Titolo -->/i",$genere_nome , $genere_show_collect );
-            $genere_show_collect=preg_replace("/<!-- Show -->/i",$show , $genere_show_collect );
-            //echo " genere_show_collect /n ".$genere_show_collect." /n ";
-            
-        $genere_show_collect=preg_replace("/<!-- Successivo -->/i","" , $genere_show_collect );
-        
-        $output = preg_replace("/<!-- Nome_Pagina -->/i", "genere", $output );
-        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
-        $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $genere_show_collect, $output );
-        
-        return $output;
-        
-        return $output;
-    }
+    
     
     ?>
