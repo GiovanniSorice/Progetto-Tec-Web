@@ -1,5 +1,5 @@
   /*Esplora section*/
-  #esplora section > h2{
+  .titolo-genere{
     padding-left: 1em; 
     float: left;
     margin-top: 1em;
@@ -14,49 +14,58 @@
 
   }
 
+  .elenco-serie{
+    clear: both;
+  }
+
   #esplora ul{
     overflow: hidden; /*per funzionare deve essere settata una altezza*/
     height: 354px;  /*Vanno bene i pixel? magari usare vh o %*/ 
     clear: both;
   }
 
-  #esplora li:first-child{
-      padding-left: 0em;
-  }
 
-  #esplora li{
+  .elenco-serie li{
     overflow: hidden; 
     padding-left: 0.5em;
   }
 
-  #esplora .show-min a{
+  .elenco-serie li:first-child{
+      padding-left: 0em;
+  }
+
+  .elenco-serie li:last-child{
+    margin-bottom: 4em;
+  }
+
+  .elenco-serie .show-min a{
     padding-bottom: 1px; /*is px okay?*/
   }
 
-  #esplora img{
+  .elenco-serie img{
     transition: all .3s ease-in-out;
   }
 
-  #esplora img:hover{
+  .elenco-serie img:hover{
     /*opacity: 0.9;*/
     transform: scale(1.16);
   }
 
-  #esplora .show-info{
+  .elenco-serie .show-info{
     padding-left: 8px;
   }
 
-  #esplora .show-name{
+  .elenco-serie .show-name{
     margin-top: 0;
     margin-bottom:5px; /*is px okay? plus, aggiungere lo stile per i link già cliccati*/ 
   }
 
-  #esplora .show-name a{
+  .elenco-serie .show-name a{
     padding: 0;
     color: black;
   }
 
-  #esplora .show-consigliati{
+  .elenco-serie .show-consigliati{
     font-size: small;
     margin:0;
   }

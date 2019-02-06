@@ -1,10 +1,10 @@
 
 			<!-- contenuto effettivo della pagina -->
-					<h1>
+					<h1 class="titolo-genere">
 						Preferiti
 					</h1>
 
-				<ul class="list-inline list_no-style">
+				<ul class="list-inline list_no-style elenco-serie">
 					
 					<!-- Preferiti_Show -->
 
