@@ -19,13 +19,13 @@ if($stmt!=null){
     if($result->num_rows==1){
         //Inizializzo la sessione
         $row = $result->fetch_array(MYSQLI_ASSOC);
-        session_start();
         $_SESSION['user_id']=$row['id'];
         $_SESSION['user_username']=$row['username'];
         $_SESSION['user_tipo']=$row['tipo'];
         
         /* Redirect to a different page in the current directory that was requested */
         header("Location: http://$host$uri/$extra");
+        return;
     }
 }
 
