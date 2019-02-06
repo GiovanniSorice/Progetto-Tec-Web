@@ -217,11 +217,16 @@ include_once 'DBConnection.php';
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = 'esplora.php';
+        $extra2 = 'preferiti_action.php?serie_id=';
+        $extra3 = 'rimuoviPref_action.php?serie_id=';
+        $extra4 = 'consigliati_action.php?serie_id=';
+        $extra5 = 'rimuoviCons_action.php?serie_id=';
+        $extra6 = 'modificaCons_action.php?consigliato=';
+        
         
         if(!array_key_exists('serie_id',$_GET) && empty($_GET['serie_id'])) { 
             /* Redirect to a different page in the current directory that was requested */
             header("Location: http://$host$uri/$extra");
-            
         }
         
         global $connection;
@@ -257,6 +262,59 @@ include_once 'DBConnection.php';
             $attore_collect=preg_replace("/<!-- Nome_Cognome_Attore -->/i",$attore["nome"]." ".$attore["cognome"] , $attore_collect );      
         }
         $attore_collect=preg_replace("/<!-- Successivo -->/i","" , $attore_collect );
+
+
+
+        if(array_key_exists('user_username',$_SESSION) && !empty($_SESSION['user_username'])){
+            $id_utente = $_SESSION["user_id"];
+            $query = "select * from preferiti where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente;
+            $isPreferito = resultQueryToTable($connection->query($query));
+            if(empty($isPreferito)){
+                $side_serie_block=preg_replace("/<!-- Add-Rem -->/i", "Aggiungi ai preferiti" , $side_serie_block );
+                $side_serie_block=preg_replace("/<!-- Add_Preferitio -->/i", "http://$host$uri/$extra2".$_GET["serie_id"]."&user_id=".$id_utente , 
+                $side_serie_block );
+            }
+            else{
+                $side_serie_block=preg_replace("/<!-- Add-Rem -->/i", "Rimuovi dai preferiti" , $side_serie_block );
+                $side_serie_block=preg_replace("/<!-- Add_Preferitio -->/i", "http://$host$uri/$extra3".$_GET["serie_id"]."&user_id=".$id_utente , 
+                $side_serie_block );
+            }
+
+
+            $query = "select * from consiglio where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente;
+            $isPresent = resultQueryToTable($connection->query($query));
+            if(empty($isPresent)){
+                $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&user_id=".$id_utente."&consigliato=1" , $side_serie_block );
+                $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&user_id=".$id_utente."&consigliato=0" , $side_serie_block );
+            }
+            else{
+                $query = "select * from consiglio where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente." and consigliato=1";
+                $isConsigliato = resultQueryToTable($connection->query($query));
+
+                if(empty($isConsigliato)){
+                    $side_serie_block=preg_replace("/<!-- Scons_Color -->/i", "#fac100" , $side_serie_block );
+                    $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra6"."1"."&serie_id=".$_GET["serie_id"].
+                        "&user_id=".$id_utente , $side_serie_block );
+                    $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra5".$_GET["serie_id"]."&user_id=".$id_utente , 
+                        $side_serie_block );
+                }
+                else{
+                    $side_serie_block=preg_replace("/<!-- Cons_Color -->/i", "#fac100" , $side_serie_block );
+                    $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra5".$_GET["serie_id"]."&user_id=".$id_utente , 
+                        $side_serie_block );
+                    $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra6"."0"."&serie_id=".
+                        $_GET["serie_id"]."&user_id=".$id_utente , $side_serie_block );
+                }
+            }
+        }
+        else{
+            $side_serie_block=preg_replace("/<!-- Add-Rem -->/i", "Aggiungi ai preferiti" , $side_serie_block );
+            $side_serie_block=preg_replace("/<!-- Add_Preferitio -->/i", "http://$host$uri/login.php", $side_serie_block );
+
+            $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/login.php" , $side_serie_block );
+            $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/login.php" , $side_serie_block );
+        }
+
         $side_serie_block=preg_replace("/<!-- Attore -->/i",$attore_collect , $side_serie_block );
         $side_block = preg_replace("/<!-- Side_Bar_Contnent -->/i", $side_serie_block, $side_block );
         $output = preg_replace("/<!-- Side_Bar -->/i", $side_block, $output );
