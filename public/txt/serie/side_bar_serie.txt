@@ -1,9 +1,24 @@
 				<div id="side-bar__consigli">
 					<span>Consigliata dal <!-- Percentuale_Consigliati -->% degli utenti</span>
-					<div class="pollici">
-						<a href="" title="consiglia la serie"><img id="like" src="../img/consigliati/like.png"></a>			
-						<a href="" title="sconsiglia la serie"><img id="dislike" src="../img/consigliati/dislike.png"></a>
-					</div>					
+           			<div id="consiglia" class="pollici">
+						<a href="<!-- Consigliato -->" title="consiglia la serie"><img id="like" src="../img/consigliati/like.png"></a>
+					</div>
+					<div id="sconsiglia" class="pollici">			
+						<a href="<!-- Sconsigliato -->" title="sconsiglia la serie"><img id="dislike" src="../img/consigliati/dislike.png"></a>
+					</div>
+
+					<script>
+	                	document.getElementById("consiglia").style.backgroundColor = "<!-- Cons_Color -->";
+	            	</script>
+	            	
+	            	<script>
+	                	document.getElementById("sconsiglia").style.backgroundColor = "<!-- Scons_Color -->";
+	            	</script>
+
+				</div>
+
+				<div>
+					<a href="<!-- Add_Preferitio -->" title="<!-- Add-Rem -->"><!-- Add-Rem --></a>
 				</div>
 				<div id="side-bar__attori">
 					<h2>Attori</h2>
