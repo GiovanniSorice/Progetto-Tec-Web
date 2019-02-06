@@ -197,7 +197,6 @@ include_once 'DBConnection.php';
             //Inserisco le serie nel div del genere e completo il div con le informazioni mancanti
             $genere_show_collect=preg_replace("/<!-- Successivo -->/i",$genere_page." <!-- Successivo -->" , $genere_show_collect );
             $genere_show_collect=preg_replace("/<!-- Genere -->/i",$genere_nome , $genere_show_collect );
-            $genere_show_collect=preg_replace("/<!-- Mostra_Tutto_Genere -->/i",'<a href="http://'.$host.$uri.'/genere.php?genere_id='.$genere_id.'"><h3 id="mostra-tutto">mostra tutto</h3></a>' , $genere_show_collect );
             $genere_show_collect=preg_replace("/<!-- Genere_Titolo -->/i",$genere_nome , $genere_show_collect );
             $genere_show_collect=preg_replace("/<!-- Show -->/i",$show , $genere_show_collect );
             //echo " genere_show_collect /n ".$genere_show_collect." /n ";

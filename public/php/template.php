@@ -62,9 +62,7 @@
              case "profilo":
                 echo printPageProfilo($output);
                 break;
-             case "genere":
-                 echo printPageGenere($output);
-                 break;
+
 
             default:
                 
