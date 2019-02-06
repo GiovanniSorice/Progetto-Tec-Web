@@ -2,11 +2,12 @@
     include_once 'general_function.php';
 
     //Parte standard per tutte le pagine
+    session_start();
     function createPage($namePage){
         readfile('../txt/head.txt');
         echo printNavbar($namePage);
 
-        session_start();
+        
         
         $file_content = implode("",file("../txt/pagecenter.txt"));
         $host  = $_SERVER['HTTP_HOST'];
