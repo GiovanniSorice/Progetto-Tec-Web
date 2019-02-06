@@ -551,6 +551,12 @@ include_once 'DBConnection.php';
         
         $output = preg_replace("/<!-- Nome_Pagina -->/i", "login", $output );
         $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        if(array_key_exists('errore_login',$_SESSION) && !empty($_SESSION['errore_login'])){
+            $login = preg_replace("/<!-- Errore -->/i", "Errore login, reinserisci i dati. ", $login );
+            unset($_SESSION['errore_login']);
+        }
+        
+        
         $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $login , $output );
         
         return $output;
@@ -636,8 +642,6 @@ include_once 'DBConnection.php';
         $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $genere_show_collect, $output );
         
         return $output;
-        
-        return $output;
-    }
+        }
     
     ?>
