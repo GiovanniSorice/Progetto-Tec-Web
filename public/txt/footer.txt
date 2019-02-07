@@ -24,10 +24,8 @@
 	</div>
 
 
-	</div>
 
-
-<script>
+<script type="text/javascript">
 function myFunction() {
     var x = document.getElementById("nav");
     var y = document.getElementById("nav__top-list");

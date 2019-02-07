@@ -7,12 +7,22 @@
 
 				<div class="show-seasons">
 					<h2>Episodi</h2>
-					<div class="dropdown">
-					  <button class="selettore-stagione">Stagione</button>
-					  <div class="dropdown__stagioni">
-						<!-- Stagione -->
-					  </div>
-					</div> 
+					<script>
+						<div class="dropdown">
+						  <button class="selettore-stagione">Stagione</button>
+						  <div class="dropdown__stagioni">
+							<!-- Stagione -->
+						  </div>
+						</div> 
+					</script>
+					<noscript>
+						<div class="dropdown">
+						  <button class="selettore-stagione">Stagione</button>
+						  <div class="dropdown__stagioni">
+							<!-- StagioneNS -->
+						  </div>
+						</div> 
+					</noscript>
 
 					<table id="stagione">
 						<tr>
