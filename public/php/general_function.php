@@ -15,7 +15,6 @@ include_once 'DBConnection.php';
              
             if($stmt) return $stmt;
             }
-            echo "no";
             return null;
         }
                    
@@ -227,6 +226,8 @@ include_once 'DBConnection.php';
             /* Redirect to a different page in the current directory that was requested */
             header("Location: http://$host$uri/$extra");
         }
+        
+        $_SESSION['serie_id']=$_GET['serie_id'];
         
         global $connection;
         $side_block = implode("",file("../txt/side_bar.txt"));
