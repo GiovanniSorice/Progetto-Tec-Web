@@ -17,8 +17,10 @@
 
 				</div>
 
-				<div id="aggiungi-preferito">
-					<a href="<!-- Add_Preferitio -->" title="<!-- Add-Rem -->"><!-- Add-Rem --></a>
+				<div id="preferito-btn">
+					<button>
+						<a href="<!-- Add_Preferitio -->" title="<!-- Add-Rem -->"><!-- Add-Rem --></a>
+					</button>
 				</div>
 				<div id="side-bar__attori">
 					<h2>Attori</h2>
