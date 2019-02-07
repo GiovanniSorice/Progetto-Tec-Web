@@ -400,9 +400,15 @@ include_once 'DBConnection.php';
         
         //parte centro post per ogni serie
         
-        $query="select b.id, b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where a.id=".$_GET["serie_id"]." and b.id not in 
-        (select id_ref from segnalazione where tipo=1 and id_utente=".$_SESSION["user_id"].")";
         
+        if(!array_key_exists('user_id',$_SESSION) && empty($_SESSION['user_id'])){
+            
+            $query="select b.id, b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where a.id=".$_GET["serie_id"]." and b.id not in 
+            (select id_ref from segnalazione where tipo=1)";
+        }else{
+            $query="select b.id, b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where a.id=".$_GET["serie_id"]." and b.id not in
+            (select id_ref from segnalazione where tipo=1 and id_utente=".$_SESSION["user_id"].")";            
+        }
         $posts=resultQueryToTable($connection->query($query));
         
         $post_collect="<!-- Successivo -->";
