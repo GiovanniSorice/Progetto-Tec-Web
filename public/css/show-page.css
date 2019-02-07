@@ -258,6 +258,11 @@
 	font-size: 17px;
 	padding: 0 25px;
 	border: none;
+	opacity: 0.9;
+}
+
+.submit-post-btn:hover{
+	opacity: 1;
 }
 
 .post{
@@ -268,6 +273,17 @@
 .post-header{
 	border-bottom: 1px solid #aaa;
 	margin: 5px;
+}
+
+.post-header .autore{
+	text-align: left;
+
+}
+
+.post-header .segnala{
+	text-align: right;
+
+
 }
 
 .post-body{
@@ -287,7 +303,6 @@
 		margin: 0;
 		width: 25%;
 		overflow: hidden;
-		height: 100%;
 		display: block;
 	}
 	#show-page{
@@ -306,7 +321,7 @@
 	#list-attori li{
 	margin-right: 5%;
 	float: none;
-}
+	}
 }
 
 @media screen and (min-width: 751px) and (max-width: 1024px){
@@ -320,7 +335,6 @@
 		margin: 0;
 		width: 25%;
 		overflow: hidden;
-		height: 100%;
 		display: block;
 	}
 	#show-page{
@@ -339,6 +353,6 @@
 	#list-attori li{
 	margin-right: 5%;
 	float: none;
-}
+	}
 }
 

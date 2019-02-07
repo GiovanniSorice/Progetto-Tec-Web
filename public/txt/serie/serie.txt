@@ -37,7 +37,6 @@
 			
 				<div class="post-section">
 					<h2>Post</h2>
-					
 					<form class="post-form">
 						<div class="top">
 							<div class="post-holder">
@@ -47,7 +46,7 @@
 							</div>
 						</div>
 						<div class="submit-post">
-							<button class="submit-post-btn" type="button">
+							<button class="submit-post-btn" type="submit">
 								Invia
 							</button>
 						</div>	
