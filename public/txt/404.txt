@@ -1,0 +1,10 @@
+
+
+
+			<!-- contenuto effettivo della pagina -->
+			<div>
+					<h2>
+						Pagina in manutenzione!
+					</h2>
+			</div>
+

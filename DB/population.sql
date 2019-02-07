@@ -17,12 +17,12 @@ TRUNCATE TABLE post;
 TRUNCATE TABLE commento;
 
 -- utente
--- INSERT INTO Utente VALUES(id, user, pass, mail, fotoprofilo, nome, cognome, dataNasc, tipo);
-INSERT INTO utente VALUES ('1', 'admin', '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', 'admin@support.it', '', 'Lorenzo', 'Busin', '1997/05/16', 'admin');
-INSERT INTO utente VALUES ('2', 'user', '04F8996DA763B7A969B1028EE3007569EAF3A635486DDAB211D512C85B9DF8FB', 'rossiluca@gmail.com', '../img/fotoProfilo/user.png', 'Luca', 'Rossi', '1997/04/21', 'user');
-INSERT INTO utente VALUES ('3', 'user1', 'user1', 'cornish3@google.com.br' , '', 'Annamaria', 'Cornish', '1988/02/21', 'user');
-INSERT INTO utente VALUES ('4', 'user2', 'user2', 'cchinghnam@yahoo.com', '', 'Cyndi', 'Highnam', '1997/01/08', 'user');
-INSERT INTO utente VALUES ('5', 'user3', 'user3', 'johnslo@gmail.com', '', 'John', 'Slowan', '1994/09/06', 'user');
+-- INSERT INTO Utente VALUES(id, user, pass, mail,fotoprofilo, nome, cognome, dataNasc, tipo);
+INSERT INTO utente VALUES ('1', 'admin', '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', 'admin@support.it', '../img/fotoProfilo/user.png', 'Lorenzo', 'Busin', '1997/05/16', 'admin');
+INSERT INTO utente VALUES ('2', 'user', '04F8996DA763B7A969B1028EE3007569EAF3A635486DDAB211D512C85B9DF8FB', 'rossiluca@gmail.com','../img/fotoProfilo/user.png', 'Luca', 'Rossi', '1997/04/21', 'user');
+INSERT INTO utente VALUES ('3', 'user1', 'user1', 'cornish3@google.com.br' ,'../img/fotoProfilo/user.png', 'Annamaria', 'Cornish', '1988/02/21', 'user');
+INSERT INTO utente VALUES ('4', 'user2', 'user2', 'cchinghnam@yahoo.com','../img/fotoProfilo/user.png', 'Cyndi', 'Highnam', '1997/01/08', 'user');
+INSERT INTO utente VALUES ('5', 'user3', 'user3', 'johnslo@gmail.com','../img/fotoProfilo/user.png', 'John', 'Slowan', '1994/09/06', 'user');
 
 
 -- serie
@@ -191,7 +191,7 @@ INSERT INTO episodio VALUES('15', 'Senza ritorno', '', '2', '2008-01-27', '1', '
 INSERT INTO episodio VALUES('16', 'Conseguenze radicali', '', '3', '2008-02-10', '1', '0', '0', '6');
 INSERT INTO episodio VALUES('17', 'Una malattia scomoda', '', '4', '2009-03-15', '1', '0', '0', '6');
 INSERT INTO episodio VALUES('18', 'Grigliato', '', '2', '2009-03-20', '2', '0', '0', '6');
-INSERT INTO episodio VALUES('19', 'Punto da un\'ape', '', '1', '2015/08/28', '2', '0', '0', '6');
+INSERT INTO episodio VALUES('19', 'Punto da un\'ape', '', '3', '2009-03-28', '2', '0', '0', '6');
 
 
 

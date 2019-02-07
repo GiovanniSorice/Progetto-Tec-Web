@@ -63,8 +63,13 @@
              case "profilo":
                 echo printPageProfilo($output);
                 break;
+
              case "genere":
                  echo printPageGenere($output);
+                 break;
+
+            case "404":
+                 echo printPage404($output);
                  break;
                  
 

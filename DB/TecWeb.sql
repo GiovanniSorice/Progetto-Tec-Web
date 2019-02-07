@@ -6,7 +6,7 @@ CREATE TABLE utente (
   username char(100) UNIQUE NOT NULL,
   password char(64) NOT NULL,
   email char(100) NOT NULL,
-  foto_profilo varchar(500),
+  foto_profilo varchar(500) NOT NULL DEFAULT '../img/fotoProfilo/user.png',
   nome char(64) NOT NULL,
   cognome char(64) NOT NULL,
   data_nascita date NOT NULL,
