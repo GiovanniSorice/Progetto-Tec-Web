@@ -400,7 +400,9 @@ include_once 'DBConnection.php';
         
         //parte centro post per ogni serie
         
-        $query="select b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where a.id=".$_GET["serie_id"];
+        $query="select b.id, b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where a.id=".$_GET["serie_id"]." and b.id not in 
+        (select id_ref from segnalazione where tipo=1 and id_utente=".$_SESSION["user_id"].")";
+        
         $posts=resultQueryToTable($connection->query($query));
         
         $post_collect="<!-- Successivo -->";
@@ -409,6 +411,7 @@ include_once 'DBConnection.php';
             $post_collect=preg_replace("/<!-- Successivo -->/i",$post_block."<!-- Successivo -->", $post_collect );
             $post_collect=preg_replace("/<!-- Username_Autore -->/i",$post["username"], $post_collect );
             $post_collect=preg_replace("/<!-- Testo -->/i",$post["testo"], $post_collect );
+            $post_collect=preg_replace("/<!-- Segnala -->/i","http://$host$uri/segnala_action.php?post_id=".$post["id"], $post_collect );
             
             
         }

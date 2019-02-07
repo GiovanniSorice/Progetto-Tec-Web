@@ -6,7 +6,7 @@
 								</span>
 							</div>
 							<div class="segnala">
-								<a href="">segnala</a>
+								<a href="<!-- Segnala -->">segnala</a>
 							</div>
 						</div>
 						<div class="post-body">
