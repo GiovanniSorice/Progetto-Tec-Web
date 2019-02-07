@@ -36,35 +36,35 @@ include_once 'DBConnection.php';
         $nav = implode("",file("../txt/nav.txt"));
         switch ($currentPage) {
             case "esplora":
-                $nav = preg_replace("/<!-- refEsplora -->/i", "#", $nav);
+                $nav = preg_replace("/<!-- refEsplora -->/i", "selezionato", $nav);
                 break;
 
             case "profilo":
-                $nav = preg_replace("/<!-- refProfilo -->/i", "#", $nav);
+                $nav = preg_replace("/<!-- refProfilo -->/i", "selezionato", $nav);
                 break;
 
             case "preferiti":
-                $nav = preg_replace("/<!-- refPreferiti -->/i", "#", $nav);
+                $nav = preg_replace("/<!-- refPreferiti -->/i", "selezionato", $nav);
                 break;
 
             case "impostazioni":
-                $nav = preg_replace("/<!-- refImpostazioni -->/i", "#", $nav);
+                $nav = preg_replace("/<!-- refImpostazioni -->/i", "selezionato", $nav);
                 break;
 
             case "faq":
-                $nav = preg_replace("/<!-- refFaq -->/i", "#", $nav);
+                $nav = preg_replace("/<!-- refFaq -->/i", "selezionato", $nav);
                 break;
 
             case "supporto":
-                $nav = preg_replace("/<!-- refSupporto -->/i", "#", $nav);
+                $nav = preg_replace("/<!-- refSupporto -->/i", "selezionato", $nav);
                 break;
 
             case "privacy":
-                $nav = preg_replace("/<!-- refPrivacy -->/i", "#", $nav);
+                $nav = preg_replace("/<!-- refPrivacy -->/i", "selezionato", $nav);
                 break;
 
             case "about":
-                $nav = preg_replace("/<!-- refAbout -->/i", "#", $nav);
+                $nav = preg_replace("/<!-- refAbout -->/i", "selezionato", $nav);
                 break;
 
             case "home":
@@ -75,14 +75,14 @@ include_once 'DBConnection.php';
                 break;
         }
 
-        $nav = preg_replace("/<!-- refEsplora -->/i", "esplora.php", $nav);
-        $nav = preg_replace("/<!-- refProfilo -->/i", "profilo.php", $nav);
-        $nav = preg_replace("/<!-- refPreferiti -->/i", "preferiti.php", $nav);
-        $nav = preg_replace("/<!-- refImpostazioni -->/i", "impostazioni.php", $nav);
-        $nav = preg_replace("/<!-- refFaq -->/i", "faq.php", $nav);
-        $nav = preg_replace("/<!-- refSupporto -->/i", "supporto.php", $nav);
-        $nav = preg_replace("/<!-- refPrivacy -->/i", "privacy.php", $nav);
-        $nav = preg_replace("/<!-- refAbout -->/i", "about.php", $nav);
+        $nav = preg_replace("/<!-- refEsplora -->/i", "", $nav);
+        $nav = preg_replace("/<!-- refProfilo -->/i", "", $nav);
+        $nav = preg_replace("/<!-- refPreferiti -->/i", "", $nav);
+        $nav = preg_replace("/<!-- refImpostazioni -->/i", "", $nav);
+        $nav = preg_replace("/<!-- refFaq -->/i", "", $nav);
+        $nav = preg_replace("/<!-- refSupporto -->/i", "", $nav);
+        $nav = preg_replace("/<!-- refPrivacy -->/i", "", $nav);
+        $nav = preg_replace("/<!-- refAbout -->/i", "", $nav);
         $nav = preg_replace("/<!-- refHome -->/i", "home.php", $nav);
 
         return $nav;
