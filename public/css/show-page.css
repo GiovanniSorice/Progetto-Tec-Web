@@ -205,6 +205,61 @@
 	margin: 5px;
 }
 
+.post-form{
+	margin: 10px;
+}
+
+.post-form .top{
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.post-holder{
+	border-radius: 4px 4px 0 0;
+	position: relative;
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 5px;
+	margin-left: 0;
+}
+
+.textarea-wrap{
+	display: block;
+	text-align: left;
+}
+
+.post-form textarea{
+	overflow: hidden;
+	height: 40px;
+	background: 0 0;
+	border: none;
+	outline: 0;
+	font-size: 14px;
+	color: #555;
+	width: 100%;
+	padding: 5px;
+	max-width: 98%;
+}
+
+.submit-post{
+	text-align: right;
+	position: relative;
+	margin-top: 0.5em;
+}
+
+.submit-post-btn{
+	color: #555;
+	text-transform: uppercase;
+	border-radius: 4px;
+	text-align: center;
+	height: 35px;
+	line-height: 37px;
+	background-color: #fac100;
+	font-size: 17px;
+	padding: 0 25px;
+	border: none;
+}
+
 .post{
 	border: 1px solid #aaa;
 	margin: 10px;
