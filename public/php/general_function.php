@@ -353,16 +353,35 @@ include_once 'DBConnection.php';
                 
             $link=(string)"http://".$host.$uri."/".$extra.$_GET["serie_id"]."&stagione_numero=".($i);
             $stagione_collect=preg_replace("/<!-- Successivo -->/i","<a href=javascript:episodi('$link') >Stagione".($i)."</a>"." <!-- Successivo -->" , $stagione_collect );
-            
+            $stagione_collect=preg_replace("/<!-- SuccessivoNS -->/i","<a href='$link' >Stagione".($i)."</a>"." <!-- SuccessivoNS -->" , $stagione_collect );           
             }
         $stagione_collect=preg_replace("/<!-- Successivo -->/i","" , $stagione_collect );
             
         $serie_block=preg_replace("/<!-- Stagione -->/i",$stagione_collect , $serie_block );
         
-        $query="select b.id, b.titolo,b.descrizione, b.numero,b.data,b.visualizzato from serie a join episodio b on a.id=b.id_serie where b.stagione=1  and a.id=".$_GET["serie_id"];
+        $stagione_collect="<!-- Successivo -->";
         
-        $episodi=resultQueryToTable($connection->query($query));
-
+        $extra="serie.php?serie_id=";
+        for ($i = 1; $i <= $numero_stagioni; $i++) {
+            
+            $link=(string)"http://".$host.$uri."/".$extra.$_GET["serie_id"]."&stagione_numero=".($i);
+            $stagione_collect=preg_replace("/<!-- Successivo -->/i","<a href='$link' >Stagione".($i)."</a>"." <!-- Successivo -->" , $stagione_collect );
+        }
+        $stagione_collect=preg_replace("/<!-- Successivo -->/i","" , $stagione_collect );
+        
+        $serie_block=preg_replace("/<!-- StagioneNS -->/i",$stagione_collect , $serie_block );
+        
+        if(array_key_exists('stagione_numero',$_GET) && !empty($_GET['stagione_numero'])){
+            $query="select b.id, b.titolo,b.descrizione, b.numero,b.data,b.visualizzato from serie a join episodio b on a.id=b.id_serie where b.stagione=?  and a.id=?";
+            $stmt=executeQuery($query,array(&$_GET['stagione_numero'],&$_GET['serie_id']),array("ss"));
+            
+        }else{
+            $query="select b.id, b.titolo,b.descrizione, b.numero,b.data,b.visualizzato from serie a join episodio b on a.id=b.id_serie where b.stagione=1  and a.id=?";
+            $stmt=executeQuery($query,array(&$_GET['serie_id']),array("s"));
+            
+        }
+        $episodi=resultQueryToTable($stmt->get_result());
+        $stmt->close();
         $episodio_collect="<!-- Successivo -->";
         
         foreach ($episodi as $episodio) {
