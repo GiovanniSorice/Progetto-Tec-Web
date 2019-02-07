@@ -7,13 +7,12 @@
 
 				<div class="show-seasons">
 					<h2>Episodi</h2>
-					<script>
-						<div class="dropdown">
+						<div class="dropdown jsonly" id="dropdownJSSerie">
 						  <button class="selettore-stagione">Stagione</button>
 						  <div class="dropdown__stagioni">
 							<!-- Stagione -->
 						  </div>
-						</div> 
+						</div>
 					</script>
 					<noscript>
 						<div class="dropdown">
@@ -37,18 +36,17 @@
 			
 				<div class="post-section">
 					<h2>Post</h2>
-					<form class="post-form">
-						<div class="top">
-							<div class="post-holder">
+					
+					<form class="post-form" action="commento_action.php" method="get">					
+						<div class="top">						
+							<div class="post-holder">							
 								<div class="textarea-wrap">
-									<textarea placeholder="inserisci il tuo commento"></textarea>
+									<textarea placeholder="inserisci il tuo commento" name="post"></textarea>
 								</div>
 							</div>
 						</div>
 						<div class="submit-post">
-							<button class="submit-post-btn" type="submit">
-								Invia
-							</button>
+							<input class="submit-post-btn" type="submit" value="Invia"/>
 						</div>	
 					</form>
 

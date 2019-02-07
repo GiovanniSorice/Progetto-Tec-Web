@@ -26,6 +26,11 @@
 
 
 <script type="text/javascript">
+
+//Parte per div serie
+
+document.getElementById('dropdownJSSerie').className='dropdown';
+
 function myFunction() {
     var x = document.getElementById("nav");
     var y = document.getElementById("nav__top-list");

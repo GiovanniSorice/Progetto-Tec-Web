@@ -45,6 +45,7 @@
   pointer-events: none;
   cursor: default; 
 }  
+
 .nav a:active{
   color: purple;
 }
