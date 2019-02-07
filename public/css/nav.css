@@ -31,15 +31,20 @@
   margin-top: 5%;
   margin-bottom : 5%;
 }
-	
+
 .nav li{
   text-align: left;
 }
-	
+  
 .nav a{
-	color: #aaa;
+  color: #aaa;
 }
 
+.selezionato a{
+  color: white; 
+  pointer-events: none;
+  cursor: default; 
+}  
 .nav a:active{
   color: purple;
 }
