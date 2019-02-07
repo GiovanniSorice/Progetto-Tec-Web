@@ -1,17 +1,13 @@
 <body>
-	<!-- Sostituire con tag HTML5 <header>? Vedere pro e contro
-		Contro: XHTML5 non esiste -> in xhtml i tag header e footer non esistono.
-
-	-->
 	<div class="nav" id="nav">
 		<div class="nav__logo-container" id="nav__logo-container">
 			<a href="<!-- refHome -->" title="Homepage"> 
-				<img src="../logo/logo_TVhunter.png" alt="logo del sito, riporta alla homepage">		
+				<img src="../logo/logo_TVhunter.png" alt="logo del sito, riporta alla homepage"/>		
 			</a>
 		</div>
 		
 		<div class="nav__ricerca">
-			<input type="text" placeholder="Cerca.." onkeyup="showResult(this.value)">
+			<input type="text" placeholder="Cerca.." onkeyup="showResult(this.value)"/>
 		</div>
 		
 		<ul class="nav__top-list list_no-style	" id="nav__top-list">
