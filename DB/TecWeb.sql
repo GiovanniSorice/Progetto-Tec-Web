@@ -169,9 +169,11 @@ CREATE TABLE voto (
 DROP TABLE IF EXISTS segnalazione;
 CREATE TABLE segnalazione (
   id int  AUTO_INCREMENT PRIMARY KEY,
-  id_ref int UNIQUE,
+  id_ref int,
   id_utente int,
   tipo enum ('post','commento','risposta'),
+
+  UNIQUE(id_utente, id_ref),
 
   FOREIGN KEY (id_utente) REFERENCES utente(id)
     
