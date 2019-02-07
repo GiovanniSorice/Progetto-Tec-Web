@@ -191,7 +191,7 @@ INSERT INTO episodio VALUES('15', 'Senza ritorno', '', '2', '2008-01-27', '1', '
 INSERT INTO episodio VALUES('16', 'Conseguenze radicali', '', '3', '2008-02-10', '1', '0', '0', '6');
 INSERT INTO episodio VALUES('17', 'Una malattia scomoda', '', '4', '2009-03-15', '1', '0', '0', '6');
 INSERT INTO episodio VALUES('18', 'Grigliato', '', '2', '2009-03-20', '2', '0', '0', '6');
-INSERT INTO episodio VALUES('19', 'Punto da un\'ape', '', '1', '2015/08/28', '2', '0', '0', '6');
+INSERT INTO episodio VALUES('19', 'Punto da un\'ape', '', '3', '2009-03-28', '2', '0', '0', '6');
 
 
 
