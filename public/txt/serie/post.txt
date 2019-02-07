@@ -8,6 +8,7 @@
 							<div class="segnala">
 								<a href="">segnala</a>
 							</div>
+							<div class="clear"></div>
 						</div>
 						<div class="post-body">
 							<span>
