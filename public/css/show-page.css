@@ -1,5 +1,8 @@
 /*Page center*/
 
+ .jsonly{
+	display: none !important;
+}
 
 /*Header*/
 
