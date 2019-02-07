@@ -663,5 +663,21 @@ include_once 'DBConnection.php';
         
         return $output;
         }
+
+        function printPage404($output){
+        global $connection;
+        
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+
+        $head_page = implode("", file("../txt/pagehead.txt"));
+        $error = implode("", file("../txt/404.txt"));
+
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "404", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $error , $output );
+
+        return $output;
+    }
     
     ?>
