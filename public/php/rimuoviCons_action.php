@@ -2,8 +2,9 @@
 include_once 'general_function.php';
 
 global $connection;
+session_start();
 $serie_id = $_GET['serie_id'];
-$id_utente = $_GET["user_id"];
+$id_utente = $_SESSION["user_id"];
 
 $query="delete from consiglio where id_serie=? and id_utente=?";
 $stmt=executeQuery($query,array(&$serie_id,&$id_utente),array("ss"));

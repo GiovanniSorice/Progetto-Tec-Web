@@ -271,12 +271,12 @@ include_once 'DBConnection.php';
             $isPreferito = resultQueryToTable($connection->query($query));
             if(empty($isPreferito)){
                 $side_serie_block=preg_replace("/<!-- Add-Rem -->/i", "Aggiungi ai preferiti" , $side_serie_block );
-                $side_serie_block=preg_replace("/<!-- Add_Preferitio -->/i", "http://$host$uri/$extra2".$_GET["serie_id"]."&user_id=".$id_utente , 
+                $side_serie_block=preg_replace("/<!-- Add_Preferitio -->/i", "http://$host$uri/$extra2".$_GET["serie_id"] , 
                 $side_serie_block );
             }
             else{
                 $side_serie_block=preg_replace("/<!-- Add-Rem -->/i", "Rimuovi dai preferiti" , $side_serie_block );
-                $side_serie_block=preg_replace("/<!-- Add_Preferitio -->/i", "http://$host$uri/$extra3".$_GET["serie_id"]."&user_id=".$id_utente , 
+                $side_serie_block=preg_replace("/<!-- Add_Preferitio -->/i", "http://$host$uri/$extra3".$_GET["serie_id"] , 
                 $side_serie_block );
             }
 
@@ -284,8 +284,8 @@ include_once 'DBConnection.php';
             $query = "select * from consiglio where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente;
             $isPresent = resultQueryToTable($connection->query($query));
             if(empty($isPresent)){
-                $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&user_id=".$id_utente."&consigliato=1" , $side_serie_block );
-                $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&user_id=".$id_utente."&consigliato=0" , $side_serie_block );
+                $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&consigliato=1" , $side_serie_block );
+                $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&consigliato=0" , $side_serie_block );
             }
             else{
                 $query = "select * from consiglio where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente." and consigliato=1";
@@ -293,17 +293,16 @@ include_once 'DBConnection.php';
 
                 if(empty($isConsigliato)){
                     $side_serie_block=preg_replace("/<!-- Scons_Color -->/i", "#fac100" , $side_serie_block );
-                    $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra6"."1"."&serie_id=".$_GET["serie_id"].
-                        "&user_id=".$id_utente , $side_serie_block );
-                    $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra5".$_GET["serie_id"]."&user_id=".$id_utente , 
+                    $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra6"."1"."&serie_id=".$_GET["serie_id"] , $side_serie_block );
+                    $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra5".$_GET["serie_id"] , 
                         $side_serie_block );
                 }
                 else{
                     $side_serie_block=preg_replace("/<!-- Cons_Color -->/i", "#fac100" , $side_serie_block );
-                    $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra5".$_GET["serie_id"]."&user_id=".$id_utente , 
+                    $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra5".$_GET["serie_id"] , 
                         $side_serie_block );
                     $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra6"."0"."&serie_id=".
-                        $_GET["serie_id"]."&user_id=".$id_utente , $side_serie_block );
+                        $_GET["serie_id"] , $side_serie_block );
                 }
             }
         }
@@ -444,7 +443,7 @@ include_once 'DBConnection.php';
 
             $id_utente = $_SESSION["user_id"];
 
-            $query="select serie.id,serie.titolo,serie.miniatura from serie JOIN preferiti ON serie.id = preferiti.id_serie JOIN utente ON utente.id = ".$id_utente." group by serie.id";
+            $query="select distinct serie.id,serie.titolo,serie.miniatura from (serie JOIN preferiti ON serie.id = preferiti.id_serie) JOIN utente ON utente.id = preferiti.id_utente and utente.id=".$id_utente;
 
             $shows=resultQueryToTable($connection->query($query));
 
