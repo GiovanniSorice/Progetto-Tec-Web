@@ -13,7 +13,7 @@
 		          <input type="email" name="email" placeholder="example@gmail.com" required pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
 		          <input type="text" name="nome" placeholder="Nome" required/>
 		          <input type="text" name="cognome" placeholder="Cognome" required/>
-		          <input type="date" name="datanascita" placeholder="Data di nascita (es. 10/02/1997)" required/>                  
+		          <input type="date" name="datanascita" required/>                  
 		          <input type="submit" value="Invia"/>
 		        </div>
 		      </div>
@@ -26,7 +26,7 @@
                   <a href="login.php" class="btn">Accedi</a>
                 </div>
                 <div class="signup__colonna">
-                  <a href="#" class="btn"><span xml:lang="EN">Password</span> dimenticata?</a>
+                  <a href="#" class="btn"><span lang="EN">Password</span> dimenticata?</a>
                 </div>
               </div>
             </div> 

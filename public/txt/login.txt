@@ -1,4 +1,4 @@
-		<div id="login" class="content">
+		<div class="content">
 		 	<div class="login__riga">
 	       		<div class="login__colonna">
 	        		<!-- Errore -->
@@ -9,16 +9,16 @@
 		  <div id="login__top" class="login">
         <form action="login_action.php">
           <div class="login__riga">
-            <h2>Effettua l'accesso con un <span xml:lang="EN">social</span> a scelta oppure manualmente</h2>                   
+            <h2>Effettua l'accesso con un <span lang="EN">social</span> a scelta oppure manualmente</h2>                   
             <div class="login__colonna">
               <a  href="javascript:void(0);" class="fb btn" onclick="loginSocial()">
-                <i class="fa fa-facebook fa-fw"></i><span xml:lang="EN">Login</span> con <span xml:lang="EN">Facebook</span><!-- TODO: aggiungere icona social -->
+                <i class="fa fa-facebook fa-fw"></i><span lang="EN">Login</span> con <span lang="EN">Facebook</span><!-- TODO: aggiungere icona social -->
               </a>
               <a href="javascript:void(0);" class="twitter btn" onclick="loginSocial()">
-                <i class="fa fa-twitter fa-fw"></i><span xml:lang="EN">Login</span> con <span xml:lang="EN">Twitter</span><!-- TODO: aggiungere icona social -->
+                <i class="fa fa-twitter fa-fw"></i><span lang="EN">Login</span> con <span lang="EN">Twitter</span><!-- TODO: aggiungere icona social -->
               </a>
               <a href="javascript:void(0);" class="google btn" onclick="loginSocial()">
-                <i class="fa fa-google fa-fw"></i><span xml:lang="EN">Login</span> con <span xml:lang="EN">Google+</span><!-- TODO: aggiungere icona social -->
+                <i class="fa fa-google fa-fw"></i><span lang="EN">Login</span> con <span lang="EN">Google+</span><!-- TODO: aggiungere icona social -->
               </a>
             </div>
             <div class="login__colonna">
@@ -32,7 +32,7 @@
         <!-- Modal content -->
          <div class="modal-content">
            <a href="javascript:void(0);" onclick="closeModal()"><span class="close">&times;</span></a>
-           <p>Siamo spiacenti ma la funzione di accesso tramite <span xml:lang="EN">social</span> verr&agrave;  introdotta nelle versioni successive</p>
+           <p>Siamo spiacenti ma la funzione di accesso tramite <span lang="EN">social</span> verr&agrave;  introdotta nelle versioni successive</p>
          </div>
       </div>
           
@@ -52,4 +52,3 @@
             
  
     </div>
-	</div>
