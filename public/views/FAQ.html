@@ -2,42 +2,105 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
-<title>Tv Hunter</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../css/styleProva.css"/>
+<link rel="stylesheet" type="text/css" href="../css/styleProva.css">
 
 <link rel="icon" type="image/png" href="../img/favicomatic/favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="../img/favicomatic/favicon-16x16.png" sizes="16x16" />
-<link rel="stylesheet" href=""/>
+<link rel="stylesheet" href="">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Social network per le tue serie TV"/>
 </head>
 
-	<div class="page-center">
-		<div class="header" id = "header">
-				<!-- Page_Head -->
-		</div>
-		<div class="login-bar vertical-center">
-			<div class="non-logged-user align-right">
-				<span class="user-name"> <!-- Nome --> </span>
-				<button onClick="window.location.href='<!-- Url_Log -->'"><!-- Log --></button>
-			</div>
-		</div>
-		<div class="content">
-			<div id="risultati-ricerca">
-				
-			</div>
-			<!-- Side_Bar -->
+<body>
+    <body>
+	<!-- Sostituire con tag HTML5 <header>? Vedere pro e contro
+		Contro: XHTML5 non esiste -> in xhtml i tag header e footer non esistono.
 
-			<!-- contenuto effettivo della pagina -->
-			<div id="<!-- Nome_Pagina -->">
-				<div id = "contenuto-FAQ">
-						
-				</div>
-			</div>
+	-->
+	<div class="nav" id="nav">
+		<div class="nav__logo-container" id="nav__logo-container">
+			<a href="<!-- refHome -->" title="Homepage"> 
+				<img src="../logo/logo_TVhunter.png" alt="logo del sito, riporta alla homepage">		
+			</a>
 		</div>
+		
+		<div class="nav__ricerca">
+			<input type="text" placeholder="Cerca..">
+		</div>
+		
+		<ul class="nav__top-list list_no-style	" id="nav__top-list">
+			<li class="nav__esplora"><a href="<!-- refEsplora -->" title="Esplora">Esplora</a></li>
+			<li class="nav__restricted nav__profilo"><a href="<!-- refProfilo -->" title="Profilo">Profilo</a></li>
+			<li class="nav__restricted nav__preferiti"><a href="<!-- refPreferiti -->" title="Preferiti">Preferiti</a></li>
+		</ul>
+
+		<ul class="nav__bottom-list list_no-style">
+			<li class="nav__restricted nav__impostazioni"><a href="<!-- refImpostazioni -->" title="Impostazioni">Impostazioni</a></li>
+			<li class="nav__faq"><a href="<!-- refFaq -->"><acronym title="Frequently Asked Questions">FAQ</acronym></a></li>
+			<li class="nav__supporto"><a href="<!-- refSupporto -->" title="Supporto">Supporto </a></li>
+			<li class="nav__privacy"><a href="<!-- refPrivacy -->" title="Privacy"><span xml:lang="EN">Privacy</span></a></li>
+			<li class="nav__about"><a href="<!-- refAbout -->" title="About"><span xml:lang="EN">About</span></a></li>
+   		</ul>
+
+		<div class="nav__social">
+		</div>
+		<div class="nav__icon">
+			<a href="#footer-responsive-menu"><i class=""></i>Menu</a> <!-- TODO: aggiungere pulsante icons -->
+		</div>
+
 	</div>
+
+    <div class="page-center">      
+    	<div class="header" id = "header">
+			<div class="header-content">
+				<h1>Tv Hunter</h1> 
+			</div>
+		</div> 
+        <div id="login-bar" class="login-bar vertical-center">
+            <div class="non-logged-user align-right">
+                <span>Accesso non effettuato.</span>
+                <button><a href="">Accedi</a></button>
+            </div>
+            <div class="logged-user align-right display-none">
+                <span class="user-name"><a href="">dbarasti</a></span> (
+                <a href="">Logout</a>)
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="pagina-FAQ">
+            	<div id="descrizione-FAQ">            
+					<h1> FAQ </h1>					
+					<h2> 
+						La pagina presenta le risposte alle domande che più frequentemente sono state
+						richieste da parte degli utenti registrati agli amministratori. 
+					</h2>					
+				</div>
+
+				<div id="lista-domande-risposte">
+					<h1 class = "titolo-domanda"> Come ci si registra al sito? </h1>
+					<h2 class = "risposta"> 
+						Prova
+					</h2>
+
+					<h1 class = "titolo-domanda"> Prova </h1>
+					<h2 class = "risposta"> 
+						Prova
+					</h2>
+
+					<h1 class = "titolo-domanda"> Prova </h1>
+					<h2 class = "risposta"> 
+						Prova
+					</h2>
+					<h1 class = "titolo-domanda"> Prova </h1>
+					<h2 class = "risposta"> 
+						Prova
+					</h2>
+				</div>
+   		 	</div>
+            <div id="privacy-content"></div>
+        </div>
+    </div>
 
 	<div class="footer">
 		<div class="footer__nav">
@@ -65,13 +128,10 @@
 	</div>
 
 
+	</div>
 
-<script type="text/javascript">
 
-//Parte per div serie
-
-document.getElementById('dropdownJSSerie').className='dropdown';
-
+<script>
 function myFunction() {
     var x = document.getElementById("nav");
     var y = document.getElementById("nav__top-list");
@@ -88,23 +148,6 @@ function myFunction() {
         z.className = "nav__logo-container";
     }
 }
-
-//Parte modal
-var modal = document.getElementById('modal-login-social');
-
-function loginSocial(){
-	modal.style.display = "block";
-}
-function closeModal(){
-	modal.style.display = "none";
-}
-//When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
 
 //Parte Stagione->Episodio 
 function episodi(link) { 
@@ -151,3 +194,7 @@ function showResult(str) {
 
 </body>
 </html>
+   
+
+
+    
