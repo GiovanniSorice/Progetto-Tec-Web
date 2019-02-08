@@ -35,54 +35,54 @@ include_once 'DBConnection.php';
         $nav = implode("",file("../txt/nav.txt"));
         switch ($currentPage) {
             case "esplora":
-                $nav = preg_replace("/<!-- refEsplora -->/i", "selezionato", $nav);
+                $nav = preg_replace("/refEsplora/i", "selezionato", $nav);
                 break;
 
             case "profilo":
-                $nav = preg_replace("/<!-- refProfilo -->/i", "selezionato", $nav);
+                $nav = preg_replace("/refProfilo/i", "selezionato", $nav);
                 break;
 
             case "preferiti":
-                $nav = preg_replace("/<!-- refPreferiti -->/i", "selezionato", $nav);
+                $nav = preg_replace("/refPreferiti/i", "selezionato", $nav);
                 break;
 
             case "impostazioni":
-                $nav = preg_replace("/<!-- refImpostazioni -->/i", "selezionato", $nav);
+                $nav = preg_replace("/refImpostazioni/i", "selezionato", $nav);
                 break;
 
             case "faq":
-                $nav = preg_replace("/<!-- refFaq -->/i", "selezionato", $nav);
+                $nav = preg_replace("/refFaq/i", "selezionato", $nav);
                 break;
 
             case "supporto":
-                $nav = preg_replace("/<!-- refSupporto -->/i", "selezionato", $nav);
+                $nav = preg_replace("/refSupporto/i", "selezionato", $nav);
                 break;
 
             case "privacy":
-                $nav = preg_replace("/<!-- refPrivacy -->/i", "selezionato", $nav);
+                $nav = preg_replace("/refPrivacy/i", "selezionato", $nav);
                 break;
 
             case "about":
-                $nav = preg_replace("/<!-- refAbout -->/i", "selezionato", $nav);
+                $nav = preg_replace("/refAbout/i", "selezionato", $nav);
                 break;
 
             case "home":
-                $nav = preg_replace("/<!-- refHome -->/i", "#", $nav);
+                $nav = preg_replace("/refHome/i", "#", $nav);
                 break;
             
             default:
                 break;
         }
 
-        $nav = preg_replace("/<!-- refEsplora -->/i", "", $nav);
-        $nav = preg_replace("/<!-- refProfilo -->/i", "", $nav);
-        $nav = preg_replace("/<!-- refPreferiti -->/i", "", $nav);
-        $nav = preg_replace("/<!-- refImpostazioni -->/i", "", $nav);
-        $nav = preg_replace("/<!-- refFaq -->/i", "", $nav);
-        $nav = preg_replace("/<!-- refSupporto -->/i", "", $nav);
-        $nav = preg_replace("/<!-- refPrivacy -->/i", "", $nav);
-        $nav = preg_replace("/<!-- refAbout -->/i", "", $nav);
-        $nav = preg_replace("/<!-- refHome -->/i", "home.php", $nav);
+        $nav = preg_replace("/refEsplora/i", "", $nav);
+        $nav = preg_replace("/refProfilo/i", "", $nav);
+        $nav = preg_replace("/refPreferiti/i", "", $nav);
+        $nav = preg_replace("/refImpostazioni/i", "", $nav);
+        $nav = preg_replace("/refFaq/i", "", $nav);
+        $nav = preg_replace("/refSupporto/i", "", $nav);
+        $nav = preg_replace("/refPrivacy/i", "", $nav);
+        $nav = preg_replace("/refAbout/i", "", $nav);
+        $nav = preg_replace("/refHome/i", "home.php", $nav);
 
         return $nav;
     }
@@ -139,7 +139,7 @@ include_once 'DBConnection.php';
                 $Registrati =  
                 "<div class=\"iscriviti\">
                     <p>
-                        Per interagire con la community, per votare le tue serie TV preferite e molto altro <a href=\"signup.php\" title=\"registrati\">REGISTRATI</a> oppure <a href=\"login.php\" title=\"accedi\">EFFETTUA IL <span xml:lang=\"EN\">LOGIN</span></a>
+                        Per interagire con la community, per votare le tue serie TV preferite e molto altro <a href=\"signup.php\" title=\"registrati\">REGISTRATI</a> oppure <a href=\"login.php\" title=\"accedi\">EFFETTUA IL <span lang=\"EN\">LOGIN</span></a>
                     </p>
                 </div>";
                 $output = preg_replace("/<!-- Registrati -->/i", $Registrati , $output );
@@ -476,7 +476,7 @@ include_once 'DBConnection.php';
                 $Registrati =  
                 "<div class=\"iscriviti\">
                     <p>
-                        Per vedere l'elenco delle tue serie TV preferite <a href=\"signup.php\" title=\"registrati\">REGISTRATI</a> oppure <a href=\"login.php\" title=\"accedi\">EFFETTUA IL <span xml:lang=\"EN\">LOGIN</span></a>
+                        Per vedere l'elenco delle tue serie TV preferite <a href=\"signup.php\" title=\"registrati\">REGISTRATI</a> oppure <a href=\"login.php\" title=\"accedi\">EFFETTUA IL <span lang=\"EN\">LOGIN</span></a>
                     </p>
                 </div>";
 
@@ -523,7 +523,7 @@ include_once 'DBConnection.php';
                 $Registrati =  
                 "<div class=\"iscriviti\">
                     <p>
-                        Per accedere alla tua area personale <a href=\"signup.php\" title=\"registrati\">REGISTRATI</a> oppure <a href=\"login.php\" title=\"accedi\">EFFETTUA IL <span xml:lang=\"EN\">LOGIN</span></a>
+                        Per accedere alla tua area personale <a href=\"signup.php\" title=\"registrati\">REGISTRATI</a> oppure <a href=\"login.php\" title=\"accedi\">EFFETTUA IL <span lang=\"EN\">LOGIN</span></a>
                     </p>
                 </div>";
 
