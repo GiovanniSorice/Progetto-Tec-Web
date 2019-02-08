@@ -74,7 +74,7 @@ html, body{
 }
 
 #content__homepage .iscriviti{
-	background-color: #aaa;
+	background-color: transparent;
 	display: flex;
 	height: 5em;
 }
@@ -84,7 +84,6 @@ html, body{
 	margin: auto;
 	text-align: center;
 }
-
 
 @media screen and (min-width: 1025px){
 	#homepage-advice a:hover{
