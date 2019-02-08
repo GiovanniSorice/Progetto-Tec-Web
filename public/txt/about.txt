@@ -4,7 +4,7 @@
 					<!-- Introduzione al funzionamento/scopo del sito -->
 
 		<div class = "pagina-right">	 
-			<h3 class="titolo"><span xml:lang="EN">About Tv Hunter</span>:</h3>			
+			<h3 class="titolo"><span lang="EN">About Tv Hunter</span>:</h3>			
 			<p> 
 				
 				Il sito fornisce al visitatore una panoramica riguardante il mondo delle serie tv, mostrando le nuove uscite e mettendo in opportune sezioni le 				serie tv più votate e consigliate dalla community. <br/>

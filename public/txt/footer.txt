@@ -1,21 +1,21 @@
 	<div class="footer">
 		<div class="footer__nav">
 			<ul class="list_no-style">
-				<li><a href="">Supporto </a></li>
-				<li><a href=""><span xml:lang="EN">Privacy</span></a></li>
-				<li><a href="">About</a></li>
+				<li><a href="supporto.php">Supporto </a></li>
+				<li><a href="privacy.php"><span lang="EN">Privacy</span></a></li>
+				<li><a href="about.php">About</a></li>
 			</ul>	
 		</div>
 	</div>
 
 	<div id="footer-responsive-menu">
 		<ul class="list_no-style">
-			<li><a href="<!-- refEsplora -->" title="Esplora">Esplora</a></li>
-			<li><a href="<!-- refProfilo -->" title="Profilo">Profilo</a></li>
-			<li><a href="<!-- refPreferiti -->" title="Preferiti">Preferiti</a></li>
-			<li><a href="">Supporto </a></li>
-			<li><a href=""><span xml:lang="EN">Privacy</span></a></li>
-			<li><a href="">About</a></li>
+			<li><a href="esplora.php" title="Esplora">Esplora</a></li>
+			<li><a href="profilo.php" title="Profilo">Profilo</a></li>
+			<li><a href="preferiti.php" title="Preferiti">Preferiti</a></li>
+			<li><a href="supporto.php">Supporto </a></li>
+			<li><a href="privacy.php"><span lang="EN">Privacy</span></a></li>
+			<li><a href="about.php"><span lang="EN">About</span></a></li>
 		</ul>	
 	</div>
 
@@ -25,7 +25,7 @@
 
 
 
-<script type="text/javascript">
+<script>
 
 //Parte per div serie
 

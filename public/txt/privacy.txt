@@ -13,17 +13,9 @@
 				</p>
 				<h3 class = "sezione-privacy"> II. I nostri obiettivi per la tua privacy </h3>
 				<p>
-					<ol>
-						<li>
-							Abbiamo a cuore la tutela delle vostre informazioni. Perciò mettiamo in atto misure idonee elaborate specificatamente per evitare l’accesso non autorizzato e l’uso improprio dei vostri dati personali.
-						</li>
-						<li>
-								Per maggiori informazioni sulle procedure messe in atto leggi qui sotto.
-						</li>
-					</ol>
+					<strong>	</strong>
 				</p>
 				<h3 class = "sezione-privacy"> III. Informazioni collezionate e come </h3>
-				<p> 
 					<ol>
 						<li> 
 							<strong> Informazioni dell'account: </strong> certe funzionalità di sistema ti potrebbero richiedere di creare un account
@@ -31,15 +23,8 @@
 							mail, sesso e data di nascita. 
 						</li>
 						<li>
-							<strong> Quali procedure abbiamo predisposto per prevenire la violazione dei dati: </strong>
-							l'accesso ai dati è effettuato tramite una procedura di login con una mail univoca e una password. Il sistema protegge da attacchi di SQL injection e da altre tipologia di attacchi per il riperimento di informazioni sensibili. 
-						</li>
-						<li>
-							<strong> Da quali terze parti riceviamo i dati: </strong>
-							il sito permetterà in futuro il login tramite social network, Facebook e Twitter, oppure tramite Google+. 
-							Tutti questi dati verranno salvati all'interno del sito e verranno protetti tramiti meccanismi di sicurezza informatica.
+							
 						</li>
 					</ol>
-				</p>
 			</div>
 		</div>
