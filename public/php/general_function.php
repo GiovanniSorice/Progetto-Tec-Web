@@ -352,7 +352,7 @@ include_once 'DBConnection.php';
         for ($i = 1; $i <= $numero_stagioni; $i++) {
                 
             $link=(string)"http://".$host.$uri."/".$extra.$_GET["serie_id"]."&stagione_numero=".($i);
-            $stagione_collect=preg_replace("/<!-- Successivo -->/i","<a href=javascript:episodi('$link') >Stagione".($i)."</a>"." <!-- Successivo -->" , $stagione_collect );
+            $stagione_collect=preg_replace("/<!-- Successivo -->/i","<a href=\"javascript:episodi('$link')\" >Stagione".($i)."</a>"." <!-- Successivo -->" , $stagione_collect );
             $stagione_collect=preg_replace("/<!-- SuccessivoNS -->/i","<a href='$link' >Stagione".($i)."</a>"." <!-- SuccessivoNS -->" , $stagione_collect );           
             }
         $stagione_collect=preg_replace("/<!-- Successivo -->/i","" , $stagione_collect );
@@ -388,7 +388,7 @@ include_once 'DBConnection.php';
             $episodio_collect=preg_replace("/<!-- Successivo -->/i", 
             '<tr> '
             .'<td>'.$episodio["numero"].'</td>'
-                .'<td><a xml:lang="EN" href="">'.$episodio["titolo"].'</a></td>' //TODO: aggiungere href episodio
+                .'<td><a lang="EN" href="">'.$episodio["titolo"].'</a></td>' //TODO: aggiungere href episodio
             .'<td>'.date("d-m-Y", strtotime($episodio["data"])).'</td>'
             .'<td>'.($episodio["titolo"]==1?'Si':'NO').'</td>'
             .'</tr>'

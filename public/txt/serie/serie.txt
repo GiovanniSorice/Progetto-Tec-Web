@@ -13,7 +13,6 @@
 							<!-- Stagione -->
 						  </div>
 						</div>
-					</script>
 					<noscript>
 						<div class="dropdown">
 						  <button class="selettore-stagione">Stagione</button>
