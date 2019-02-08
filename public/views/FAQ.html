@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+<title>Tv Hunter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../css/styleProva.css"/>
+
+<link rel="icon" type="image/png" href="../img/favicomatic/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="../img/favicomatic/favicon-16x16.png" sizes="16x16" />
+<link rel="stylesheet" href=""/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Social network per le tue serie TV"/>
+</head>
+
+	<div class="page-center">
+		<div class="header" id = "header">
+				<!-- Page_Head -->
+		</div>
+		<div class="login-bar vertical-center">
+			<div class="non-logged-user align-right">
+				<span class="user-name"> <!-- Nome --> </span>
+				<button onClick="window.location.href='<!-- Url_Log -->'"><!-- Log --></button>
+			</div>
+		</div>
+		<div class="content">
+			<div id="risultati-ricerca">
+				
+			</div>
+			<!-- Side_Bar -->
+
+			<!-- contenuto effettivo della pagina -->
+			<div id="<!-- Nome_Pagina -->">
+				<div id = "contenuto-FAQ">
+						
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="footer__nav">
+			<ul class="list_no-style">
+				<li><a href="">Supporto </a></li>
+				<li><a href=""><span xml:lang="EN">Privacy</span></a></li>
+				<li><a href="">About</a></li>
+			</ul>	
+		</div>
+	</div>
+
+	<div id="footer-responsive-menu">
+		<ul class="list_no-style">
+			<li><a href="<!-- refEsplora -->" title="Esplora">Esplora</a></li>
+			<li><a href="<!-- refProfilo -->" title="Profilo">Profilo</a></li>
+			<li><a href="<!-- refPreferiti -->" title="Preferiti">Preferiti</a></li>
+			<li><a href="">Supporto </a></li>
+			<li><a href=""><span xml:lang="EN">Privacy</span></a></li>
+			<li><a href="">About</a></li>
+		</ul>	
+	</div>
+
+	<div id="torna-su">
+		<a href="#">Torna su</a>
+	</div>
+
+
+
+<script type="text/javascript">
+
+//Parte per div serie
+
+document.getElementById('dropdownJSSerie').className='dropdown';
+
+function myFunction() {
+    var x = document.getElementById("nav");
+    var y = document.getElementById("nav__top-list");
+    var z = document.getElementById("nav__logo-container");
+
+
+    if (x.className === "nav") {
+        x.className += " responsive";
+        y.className += " responsive";
+        z.className += " responsive";
+    } else {
+        x.className = "nav";
+        y.className = "nav__top-list";
+        z.className = "nav__logo-container";
+    }
+}
+
+//Parte modal
+var modal = document.getElementById('modal-login-social');
+
+function loginSocial(){
+	modal.style.display = "block";
+}
+function closeModal(){
+	modal.style.display = "none";
+}
+//When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+//Parte Stagione->Episodio 
+function episodi(link) { 
+	  if (window.XMLHttpRequest) { 
+	    // code for IE7+, Firefox, Chrome, Opera, Safari 
+	    xmlhttp=new XMLHttpRequest(); 
+	  } else {  // code for IE6, IE5 
+	    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP"); 
+	  } 
+	  xmlhttp.onreadystatechange=function() { 
+	    if (this.readyState==4 && this.status==200) { 
+	      document.getElementById("stagione").innerHTML=this.responseText; 
+	    } 
+	  } 
+	  xmlhttp.open("GET",String(link),true); 
+	  xmlhttp.send(); 
+	} 
+
+//Parte searchBar
+function showResult(str) {
+	  if (str.length==0) {
+	    document.getElementById("risultati-ricerca").innerHTML="";
+	    document.getElementById("risultati-ricerca").style.border="0px";
+	    return;
+	  }
+	  if (window.XMLHttpRequest) {
+	    // code for IE7+, Firefox, Chrome, Opera, Safari
+	    xmlhttp=new XMLHttpRequest();
+	  } else {  // code for IE6, IE5
+	    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	  xmlhttp.onreadystatechange=function() {
+	    if (this.readyState==4 && this.status==200) {
+	      document.getElementById("risultati-ricerca").innerHTML=this.responseText;
+	      document.getElementById("risultati-ricerca").style.border="1px solid #A5ACB2";
+	    }
+	  }
+	  xmlhttp.open("GET","../php/livesearch.php?q="+str,true);
+	  xmlhttp.send();
+	}
+	
+
+</script>
+
+</body>
+</html>

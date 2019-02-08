@@ -6,11 +6,12 @@
 }
 
 #info-privacy h2, #terms h2 {
-    font-family: ProximaNova; 
+    font-family: 'Roboto', sans-serif;
     color: #14181c; 
 }
 
 .sezione-privacy{
+		font-family: 'Roboto', sans-serif;
         text-decoration: underline;
 }
 
