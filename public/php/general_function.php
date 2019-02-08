@@ -103,7 +103,7 @@ include_once 'DBConnection.php';
         $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
 
 
-        $query="select id,titolo,miniatura,descrizione,consigliato,non_consigliato, CAST((consigliato)/(consigliato+non_consigliato)*100 AS int) AS perc_consigliato from serie order by perc_consigliato DESC LIMIT 3";
+        $query="select id,titolo,miniatura,descrizione,consigliato,non_consigliato, (consigliato)/(consigliato+non_consigliato)*100 AS perc_consigliato from serie order by perc_consigliato DESC LIMIT 3";
             //Seleziono la lista delle serie tv del momento
             $shows=resultQueryToTable($connection->query($query));
             
@@ -116,7 +116,7 @@ include_once 'DBConnection.php';
                 $show_collect=preg_replace("/<!-- Immagine -->/i",$shows["miniatura"] , $show_collect );
                 $show_collect=preg_replace("/<!-- Titolo -->/i",$shows["titolo"] , $show_collect );
                 $show_collect=preg_replace("/<!-- Descrizione -->/i",$shows["descrizione"] , $show_collect );
-                $show_collect=preg_replace("/<!-- Consigliato -->/i", $shows["perc_consigliato"] , $show_collect );
+                $show_collect=preg_replace("/<!-- Consigliato -->/i", (int)$shows["perc_consigliato"] , $show_collect );
                 $show_collect=preg_replace("/<!-- Url_Show -->/i","http://$host$uri/$extra".$shows["id"] , $show_collect );  
                 if($first == 1){
                     $show_collect=preg_replace("/<!-- Div_Consigliati -->/i", "<div class=\"consigliati__show\" id=\"first-show-anchor\">" , 
@@ -321,13 +321,13 @@ include_once 'DBConnection.php';
         //Titolo, voto e consiglio
 
         $output = preg_replace("/<!-- Page_Head -->/i", $title, $output );
-        $query = "select titolo,voto,consigliato,non_consigliato,preferiti,CAST((consigliato)/(consigliato+non_consigliato)*100 AS int) AS perc_consigliato from serie where id=".$_GET["serie_id"];
+        $query = "select titolo,voto,consigliato,non_consigliato,preferiti,(consigliato)/(consigliato+non_consigliato)*100 AS perc_consigliato from serie where id=".$_GET["serie_id"];
         $result = resultQueryToTable($connection->query($query));
         $output = preg_replace("/<!-- Titolo -->/i",$result[0]["titolo"] , $output );
         $output = preg_replace("/<!-- Voto -->/i",$result[0]["voto"] , $output );
 
         if ($result[0]["perc_consigliato"] > 0)
-            $output = preg_replace("/<!-- Percentuale_Consigliati -->/i",$result[0]["perc_consigliato"] , $output );
+            $output = preg_replace("/<!-- Percentuale_Consigliati -->/i",(int)$result[0]["perc_consigliato"] , $output );
         else
             $output = preg_replace("/<!-- Percentuale_Consigliati -->/i", '0' , $output );
 
