@@ -1,0 +1,67 @@
+            <div id="pagina-amministratore">
+				<h1> Area Amministratore </h1>		
+				<h2> 
+					Benvenuto nell'area riservata agli amministratori del sito, da qui potrai vedere i commenti che sono stati segnalati 
+					e le i messaggi che sono stati spediti dagli utenti, a lato è possibile vedere il nome dell'utente che ha spedito 
+					il messaggio. 
+				</h2>
+
+				<div class= "parte-segnalazioni">
+					<div id="descrizione-tabella-segnalazioni">
+						<strong>Segnalazioni effettuate</strong>: per ogni segnalazione è presente il nome dell'utente che ha segnalato e il commento.
+					</div>				
+					<table id="segnalazioni">									
+							<tr>
+    							<th>Nome Utente</th>
+    							<th>Commento</th>
+    							<th>Elimina	</th>
+  							</tr>
+					
+							<!-- Segnalazioni -->					
+					</table>
+				</div>
+
+				<div id="messaggi">
+					<div id="descrizione-tabella-messaggi">
+						<strong>Messaggi</strong>: per ogni messaggio ricevuto è presente il nome dell'utente che l'ha spedito e il suo contenuto.
+					</div>	
+
+					<table id="tabella-messaggi">
+						<tr>
+    						<th>Nome Utente</th>
+    						<th>Messaggio</th>
+    						<th>Elimina</th>
+  						</tr>
+  						<tr>
+  							<td class="nome-utente">Nome utente</td>
+							<td class="messaggio-inviato">Messaggio</td>
+  							<td class="spazio-eliminazione">
+    							<a href="www.google.com">
+									<img src="../img/admin/trash.png" class= "elimina-commento" alt="immagine cestino"></img>
+								</a>
+    						</td>   
+  						</tr>
+  							<tr>
+  							<td class="nome-utente">Nome utente</td>
+							<td class="messaggio-inviato">Messaggio</td>
+  							<td class="spazio-eliminazione">
+    							<a href="www.google.com">
+									<img src="../img/admin/trash.png" class= "elimina-commento" alt="immagine cestino"></img>
+								</a>
+    						</td>   
+  						</tr>
+  							<tr>
+  							<td class="nome-utente">Nome utente</td>
+							<td class="messaggio-inviato">Messaggio</td>
+  							<td class="spazio-eliminazione">
+    							<a href="www.google.com">
+									<img src="../img/admin/trash.png" class= "elimina-commento" alt="immagine cestino"></img>
+								</a>
+    						</td>   
+  						</tr>
+					</table>
+				</div>
+
+   		 	</div>
+            <div id="privacy-content"></div>
+        </div>

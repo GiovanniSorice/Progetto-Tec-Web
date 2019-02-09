@@ -22,6 +22,7 @@
 			<li class="nav__supporto refSupporto"><a href="supporto.php" title="Supporto">Supporto </a></li>
 			<li class="nav__privacy refPrivacy"><a href="privacy.php" title="Privacy"><span lang="EN">Privacy</span></a></li>
 			<li class="nav__about refAbout"><a href="about.php" title="About"><span lang="EN">About</span></a></li>
+   			<!-- Amministrazione -->
    		</ul>
 
 		<div class="nav__social">

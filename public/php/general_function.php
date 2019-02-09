@@ -33,6 +33,12 @@ include_once 'DBConnection.php';
 
     function printNavbar($currentPage){  
         $nav = implode("",file("../txt/nav.txt"));
+        
+        if(array_key_exists('user_tipo',$_SESSION) && !empty($_SESSION['user_tipo']) && $_SESSION['user_tipo']=="admin"){
+            $nav = preg_replace("/<!-- Amministrazione -->/i", '<li class="nav__impostazioni refAmministrazione"><a href="amministrazione.php" title="Amministrazione">Amministrazione</a></li>', $nav);
+        }
+            
+        
         switch ($currentPage) {
             case "esplora":
                 $nav = preg_replace("/refEsplora/i", "selezionato", $nav);
@@ -70,6 +76,10 @@ include_once 'DBConnection.php';
                 $nav = preg_replace("/refHome/i", "#", $nav);
                 break;
             
+            case "amministrazione":
+                $nav = preg_replace("/refAmministrazione/i", "selezionato", $nav);
+                break;
+                
             default:
                 break;
         }
@@ -403,10 +413,10 @@ include_once 'DBConnection.php';
         
         if(!array_key_exists('user_id',$_SESSION) && empty($_SESSION['user_id'])){
             
-            $query="select b.id, b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where a.id=".$_GET["serie_id"]." and b.id not in 
+            $query="select b.id, b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where b.cancellato=0 and a.id=".$_GET["serie_id"]." and b.id not in 
             (select id_ref from segnalazione where tipo=1)";
         }else{
-            $query="select b.id, b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where a.id=".$_GET["serie_id"]." and b.id not in
+            $query="select b.id, b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where b.cancellato=0 and a.id=".$_GET["serie_id"]." and b.id not in
             (select id_ref from segnalazione where tipo=1 and id_utente=".$_SESSION["user_id"].")";            
         }
         $posts=resultQueryToTable($connection->query($query));
@@ -685,5 +695,62 @@ include_once 'DBConnection.php';
 
         return $output;
     }
+    
+    function printPageAmministrazione($output){
+        global $connection;
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $extra ="login.php";
+        
+        if(!array_key_exists('user_id',$_SESSION) && empty($_SESSION['user_id'])){
+            header("Location: http://$host$uri/$extra");            
+        }
+        
+        
+        $head_page = implode("", file("../txt/pagehead.txt"));
+        
+        if(array_key_exists('user_tipo',$_SESSION) && !empty($_SESSION['user_tipo']) && $_SESSION['user_tipo']=="admin"){           
+            $amministratore = implode("", file("../txt/amministrazione.txt"));
+        }else{
+            $amministratore="Solo gli admin possono accedere a questa pagina";
+        }
+        
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "amministazione", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        
+        $query="select a.id, a.id_ref, c.username, a.tipo, b.testo from (segnalazione a join post b on a.id_ref=b.id) join utente c on a.id_utente=c.id where a.checked=0";
+        
+        //Seleziono la lista delle segnalazioni
+        $segnalazioni=resultQueryToTable($connection->query($query));
+        
+        $segnalazioni_collect="<!-- Successivo -->";
+        
+        $ammAct="amministrazione_action.php?";
+        foreach ($segnalazioni as $segnalazione) {
+            $link=(string)"http://".$host.$uri."/".$ammAct."post_id=".$segnalazione["id_ref"]."&segnalazione_tipo=".$segnalazione["tipo"];
+            
+            $segnalazioni_collect=preg_replace("/<!-- Successivo -->/i",
+                '<tr> '
+                .'<td class="nome-utente">'.$segnalazione["username"].'</td>'
+                .'<td class="tipo-segnalazione">'.$segnalazione["testo"].'</td>'
+                .'<td class="spazio-eliminazione">'
+                    .'<a href="'.$link.'">'
+                    .'<img src="../img/admin/trash.png" class= "elimina-commento" alt="immagine cestino"></img>'
+                    .' </a>'
+                .'</td>'
+                .'</tr>'
+                .'<!-- Successivo -->'
+                , $segnalazioni_collect );
+        }
+        
+        $segnalazioni_collect=preg_replace("/<!-- Successivo -->/i","" , $segnalazioni_collect );
+        $amministratore=preg_replace("/<!-- Segnalazioni -->/i",$segnalazioni_collect, $amministratore );
+        
+        
+        $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $amministratore , $output );
+        
+        return $output;
+    }
+    
     
     ?>
