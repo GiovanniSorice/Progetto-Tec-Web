@@ -171,6 +171,7 @@ CREATE TABLE segnalazione (
   id int  AUTO_INCREMENT PRIMARY KEY,
   id_ref int,
   id_utente int,
+  checked boolean NOT NULL DEFAULT '0',
   tipo enum ('post','commento','risposta'),
 
   UNIQUE(id_utente, id_ref),
