@@ -727,17 +727,23 @@ include_once 'DBConnection.php';
         
         $ammAct="amministrazione_action.php?";
         foreach ($segnalazioni as $segnalazione) {
-            $link=(string)"http://".$host.$uri."/".$ammAct."post_id=".$segnalazione["id_ref"]."&segnalazione_tipo=".$segnalazione["tipo"];
+            $link=(string)"http://".$host.$uri."/".$ammAct."post_id=".$segnalazione["id_ref"]."&segnalazione_tipo=".$segnalazione["tipo"]."&elimina=";
             
             $segnalazioni_collect=preg_replace("/<!-- Successivo -->/i",
                 '<tr> '
                 .'<td class="nome-utente">'.$segnalazione["username"].'</td>'
                 .'<td class="tipo-segnalazione">'.$segnalazione["testo"].'</td>'
                 .'<td class="spazio-eliminazione">'
-                    .'<a href="'.$link.'">'
+                    .'<a href="'.$link.'true">'
                     .'<img src="../img/admin/trash.png" class= "elimina-commento" alt="immagine cestino"></img>'
                     .' </a>'
                 .'</td>'
+                .'<td class="spazio-spunta">'
+                .'<a href="'.$link.'false">'
+                .'&#10004;'
+                .' </a>'
+                .'</td>'
+                
                 .'</tr>'
                 .'<!-- Successivo -->'
                 , $segnalazioni_collect );

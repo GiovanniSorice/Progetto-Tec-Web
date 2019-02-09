@@ -14,7 +14,8 @@
 							<tr>
     							<th>Nome Utente</th>
     							<th>Commento</th>
-    							<th>Elimina	</th>
+    							<th>Elimina</th>
+    							<th>Spunta</th>    							
   							</tr>
 					
 							<!-- Segnalazioni -->					

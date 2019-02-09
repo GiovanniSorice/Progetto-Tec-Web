@@ -11,14 +11,14 @@ if(!array_key_exists('user_tipo',$_SESSION) && empty($_SESSION['user_tipo']) && 
     return ;
 }
 
-if(!array_key_exists('post_id',$_GET) && empty($_GET['post_id']) && !array_key_exists('segnalazione_tipo',$_GET) && empty($_GET['segnalazione_tipo'])){
+if(!array_key_exists('post_id',$_GET) && empty($_GET['post_id']) && !array_key_exists('segnalazione_tipo',$_GET) && empty($_GET['segnalazione_tipo'])&& !array_key_exists('elimina',$_GET) && empty($_GET['elimina'])){
     header("Location: http://$host$uri/$extra");
     return;
 }
 $query=" UPDATE segnalazione SET checked=1 where id_ref=? and tipo=?";
 $stmt=executeQuery($query,array(&$_GET["post_id"],&$_GET["segnalazione_tipo"]),array("ss"));
 
-if($stmt!=null){
+if($stmt!=null && $_GET["elimina"]=="true"){
     if($stmt->affected_rows>0){
         $stmt->close();
         $tabella="";
