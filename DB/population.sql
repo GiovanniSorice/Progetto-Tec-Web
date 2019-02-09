@@ -19,10 +19,10 @@ TRUNCATE TABLE commento;
 -- utente
 -- INSERT INTO Utente VALUES(id, user, pass, mail,fotoprofilo, nome, cognome, dataNasc, tipo);
 INSERT INTO utente VALUES ('1', 'admin', '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', 'admin@support.it', '../img/fotoProfilo/user.png', 'Lorenzo', 'Busin', '1997/05/16', 'admin');
-INSERT INTO utente VALUES ('2', 'user', '04F8996DA763B7A969B1028EE3007569EAF3A635486DDAB211D512C85B9DF8FB', 'rossiluca@gmail.com','../img/fotoProfilo/user.png', 'Luca', 'Rossi', '1997/04/21', 'user');
-INSERT INTO utente VALUES ('3', 'user1', 'user1', 'cornish3@google.com.br' ,'../img/fotoProfilo/user.png', 'Annamaria', 'Cornish', '1988/02/21', 'user');
-INSERT INTO utente VALUES ('4', 'user2', 'user2', 'cchinghnam@yahoo.com','../img/fotoProfilo/user.png', 'Cyndi', 'Highnam', '1997/01/08', 'user');
-INSERT INTO utente VALUES ('5', 'user3', 'user3', 'johnslo@gmail.com','../img/fotoProfilo/user.png', 'John', 'Slowan', '1994/09/06', 'user');
+INSERT INTO utente VALUES ('2', 'user', '04F8996DA763B7A969B1028EE3007569EAF3A635486DDAB211D512C85B9DF8FB', 'user@gmail.com','../img/fotoProfilo/user.png', 'Luca', 'Rossi', '1997/04/21', 'user');
+INSERT INTO utente VALUES ('3', 'Anna', 'user1', 'cornish3@google.com.br' ,'../img/fotoProfilo/user.png', 'Annamaria', 'Cornish', '1988/02/21', 'user');
+INSERT INTO utente VALUES ('4', 'Andrea', 'user2', 'andreaverdi@yahoo.com','../img/fotoProfilo/user.png', 'Andrea', 'Verdi', '1997/01/08', 'user');
+INSERT INTO utente VALUES ('5', 'John', 'user3', 'johnslo@gmail.com','../img/fotoProfilo/user.png', 'John', 'Slowan', '1994/09/06', 'user');
 
 
 -- serie
@@ -67,17 +67,37 @@ INSERT INTO consiglio VALUES('7', '2', '0');
 
 
 -- post
--- INSERT INTO post VALUES(id, idserie, idutente, testo);
-INSERT INTO post VALUES('1', '1', '3', 'Wow');
-INSERT INTO post VALUES('2', '1', '2', 'Aspettando la nuova stagione...');
-INSERT INTO post VALUES('3', '1', '4', 'Stupendo!');
-INSERT INTO post VALUES('4', '2', '4', 'Consigliatissimo!!!');
-INSERT INTO post VALUES('5', '2', '2', 'Mi aspettavo qualcosa di meglio');
-INSERT INTO post VALUES('6', '3', '2', 'Molto bello!');
-INSERT INTO post VALUES('7', '3', '3', 'Gli zombie sembrano finti');
-INSERT INTO post VALUES('8', '6', '3', 'La serie TV migliore in assoluto!');
-INSERT INTO post VALUES('9', '6', '3', 'Sempre stupenda');
-INSERT INTO post VALUES('10', '6', '3', 'Intramontabile!!');
+-- INSERT INTO post VALUES(id, idserie, idutente, testo,cancellato);
+INSERT INTO post VALUES('1', '1', '3', 'Wow','0');
+INSERT INTO post VALUES('2', '1', '2', 'Aspettando la nuova stagione...','0');
+INSERT INTO post VALUES('3', '1', '4', 'Stupenda!','0');
+INSERT INTO post VALUES('4', '2', '4', 'Consigliatissima!!!','0');
+INSERT INTO post VALUES('5', '2', '2', 'Mi aspettavo qualcosa di meglio','0');
+INSERT INTO post VALUES('6', '3', '2', 'Molto bella!','0');
+INSERT INTO post VALUES('7', '3', '3', 'Consigliata','0');
+INSERT INTO post VALUES('8', '6', '4', 'La serie TV migliore in assoluto!','0');
+INSERT INTO post VALUES('9', '6', '3', 'Sempre stupenda','0');
+INSERT INTO post VALUES('10', '6', '4', 'Intramontabile!!','0');
+INSERT INTO post VALUES('11', '4', '3', 'Bella bella','0');
+INSERT INTO post VALUES('12', '4', '2', 'Intramontabile!!','0');
+INSERT INTO post VALUES('13', '5', '3', 'La sconsiglio','0');
+INSERT INTO post VALUES('14', '5', '4', 'Molto consigliata agli amanti del genere','0');
+INSERT INTO post VALUES('15', '7', '3', 'La sconsiglio','0');
+INSERT INTO post VALUES('16', '7', '4', 'Wow','0');
+INSERT INTO post VALUES('17', '8', '2', 'Bella bella','0');
+INSERT INTO post VALUES('18', '8', '3', 'Consigliata','0');
+INSERT INTO post VALUES('19', '9', '4', 'Wow','0');
+INSERT INTO post VALUES('20', '9', '2', 'Mi aspettavo qualcosa di meglio','0');
+INSERT INTO post VALUES('21', '10', '3', 'Consigliata','0');
+INSERT INTO post VALUES('22', '10', '4', 'Molto consigliata agli amanti del genere','0');
+INSERT INTO post VALUES('23', '11', '2', 'Consigliata','0');
+INSERT INTO post VALUES('24', '11', '3', 'Wow','0');
+INSERT INTO post VALUES('25', '12', '4', 'Sempre stupenda','0');
+INSERT INTO post VALUES('26', '12', '2', 'La serie TV migliore in assoluto!','0');
+INSERT INTO post VALUES('27', '13', '3', 'Consigliata','0');
+INSERT INTO post VALUES('28', '13', '4', 'Mi aspettavo qualcosa di meglio','0');
+INSERT INTO post VALUES('29', '14', '2', 'Molto consigliata agli amanti del genere','0');
+INSERT INTO post VALUES('30', '14', '3', 'La serie TV migliore in assoluto!','0');
 
 
 -- commento
@@ -216,4 +236,12 @@ INSERT INTO voto VALUES('2', '5', '5');
 
 
 -- segnalazione
--- INSERT INTO segnalazione VALUES(id, nome, cognome, bio);
+-- INSERT INTO segnalazione VALUES(id, id_ref, id_utente, checked,tipo);
+INSERT INTO segnalazione VALUES('1', '2', '3','0','post');
+INSERT INTO segnalazione VALUES('2', '2', '2','0','post');
+INSERT INTO segnalazione VALUES('3', '5', '2','0','post');
+INSERT INTO segnalazione VALUES('4', '6', '4','0','post');
+INSERT INTO segnalazione VALUES('5', '7', '4','0','post');
+INSERT INTO segnalazione VALUES('6', '8', '2','0','post');
+INSERT INTO segnalazione VALUES('7', '8', '4','0','post');
+INSERT INTO segnalazione VALUES('8', '10', '2','0','post');

@@ -62,6 +62,7 @@ CREATE TABLE post (
   id_serie int,
   id_utente int,
   testo varchar (500) NOT NULL,
+  cancellato boolean NOT NULL DEFAULT '0',
 
   FOREIGN KEY (id_serie) REFERENCES serie(id) ,
   FOREIGN KEY (id_utente) REFERENCES utente(id)
