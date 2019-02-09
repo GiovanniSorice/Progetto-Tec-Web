@@ -92,48 +92,48 @@ DELIMITER ;
 
 
 
--- episodio votato
-DROP TRIGGER IF EXISTS VOTE_EP;
+-- serie votata
+DROP TRIGGER IF EXISTS VOTE_SERIE;
 DELIMITER $$
-CREATE TRIGGER VOTE_EP AFTER INSERT ON voto
+CREATE TRIGGER VOTE_SERIE AFTER INSERT ON voto
  FOR EACH ROW 
  BEGIN
- 	UPDATE episodio SET episodio.voto = (SELECT AVG(valutazione)
+ 	UPDATE serie SET serie.voto = (SELECT AVG(valutazione)
  								   		 FROM voto
- 								   		 WHERE id_episodio = new.id_episodio)
-	WHERE episodio.id = new.id_episodio;
-END;
-$$
-DELIMITER ;
-
-
--- cambiato voto episodio
-DROP TRIGGER IF EXISTS UPDATE_VOTE_EP;
-DELIMITER $$
-CREATE TRIGGER UPDATE_VOTE_EP AFTER UPDATE ON voto
- FOR EACH ROW 
- BEGIN
- 	UPDATE episodio SET episodio.voto = (SELECT AVG(valutazione)
- 								   		 FROM voto
- 								   		 WHERE id_episodio = new.id_episodio)
-	WHERE episodio.id = new.id_episodio;
-END;
-$$
-DELIMITER ;
-
-
-
-
--- aggiornato voro della serie
-DROP TRIGGER IF EXISTS UPDATE_VOTE;
-DELIMITER $$
-CREATE TRIGGER UPDATE_VOTE AFTER UPDATE ON episodio
- FOR EACH ROW 
- BEGIN
- 	UPDATE serie SET serie.voto = (SELECT AVG(voto)
- 								   FROM episodio
- 								   WHERE id_serie = new.id_serie)
+ 								   		 WHERE id_serie = new.id_serie)
 	WHERE serie.id = new.id_serie;
+END;
+$$
+DELIMITER ;
+
+
+-- cambiato voto serie
+DROP TRIGGER IF EXISTS UPDATE_VOTE_SERIE;
+DELIMITER $$
+CREATE TRIGGER UPDATE_VOTE_SERIE AFTER UPDATE ON voto
+ FOR EACH ROW 
+ BEGIN
+ 	UPDATE serie SET serie.voto = (SELECT AVG(valutazione)
+ 								   		 FROM voto
+ 								   		 WHERE id_serie = new.id_serie)
+	WHERE serie.id = new.id_serie;
+END;
+$$
+DELIMITER ;
+
+
+
+
+-- tolto voto dalla serie
+DROP TRIGGER IF EXISTS DELETE_VOTE_SERIE;
+DELIMITER $$
+CREATE TRIGGER DELETE_VOTE_SERIE AFTER DELETE ON voto
+ FOR EACH ROW 
+ BEGIN
+ 	UPDATE serie SET serie.voto = (SELECT AVG(valutazione)
+ 								   FROM voto
+ 								   WHERE id_serie = old.id_serie)
+	WHERE serie.id = old.id_serie;
 END;
 $$
 DELIMITER ;

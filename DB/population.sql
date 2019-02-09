@@ -15,6 +15,7 @@ TRUNCATE TABLE episodio;
 TRUNCATE TABLE visto;
 TRUNCATE TABLE post;
 TRUNCATE TABLE commento;
+TRUNCATE TABLE segnalazione;
 
 -- utente
 -- INSERT INTO Utente VALUES(id, user, pass, mail,fotoprofilo, nome, cognome, dataNasc, tipo);
@@ -191,27 +192,27 @@ INSERT INTO serie_genere VALUES('4', '1');
 
 
 -- episodio
--- INSERT INTO episodio VALUES(id, titolo, desc, num, data, stagione, visualizzato, voto, idserie);
-INSERT INTO episodio VALUES('1', 'Discesa', 'Il chimico Cucaracha consegna un carico di stupefacenti al contrabbandiere Pablo Escobar.', '1', '2015/08/28', '1', '0', '0', '1');
-INSERT INTO episodio VALUES('2', 'La spada di Simon Bolivar', 'Il gruppo comunista radicale M-19 sfida i narcos, mentre Murphy scopre i metodi delle forze armate colombiane dal suo nuovo collega Peña.', '2', '2015/08/28', '1', '0', '0', '1');
-INSERT INTO episodio VALUES('3', 'Finalmente libero', 'Dopo una massiccia operazione militare volta a catturare Pablo, la sua famiglia si riunisce e i suoi nemici si preoccupano. Steve e Connie discutono di sicurezza.', '1', '2016/09/02', '2', '0', '0', '1');
-INSERT INTO episodio VALUES('4', 'La strategia del capo', 'I gentiluomini di Cali convocano i soci per un annuncio a sorpresa sul futuro della loro attivit&agrave;.', '1', '2017/09/01', '3', '0', '0', '1');
-INSERT INTO episodio VALUES('5', 'Sul ring', 'Matt Murdock e il suo amico Foggy Nelson aprono uno studio legale indipendente: la loro prima cliente &egrave; una segretaria della Union Allied, Karen, accusata di omicidio.', '1', '2015/04/10', '1', '0', '0', '2');
-INSERT INTO episodio VALUES('6', 'Bang!', 'Una nuova minaccia riempie il vuoto lasciato da Fisk a Hells Kitchen. Murdock e Foggy accettano un cliente dal passato discutibile.', '1', '2016/03/18', '2', '0', '0', '2');
-INSERT INTO episodio VALUES('7', 'I giorni andati', 'Rick si sveglia in un ospedale, dopo aver avuto un incidente sul campo dove &egrave; rimasto ferito, e scopre la drammatica verit&agrave;: la sua famiglia &egrave; scomparsa, tutti sono scomparsi. O peggio, strane e orribili creature assetate di sangue...', '1', '2010/10/31', '1', '0', '0', '3');
-INSERT INTO episodio VALUES('8', 'La strada da percorrere', 'La seconda stagione si apre con Rick e il suo gruppo che scappano da Atlanta e vengono minacciati da un pericolo mai incontrato prima, altrove un gruppo cerca una persona scomparsa.', '1', '2011/10/16', '2', '0', '0', '3');
-INSERT INTO episodio VALUES('9', 'Steven vede un fantasma', 'Indagando su una storia di fantasmi per il suo ultimo romanzo, uno scettico Steven riceve una telefonata dalla sorella che innesca una catena di eventi fatali.', '1', '2018/10/12', '1', '0', '0', '4');
-INSERT INTO episodio VALUES('10', 'Il clan dei Savastano', 'Il controllo di Pietro Savastano, potente boss del Napoletano, &egrave; minacciato dal clan rivale di Salvatore Conte. Una serie di agguati e intimidazioni apre la guerra per il controllo del territorio.', '1', '2014/05/06', '1', '0', '0', '5');
-INSERT INTO episodio VALUES('11', 'Questione di chimica', 'Dopo la diagnosi di cancro terminale ai polmoni, un insegnante di chimica del liceo si d&agrave; alla produzione di metanfetamine per garantire la sopravvivenza della famiglia.', '1', '2008/01/20', '1', '0', '0', '6');
-INSERT INTO episodio VALUES('12', 'Tutto cambia', 'Mentre pianificano una grossa vendita finale di stupefacenti, Walt e Jesse si preoccupano del fatto che possano ucciderli.', '1', '2009/03/08', '2', '0', '0', '6');
-INSERT INTO episodio VALUES('13', 'Ciao amico', 'Elliot Alderson &egrave; un ingegnere informatico, vive a New York e lavora presso una azienda di sicurezza informatica AllSafe Security. Soffre di paranoia ed &egrave; convinto di essere pedinato.', '1', '2015/06/24', '1', '0', '0', '7');
-INSERT INTO episodio VALUES('14', 'Uno studio in rosa', 'Una donna in rosa &egrave; la quarta vittima di una serie di suicidi apparentemente scollegati, ma Sherlock Holmes capisce che in realt&agrave; si tratta di terribili omicidi.', '2', '2010/07/25', '1', '0', '0', '8');
+-- INSERT INTO episodio VALUES(id, titolo, desc, num, data, stagione, visualizzato, idserie);
+INSERT INTO episodio VALUES('1', 'Discesa', 'Il chimico Cucaracha consegna un carico di stupefacenti al contrabbandiere Pablo Escobar.', '1', '2015/08/28', '1', '0', '1');
+INSERT INTO episodio VALUES('2', 'La spada di Simon Bolivar', 'Il gruppo comunista radicale M-19 sfida i narcos, mentre Murphy scopre i metodi delle forze armate colombiane dal suo nuovo collega Peña.', '2', '2015/08/28', '1', '0', '1');
+INSERT INTO episodio VALUES('3', 'Finalmente libero', 'Dopo una massiccia operazione militare volta a catturare Pablo, la sua famiglia si riunisce e i suoi nemici si preoccupano. Steve e Connie discutono di sicurezza.', '1', '2016/09/02', '2', '0', '1');
+INSERT INTO episodio VALUES('4', 'La strategia del capo', 'I gentiluomini di Cali convocano i soci per un annuncio a sorpresa sul futuro della loro attivit&agrave;.', '1', '2017/09/01', '3', '0', '1');
+INSERT INTO episodio VALUES('5', 'Sul ring', 'Matt Murdock e il suo amico Foggy Nelson aprono uno studio legale indipendente: la loro prima cliente &egrave; una segretaria della Union Allied, Karen, accusata di omicidio.', '1', '2015/04/10', '1', '0', '2');
+INSERT INTO episodio VALUES('6', 'Bang!', 'Una nuova minaccia riempie il vuoto lasciato da Fisk a Hells Kitchen. Murdock e Foggy accettano un cliente dal passato discutibile.', '1', '2016/03/18', '2', '0', '2');
+INSERT INTO episodio VALUES('7', 'I giorni andati', 'Rick si sveglia in un ospedale, dopo aver avuto un incidente sul campo dove &egrave; rimasto ferito, e scopre la drammatica verit&agrave;: la sua famiglia &egrave; scomparsa, tutti sono scomparsi. O peggio, strane e orribili creature assetate di sangue...', '1', '2010/10/31', '1', '0','3');
+INSERT INTO episodio VALUES('8', 'La strada da percorrere', 'La seconda stagione si apre con Rick e il suo gruppo che scappano da Atlanta e vengono minacciati da un pericolo mai incontrato prima, altrove un gruppo cerca una persona scomparsa.', '1', '2011/10/16', '2', '0', '3');
+INSERT INTO episodio VALUES('9', 'Steven vede un fantasma', 'Indagando su una storia di fantasmi per il suo ultimo romanzo, uno scettico Steven riceve una telefonata dalla sorella che innesca una catena di eventi fatali.', '1', '2018/10/12', '1', '0', '4');
+INSERT INTO episodio VALUES('10', 'Il clan dei Savastano', 'Il controllo di Pietro Savastano, potente boss del Napoletano, &egrave; minacciato dal clan rivale di Salvatore Conte. Una serie di agguati e intimidazioni apre la guerra per il controllo del territorio.', '1', '2014/05/06', '1', '0', '5');
+INSERT INTO episodio VALUES('11', 'Questione di chimica', 'Dopo la diagnosi di cancro terminale ai polmoni, un insegnante di chimica del liceo si d&agrave; alla produzione di metanfetamine per garantire la sopravvivenza della famiglia.', '1', '2008/01/20', '1', '0', '6');
+INSERT INTO episodio VALUES('12', 'Tutto cambia', 'Mentre pianificano una grossa vendita finale di stupefacenti, Walt e Jesse si preoccupano del fatto che possano ucciderli.', '1', '2009/03/08', '2', '0', '6');
+INSERT INTO episodio VALUES('13', 'Ciao amico', 'Elliot Alderson &egrave; un ingegnere informatico, vive a New York e lavora presso una azienda di sicurezza informatica AllSafe Security. Soffre di paranoia ed &egrave; convinto di essere pedinato.', '1', '2015/06/24', '1', '0','7');
+INSERT INTO episodio VALUES('14', 'Uno studio in rosa', 'Una donna in rosa &egrave; la quarta vittima di una serie di suicidi apparentemente scollegati, ma Sherlock Holmes capisce che in realt&agrave; si tratta di terribili omicidi.', '2', '2010/07/25', '1', '0', '8');
 
-INSERT INTO episodio VALUES('15', 'Senza ritorno', '', '2', '2008-01-27', '1', '0', '0', '6');
-INSERT INTO episodio VALUES('16', 'Conseguenze radicali', '', '3', '2008-02-10', '1', '0', '0', '6');
-INSERT INTO episodio VALUES('17', 'Una malattia scomoda', '', '4', '2009-03-15', '1', '0', '0', '6');
-INSERT INTO episodio VALUES('18', 'Grigliato', '', '2', '2009-03-20', '2', '0', '0', '6');
-INSERT INTO episodio VALUES('19', 'Punto da un\'ape', '', '3', '2009-03-28', '2', '0', '0', '6');
+INSERT INTO episodio VALUES('15', 'Senza ritorno', '', '2', '2008-01-27', '1', '0', '6');
+INSERT INTO episodio VALUES('16', 'Conseguenze radicali', '', '3', '2008-02-10', '1', '0', '6');
+INSERT INTO episodio VALUES('17', 'Una malattia scomoda', '', '4', '2009-03-15', '1', '0','6');
+INSERT INTO episodio VALUES('18', 'Grigliato', '', '2', '2009-03-20', '2', '0', '6');
+INSERT INTO episodio VALUES('19', 'Punto da un\'ape', '', '3', '2009-03-28', '2', '0', '6');
 
 
 
@@ -225,14 +226,33 @@ INSERT INTO visto VALUES('2', '4');
 INSERT INTO visto VALUES('2', '2');
 
 -- voto
--- INSERT INTO voto VALUES(episodio, utente, voto);
+-- INSERT INTO voto VALUES(idserie, idutente, voto);
 INSERT INTO voto VALUES('1', '2', '3');
 INSERT INTO voto VALUES('1', '3', '4');
-INSERT INTO voto VALUES('1', '4', '3');
+INSERT INTO voto VALUES('2', '4', '3');
 INSERT INTO voto VALUES('2', '2', '1');
-INSERT INTO voto VALUES('2', '3', '5');
-INSERT INTO voto VALUES('2', '4', '2');
-INSERT INTO voto VALUES('2', '5', '5');
+INSERT INTO voto VALUES('3', '3', '5');
+INSERT INTO voto VALUES('3', '2', '2');
+INSERT INTO voto VALUES('4', '5', '5');
+INSERT INTO voto VALUES('4', '2', '4');
+INSERT INTO voto VALUES('5', '5', '2');
+INSERT INTO voto VALUES('5', '2', '1');
+INSERT INTO voto VALUES('6', '5', '3');
+INSERT INTO voto VALUES('6', '2', '5');
+INSERT INTO voto VALUES('7', '5', '5');
+INSERT INTO voto VALUES('7', '2', '2');
+INSERT INTO voto VALUES('8', '5', '3');
+INSERT INTO voto VALUES('8', '2', '5');
+INSERT INTO voto VALUES('9', '5', '1');
+INSERT INTO voto VALUES('9', '2', '5');
+INSERT INTO voto VALUES('10', '5', '3');
+INSERT INTO voto VALUES('10', '2', '5');
+INSERT INTO voto VALUES('11', '5', '4');
+INSERT INTO voto VALUES('11', '2', '5');
+INSERT INTO voto VALUES('12', '5', '2');
+INSERT INTO voto VALUES('12', '2', '5');
+INSERT INTO voto VALUES('13', '5', '5');
+INSERT INTO voto VALUES('14', '2', '2');
 
 
 -- segnalazione

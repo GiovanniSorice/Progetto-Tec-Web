@@ -137,8 +137,7 @@ CREATE TABLE episodio (
   numero int NOT NULL,
   data date NOT NULL,
   stagione int NOT NULL,
-  visualizzato int DEFAULT 0,
-  voto decimal(2,1) DEFAULT 0, 
+  visualizzato int DEFAULT 0, 
   id_serie int NOT NULL,
 
   FOREIGN KEY (id_serie) REFERENCES serie(id)
@@ -157,14 +156,14 @@ CREATE TABLE visto (
 
 DROP TABLE IF EXISTS voto;
 CREATE TABLE voto (
-  id_episodio int,
+  id_serie int,
   id_utente int,
   valutazione int NOT NULL,
 
-  FOREIGN KEY (id_episodio) REFERENCES episodio(id) ,
+  FOREIGN KEY (id_serie) REFERENCES serie(id) ,
   FOREIGN KEY (id_utente) REFERENCES utente(id),
 
-  PRIMARY KEY (id_episodio, id_utente)
+  PRIMARY KEY (id_serie, id_utente)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS segnalazione;
