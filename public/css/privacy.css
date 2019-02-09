@@ -1,17 +1,33 @@
 
 
+#titolo h1{
+	font-family: normal;
+	font-size: 1.7em;
+}
+
 #info-privacy{
-	margin-left: 40px;
-	margin-top: 40px;
+	font-size: 1.4em;
+	margin: 2em;
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+}
+
+#info-privacy h1{
+
 }
 
 #info-privacy h2, #terms h2 {
-    font-family: ProximaNova; 
-    color: #14181c; 
+ 
 }
 
 .sezione-privacy{
-        text-decoration: underline;
+    text-decoration: underline;
 }
 
- 
+@media screen and (min-width: 150px) and (max-width: 600px){
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px){
+
+}
