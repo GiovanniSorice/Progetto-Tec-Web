@@ -230,6 +230,10 @@ include_once 'DBConnection.php';
         $extra4 = 'consigliati_action.php?serie_id=';
         $extra5 = 'rimuoviCons_action.php?serie_id=';
         $extra6 = 'modificaCons_action.php?consigliato=';
+        $extra7 = 'vota_action.php?serie_id=';
+        $extra8 = 'cambiaVoto_action.php?serie_id=';
+        $extra9 = 'cancellaVoto_action.php?serie_id=';
+
         
         
         if(!array_key_exists('serie_id',$_GET) && empty($_GET['serie_id'])) { 
@@ -315,8 +319,117 @@ include_once 'DBConnection.php';
                         $_GET["serie_id"] , $side_serie_block );
                 }
             }
+
+            $query = "select * from voto where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente;
+            $isVotato = resultQueryToTable($connection->query($query));
+            if(empty($isVotato)){
+                $side_serie_block=preg_replace("/<!-- Voto1 -->/i", "http://$host$uri/$extra7".$_GET["serie_id"]."&voto=1" , 
+                        $side_serie_block );
+                $side_serie_block=preg_replace("/<!-- Voto2 -->/i", "http://$host$uri/$extra7".$_GET["serie_id"]."&voto=2" , 
+                        $side_serie_block );
+                $side_serie_block=preg_replace("/<!-- Voto3 -->/i", "http://$host$uri/$extra7".$_GET["serie_id"]."&voto=3" , 
+                        $side_serie_block );
+                $side_serie_block=preg_replace("/<!-- Voto4 -->/i", "http://$host$uri/$extra7".$_GET["serie_id"]."&voto=4" , 
+                        $side_serie_block );
+                $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/$extra7".$_GET["serie_id"]."&voto=5" , 
+                        $side_serie_block );
+            }
+            else{
+                switch ($isVotato[0]["valutazione"]) {
+                    case '1':{
+                        $side_serie_block=preg_replace("/<!-- Voto1 -->/i", "http://$host$uri/$extra9".$_GET["serie_id"] , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto2 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=2" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto3 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=3" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto4 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=4" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=5" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- voto1_Color -->/i", "#fac100" , $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- voto1_bottom -->/i", "0.3em solid #FF831C" , $side_serie_block );
+                    }
+                        break;
+
+                    case '2':{
+                        $side_serie_block=preg_replace("/<!-- Voto1 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=1" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto2 -->/i", "http://$host$uri/$extra9".$_GET["serie_id"] , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto3 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=3" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto4 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=4" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=5" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- voto2_Color -->/i", "#fac100" , $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- voto2_bottom -->/i", "0.3em solid #FF831C" , $side_serie_block );
+                    }
+                        break;
+
+                    case '3':{
+                        $side_serie_block=preg_replace("/<!-- Voto1 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=1" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto2 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=2", 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto3 -->/i", "http://$host$uri/$extra9".$_GET["serie_id"] , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto4 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=4" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=5" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- voto3_Color -->/i", "#fac100" , $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- voto3_bottom -->/i", "0.3em solid #FF831C" , $side_serie_block );
+                    }
+                        break;
+
+                    case '4':{
+                        $side_serie_block=preg_replace("/<!-- Voto1 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=1" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto2 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=2", 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto3 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=3" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto4 -->/i", "http://$host$uri/$extra9".$_GET["serie_id"] , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=5" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- voto4_Color -->/i", "#fac100" , $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- voto4_bottom -->/i", "0.3em solid #FF831C" , $side_serie_block );
+                    }
+                        break;
+
+                    case '5':{
+                        $side_serie_block=preg_replace("/<!-- Voto1 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=1" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto2 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=2", 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto3 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=4" , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto4 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=5"  , 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/$extra9".$_GET["serie_id"], 
+                        $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- voto5_Color -->/i", "#fac100" , $side_serie_block );
+                        $side_serie_block=preg_replace("/<!-- voto5_bottom -->/i", "0.3em solid #FF831C" , $side_serie_block );
+                    }
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
         }
         else{
+
+            $side_serie_block=preg_replace("/<!-- Voto1 -->/i", "http://$host$uri/login.php", $side_serie_block );
+            $side_serie_block=preg_replace("/<!-- Voto2 -->/i", "http://$host$uri/login.php", $side_serie_block );
+            $side_serie_block=preg_replace("/<!-- Voto3 -->/i", "http://$host$uri/login.php", $side_serie_block );
+            $side_serie_block=preg_replace("/<!-- Voto4 -->/i", "http://$host$uri/login.php", $side_serie_block );
+            $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/login.php", $side_serie_block );
+
             $side_serie_block=preg_replace("/<!-- Add-Rem -->/i", "Aggiungi ai preferiti" , $side_serie_block );
             $side_serie_block=preg_replace("/<!-- Add_Preferitio -->/i", "http://$host$uri/login.php", $side_serie_block );
 
