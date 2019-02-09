@@ -1,40 +1,68 @@
 
-.pagina-FAQ{
+.pagina-FAQ {
 	margin: 3em;
 	font-family: 'Roboto', sans-serif;
 }
 
-#descrizione-FAQ h1{
-	/* text-align:center; */
+#descrizione-FAQ h1 {
 	font-family: normal;
 	font-size: 3em;
 	font-weight: bold;
 	margin-bottom: 0;
 }	
 
-#descrizione-FAQ h2{
-	font-size: 1.3em;
+#descrizione-FAQ strong{
+	color: red;
+}
+
+#descrizione-FAQ h2 {
+	font-size: 1.4em;
 	margin-top: 0.7em;
 	margin-bottom: 2em;
+	margin-left: 1em;
 }
 
 /* Lista delle domande e delle risposte */
 
-#lista-domande-risposte h1{
+#lista-domande-risposte h1 {
 	margin-top: 1em;
 }
 
-.titolo-domanda{
+.titolo-domanda {
 	font-family: normal;
 	font-size: 2em;
 	font-weight: bold;
 	margin-bottom: 0;
 }
 
-.risposta{
-	font-size: 1.5em;
+.risposta {
+	font-size: 1.3em;
 	margin-top: 0.5em;
 	margin-left: 1em;
+}
+
+.immagine-faq img{
+	margin-top: 1.7em;
+	margin-left: 1.7em;
+	margin-right: 1.7em;
+	max-width: 70%;
+	max-height: 70%;
+}
+
+.caption-immagine{
+	font-family: normal;
+	font-weight: lighter;
+	text-align: center;
+	font-size: 0.8em;
+	margin-top: 0.5em;
+	margin-right: 10.7em;
+	margin-left: 1.7em;
+	margin-bottom: 1.7em;
+}
+.risposta strong{
+	font-family: normal;
+	font-size: 1em;
+	font-weight: bold;
 }
 
 @media screen and (min-width: 751px) and (max-width: 1024px){
