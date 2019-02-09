@@ -9,13 +9,34 @@
 
 					<script>
 	                	document.getElementById("consiglia").style.backgroundColor = "<!-- Cons_Color -->";
-	            	</script>
-	            	
-	            	<script>
 	                	document.getElementById("sconsiglia").style.backgroundColor = "<!-- Scons_Color -->";
 	            	</script>
 
 				</div>
+
+				
+
+				<div class="votazioni">
+					<h1>Vota la serie</h1>
+					<div class="valori">
+						<ul>
+							<a href="<!-- Voto1 -->" title="Voto 1" ><li id="uno">1</li></a>
+							<a href="<!-- Voto2 -->" title="Voto 2" ><li id="due">2</li></a>
+							<a href="<!-- Voto3 -->" title="Voto 3" ><li id="tre">3</li></a>
+							<a href="<!-- Voto4 -->" title="Voto 4" ><li id="quattro">4</li></a>
+							<a href="<!-- Voto5 -->" title="Voto 5" ><li id="cinque">5</li></a>
+						</ul>
+					</div>
+				</div>
+
+				<script>
+	                	document.getElementById("uno").style.backgroundColor = "<!-- voto1_Color -->";
+	                	document.getElementById("due").style.backgroundColor = "<!-- voto2_Color -->";
+	                	document.getElementById("tre").style.backgroundColor = "<!-- voto3_Color -->";
+	                	document.getElementById("quattro").style.backgroundColor = "<!-- voto4_Color -->";
+	                	document.getElementById("cinque").style.backgroundColor = "<!-- voto5_Color -->";
+
+	            </script>
 
 				<div id="preferito-btn">
 						<a href="<!-- Add_Preferitio -->" title="<!-- Add-Rem -->"><!-- Add-Rem --></a>
