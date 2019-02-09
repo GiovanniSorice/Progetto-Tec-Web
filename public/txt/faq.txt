@@ -18,6 +18,7 @@
 						<div class = "caption-immagine">
 							Posizione del tasto che porta alla sezione di login.
 						</div>
+
 						In seguito va compilato ogni campo presente facendo attenzione al campo email che deve essere <strong> univoco </strong>. 
 						Quindi se ci si è già registrati con un email il sistema non completerà la registrazione.
 						Il secondo modo che sarà disponibile in futuro è la registrazione tramite social network.  
@@ -28,9 +29,16 @@
 						Per cercare una serie Tv specifica bisogna cercare all'interno dell'apposita barra di ricerca posta in alto a sinistra dello schermo 
 						e digitare il nome delle serie Tv che si sta cercando. 
 
+						<div class = "immagine-faq">
+							<img src="../img/faq/searchbar.png" alt="Indicazioni posizione login">
+						</div>
+						<div class = "caption-immagine">
+							Posizione della search bar.
+						</div>						
+						Se ci si sposta nella sezione esplora inoltre verranno caricati in ante
 					</h2>
 
-					<h1 class = "titolo-domanda"> Prova </h1>
+					<h1 class = "titolo-domanda"> Come posso segnalare un commento offensivo o poco opportuno? </h1>
 					<h2 class = "risposta"> 
 						Prova
 					</h2>

@@ -11,7 +11,7 @@
 
 				In particolare per ogni serie tv il sito da informazioni riguardanti la trama, gli attori, gli episodi divisi per stagione e extra, ovvero 					mostra contenuti simili alla serie tv visualizzata nella pagina. <br/>
 
-				L'utente non iscritto può registrarsi nell'apposita sezione che permetterà l'accesso a contenuti come il votare e commentare. <br/>
+				L'utente non iscritto può registrarsi nell'apposita sezione che permetterà l'accesso a contenuti come il votare e commentare le serie Tv. <br/>
 				
 			</p>
 				       <!-- Foto di noi 4 e spiegazione ruoli -->
@@ -31,9 +31,9 @@
 								<h3 class="nome-sviluppatore">
 									Davide Barasti 
 								</h3>
-								<p class="descrizione-sviluppatore">
+								<!-- <p class="descrizione-sviluppatore">
 									Frontend e responsabile 
-								</p>
+								</p> -->
 							</div>
 						</div>
 					</li>
@@ -46,9 +46,9 @@
 								<h3 class="nome-sviluppatore">
 									Giovanni Sorice 
 								</h3>
-								<p class="descrizione-sviluppatore">
+								<!-- <p class="descrizione-sviluppatore">
 									Php e backend
-								</p>
+								</p> -->
 							</div>
 						</div>
 						
@@ -63,9 +63,9 @@
 								<h3 class="nome-sviluppatore">
 									Lorenzo Busin
 								</h3>
-								<p class="descrizione-sviluppatore">
+								<!-- <p class="descrizione-sviluppatore">
 									Database e backend
-								</p>
+								</p> -->
 							</div>						
 						</div>
 						
@@ -79,9 +79,9 @@
 						      		<h3 class="nome-sviluppatore">
 									Francesco Corti 
 						      		</h3>
-						      	<p class="descrizione-sviluppatore">
+						      	<!-- <p class="descrizione-sviluppatore">
 								Relazione e about
-						      	</p>
+						      	</p> -->
 							</div>
 						</div>
 						
