@@ -27,6 +27,7 @@
         }
         
         //Parte personalizzata per tutte le pagine
+        $script="";
         switch ($namePage) {
             case "esplora":
                 echo printPageEsplora($output);
@@ -34,6 +35,7 @@
             
             case "serie":
                 echo printPageSerie($output);
+                $script = implode("",file("../javascript/serie.js"));                
                 break;
                 
             case "about":
@@ -81,6 +83,9 @@
         
         //Parte standard per tutte le pagine
         
-        readfile('../txt/footer.txt');
+        $footer = implode("",file("../txt/footer.txt"));
+        $footer = preg_replace("/<!-- Script -->/i", $script, $footer );
+        
+        echo $footer;
     }
 ?>
