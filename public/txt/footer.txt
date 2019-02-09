@@ -27,9 +27,7 @@
 
 <script>
 
-//Parte per div serie
-
-document.getElementById('dropdownJSSerie').className='dropdown';
+<!-- Script -->
 
 function myFunction() {
     var x = document.getElementById("nav");
