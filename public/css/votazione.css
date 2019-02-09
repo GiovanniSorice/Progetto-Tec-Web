@@ -1,9 +1,10 @@
 .votazioni{
   margin: 0;
   text-align: center;
-  padding-bottom: 2em;
+  padding-bottom: 3em;
   position: relative;
 }
+
 
 .votazioni h1{
   font-size: 2em;
@@ -16,6 +17,7 @@
 }
 
 .votazioni li{
+  font-size: 1.5em;
   background-color: #ffffa0;
   float: left;
   padding: 7%;

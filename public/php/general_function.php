@@ -389,7 +389,7 @@ include_once 'DBConnection.php';
                         $side_serie_block );
                         $side_serie_block=preg_replace("/<!-- Voto2 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=2", 
                         $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- Voto3 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=4" , 
+                        $side_serie_block=preg_replace("/<!-- Voto3 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=3" , 
                         $side_serie_block );
                         $side_serie_block=preg_replace("/<!-- Voto4 -->/i", "http://$host$uri/$extra9".$_GET["serie_id"] , 
                         $side_serie_block );
