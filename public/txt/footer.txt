@@ -16,6 +16,7 @@
 			<li><a href="supporto.php">Supporto </a></li>
 			<li><a href="privacy.php"><span lang="EN">Privacy</span></a></li>
 			<li><a href="about.php"><span lang="EN">About</span></a></li>
+			<!-- Amministrazione -->
 		</ul>	
 	</div>
 

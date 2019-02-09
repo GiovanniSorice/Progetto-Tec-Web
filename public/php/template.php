@@ -12,6 +12,7 @@
         $file_content = implode("",file("../txt/pagecenter.txt"));
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $footer = implode("",file("../txt/footer.txt"));
         
         if(array_key_exists('user_username',$_SESSION) && !empty($_SESSION['user_username'])) {
             $extra="logout_action.php";
@@ -25,9 +26,14 @@
             $output = preg_replace("/<!-- Url_Log -->/i", "http://$host$uri/$extra", $output );
             
         }
-        
+
+        if(array_key_exists('user_tipo',$_SESSION) && !empty($_SESSION['user_tipo']) && $_SESSION['user_tipo']=="admin"){
+            $footer = preg_replace("/<!-- Amministrazione -->/i", '<li><a href="amministrazione.php" title="Amministrazione">Amministrazione</a></li>', $footer);
+        }
+
         //Parte personalizzata per tutte le pagine
         $script="";
+
         switch ($namePage) {
             case "esplora":
                 echo printPageEsplora($output);
@@ -90,7 +96,6 @@
         
         //Parte standard per tutte le pagine
         
-        $footer = implode("",file("../txt/footer.txt"));
         $footer = preg_replace("/<!-- Script -->/i", $script, $footer );
         
         echo $footer;

@@ -40,7 +40,7 @@
 						<div class="top">						
 							<div class="post-holder">							
 								<div class="textarea-wrap">
-									<textarea placeholder="inserisci il tuo commento" name="post"></textarea>
+									<textarea placeholder="inserisci il tuo commento" title="inserisci il tuo commento" name="post"></textarea>
 								</div>
 							</div>
 						</div>
