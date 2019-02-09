@@ -73,6 +73,9 @@
              case "amministrazione":
                  echo printPageAmministrazione($output);
                  break;
+             case "faq":
+                 echo printPageFAQ($output);
+                 break;
                  
             case "404":
                  echo printPage404($output);
