@@ -1,0 +1,53 @@
+#tabella .messaggi{	
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  	border-collapse: collapse;
+  	width: 94%;	
+  	margin-left: 3%;
+  	
+}
+/* Header della tabella dei messaggi */
+
+#tabella .messaggi th {
+  padding-top: 0.6em;
+  padding-bottom: 0.5em;
+  text-align: center;
+  background-color: #2f4858;
+  color: white;
+  font-size: 1em;
+}
+
+/* Contenuti generali presenti nella tabella*/
+
+#tabella .messaggi td{
+  	border: 1px solid #ddd; 
+  	padding: 8px;
+  	font-size: 0.6em;
+}
+
+#tabella .messaggi tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+#tabella .messaggi tr:hover{
+	background-color: #ddd;
+}
+
+#tabella .serie{
+	width: 17%;
+}
+#tabella .segnalazione{
+	width: 70%;
+}
+#tabella .azione{
+	width: 13%;
+}
+
+
+@media screen and (min-width: 1025px){
+
+	}
+
+@media screen and (min-width: 751px) and (max-width: 1024px){
+
+	}
+
