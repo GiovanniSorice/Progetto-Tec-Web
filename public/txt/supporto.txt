@@ -13,7 +13,7 @@
 							<input class="submit-post-btn" type="submit" value="Invia"/>
 						</div>	
 					</form>
-					<div id="tabella">
+					<div class="tabella">
 						<table class="messaggi">
 						 	<caption>Tabella dei messaggi inviati con le relative risposte</caption>
 							<thead>
@@ -29,7 +29,7 @@
 					</div>
 	        	</div>
     		    <div class="segnalazioni">
-					<div id="tabella">
+					<div class="tabella">
 						<table class="messaggi">
 						 	<caption>Tabella delle azioni svolte relative alle segnalazioni effettuate</caption>
 							<thead>															

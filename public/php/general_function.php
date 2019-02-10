@@ -1014,7 +1014,7 @@ include_once 'DBConnection.php';
         $segnalazione_collect="<!-- Successivo -->";
         
         foreach ($segnalazioni as $segnalazione) {
-            $azione=$segnalazione["checked"]==$segnalazione["cancellato"]?"Cancellato":"Cancellato solo per te";
+            $azione=$segnalazione["checked"]==$segnalazione["cancellato"]&&$segnalazione["checked"]=="1"?"Cancellato":"Cancellato solo per te";
             $segnalazione_collect=preg_replace("/<!-- Successivo -->/i",
                 '<tr> '
                 .'<td scope="row" class="serie">'.$segnalazione["titolo"].'</td>'
