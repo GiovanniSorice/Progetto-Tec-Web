@@ -42,7 +42,7 @@
             break;
             
             case "serie":
-                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="espolora.php">Esplora</a><span>&#x27AA;</span><a href="serie.php">Serie</a>', $output);
+                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="esplora.php">Esplora</a><span>&#x27AA;</span><a href="serie.php">Serie</a>', $output);
                 echo printPageSerie($output);
                 $script = implode("",file("../javascript/serie.js"));                
                 break;
@@ -87,7 +87,7 @@
                 break;
 
              case "genere":
-                 $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="espolora.php">Esplora</a><span>&#x27AA;</span><a href="#">Genere</a>', $output);
+                 $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="esplora.php">Esplora</a><span>&#x27AA;</span><a href="#">Genere</a>', $output);
                  echo printPageGenere($output);
                  break;
                  
