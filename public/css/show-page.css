@@ -48,10 +48,23 @@
 	display: inline-block;
 	border-style: outset;
 	margin: 1em;
+	width: 25%;
+}
+
+#side-bar__consigli #consiglia{
+	margin-right: 5%;
+}
+
+#side-bar__consigli #sconsiglia{
+	margin-left: 2%;
 }
 
 #side-bar__consigli .pollici:hover{ /*vale per entrambi i pollici*/
 	background-color: #fac100;
+}
+
+#side-bar__consigli .pollici img{
+	width: 100%;
 }
 
 #side-bar__attori{
@@ -369,6 +382,7 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	padding-top: 1em;
 	}
 
 	#preferito-btn button{ 
