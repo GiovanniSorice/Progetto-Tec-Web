@@ -1,3 +1,25 @@
+
+
+#pagina-About{
+  margin: 1.5em ; 
+  font-size: 1.5em;
+}
+
+.pagina-About p{
+  margin-left: 1em;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px){
+   .pagina-right{
+    margin: 1.5em; 
+    font-size: 1.5em;
+  } 
+
+  .pagina-right p{
+    margin-left: 1em;
+  }
+}
+
 @media screen and (min-width: 1025px){
   .pagina-right{
     margin: 1.5em ; 
@@ -66,27 +88,5 @@
       height: 12em;
       width: 12em;
       margin-bottom: 0; 
-  }
-}
-
-@media screen and (min-width: 150px) and (max-width: 600px){
-   .pagina-right{
-    margin: 1.5em ; 
-    font-size: 1.5em;
-  }
-
-  .pagina-right p{
-    margin-left: 1em;
-  }
-}
-
-@media screen and (min-width: 601px) and (max-width: 1024px){
-   .pagina-right{
-    margin: 1.5em; 
-    font-size: 1.5em;
-  } 
-
-  .pagina-right p{
-    margin-left: 1em;
   }
 }

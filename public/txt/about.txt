@@ -3,7 +3,7 @@
 
 					<!-- Introduzione al funzionamento/scopo del sito -->
 
-		<div class = "pagina-right">	 
+		<div id = "pagina-About"
 			<h3 class="titolo"><span lang="EN">About Tv Hunter</span>:</h3>			
 			<p> 
 				

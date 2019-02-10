@@ -15,10 +15,14 @@
 						raggiungibile attraverso la sezione di login che si raggiunge cliccando in alto a destra della pagina: 
 
 						<div class = "immagine-faq">
-							<img src="../img/faq/login.png" alt="Indicazioni posizione login">
+							<picture>
+								<source media="(min-width: 751px)" srcset="../img/faq/login.png">
+								<img src="../img/faq/loginSmall.png" alt="Indicazioni posizione login">
+							</picture>
+							
 						</div>
 						<div class = "caption-immagine">
-							Posizione del tasto che porta alla sezione di login.
+							Posizione tasto di login.
 						</div>
 
 						In seguito va compilato ogni campo presente facendo attenzione al campo email che deve essere <strong> univoco </strong>. 
@@ -28,16 +32,20 @@
 
 					<h1 class = "titolo-domanda"> Come cerco una serie Tv? </h1>
 					<h2 class = "risposta"> 
-						Per cercare una serie Tv specifica bisogna cercare all'interno dell'apposita barra di ricerca posta in alto a sinistra dello schermo 
-						e digitare il nome delle serie Tv che si sta cercando. 
+						Per cercare una serie Tv specifica bisogna inserire all'interno dell'apposita barra di ricerca, posta in alto a sinistra dello schermo,
+						il nome delle serie Tv che si sta cercando. 
 
 						<div class = "immagine-faq">
-							<img src="../img/faq/searchbar.png" alt="Indicazioni posizione login">
+							<picture>
+								<source media="(min-width: 751px)" srcset="../img/faq/searchbar.png">
+								<img src="../img/faq/searchbarSmall.png" alt="Posizione della search bar.">
+							</picture>
+							
 						</div>
 						<div class = "caption-immagine">
 							Posizione della search bar.
 						</div>						
-						Inoltre verranno caricati in anteprima, come illustrato nell'immagine, i risultati pi&ugrave simili rispetto alla ricerca che si sta effettuando. 
+						Inoltre verranno caricati in anteprima, come illustrato nell'immagine, i risultati pi&ugrave simili rispetto alla ricerca che si sta seffettuando. 
 					</h2>
 
 					<h1 class = "titolo-domanda"> Come posso segnalare un commento offensivo o poco opportuno? </h1>
