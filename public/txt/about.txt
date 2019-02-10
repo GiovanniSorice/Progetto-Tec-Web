@@ -47,7 +47,7 @@
 							</div>
 						</div>
 					</li>
-  					<li class="show">
+  					<li class="show-about">
 						<div class="paragrafo-sviluppatore">
 							<a href="https://github.com/GiovanniSorice">
 								<img src="../img/aboutImage/ciruz.jpg" alt="immagine di Giovanni Sorice"/>
@@ -63,7 +63,7 @@
 						</div>
 						
 					</li>
-  					<li class="show">
+  					<li class="show-about">
 						<div class="paragrafo-sviluppatore">
 							<a href="https://github.com/lorenzobusin">
 								<img src="../img/aboutImage/lore.jpeg" alt="immagine di Lorenzo Busin"/>
@@ -80,7 +80,7 @@
 						</div>
 						
 					</li>
-  					<li class="show">
+  					<li class="show-about">
 						<div class="paragrafo-sviluppatore">
 							<a href="https://github.com/fraccorzo">
 								<img src="../img/aboutImage/chicco.jpeg" alt="immagine di Francesco Corti"/>
