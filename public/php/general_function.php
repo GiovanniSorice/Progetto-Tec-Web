@@ -51,11 +51,7 @@ include_once 'DBConnection.php';
             case "preferiti":
                 $nav = preg_replace("/refPreferiti/i", "selezionato", $nav);
                 break;
-
-            case "impostazioni":
-                $nav = preg_replace("/refImpostazioni/i", "selezionato", $nav);
-                break;
-
+                
             case "faq":
                 $nav = preg_replace("/refFaq/i", "selezionato", $nav);
                 break;
