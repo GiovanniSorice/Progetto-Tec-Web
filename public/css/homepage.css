@@ -85,6 +85,14 @@ html, body{
 	text-align: center;
 }
 
+#content__homepage .iscriviti a{
+	color: white;
+}
+
+#content__homepage .iscriviti a:visited{
+	color: #aaa;
+}
+
 @media screen and (min-width: 1025px){
 	#homepage-advice a:hover{
 	color: #999999;
