@@ -442,8 +442,16 @@ include_once 'DBConnection.php';
         $output = preg_replace("/<!-- Page_Head -->/i", $title, $output );
         $query = "select titolo,voto,consigliato,non_consigliato,preferiti,(consigliato)/(consigliato+non_consigliato)*100 AS perc_consigliato from serie where id=".$_GET["serie_id"];
         $result = resultQueryToTable($connection->query($query));
+
+        if(($result[0]["voto"] - (int)$result[0]["voto"]) == 0){
+            echo ($result[0]["voto"] - (int)$result[0]["voto"]);
+            $voto = (int)$result[0]["voto"];
+        }
+        else
+            $voto = $result[0]["voto"];
+
         $output = preg_replace("/<!-- Titolo -->/i",$result[0]["titolo"] , $output );
-        $output = preg_replace("/<!-- Voto -->/i",$result[0]["voto"] , $output );
+        $output = preg_replace("/<!-- Voto -->/i",$voto , $output );
 
         if ($result[0]["perc_consigliato"] > 0)
             $output = preg_replace("/<!-- Percentuale_Consigliati -->/i",(int)$result[0]["perc_consigliato"] , $output );
