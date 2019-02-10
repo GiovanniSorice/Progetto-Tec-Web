@@ -201,18 +201,87 @@ INSERT INTO episodio VALUES('5', 'Sul ring', 'Matt Murdock e il suo amico Foggy 
 INSERT INTO episodio VALUES('6', 'Bang!', 'Una nuova minaccia riempie il vuoto lasciato da Fisk a Hells Kitchen. Murdock e Foggy accettano un cliente dal passato discutibile.', '1', '2016/03/18', '2', '0', '2');
 INSERT INTO episodio VALUES('7', 'I giorni andati', 'Rick si sveglia in un ospedale, dopo aver avuto un incidente sul campo dove &egrave; rimasto ferito, e scopre la drammatica verit&agrave;: la sua famiglia &egrave; scomparsa, tutti sono scomparsi. O peggio, strane e orribili creature assetate di sangue...', '1', '2010/10/31', '1', '0','3');
 INSERT INTO episodio VALUES('8', 'La strada da percorrere', 'La seconda stagione si apre con Rick e il suo gruppo che scappano da Atlanta e vengono minacciati da un pericolo mai incontrato prima, altrove un gruppo cerca una persona scomparsa.', '1', '2011/10/16', '2', '0', '3');
-INSERT INTO episodio VALUES('9', 'Steven vede un fantasma', 'Indagando su una storia di fantasmi per il suo ultimo romanzo, uno scettico Steven riceve una telefonata dalla sorella che innesca una catena di eventi fatali.', '1', '2018/10/12', '1', '0', '4');
-INSERT INTO episodio VALUES('10', 'Il clan dei Savastano', 'Il controllo di Pietro Savastano, potente boss del Napoletano, &egrave; minacciato dal clan rivale di Salvatore Conte. Una serie di agguati e intimidazioni apre la guerra per il controllo del territorio.', '1', '2014/05/06', '1', '0', '5');
 INSERT INTO episodio VALUES('11', 'Questione di chimica', 'Dopo la diagnosi di cancro terminale ai polmoni, un insegnante di chimica del liceo si d&agrave; alla produzione di metanfetamine per garantire la sopravvivenza della famiglia.', '1', '2008/01/20', '1', '0', '6');
 INSERT INTO episodio VALUES('12', 'Tutto cambia', 'Mentre pianificano una grossa vendita finale di stupefacenti, Walt e Jesse si preoccupano del fatto che possano ucciderli.', '1', '2009/03/08', '2', '0', '6');
-INSERT INTO episodio VALUES('13', 'Ciao amico', 'Elliot Alderson &egrave; un ingegnere informatico, vive a New York e lavora presso una azienda di sicurezza informatica AllSafe Security. Soffre di paranoia ed &egrave; convinto di essere pedinato.', '1', '2015/06/24', '1', '0','7');
-INSERT INTO episodio VALUES('14', 'Uno studio in rosa', 'Una donna in rosa &egrave; la quarta vittima di una serie di suicidi apparentemente scollegati, ma Sherlock Holmes capisce che in realt&agrave; si tratta di terribili omicidi.', '2', '2010/07/25', '1', '0', '8');
 
 INSERT INTO episodio VALUES('15', 'Senza ritorno', '', '2', '2008-01-27', '1', '0', '6');
 INSERT INTO episodio VALUES('16', 'Conseguenze radicali', '', '3', '2008-02-10', '1', '0', '6');
 INSERT INTO episodio VALUES('17', 'Una malattia scomoda', '', '4', '2009-03-15', '1', '0','6');
 INSERT INTO episodio VALUES('18', 'Grigliato', '', '2', '2009-03-20', '2', '0', '6');
 INSERT INTO episodio VALUES('19', 'Punto da un\'ape', '', '3', '2009-03-28', '2', '0', '6');
+
+INSERT INTO episodio VALUES('20', 'Episodio 1', '', '1', '2018-02-01', '1', '0', '9');
+INSERT INTO episodio VALUES('21', 'Episodio 2', '', '2', '2018-02-08', '1', '0', '9');
+INSERT INTO episodio VALUES('22', 'Episodio 3', '', '3', '2018-02-15', '1', '0', '9');
+INSERT INTO episodio VALUES('23', 'Episodio 1', '', '1', '2019-01-10', '2', '0', '9');
+INSERT INTO episodio VALUES('24', 'Episodio 2', '', '2', '2019-01-17', '2', '0', '9');
+INSERT INTO episodio VALUES('25', 'Episodio 3', '', '3', '2019-01-24', '2', '0', '9');
+
+INSERT INTO episodio VALUES('26', 'Episodio 1', '', '1', '2018-02-01', '1', '0', '10');
+INSERT INTO episodio VALUES('27', 'Episodio 2', '', '2', '2018-02-08', '1', '0', '10');
+INSERT INTO episodio VALUES('28', 'Episodio 3', '', '3', '2018-02-15', '1', '0', '10');
+INSERT INTO episodio VALUES('29', 'Episodio 1', '', '1', '2019-01-10', '2', '0', '10');
+INSERT INTO episodio VALUES('30', 'Episodio 2', '', '2', '2019-01-17', '2', '0', '10');
+INSERT INTO episodio VALUES('31', 'Episodio 3', '', '3', '2019-01-24', '2', '0', '10');
+
+INSERT INTO episodio VALUES('32', 'Episodio 1', '', '1', '2018-02-01', '1', '0', '11');
+INSERT INTO episodio VALUES('33', 'Episodio 2', '', '2', '2018-02-08', '1', '0', '11');
+INSERT INTO episodio VALUES('34', 'Episodio 3', '', '3', '2018-02-15', '1', '0', '11');
+INSERT INTO episodio VALUES('35', 'Episodio 1', '', '1', '2019-01-10', '2', '0', '11');
+INSERT INTO episodio VALUES('36', 'Episodio 2', '', '2', '2019-01-17', '2', '0', '11');
+INSERT INTO episodio VALUES('37', 'Episodio 3', '', '3', '2019-01-24', '2', '0', '11');
+
+INSERT INTO episodio VALUES('38', 'Episodio 1', '', '1', '2018-02-01', '1', '0', '12');
+INSERT INTO episodio VALUES('39', 'Episodio 2', '', '2', '2018-02-08', '1', '0', '12');
+INSERT INTO episodio VALUES('40', 'Episodio 3', '', '3', '2018-02-15', '1', '0', '12');
+INSERT INTO episodio VALUES('41', 'Episodio 1', '', '1', '2019-01-10', '2', '0', '12');
+INSERT INTO episodio VALUES('42', 'Episodio 2', '', '2', '2019-01-17', '2', '0', '12');
+INSERT INTO episodio VALUES('43', 'Episodio 3', '', '3', '2019-01-24', '2', '0', '12');
+
+INSERT INTO episodio VALUES('44', 'Episodio 1', '', '1', '2018-02-01', '1', '0', '13');
+INSERT INTO episodio VALUES('45', 'Episodio 2', '', '2', '2018-02-08', '1', '0', '13');
+INSERT INTO episodio VALUES('46', 'Episodio 3', '', '3', '2018-02-15', '1', '0', '13');
+INSERT INTO episodio VALUES('47', 'Episodio 1', '', '1', '2019-01-10', '2', '0', '13');
+INSERT INTO episodio VALUES('48', 'Episodio 2', '', '2', '2019-01-17', '2', '0', '13');
+INSERT INTO episodio VALUES('49', 'Episodio 3', '', '3', '2019-01-24', '2', '0', '13');
+
+INSERT INTO episodio VALUES('50', 'Episodio 1', '', '1', '2018-02-01', '1', '0', '14');
+INSERT INTO episodio VALUES('51', 'Episodio 2', '', '2', '2018-02-08', '1', '0', '14');
+INSERT INTO episodio VALUES('52', 'Episodio 3', '', '3', '2018-02-15', '1', '0', '14');
+INSERT INTO episodio VALUES('53', 'Episodio 1', '', '1', '2019-01-10', '2', '0', '14');
+INSERT INTO episodio VALUES('54', 'Episodio 2', '', '2', '2019-01-17', '2', '0', '14');
+INSERT INTO episodio VALUES('55', 'Episodio 3', '', '3', '2019-01-24', '2', '0', '14');
+
+INSERT INTO episodio VALUES('9', 'Episodio 1', '', '1', '2018-02-01', '1', '0', '4');
+INSERT INTO episodio VALUES('10', 'Episodio 1', '', '1', '2018-02-01', '1', '0', '5');
+INSERT INTO episodio VALUES('13', 'Episodio 1', '', '1', '2018-02-01', '1', '0', '7');
+INSERT INTO episodio VALUES('14', 'Episodio 1', '', '1', '2018-02-01', '1', '0', '8');
+
+INSERT INTO episodio VALUES('56', 'Episodio 2', '', '2', '2018-02-15', '1', '0', '4');
+INSERT INTO episodio VALUES('57', 'Episodio 1', '', '1', '2019-01-10', '2', '0', '4');
+INSERT INTO episodio VALUES('58', 'Episodio 2', '', '2', '2019-01-17', '2', '0', '4');
+INSERT INTO episodio VALUES('59', 'Episodio 3', '', '3', '2019-01-24', '2', '0', '4');
+
+INSERT INTO episodio VALUES('60', 'Episodio 2', '', '2', '2018-02-15', '1', '0', '5');
+INSERT INTO episodio VALUES('61', 'Episodio 1', '', '1', '2019-01-10', '2', '0', '5');
+INSERT INTO episodio VALUES('62', 'Episodio 2', '', '2', '2019-01-17', '2', '0', '5');
+INSERT INTO episodio VALUES('63', 'Episodio 3', '', '3', '2019-01-24', '2', '0', '5');
+
+INSERT INTO episodio VALUES('64', 'Episodio 2', '', '2', '2018-02-15', '1', '0', '7');
+INSERT INTO episodio VALUES('65', 'Episodio 1', '', '1', '2019-01-10', '2', '0', '7');
+INSERT INTO episodio VALUES('66', 'Episodio 2', '', '2', '2019-01-17', '2', '0', '7');
+INSERT INTO episodio VALUES('67', 'Episodio 3', '', '3', '2019-01-24', '2', '0', '7');
+
+INSERT INTO episodio VALUES('68', 'Episodio 2', '', '2', '2018-02-15', '1', '0', '8');
+INSERT INTO episodio VALUES('69', 'Episodio 1', '', '1', '2019-01-10', '2', '0', '8');
+INSERT INTO episodio VALUES('70', 'Episodio 2', '', '2', '2019-01-17', '2', '0', '8');
+INSERT INTO episodio VALUES('71', 'Episodio 3', '', '3', '2019-01-24', '2', '0', '8');
+
+INSERT INTO episodio VALUES('72', 'Episodio 3', '', '3', '2018-02-24', '1', '0', '4');
+INSERT INTO episodio VALUES('73', 'Episodio 3', '', '3', '2018-02-24', '1', '0', '5');
+INSERT INTO episodio VALUES('74', 'Episodio 3', '', '3', '2018-02-24', '1', '0', '7');
+INSERT INTO episodio VALUES('75', 'Episodio 3', '', '3', '2018-02-24', '1', '0', '8');
+
 
 
 
