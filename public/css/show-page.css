@@ -348,6 +348,7 @@
 
 .preferito{
 	font-size: 1.5em;
+	margin-left: 1em;
 }
 
 .preferito a:link{
@@ -400,6 +401,7 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	margin: 0;
 	}
 
 }
@@ -438,6 +440,7 @@
 	display: flex;
 	justify-content: center;
 	padding-top: 1em;
+	margin: 0;
 	}
 
 }

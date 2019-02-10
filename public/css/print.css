@@ -20,6 +20,10 @@
 		display: none;
 	}
 
+	#esplora section > a{
+		display: none;
+	}
+
 	/*Supporto*/
 	.post-form-supporto{
 		display: none;
