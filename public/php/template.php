@@ -36,11 +36,13 @@
 
         switch ($namePage) {
             case "esplora":
+                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="espolora.php">Esplora</a>', $output);
                 $footer = preg_replace("/refEsplora/i", "class=\"selezionato\"", $footer );
                 echo printPageEsplora($output);
             break;
             
             case "serie":
+                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="espolora.php">Esplora</a><span>&#x27AA;</span><a href="serie.php">Esplora</a>', $output);
                 echo printPageSerie($output);
                 $script = implode("",file("../javascript/serie.js"));                
                 break;

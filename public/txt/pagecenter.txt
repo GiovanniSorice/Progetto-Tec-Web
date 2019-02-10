@@ -3,6 +3,10 @@
 				<!-- Page_Head -->
 		</div>
 		<div class="login-bar vertical-center">
+			<label for="link_navigazione">Ti trovi in:</label>
+			<div class="link-navigazione">
+			<!-- Link_Navigazione -->
+			</div>
 			<div class="non-logged-user align-right">
 				<span class="user-name"> <!-- Nome --> </span>
 				<button onClick="window.location.href='<!-- Url_Log -->'"><!-- Log --></button>

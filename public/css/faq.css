@@ -1,13 +1,15 @@
 
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+
 .pagina-FAQ {
 	margin: 0.5em;
-	font-family: 'Roboto', sans-serif; 
+	font-family: 'Roboto'; 	
 }
 
 #descrizione-FAQ h1 {
-	font-family: normal;
 	font-size: 1.5em;
-	font-weight: bold;
+	font-weight: 500;
 	margin-bottom: 0;
 }	
 
@@ -17,6 +19,7 @@
 
 #descrizione-FAQ h2 {
 	font-size: 1em;
+	font-weight:300;
 	margin-top: 0.7em;
 	margin-bottom: 2em;
 	margin-left: 1em;
@@ -29,14 +32,14 @@
 }
 
 .titolo-domanda {
-	font-family: normal;
 	font-size: 1em;
-	font-weight: bold;
+	font-weight: 500;
 	margin-bottom: 0;	
 }
 
 .risposta {
-	font-size: 0.8em;
+	font-size: 0.9em;
+	font-weight: 300;
 	margin-top: 0.5em;
 	margin-left: 1em;
 }
@@ -57,9 +60,8 @@
 	font-size: 0em;
 }
 .risposta strong{
-	font-family: normal;
 	font-size: 1em;
-	font-weight: bold;
+	font-weight: lighter;
 }
 
 @media screen and (min-width: 751px) and (max-width: 1024px){
