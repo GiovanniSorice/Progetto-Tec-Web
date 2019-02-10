@@ -6,8 +6,8 @@
     font-family: "Roboto";
 }
 
-.show-about img{
-    width: 25%;
+.sezione-sviluppatore img{
+  width: 25%;
 }
 
 #titolo-pagina{
@@ -91,7 +91,7 @@
       color: #333; 
   }
 
-  .show-about{
+  .sezione-sviluppatore{
        display: inline;
   }
 
