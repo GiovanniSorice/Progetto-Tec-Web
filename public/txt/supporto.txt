@@ -5,7 +5,7 @@
 							<label for="label-messaggio" >Invia un messaggio agli amministratori:</label>																												
 							<div class="post-holder">	
 								<div class="textarea-wrap">
-									<textarea placeholder="inserisci il tuo messaggio" title="inserisci il tuo messaggio" name="messaggio"></textarea>
+									<textarea placeholder="inserisci il tuo messaggio" title="inserisci il tuo messaggio" name="messaggio" minlength="1" maxlenght="256" required></textarea>
 								</div>
 							</div>
 						</div>
