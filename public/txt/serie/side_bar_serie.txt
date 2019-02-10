@@ -40,7 +40,7 @@
 	            </script>
 
 				<div id="preferito-btn" class="preferito">
-						<button href="<!-- Add_Preferitio -->" title="<!-- Add-Rem -->"><!-- Add-Rem --></button>
+						<a href="<!-- Add_Preferitio -->" title="<!-- Add-Rem -->"><!-- Add-Rem --></a>
 				</div>
 
 				<div id="side-bar__attori">

@@ -70,7 +70,7 @@ html, body{
 .homepage__consigliati .show__info{
 	padding-left: 1em;
 	color: #aaa;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 #content__homepage .iscriviti{
