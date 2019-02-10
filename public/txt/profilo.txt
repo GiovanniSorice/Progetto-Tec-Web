@@ -3,10 +3,9 @@
 
 			<!-- contenuto effettivo della pagina -->
 			<div class="profilo">
-					<h2>
+					<h1>
 						Profilo
-					</h2>
-
+					</h1>
 				<div>
 					<img src="<!-- Foto -->" alt="foto profilo dell'utente"/>
 				</div>

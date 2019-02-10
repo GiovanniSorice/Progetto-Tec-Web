@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.15)  10 FEB 2019 21:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.15)  10 FEB 2019 22:52
 entering extended mode
 **./Relazione_tecweb.tex
 (Relazione_tecweb.tex
@@ -1098,7 +1098,7 @@ LaTeX Info: Redefining \nameref on input line 7.
 \@outlinefile=\write5
 \openout5 = `Relazione_tecweb.out'.
 
-<img/logo.jpg, id=170, 190.7125pt x 190.7125pt>
+<img/logo.jpg, id=174, 190.7125pt x 190.7125pt>
 File: img/logo.jpg Graphic file (type jpg)
 <use img/logo.jpg>
 Package pdftex.def Info: img/logo.jpg  used on input line 8.
@@ -1162,7 +1162,19 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.12 \newpage
-              [1] (sez/introduzione.tex
+              [1]
+File: img/logo.jpg Graphic file (type jpg)
+<use img/logo.jpg>
+Package pdftex.def Info: img/logo.jpg  used on input line 12.
+(pdftex.def)             Requested size: 19.07236pt x 19.07236pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 23.4224pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2] (sez/introduzione.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
  []
@@ -1192,7 +1204,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2]
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
@@ -1218,7 +1230,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3]
+[4]
 Overfull \hbox (4.38353pt too wide) in paragraph at lines 43--44
 []\OT1/lmr/m/n/12 regole di sti-le in una \OT1/lmr/m/it/12 me-dia que-ry \OT1/l
 mr/m/n/12 per scher-mi de-sk-top (min-width 1025px). 
@@ -1244,8 +1256,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4]
-<img/nav_bar.png, id=245, 349.305pt x 675.52374pt>
+[5]
+<img/nav_bar.png, id=255, 349.305pt x 675.52374pt>
 File: img/nav_bar.png Graphic file (type png)
 <use img/nav_bar.png>
 Package pdftex.def Info: img/nav_bar.png  used on input line 67.
@@ -1261,17 +1273,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5 <./img/nav_bar.png>]
+[6 <./img/nav_bar.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-<img/about.png, id=254, 837.1275pt x 396.48125pt>
+<img/about.png, id=265, 837.1275pt x 396.48125pt>
 File: img/about.png Graphic file (type png)
 <use img/about.png>
 Package pdftex.def Info: img/about.png  used on input line 84.
 (pdftex.def)             Requested size: 334.84506pt x 158.58968pt.
-<img/esplora.png, id=255, 1142.01656pt x 526.21594pt>
+<img/esplora.png, id=266, 1142.01656pt x 526.21594pt>
 File: img/esplora.png Graphic file (type png)
 <use img/esplora.png>
 Package pdftex.def Info: img/esplora.png  used on input line 101.
@@ -1286,7 +1298,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6 <./img/about.png>]
+[7 <./img/about.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
@@ -1311,7 +1323,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
-<img/privacy.png, id=264, 799.48688pt x 445.16313pt>
+<img/privacy.png, id=274, 799.48688pt x 445.16313pt>
 File: img/privacy.png Graphic file (type png)
 <use img/privacy.png>
 Package pdftex.def Info: img/privacy.png  used on input line 125.
@@ -1326,7 +1338,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7 <./img/esplora.png>]) (sez/realizzazione.tex
+[8 <./img/esplora.png>]) (sez/realizzazione.tex
 File: img/logo.jpg Graphic file (type jpg)
 <use img/logo.jpg>
 Package pdftex.def Info: img/logo.jpg  used on input line 1.
@@ -1338,7 +1350,23 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8 <./img/privacy.png>]) (sez/verifica.tex
+[9 <./img/privacy.png>]
+Overfull \hbox (10.23004pt too wide) in paragraph at lines 10--11
+[]\OT1/lmr/bx/n/12 @media screen and (min-width: 751px) and (max-width: 1024px)
+
+ []
+
+File: img/logo.jpg Graphic file (type jpg)
+<use img/logo.jpg>
+Package pdftex.def Info: img/logo.jpg  used on input line 30.
+(pdftex.def)             Requested size: 19.07236pt x 19.07236pt.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 23.4224pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]) (sez/verifica.tex
 File: img/logo.jpg Graphic file (type jpg)
 <use img/logo.jpg>
 Package pdftex.def Info: img/logo.jpg  used on input line 1.
@@ -1350,19 +1378,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9]
-File: img/logo.jpg Graphic file (type jpg)
-<use img/logo.jpg>
-Package pdftex.def Info: img/logo.jpg  used on input line 1.
-(pdftex.def)             Requested size: 19.07236pt x 19.07236pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 23.4224pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[10]
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
@@ -1379,7 +1395,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11]) 
+[12]) 
 AED: lastpage setting LastPage
 File: img/logo.jpg Graphic file (type jpg)
 <use img/logo.jpg>
@@ -1391,24 +1407,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12]
+[13]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 20.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 20.
  (Relazione_tecweb.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 20.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 20.
 Package rerunfilecheck Info: File `Relazione_tecweb.out' has not changed.
-(rerunfilecheck)             Checksum: 87C7B2AFC69BAE967EA6D43762329508;2876.
+(rerunfilecheck)             Checksum: 3798566557FC213EBA57D7A5B7697C41;2953.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 24301 strings out of 492970
- 447076 string characters out of 3137594
- 774119 words of memory out of 3000000
- 27596 multiletter control sequences out of 15000+200000
+ 24304 strings out of 492970
+ 447123 string characters out of 3137594
+ 775119 words of memory out of 3000000
+ 27597 multiletter control sequences out of 15000+200000
  41384 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,18n,124p,803b,502s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1418,9 +1434,9 @@ lm-rmtt.enc}<D:/Programmi/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><D:/Progr
 ammi/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><D:/Programmi/MiKTeX 2.9/fonts/
 type1/public/lm/lmri12.pfb><D:/Programmi/MiKTeX 2.9/fonts/type1/public/lm/lmsy1
 0.pfb><D:/Programmi/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Relazione_tecweb.pdf (13 pages, 3542776 bytes).
+Output written on Relazione_tecweb.pdf (14 pages, 3546327 bytes).
 PDF statistics:
- 334 PDF objects out of 1000 (max. 8388607)
- 58 named destinations out of 1000 (max. 500000)
- 366 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 344 PDF objects out of 1000 (max. 8388607)
+ 60 named destinations out of 1000 (max. 500000)
+ 374 words of extra memory for PDF output out of 10000 (max. 10000000)
 

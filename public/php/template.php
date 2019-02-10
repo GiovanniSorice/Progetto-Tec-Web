@@ -107,7 +107,7 @@
                  break;
                  
             case "supporto":
-                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a class="path" href="home.php">Home</a><span>&#x27AA;</span><a href="#">Supporto</a>', $output);                
+                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a class="path" href="home.php">Home</a><span>&#x27AA;</span><a href="#" class="path">Supporto</a>', $output);                
                 $footer = preg_replace("/refSupporto/i", "class=\"selezionato\"", $footer );
                 echo printPageSupporto($output);
                 break;

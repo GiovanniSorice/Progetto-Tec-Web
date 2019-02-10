@@ -3,7 +3,18 @@
 Per la realizzazione del sito si è fatto riferimento ad alcune linee guida che ci hanno permesso di impostare il lavoro fin da subito, permettendo una scrittura agevole e relativamente semplice del codice.
 
 \subsection{Responsive Design}
-Dire che abbiamo scelto di implentare in primis il codice per la versione mobile in quanto più responsive
+TV Hunter è stato sviluppato con un approccio \textbf{mobile first} responsive.\\
+Sono presenti tre breakpoint che permettono una visualizzazione di qualità delle pagine da tutti i tipi di dispositivi comunemente usati per la navigazione.\\
+I breakpoint (indicati con l'intera \textit{media query}) sono i seguenti:
+\begin{itemize}
+	\item \textbf{@media screen and (min-width: 751px) and (max-width: 1024px)} delimita la modalità tablet. Adatta a schemi medio-grandi di tablet o a schermi grandi di smartphone.
+	\item \textbf{@media screen and (min-width: 1025px)} delimita l'inizio della modalità desktop. 
+\end{itemize}
+Lo stile per i dispositivi mobili con larghezza massima di 750px è specificato all'esterno di media query, questà è una caratteristica del codice mobile first.\\
+È presente una ulteriore media query per la modalità di stampa.
+\subsubsection{Layout di stampa}
+Per permettere all'utente di stampare pagine del sito è stato definito un layout di stampa che elimina dalla pagina elementi non utili alla stampa.\\
+Ad esempio non sono visualizzati l'header, la barra di navigazione superiore ed inferiore. Gli sfondi scuri sono sostituiti dal colore bianco e i testi sono convertiti in colore nero. Le miniature delle serie TV non sono visualizzate nelle pagine di \textit{esplora} e \textit{preferiti} per evitare il consumo eccessivo di colore in fase di stampa.
 
 \subsection{Linguaggi e strumenti}
 
