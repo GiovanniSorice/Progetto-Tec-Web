@@ -1,21 +1,24 @@
 	<div class="footer">
 		<div class="footer__nav">
 			<ul class="list_no-style">
-				<li><a href="supporto.php">Supporto </a></li>
-				<li><a href="privacy.php"><span lang="EN">Privacy</span></a></li>
-				<li><a href="about.php">About</a></li>
+				<li refFaq><a href="faq.php"><abbr title="Frequently Asked Questions">FAQ</abbr></a></li>
+				<li refSupporto><a href="supporto.php" title="Supporto">Supporto</a></li>
+				<li refPrivacy><a href="privacy.php" title="Privacy"><span lang="EN">Privacy</span></a></li>
+				<li refAbout><a href="about.php title="About"">About</a></li>
+				<!-- Amministrazione -->
 			</ul>	
 		</div>
 	</div>
 
 	<div id="footer-responsive-menu">
 		<ul class="list_no-style">
-			<li><a href="esplora.php" title="Esplora">Esplora</a></li>
-			<li><a href="profilo.php" title="Profilo">Profilo</a></li>
-			<li><a href="preferiti.php" title="Preferiti">Preferiti</a></li>
-			<li><a href="supporto.php">Supporto </a></li>
-			<li><a href="privacy.php"><span lang="EN">Privacy</span></a></li>
-			<li><a href="about.php"><span lang="EN">About</span></a></li>
+			<li refEsplora><a href="esplora.php" title="Esplora">Esplora</a></li>
+			<li refProfilo><a href="profilo.php" title="Profilo">Profilo</a></li>
+			<li refPreferiti><a href="preferiti.php" title="Preferiti">Preferiti</a></li>
+			<li refFaq><a href="faq.php"><abbr title="Frequently Asked Questions">FAQ</abbr></a></li>
+			<li refSupporto><a href="supporto.php" title="Supporto">Supporto </a></li>
+			<li refPrivacy><a href="privacy.php" title="Privacy"><span lang="EN">Privacy</span></a></li>
+			<li refAbout><a href="about.php" title="About"><span lang="EN">About</span></a></li>
 			<!-- Amministrazione -->
 		</ul>	
 	</div>
