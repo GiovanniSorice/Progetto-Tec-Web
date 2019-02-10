@@ -1,12 +1,13 @@
 				<div id="side-bar__consigli">
 					<span>Consigliata dal <!-- Percentuale_Consigliati -->% degli utenti</span>
-           			<div id="consiglia" class="pollici">
-						<a href="<!-- Consigliato -->" title="consiglia la serie"><img id="like" src="../img/consigliati/like.png" alt="Consiglia" /></a>
+					<div>
+	           			<div id="consiglia" class="pollici">
+							<a href="<!-- Consigliato -->" title="consiglia la serie"><img id="like" src="../img/consigliati/like.png" alt="Consiglia" /></a>
+						</div>
+						<div id="sconsiglia" class="pollici">			
+							<a href="<!-- Sconsigliato -->" title="sconsiglia la serie"><img id="dislike" src="../img/consigliati/dislike.png" alt="Sconsiglia"/></a>
+						</div>
 					</div>
-					<div id="sconsiglia" class="pollici">			
-						<a href="<!-- Sconsigliato -->" title="sconsiglia la serie"><img id="dislike" src="../img/consigliati/dislike.png" alt="Sconsiglia"/></a>
-					</div>
-
 					<script>
 	                	document.getElementById("consiglia").style.backgroundColor = "<!-- Cons_Color -->";
 	                	document.getElementById("sconsiglia").style.backgroundColor = "<!-- Scons_Color -->";
@@ -38,9 +39,10 @@
 
 	            </script>
 
-				<div id="preferito-btn">
-						<a href="<!-- Add_Preferitio -->" title="<!-- Add-Rem -->"><!-- Add-Rem --></a>
+				<div id="preferito-btn" class="preferito">
+						<button href="<!-- Add_Preferitio -->" title="<!-- Add-Rem -->"><!-- Add-Rem --></button>
 				</div>
+
 				<div id="side-bar__attori">
 					<h2>Attori</h2>
 					<ul class="list_no-style list-inline" id="list-attori">

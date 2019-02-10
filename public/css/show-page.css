@@ -48,10 +48,24 @@
 	display: inline-block;
 	border-style: outset;
 	margin: 1em;
+	width: 25%;
+	background-color: #ffffa0;
+}
+
+#side-bar__consigli #consiglia{
+	margin-right: 5%;
+}
+
+#side-bar__consigli #sconsiglia{
+	margin-left: 2%;
 }
 
 #side-bar__consigli .pollici:hover{ /*vale per entrambi i pollici*/
 	background-color: #fac100;
+}
+
+#side-bar__consigli .pollici img{
+	width: 100%;
 }
 
 #side-bar__attori{
@@ -62,7 +76,7 @@
 }
 
 #side-bar__attori h2{
-	font-size: large;
+	font-size: 1.5em;
 }
 
 #list-attori{
@@ -88,7 +102,7 @@
 }
 
 .side-bar .attore-info .nome-attore{
-	font-size: small;
+	font-size: 1em;
 	padding: 0;
 }
 
@@ -294,6 +308,75 @@
 	margin: 5px;
 }
 
+.votazioni{
+  margin: 0;
+  text-align: center;
+  padding-bottom: 3em;
+  position: relative;
+}
+
+
+.votazioni h1{
+  font-size: 1.5em;
+  margin: 0;
+  font-family: serif;
+}
+
+.votazioni ul{
+  margin: 0;
+  padding-bottom: 2em
+}
+
+.votazioni li{
+  font-size: 1.5em;
+  background-color: #ffffa0;
+  float: left;
+  list-style-type: none;
+}
+
+.votazioni li:hover{
+  background-color: #fac100;
+  border-bottom: 0.3em solid #FF831C;
+}
+
+.votazioni a:link{
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.5em;
+}
+
+.preferito{
+	font-size: 1.5em;
+}
+
+.preferito a:link{
+  background-color: #ffffa0;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.5em;
+  border-style: outset;
+  color: black;
+}
+
+.preferito a:hover{
+	background-color: #fac100;
+}
+
+
+@media screen and (min-width: 751px) and (max-width: 1024px){
+
+}
+
+@media screen and (min-width: 1025px){
+
+}
+
+
+
+
+
 
 @media screen and (min-width: 1025px){
 	/*Side bar*/
@@ -369,6 +452,7 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	padding-top: 1em;
 	}
 
 	#preferito-btn button{ 

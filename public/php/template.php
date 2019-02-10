@@ -28,7 +28,7 @@
         }
 
         if(array_key_exists('user_tipo',$_SESSION) && !empty($_SESSION['user_tipo']) && $_SESSION['user_tipo']=="admin"){
-            $footer = preg_replace("/<!-- Amministrazione -->/i", '<li><a href="amministrazione.php" title="Amministrazione">Amministrazione</a></li>', $footer);
+            $footer = preg_replace("/<!-- Amministrazione -->/i", '<li refAdmin><a href="amministrazione.php" title="Amministrazione">Amministrazione</a></li>', $footer);
         }
 
         //Parte personalizzata per tutte le pagine
@@ -36,6 +36,7 @@
 
         switch ($namePage) {
             case "esplora":
+                $footer = preg_replace("/refEsplora/i", "class=\"selezionato\"", $footer );
                 echo printPageEsplora($output);
             break;
             
@@ -45,6 +46,7 @@
                 break;
                 
             case "about":
+                $footer = preg_replace("/refAbout/i", "class=\"selezionato\"", $footer );
                 echo printPageAbout($output);
                 break;
 
@@ -53,6 +55,7 @@
                 break;
 
             case "privacy":
+                $footer = preg_replace("/refPrivacy/i", "class=\"selezionato\"", $footer );
                 echo printPagePrivacy($output);
                 break;
 
@@ -65,10 +68,12 @@
                 break;
 
             case "preferiti":
+                $footer = preg_replace("/refPreferiti/i", "class=\"selezionato\"", $footer );
                 echo printPagePreferiti($output);
                 break;
 
              case "profilo":
+                $footer = preg_replace("/refProfilo/i", "class=\"selezionato\"", $footer );
                 echo printPageProfilo($output);
                 break;
 
@@ -77,9 +82,11 @@
                  break;
                  
              case "amministrazione":
+                 $footer = preg_replace("/refAdmin/i", "class=\"selezionato\"", $footer );
                  echo printPageAmministrazione($output);
                  break;
              case "faq":
+                 $footer = preg_replace("/refFaq/i", "class=\"selezionato\"", $footer );
                  echo printPageFAQ($output);
                  break;
                  
@@ -88,6 +95,7 @@
                  break;
                  
             case "supporto":
+                $footer = preg_replace("/refSupporto/i", "class=\"selezionato\"", $footer );
                 echo printPageSupporto($output);
                 break;
                 
@@ -99,7 +107,13 @@
         
         
         //Parte standard per tutte le pagine
-        
+        $footer = preg_replace("/refAbout/i", "", $footer );
+        $footer = preg_replace("/refPrivacy/i", "", $footer );
+        $footer = preg_replace("/refFaq/i", "", $footer );
+        $footer = preg_replace("/refSupporto/i", "", $footer );
+        $footer = preg_replace("/refEsplora/i", "", $footer );
+        $footer = preg_replace("/refProfilo/i", "", $footer );
+        $footer = preg_replace("/refPreferiti/i", "", $footer );       
         $footer = preg_replace("/<!-- Script -->/i", $script, $footer );
         
         echo $footer;

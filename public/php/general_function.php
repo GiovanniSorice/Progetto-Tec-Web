@@ -202,7 +202,7 @@ include_once 'DBConnection.php';
             //Inserisco le serie nel div del genere e completo il div con le informazioni mancanti
             $genere_show_collect=preg_replace("/<!-- Successivo -->/i",$genere_page." <!-- Successivo -->" , $genere_show_collect );
             $genere_show_collect=preg_replace("/<!-- Genere -->/i",$genere_nome , $genere_show_collect );
-            $genere_show_collect=preg_replace("/<!-- Mostra_Tutto_Genere -->/i",'<a href="http://'.$host.$uri.'/genere.php?genere_id='.$genere_id.'"><h3 id="mostra-tutto">mostra tutto</h3></a>' , $genere_show_collect );
+            $genere_show_collect=preg_replace("/<!-- Mostra_Tutto_Genere -->/i",'<a href="http://'.$host.$uri.'/genere.php?genere_id='.$genere_id.'"><h3>mostra tutto</h3></a>' , $genere_show_collect );
             $genere_show_collect=preg_replace("/<!-- Genere_Titolo -->/i",$genere_nome , $genere_show_collect );
             $genere_show_collect=preg_replace("/<!-- Show -->/i",$show , $genere_show_collect );
             
@@ -401,9 +401,9 @@ include_once 'DBConnection.php';
                         $side_serie_block );
                         $side_serie_block=preg_replace("/<!-- Voto2 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=2", 
                         $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- Voto3 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=4" , 
+                        $side_serie_block=preg_replace("/<!-- Voto3 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=3" , 
                         $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- Voto4 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=5"  , 
+                        $side_serie_block=preg_replace("/<!-- Voto4 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=4"  , 
                         $side_serie_block );
                         $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/$extra9".$_GET["serie_id"], 
                         $side_serie_block );
@@ -503,17 +503,49 @@ include_once 'DBConnection.php';
         $stmt->close();
         $episodio_collect="<!-- Successivo -->";
         
-        foreach ($episodi as $episodio) {
-            $episodio_collect=preg_replace("/<!-- Successivo -->/i", 
-            '<tr> '
-            .'<td>'.$episodio["numero"].'</td>'
-                .'<td><a lang="EN" href="">'.$episodio["titolo"].'</a></td>' //TODO: aggiungere href episodio
-            .'<td>'.date("d-m-Y", strtotime($episodio["data"])).'</td>'
-            .'<td>'.($episodio["titolo"]==1?'Si':'NO').'</td>'
-            .'</tr>'
-            .'<!-- Successivo -->'
-                , $episodio_collect );
+        if(array_key_exists('user_username',$_SESSION) && !empty($_SESSION['user_username'])){
+            foreach ($episodi as $episodio) {
+
+                $query="select visto.id_utente from visto join episodio join utente where visto.id_episodio=".$episodio["id"]." and visto.id_utente=".$_SESSION['user_id']." group by visto.id_utente";
+                $isVisto=resultQueryToTable($connection->query($query));
+
+                if(empty($isVisto)){
+                    $isVisto="NO";
+                    $visto_nonVisto = "si";
+                    $link="http://$host$uri/visto_action.php?id_episodio=".$episodio["id"]."&serie_id=".$_GET["serie_id"];
+                }
+                else{
+                    $isVisto="SI";
+                    $visto_nonVisto = "no";
+                    $link="http://$host$uri/nonVisto_action.php?id_episodio=".$episodio["id"]."&serie_id=".$_GET["serie_id"];
+                }
+
+                $episodio_collect=preg_replace("/<!-- Successivo -->/i", 
+                '<tr> '
+                .'<td>'.$episodio["numero"].'</td>'
+                    .'<td>'.$episodio["titolo"].'</td>' //TODO: aggiungere href episodio
+                .'<td>'.date("d-m-Y", strtotime($episodio["data"])).'</td>'
+                .'<td>'.'<a href="'.$link.'" title="visto '. $visto_nonVisto.'">'.$isVisto.'</a></td>'
+                .'</tr>'
+                .'<!-- Successivo -->'
+                    , $episodio_collect );
+            }
         }
+        else{
+            foreach ($episodi as $episodio) {
+                $episodio_collect=preg_replace("/<!-- Successivo -->/i", 
+                '<tr> '
+                .'<td>'.$episodio["numero"].'</td>'
+                    .'<td>'.$episodio["titolo"].'</td>' //TODO: aggiungere href episodio
+                .'<td>'.date("d-m-Y", strtotime($episodio["data"])).'</td>'
+                .'<td>'.'<a href="http://'.$host.$uri.'/login.php" title="visto no">NO</a></td>'
+                .'</tr>'
+                .'<!-- Successivo -->'
+                    , $episodio_collect );
+            }
+        }
+
+
         $episodio_collect=preg_replace("/<!-- Successivo -->/i","" , $episodio_collect );
         $serie_block=preg_replace("/<!-- Episodio -->/i",$episodio_collect, $serie_block );
         
