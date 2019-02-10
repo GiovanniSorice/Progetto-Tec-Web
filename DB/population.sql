@@ -130,6 +130,22 @@ INSERT INTO attore VALUES('9', '../img/miniature/attori/bryan-cranston_min.jpg',
 INSERT INTO attore VALUES('10', '../img/miniature/attori/aaron-paul_min.jpg', 'Aaron', 'Paul', 'Aaron Paul Sturtevant, noto semplicemente come Aaron Paul (Emmett, 26 agosto 1979) &egrave; un attore statunitense.');
 INSERT INTO attore VALUES('11', '../img/miniature/attori/rami-malek_min.jpg', 'Rami', 'Malek', 'Rami Said Malek (Los Angeles, 12 maggio 1981) &egrave; un attore statunitense, noto principalmente per la sua interpretazione di Ahkmenrah nella saga di film Una notte al museo e di Elliot Alderson nella pluripremiata serie televisiva Mr. Robot, per la quale si aggiudica un Emmy per il miglior attore in una serie drammatica e riceve due nomination ai Golden Globe.');
 INSERT INTO attore VALUES('12', '../img/miniature/attori/benedict-cumberbatch_min.jpg', 'Benedict', 'Cumberbatch', 'Benedict Timothy Carlton Cumberbatch (Londra, 19 luglio 1976) &egrave; un attore e doppiatore britannico. I ruoli pi&ugrave; conosciuti da lui interpretati sono quelli di Sherlock Holmes nella serie televisiva omonima, di Alan Turing nel film The Imitation Game e del Dottor Strange nel Marvel Cinematic Universe.');
+INSERT INTO attore VALUES('13', '../img/miniature/attori/katie-siegel_min.jpg', 'Katie', 'Siegel', '');
+INSERT INTO attore VALUES('14', '../img/miniature/attori/carly-chaikin_min.jpg', 'Carly', 'Chaikin', '');
+INSERT INTO attore VALUES('15', '../img/miniature/attori/martin-freeman_min.jpg', 'Martin', 'Freeman', '');
+INSERT INTO attore VALUES('16', '../img/miniature/attori/ursula-corbero_min.jpg', 'Ursula', 'Corbero', '');
+INSERT INTO attore VALUES('17', '../img/miniature/attori/alvaro-morte_min.jpg', 'Alvaro', 'Morte', '');
+INSERT INTO attore VALUES('18', '../img/miniature/attori/brendan-scannell_min.jpg', 'Brendan', 'Scannell', '');
+INSERT INTO attore VALUES('19', '../img/miniature/attori/james-scully_min.jpg', 'James', 'Scully', '');
+INSERT INTO attore VALUES('20', '../img/miniature/attori/toby-kebbell_min.jpg', 'Toby', 'Kebbell', '');
+INSERT INTO attore VALUES('21', '../img/miniature/attori/daniel-kuluuya_min.jpg', 'Daniel', 'Kuluuya', '');
+INSERT INTO attore VALUES('22', '../img/miniature/attori/miguel-bernandeau_min.jpg', 'Miguel', 'Bernandeau', '');
+INSERT INTO attore VALUES('23', '../img/miniature/attori/miguel-herran_min.jpg', 'Miguel', 'Herran', '');
+INSERT INTO attore VALUES('24', '../img/miniature/attori/gabriel-chavarria_min.jpg', 'Gabriel', 'Chavarria', '');
+INSERT INTO attore VALUES('25', '../img/miniature/attori/amanda-warren_min.jpg', 'Amanda', 'Warren', '');
+INSERT INTO attore VALUES('26', '../img/miniature/attori/jake-mcdorman_min.jpg', 'Jake', 'McDorman', '');
+INSERT INTO attore VALUES('27', '../img/miniature/attori/jennifer-carpenter_min.jpg', 'Jennifer', 'Carpenter', '');
+INSERT INTO attore VALUES('28', '../img/miniature/attori/fortunato-cerlino_min.jpg', 'Fortunato', 'Cerlino', '');
 
 
 -- serie_attore
@@ -141,11 +157,27 @@ INSERT INTO serie_attore VALUES('2', '4');
 INSERT INTO serie_attore VALUES('3', '5');
 INSERT INTO serie_attore VALUES('3', '6');
 INSERT INTO serie_attore VALUES('4', '7');
+INSERT INTO serie_attore VALUES('4', '13');
 INSERT INTO serie_attore VALUES('5', '8');
+INSERT INTO serie_attore VALUES('5', '28');
 INSERT INTO serie_attore VALUES('6', '9');
 INSERT INTO serie_attore VALUES('6', '10');
 INSERT INTO serie_attore VALUES('7', '11');
+INSERT INTO serie_attore VALUES('7', '14');
 INSERT INTO serie_attore VALUES('8', '12');
+INSERT INTO serie_attore VALUES('8', '15');
+INSERT INTO serie_attore VALUES('9', '16');
+INSERT INTO serie_attore VALUES('9', '17');
+INSERT INTO serie_attore VALUES('10', '18');
+INSERT INTO serie_attore VALUES('10', '19');
+INSERT INTO serie_attore VALUES('11', '20');
+INSERT INTO serie_attore VALUES('11', '21');
+INSERT INTO serie_attore VALUES('12', '22');
+INSERT INTO serie_attore VALUES('12', '23');
+INSERT INTO serie_attore VALUES('13', '24');
+INSERT INTO serie_attore VALUES('13', '25');
+INSERT INTO serie_attore VALUES('14', '26');
+INSERT INTO serie_attore VALUES('14', '27');
 
 -- genere
 -- INSERT INTO genere VALUES(id, nome);
