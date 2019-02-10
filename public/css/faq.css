@@ -16,7 +16,7 @@
 }
 
 #descrizione-FAQ h2 {
-	font-size: 1.2em;
+	font-size: 1em;
 	margin-top: 0.7em;
 	margin-bottom: 2em;
 	margin-left: 1em;
@@ -95,7 +95,7 @@
 	}
 
 	#descrizione-FAQ h2 {
-		font-size: 1.2em;
+		font-size: 1.1em;
 	}
 
 	.titolo-domanda {
@@ -106,6 +106,10 @@
 		font-size: 1.1em;
 	}
 
+	.risposta{
+		font-size: 1em;
+	}
+
 	.caption-immagine{
 		font-family: normal;
 		font-weight: lighter;
@@ -114,9 +118,7 @@
 		margin-top: 0.1em;
 		margin-right: 10.7em;
 		margin-left: 9.7em;
-		margin-bottom: 1.7em;
+		margin-bottom: 1.2em;
 	}
-	.risposta{
-		font-size: 1.1em;
-	}
+	
 }
