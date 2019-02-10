@@ -87,6 +87,10 @@
                  echo printPage404($output);
                  break;
                  
+            case "supporto":
+                echo printPageSupporto($output);
+                break;
+                
 
             default:
                 

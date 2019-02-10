@@ -887,4 +887,80 @@ include_once 'DBConnection.php';
         return $output;
     }
     
+    function printPageSupporto($output){
+        
+        global $connection;
+        
+        $host  = $_SERVER['HTTP_HOST'];
+        
+        $head_page = implode("", file("../txt/pagehead.txt"));
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "profilo", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        $supporto = implode("", file("../txt/supporto.txt"));
+        
+        if(!array_key_exists('user_username',$_SESSION) && empty($_SESSION['user_username'])){
+            $Registrati =
+            "<div class=\"iscriviti\">
+                    <p>
+                        Per accedere alla tua area personale <a href=\"signup.php\" title=\"registrati\">REGISTRATI</a> oppure <a href=\"login.php\" title=\"accedi\">EFFETTUA IL <span lang=\"EN\">LOGIN</span></a>
+                    </p>
+                </div>";
+            
+            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $Registrati , $output );
+            return $output;            
+        }            
+        
+        //parte messaggi
+        $query="SELECT messaggio,risposta FROM messaggi where user_id=".$_SESSION['user_id'];
+        
+        //Seleziono la lista delle segnalazioni
+        $messaggi=resultQueryToTable($connection->query($query));
+        
+        $messaggio_collect="<!-- Successivo -->";
+        
+        foreach ($messaggi as $messaggio) {
+            
+            $messaggio_collect=preg_replace("/<!-- Successivo -->/i",
+                '<tr> '
+                .'<td scope="row" class="messaggio-inviato">'.$messaggio["messaggio"].'</td>'
+                .'<td scope="row" class="messaggio-inviato">'.$messaggio["risposta"].'</td>'
+                .'</tr>'
+                .'<!-- Successivo -->'
+                , $messaggio_collect );
+        }
+        
+        $messaggio_collect=preg_replace("/<!-- Successivo -->/i","" , $messaggio_collect );
+        $supporto=preg_replace("/<!-- Messaggio -->/i",$messaggio_collect, $supporto );
+        
+        //parte segnalazioni
+        
+        $query="select a.checked,b.cancellato, b.testo, c.titolo from (segnalazione a join post b on a.id_ref=b.id) join serie c on b.id_serie=c.id where a.id_utente=".$_SESSION['user_id'];
+        
+        //Seleziono la lista delle segnalazioni
+        $segnalazioni=resultQueryToTable($connection->query($query));
+        
+        $segnalazione_collect="<!-- Successivo -->";
+        
+        foreach ($segnalazioni as $segnalazione) {
+            $azione=$segnalazione["checked"]==$segnalazione["cancellato"]?"Cancellato":"Cancellato solo per te";
+            $segnalazione_collect=preg_replace("/<!-- Successivo -->/i",
+                '<tr> '
+                .'<td scope="row" class="serie">'.$segnalazione["titolo"].'</td>'
+                .'<td scope="row" class="segnalazione">'.$segnalazione["testo"].'</td>'
+                .'<td scope="row" class="azione">'.$azione.'</td>'
+                .'</tr>'
+                .'<!-- Successivo -->'
+                , $segnalazione_collect );
+        }
+                
+        $segnalazione_collect=preg_replace("/<!-- Successivo -->/i","" , $segnalazione_collect );
+        $supporto=preg_replace("/<!-- Segnalazione -->/i",$segnalazione_collect, $supporto );
+        
+        
+        $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $supporto , $output );       
+        
+        return $output;
+    }
+    
+    
     ?>
