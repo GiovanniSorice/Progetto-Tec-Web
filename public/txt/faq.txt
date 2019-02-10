@@ -17,7 +17,7 @@
 						<div class = "immagine-faq">
 							<picture>
 								<source media="(min-width: 751px)" srcset="../img/faq/login.png">
-								<img src="../img/faq/loginSmall.png" alt="Indicazioni posizione login">
+								<img srcset= "../img/faq/loginSmall.png" alt="Indicazioni posizione login">
 							</picture>
 							
 						</div>
@@ -38,7 +38,7 @@
 						<div class = "immagine-faq">
 							<picture>
 								<source media="(min-width: 751px)" srcset="../img/faq/searchbar.png">
-								<img src="../img/faq/searchbarSmall.png" alt="Posizione della search bar.">
+								<img srcset="../img/faq/searchbarSmall.png" alt="Posizione della search bar.">
 							</picture>
 							
 						</div>

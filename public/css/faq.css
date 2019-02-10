@@ -1,12 +1,12 @@
 
 .pagina-FAQ {
 	margin: 0.5em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif; 
 }
 
 #descrizione-FAQ h1 {
 	font-family: normal;
-	font-size: 2.5em;
+	font-size: 1.5em;
 	font-weight: bold;
 	margin-bottom: 0;
 }	
@@ -30,13 +30,13 @@
 
 .titolo-domanda {
 	font-family: normal;
-	font-size: 1.3em;
+	font-size: 1em;
 	font-weight: bold;
 	margin-bottom: 0;	
 }
 
 .risposta {
-	font-size: 1em;
+	font-size: 0.8em;
 	margin-top: 0.5em;
 	margin-left: 1em;
 }
@@ -69,7 +69,7 @@
 	.immagine-faq img{
 		margin-bottom: 0;
 	}
-	
+
 	.caption-immagine{
 		font-family: normal;
 		font-weight: lighter;
@@ -85,25 +85,25 @@
 
 @media screen and (min-width: 1025px){
 	.pagina-FAQ {
-		margin: 1em;	
+		margin: 1.8em;	
 	}
 	.immagine-faq img{
 		margin-bottom: 0;
 	}
 	#descrizione-FAQ h1{
-		font-size: 3em;
+		font-size: 2.1em;
 	}
 
 	#descrizione-FAQ h2 {
-		font-size: 1.6em;
+		font-size: 1.2em;
 	}
 
 	.titolo-domanda {
-		font-size: 1.8em;
+		font-size: 1.5em;
 	}	
 
 	.risposta strong{
-		font-size: 1em;
+		font-size: 1.1em;
 	}
 
 	.caption-immagine{
@@ -117,6 +117,6 @@
 		margin-bottom: 1.7em;
 	}
 	.risposta{
-		font-size: 1.5em;
+		font-size: 1.1em;
 	}
 }
