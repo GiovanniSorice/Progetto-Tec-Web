@@ -177,10 +177,33 @@ CREATE TABLE segnalazione (
   UNIQUE(id_utente, id_ref),
 
   FOREIGN KEY (id_utente) REFERENCES utente(id)
-    
+
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS messaggi ;
 
+CREATE TABLE IF NOT EXISTS messaggi (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  messaggio VARCHAR(256) NOT NULL,
+  risposta VARCHAR(256) NULL DEFAULT NULL,
+  user_id INT(11) NOT NULL,
+  admin_id INT(11),
+  PRIMARY KEY (id),
+  INDEX fk_user_id_idx (user_id ASC),
+  INDEX fk_admin_id_idx (admin_id ASC),
+  CONSTRAINT fk_admin_id
+    FOREIGN KEY (admin_id)
+    REFERENCES utente (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT fk_user_id
+    FOREIGN KEY (user_id)
+    REFERENCES utente (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 

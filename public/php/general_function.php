@@ -51,11 +51,7 @@ include_once 'DBConnection.php';
             case "preferiti":
                 $nav = preg_replace("/refPreferiti/i", "selezionato", $nav);
                 break;
-
-            case "impostazioni":
-                $nav = preg_replace("/refImpostazioni/i", "selezionato", $nav);
-                break;
-
+                
             case "faq":
                 $nav = preg_replace("/refFaq/i", "selezionato", $nav);
                 break;
@@ -865,6 +861,50 @@ include_once 'DBConnection.php';
         $segnalazioni_collect=preg_replace("/<!-- Successivo -->/i","" , $segnalazioni_collect );
         $amministratore=preg_replace("/<!-- Segnalazioni -->/i",$segnalazioni_collect, $amministratore );
         
+        //parte messaggi
+        $query="select a.id,a.messaggio,b.username from messaggi a join utente b on a.user_id=b.id where admin_id is null";
+        
+        //Seleziono la lista delle segnalazioni
+        $messaggi=resultQueryToTable($connection->query($query));
+        
+        $messaggio_collect="<!-- Successivo -->";
+        
+        $messAct="messaggio_action.php?";
+        
+        foreach ($messaggi as $messaggio) {
+            $link=(string)"http://".$host.$uri."/".$messAct."messaggio_id=".$messaggio["id"]."&elimina=";
+            
+            $messaggio_collect=preg_replace("/<!-- Successivo -->/i",
+                '<tr> '
+                .'<td scope="row" class="nome-utente">'.$messaggio["username"].'</td>'
+                .'<td scope="row" class="messaggio-inviato">'.$messaggio["messaggio"].'</td>'
+                .'<td>'
+                .'<form class="post-form post-form-supporto" action="messaggio_amministratore_action.php" method="get">'
+                .'<div class="post-holder">'
+                .'<div class="textarea-wrap">'
+                .'<input class="jsonly" name="messaggio_id" value="'.$messaggio["id"].'"/>'
+                .'<textarea placeholder="inserisci il tuo messaggio" title="inserisci il tuo messaggio" name="messaggio"></textarea>'
+                .'</div>'
+                .'</div>'
+                .'<div class="submit-post">'
+                .'<input class="submit-post-btn" type="submit" value="Invia"/>'
+                .'</div>'
+                .'</form>'
+                .'</td>'
+                .'<td scope="row" class="spazio-eliminazione">'
+                .'<a href="'.$link.'true">'
+                .'<img src="../img/admin/trash.png" class= "elimina-commento" alt="immagine cestino"></img>'
+                .' </a>'
+                .'</td>'
+                .'</tr>'
+                .'<!-- Successivo -->'
+                , $messaggio_collect );
+        }
+                
+        
+        $messaggio_collect=preg_replace("/<!-- Successivo -->/i","" , $messaggio_collect );
+        $amministratore=preg_replace("/<!-- Messaggio -->/i",$messaggio_collect, $amministratore );
+        
         
         $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $amministratore , $output );
         
@@ -886,5 +926,81 @@ include_once 'DBConnection.php';
         
         return $output;
     }
+    
+    function printPageSupporto($output){
+        
+        global $connection;
+        
+        $host  = $_SERVER['HTTP_HOST'];
+        
+        $head_page = implode("", file("../txt/pagehead.txt"));
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "profilo", $output );
+        $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+        $supporto = implode("", file("../txt/supporto.txt"));
+        
+        if(!array_key_exists('user_username',$_SESSION) && empty($_SESSION['user_username'])){
+            $Registrati =
+            "<div class=\"iscriviti\">
+                    <p>
+                        Per accedere alla tua area personale <a href=\"signup.php\" title=\"registrati\">REGISTRATI</a> oppure <a href=\"login.php\" title=\"accedi\">EFFETTUA IL <span lang=\"EN\">LOGIN</span></a>
+                    </p>
+                </div>";
+            
+            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $Registrati , $output );
+            return $output;            
+        }            
+        
+        //parte messaggi
+        $query="SELECT messaggio,risposta FROM messaggi where user_id=".$_SESSION['user_id'];
+        
+        //Seleziono la lista delle segnalazioni
+        $messaggi=resultQueryToTable($connection->query($query));
+        
+        $messaggio_collect="<!-- Successivo -->";
+        
+        foreach ($messaggi as $messaggio) {
+            
+            $messaggio_collect=preg_replace("/<!-- Successivo -->/i",
+                '<tr> '
+                .'<td scope="row" class="messaggio-inviato">'.$messaggio["messaggio"].'</td>'
+                .'<td scope="row" class="messaggio-inviato">'.$messaggio["risposta"].'</td>'
+                .'</tr>'
+                .'<!-- Successivo -->'
+                , $messaggio_collect );
+        }
+        
+        $messaggio_collect=preg_replace("/<!-- Successivo -->/i","" , $messaggio_collect );
+        $supporto=preg_replace("/<!-- Messaggio -->/i",$messaggio_collect, $supporto );
+        
+        //parte segnalazioni
+        
+        $query="select a.checked,b.cancellato, b.testo, c.titolo from (segnalazione a join post b on a.id_ref=b.id) join serie c on b.id_serie=c.id where a.id_utente=".$_SESSION['user_id'];
+        
+        //Seleziono la lista delle segnalazioni
+        $segnalazioni=resultQueryToTable($connection->query($query));
+        
+        $segnalazione_collect="<!-- Successivo -->";
+        
+        foreach ($segnalazioni as $segnalazione) {
+            $azione=$segnalazione["checked"]==$segnalazione["cancellato"]?"Cancellato":"Cancellato solo per te";
+            $segnalazione_collect=preg_replace("/<!-- Successivo -->/i",
+                '<tr> '
+                .'<td scope="row" class="serie">'.$segnalazione["titolo"].'</td>'
+                .'<td scope="row" class="segnalazione">'.$segnalazione["testo"].'</td>'
+                .'<td scope="row" class="azione">'.$azione.'</td>'
+                .'</tr>'
+                .'<!-- Successivo -->'
+                , $segnalazione_collect );
+        }
+                
+        $segnalazione_collect=preg_replace("/<!-- Successivo -->/i","" , $segnalazione_collect );
+        $supporto=preg_replace("/<!-- Segnalazione -->/i",$segnalazione_collect, $supporto );
+        
+        
+        $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $supporto , $output );       
+        
+        return $output;
+    }
+    
     
     ?>

@@ -35,7 +35,7 @@
 						<div class = "caption-immagine">
 							Posizione della search bar.
 						</div>						
-						Se ci si sposta nella sezione esplora inoltre verranno caricati in anteprima, come illustrato nell'immagine, i risultati più simili rispetto alla ricerca che si sta 
+						Inoltre verranno caricati in anteprima, come illustrato nell'immagine, i risultati più simili rispetto alla ricerca che si sta 
 						effettuando. 
 					</h2>
 

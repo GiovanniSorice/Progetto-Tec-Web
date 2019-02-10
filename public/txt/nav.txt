@@ -17,7 +17,6 @@
 		</ul>
 
 		<ul class="nav__bottom-list list_no-style">
-			<li class="nav__restricted nav__impostazioni refImpostazioni"><a href="impostazioni.php" title="Impostazioni">Impostazioni</a></li>
 			<li class="nav__faq refFaq"><a href="faq.php"><abbr title="Frequently Asked Questions">FAQ</abbr></a></li>
 			<li class="nav__supporto refSupporto"><a href="supporto.php" title="Supporto">Supporto </a></li>
 			<li class="nav__privacy refPrivacy"><a href="privacy.php" title="Privacy"><span lang="EN">Privacy</span></a></li>
