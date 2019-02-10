@@ -2,33 +2,70 @@
 \section{Progettazione}
 \subsection{Studio dell'utenza finale}
 \subsubsection{Utente generico}
-L'utente generico che ci si può aspettare nel sito è di profilo informatico media alto ed è alla ricerca di informazioni riguardanti serie tv. L'utente generico registrato può commentare e lasciare un voto alla serie tv.
+L'utente generico che in generale visiterà il sito è di profilo informatico medio alto ed è alla ricerca di informazioni riguardanti serie tv.\\ 
 
-%\subsubsection{Azienda business-to-business}
-
-\subsubsection{Amministratore}
-Descrizione della pagina amministratore 
-
-\subsection{Layout del sito}
-
-
-\paragraph{Barra di navigazione}
-~\\Il sito è stato pensato per avere una navigazione a barra orizzontale fissa posta in alto sullo schermo. Le pagine del sito sono, per quanto riguarda gli utenti non registrati:
+L'utente generico non registrato ha a disposizione le seguenti azioni:
 \begin{itemize}
-	\item \textbf{\normalsize{Esplora}}
-	\item \textbf{\normalsize{Profilo}}
-	\item \textbf{\normalsize{Preferiti}}
-	\item \textbf{\normalsize{Impostazioni}}
-	\item \textbf{\normalsize{FAQ}}
-	\item \textbf{\normalsize{Supporto}}	
-	\item \textbf{\normalsize{Privacy}}
-	\item \textbf{\normalsize{About}}
+	\item eseguire il \textit{login} oppure effettuare l'\textit{iscrizione} al sito;
+	\item navigare nelle pagine \textit{homepage, esplora, serie tv, FAQ, supporto, privacy} e \textit{about};
+	\item effettuare la ricerca di serie tv grazie alla casella di ricerca presente nella barra di navigazione.
+\end{itemize}
+qualora l'utente non registrato tentasse di utilizzare le funzionalità riservate agli utenti registrati, verrà reindirizzato alla pagina di accesso/registrazione.
+
+L'utente generico registrato ha a disposizione le seguenti azioni:
+\begin{itemize}
+	\item eseguire il \textit{logout};\\
+	\item navigare nelle pagine \textit{homepage, esplora, serie tv, preferiti, FAQ, supporto, privacy} e \textit{about};
+	\item all'interno della pagina dedicata alle singole serie tv, l'utente potrà:
+	\begin{itemize}
+		\item consigliare o meno la serie;
+		\item votare la serie con una valutazione da 1 a 5;
+		\item aggiungere la serie ai preferiti; 
+		\item creare post e partecipare a discussioni;
+		\item segnalare i commenti inappropriati degli altri utenti.
+	\end{itemize}
 \end{itemize}
 
-Nella barra è presente il logo del sito e i pulsanti che portano alle altre pagine del sito. Nell'immagine sottostante è possibile vedere un esempio della barra di ricerca posta a sinistra della pagina: 
-\begin{figure}[h!]  				% scheletro di ogni paragrafo
+
+\subsubsection{Amministratore}
+I permessi aggiunti agli utenti amministratori permettono di accedere alla pagina di amministrazione.\\
+All'interno dell'area dedicata all'amministrazione è possibile svolgere le seguenti attività:
+\begin{itemize}
+	\item visualizzare in forma tabellare i commenti segnalati dagli utenti. Sarà possibile decidere di ignorare la segnalazione oppure di eliminare il commento segnalato;
+	\item visualizzare in forma tabellare i messaggi ricevuti dagli utenti (inviati dall'apposita sezione "Supporto") e decidere di dare una risposta oppure di eliminare i messaggi.
+\end{itemize}
+
+\subsection{Layout del sito}
+Il sito TV Hunter è stato sviluppato con l'approccio \textit{mobile first}. Lo stile definito nei file css è quindi strutturato nel seguente modo:
+\begin{itemize}
+	\item regole di stile per la versione mobile del sito;
+	\item regole di stile in una \textit{media query} per i dispositivi tablet (min-width 751px max-width 1024px);
+	\item regole di stile in una \textit{media query} per schermi desktop (min-width 1025px).
+\end{itemize}
+Vengono di seguito presentate prima le componenti principali del layout e successivamente le pagine principali del sito TV Hunter. \\
+Per ogni pagina o componente sono evidenziate le scelte più interessanti relative allo stile, alla struttura delle pagine, nonchè al comportamento.
+
+\subsubsection{Barra di navigazione}
+Che ci si trovi in modalità mobile, tablet o desktop, si potrà navigare all'interno del sito tramite il menù o la barra di navigazione che è sempre resa disponibile nella forma migliore in base alla situazione.\\
+\begin{itemize}
+	\item In \textbf{modalità mobile} la barra di navigazione ed il menù sono divisi. La barra di navigazione si trova sulla parte superiore della pagina. Da qui sarà possibile usare la casella di ricerca oppure, tramite il link \textit{Menu} sarà possibile visualizzare le voci del menù presenti sul fondo della pagina.\\
+	Questa scelta permette di evitare l'uso di JavaScript per la visualizzazione del menu. Il tasto \textit{Menu} risulta inoltre più intuitivo dell'immagine "ad hamburger" spesso utilizzata per la visualizzazione dei menù mobile che potrebbe rivelarsi disorientante per l'utenza con meno esperienza.\\
+	Sul fondo della pagina è presente il link \textit{Torna su} che permette di tornare facilmente a visualizzare le informazioni contenute nella pagina;
+	
+	\item In \textbf{modalità tablet} la barra di navigazione è divisa in maniera simile alla modalità mobile: sulla parte superiore della pagina è presente la barra con logo, casella di ricerca e tre voci del menù. Nella barra posta sul fondo a piè di pagina sono presenti le voci rimanenti (quelle secondarie) del menù.\\
+	Entrambe le barre sono posizionate in maniera \textit{fissa}. La barra superiore ha una altezza fissata in \textit{em}.\\
+	
+	\item In \textbf{modalità desktop} la barra di navigazione è posta in verticale sul lato sinistro. Questa ha una \textit{larghezza} del 20\% ed è posta in \textit{posizione} fissa.\\
+	nel menù sono elencate le voci principali (\textit{esplora, profilo, preferiti}) nel primo blocco e le voci secondarie (\textit{FAQ, supporto, provacy, about}) in un secondo blocco.\\
+	Alla sinistra delle voci, grazie al selettore \textit{:before}, sono state inserite delle icone che aiutano ad individuare più rapidamente la voce che si sta cercando.\\
+	Nel menù laterale sulla parte superiore è presente lo spazio per la ricerca delle serie tv;
+\end{itemize}
+	La voce del menù relativa alla pagina in cui ci si trova è evidenziata di colore bianco e non sarà cliccabile per evitare link che puntano alla pagina in cui ci si trova.
+	Sarà poi possibile capire dove ci si trovi all'interno del sito grazie al percorso indicato sulla barra sempre presente nella parte superiore della pagina.
+
+\begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.45]{img/nav_bar.png}}
-	\caption{Barra di navigazione per utente generico}
+	\caption{Barra di navigazione per utente generico in modalità desktop}
 	\label{fig:navbarGU}
 \end{figure}
 ~\\
