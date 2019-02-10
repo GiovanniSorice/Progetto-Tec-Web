@@ -41,7 +41,7 @@
 }
 
 .selezionato a{
-  color: white; 
+  color: white !important; 
   pointer-events: none;
   cursor: default; 
 }  
