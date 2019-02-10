@@ -22,7 +22,7 @@
 					Il sito è stato sviluppato per l'insegnamento di Tecnologie Web presente al terzo anno del corso di laurea in Informatica all'Università 						di Padova. 
 				</p>	
 				<ul class="list-inline list_no-style">
-  					<li class="show">	
+  					<li>	
 						<div class="paragrafo-sviluppatore">
 							<a href="https://github.com/dbarasti">
 								<img src="../img/aboutImage/davide.jpeg" alt="immagine di Davide Barasti"/>
