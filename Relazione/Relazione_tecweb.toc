@@ -5,55 +5,47 @@
 \contentsline {subsection}{\numberline {2.1}Studio dell'utenza finale}{4}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Utente generico}{4}{subsubsection.2.1.1}
 \contentsline {subsubsection}{\numberline {2.1.2}Amministratore}{4}{subsubsection.2.1.2}
-\contentsline {subsection}{\numberline {2.2}Layout del sito}{4}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Utente generico}{4}{subsubsection.2.2.1}
-\contentsline {paragraph}{\numberline {2.2.1.1}Barra di navigazione}{4}{paragraph.2.2.1.1}
-\contentsline {paragraph}{\numberline {2.2.1.2}Corpo}{5}{paragraph.2.2.1.2}
-\contentsline {paragraph}{\numberline {2.2.1.3}Pi\IeC {\'e} di pagina}{5}{paragraph.2.2.1.3}
-\contentsline {subsubsection}{\numberline {2.2.2}Amministratore}{5}{subsubsection.2.2.2}
-\contentsline {paragraph}{\numberline {2.2.2.1}Barra di navigazione}{6}{paragraph.2.2.2.1}
-\contentsline {paragraph}{\numberline {2.2.2.2}Corpo}{6}{paragraph.2.2.2.2}
-\contentsline {paragraph}{\numberline {2.2.2.3}Pi\IeC {\'e} di pagina}{6}{paragraph.2.2.2.3}
-\contentsline {subsection}{\numberline {2.3}Contenuti veicolati}{6}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Utente generico}{6}{subsubsection.2.3.1}
-\contentsline {paragraph}{\numberline {2.3.1.1}Contenuti statici}{6}{paragraph.2.3.1.1}
-\contentsline {subparagraph}{\numberline {2.3.1.1.1}Home}{6}{subparagraph.2.3.1.1.1}
-\contentsline {subparagraph}{\numberline {2.3.1.1.2}Chi siamo}{6}{subparagraph.2.3.1.1.2}
-\contentsline {subparagraph}{\numberline {2.3.1.1.3}Contattaci}{6}{subparagraph.2.3.1.1.3}
-\contentsline {paragraph}{\numberline {2.3.1.2}Contenuti dinamici}{6}{paragraph.2.3.1.2}
-\contentsline {subparagraph}{\numberline {2.3.1.2.1}Prodotti}{6}{subparagraph.2.3.1.2.1}
-\contentsline {subparagraph}{\numberline {2.3.1.2.2}Servizi}{7}{subparagraph.2.3.1.2.2}
-\contentsline {subsubsection}{\numberline {2.3.2}Amministrazione}{7}{subsubsection.2.3.2}
-\contentsline {paragraph}{\numberline {2.3.2.1}Pannello amministrazione}{7}{paragraph.2.3.2.1}
-\contentsline {paragraph}{\numberline {2.3.2.2}Prodotti}{7}{paragraph.2.3.2.2}
-\contentsline {paragraph}{\numberline {2.3.2.3}Servizi}{7}{paragraph.2.3.2.3}
-\contentsline {paragraph}{\numberline {2.3.2.4}Amministratori}{7}{paragraph.2.3.2.4}
-\contentsline {paragraph}{\numberline {2.3.2.5}Clienti}{7}{paragraph.2.3.2.5}
-\contentsline {paragraph}{\numberline {2.3.2.6}Prenotazioni}{7}{paragraph.2.3.2.6}
-\contentsline {paragraph}{\numberline {2.3.2.7}Storico prenotazioni}{7}{paragraph.2.3.2.7}
-\contentsline {section}{\numberline {3}Realizzazione}{8}{section.3}
-\contentsline {subsection}{\numberline {3.1}Responsive Design}{8}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Linguaggi e strumenti}{8}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}XHTML 1.0 Strict}{8}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}PHP}{8}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}JavaScript}{8}{subsubsection.3.2.3}
-\contentsline {subsection}{\numberline {3.3}Divisione tra presentazione, struttura e comportamento}{9}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Struttura}{9}{subsubsection.3.3.1}
-\contentsline {subsection}{\numberline {3.4}Presentazione}{9}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Comportamento}{9}{subsection.3.5}
-\contentsline {section}{\numberline {4}Validazione}{10}{section.4}
-\contentsline {subsection}{\numberline {4.1}Scelte progetturali}{10}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Strumenti automatici}{10}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}W3C Validator plugin for Visual Studio Code}{10}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}Markup Validation Service w3.org}{10}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.3}W3C CSS Validator w3.org}{10}{subsubsection.4.2.3}
-\contentsline {subsubsection}{\numberline {4.2.4}Vamol\IeC {\`a}}{10}{subsubsection.4.2.4}
-\contentsline {subsubsection}{\numberline {4.2.5}TotalValidator}{10}{subsubsection.4.2.5}
-\contentsline {subsubsection}{\numberline {4.2.6}WAVE Accessibility Extension}{10}{subsubsection.4.2.6}
-\contentsline {subsubsection}{\numberline {4.2.7}ColorSafe}{11}{subsubsection.4.2.7}
-\contentsline {subsection}{\numberline {4.3}Test effettuati}{11}{subsection.4.3}
-\contentsline {section}{\numberline {5}Suddivisione del lavoro}{12}{section.5}
-\contentsline {subsection}{\numberline {5.1}Francesco Corti}{12}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Davide Barasti}{12}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Giovanni Sorice}{12}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Lorenzo Busin}{12}{subsection.5.4}
+\contentsline {subsection}{\numberline {2.2}Layout del sito}{5}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Barra di navigazione}{5}{subsubsection.2.2.1}
+\contentsline {paragraph}{\numberline {2.2.1.1}Corpo}{7}{paragraph.2.2.1.1}
+\contentsline {paragraph}{\numberline {2.2.1.2}Pi\IeC {\'e} di pagina}{7}{paragraph.2.2.1.2}
+\contentsline {subsubsection}{\numberline {2.2.2}Amministratore}{7}{subsubsection.2.2.2}
+\contentsline {paragraph}{\numberline {2.2.2.1}Barra di navigazione}{7}{paragraph.2.2.2.1}
+\contentsline {paragraph}{\numberline {2.2.2.2}Corpo}{7}{figure.caption.5}
+\contentsline {paragraph}{\numberline {2.2.2.3}Pi\IeC {\'e} di pagina}{7}{paragraph.2.2.2.3}
+\contentsline {subsection}{\numberline {2.3}Pagine per tipologia di utente}{7}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Utente generico}{7}{subsubsection.2.3.1}
+\contentsline {paragraph}{\numberline {2.3.1.1}Contenuti statici}{7}{paragraph.2.3.1.1}
+\contentsline {subparagraph}{\numberline {2.3.1.1.1}About}{7}{subparagraph.2.3.1.1.1}
+\contentsline {subparagraph}{\numberline {2.3.1.1.2}Supporto}{7}{subparagraph.2.3.1.1.2}
+\contentsline {paragraph}{\numberline {2.3.1.2}Contenuti dinamici}{8}{paragraph.2.3.1.2}
+\contentsline {subparagraph}{\numberline {2.3.1.2.1}Preferiti}{8}{subparagraph.2.3.1.2.1}
+\contentsline {subparagraph}{\numberline {2.3.1.2.2}Esplora}{8}{subparagraph.2.3.1.2.2}
+\contentsline {subparagraph}{\numberline {2.3.1.2.3}Profilo}{8}{subparagraph.2.3.1.2.3}
+\contentsline {subparagraph}{\numberline {2.3.1.2.4}Impostazioni}{8}{subparagraph.2.3.1.2.4}
+\contentsline {subparagraph}{\numberline {2.3.1.2.5}FAQ}{9}{subparagraph.2.3.1.2.5}
+\contentsline {subparagraph}{\numberline {2.3.1.2.6}Privacy}{9}{subparagraph.2.3.1.2.6}
+\contentsline {section}{\numberline {3}Realizzazione}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}Responsive Design}{10}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Linguaggi e strumenti}{10}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}XHTML 1.0 Strict}{10}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}PHP}{10}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}JavaScript}{10}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Struttura}{10}{subsubsection.3.2.4}
+\contentsline {subsection}{\numberline {3.3}Presentazione}{10}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Comportamento}{10}{subsection.3.4}
+\contentsline {section}{\numberline {4}Validazione}{12}{section.4}
+\contentsline {subsection}{\numberline {4.1}Scelte progetturali}{12}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Strumenti automatici}{12}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Markup Validation Service w3.org}{12}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}W3C CSS Validator w3.org}{12}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Vamol\IeC {\`a}}{12}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}TotalValidator}{12}{subsubsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.5}WAVE Accessibility Extension}{12}{subsubsection.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.6}ColorSafe}{12}{subsubsection.4.2.6}
+\contentsline {subsection}{\numberline {4.3}Test effettuati}{12}{subsection.4.3}
+\contentsline {section}{\numberline {5}Suddivisione del lavoro}{13}{section.5}
+\contentsline {subsection}{\numberline {5.1}Francesco Corti}{13}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Davide Barasti}{13}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Giovanni Sorice}{13}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Lorenzo Busin}{13}{subsection.5.4}
