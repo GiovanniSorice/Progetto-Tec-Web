@@ -12,11 +12,13 @@
 				<div id="contenuto-pagina">
 
 					<h3 class= "sezione-privacy"> I. Norme privacy </h3> 
-					<p>
-						<strong> Data effettiva: </strong>
-						questa norma della privacy è in vigore ed 
-						è stata aggiornata l'ultima volta il 17 Dicembre 2018. 
-					</p>
+					<div class="contenuto-sezione">
+						
+							<strong> Data effettiva: </strong>
+							questa norma della privacy è in vigore ed 
+							è stata aggiornata l'ultima volta il 17 Dicembre 2018. 
+						
+					</div>
 					<h3 class = "sezione-privacy"> II. I nostri obiettivi per la tua privacy </h3>
 					<p>
 						<strong>	</strong>
