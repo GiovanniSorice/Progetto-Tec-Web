@@ -1,4 +1,4 @@
-#tabella .messaggi{	
+.tabella .messaggi{	
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   	border-collapse: collapse;
   	width: 94%;	
@@ -7,7 +7,7 @@
 }
 /* Header della tabella dei messaggi */
 
-#tabella .messaggi th {
+.tabella .messaggi th {
   padding-top: 0.6em;
   padding-bottom: 0.5em;
   text-align: center;
@@ -18,31 +18,31 @@
 
 /* Contenuti generali presenti nella tabella*/
 
-#tabella .messaggi td{
+.tabella .messaggi td{
   	border: 1px solid #ddd; 
   	padding: 8px;
   	font-size: 0.6em;
 }
 
-#tabella .messaggi tr:nth-child(even){
+.tabella .messaggi tr:nth-child(even){
 	background-color: #f2f2f2;
 }
 
-#tabella .messaggi tr:hover{
+.tabella .messaggi tr:hover{
 	background-color: #ddd;
 }
 
-#tabella .serie{
+.tabella .serie{
 	width: 17%;
 }
-#tabella .segnalazione{
+.tabella .segnalazione{
 	width: 70%;
 }
-#tabella .azione{
+.tabella .azione{
 	width: 13%;
 }
 
-#tabella .messaggi caption {
+.tabella .messaggi caption {
 margin-bottom: 0.5em;
 }
 
