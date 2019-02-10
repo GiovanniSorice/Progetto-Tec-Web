@@ -365,18 +365,6 @@
 }
 
 
-@media screen and (min-width: 751px) and (max-width: 1024px){
-
-}
-
-@media screen and (min-width: 1025px){
-
-}
-
-
-
-
-
 
 @media screen and (min-width: 1025px){
 	/*Side bar*/
@@ -414,9 +402,6 @@
 	justify-content: center;
 	}
 
-	#preferito-btn button{ 
-		width: 80%;
-	}
 }
 
 @media screen and (min-width: 751px) and (max-width: 1024px){
@@ -455,8 +440,22 @@
 	padding-top: 1em;
 	}
 
-	#preferito-btn button{ 
-		width: 80%;
+}
+
+@media screen and (max-width: 750px)and (min-width: 150px){
+	.side-bar{
+	overflow: auto;
 	}
+
+	.preferito{
+	font-size: 1em;
+	position: absolute;
+    bottom: 10%;
+	}
+
+	.votazioni{
+	  margin: 5%;
+	}
+
 }
 
