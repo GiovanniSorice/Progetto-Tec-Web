@@ -861,6 +861,49 @@ include_once 'DBConnection.php';
         $segnalazioni_collect=preg_replace("/<!-- Successivo -->/i","" , $segnalazioni_collect );
         $amministratore=preg_replace("/<!-- Segnalazioni -->/i",$segnalazioni_collect, $amministratore );
         
+        //parte messaggi
+        $query="select a.id,a.messaggio,b.username from messaggi a join utente b on a.user_id=b.id where admin_id is null";
+        
+        //Seleziono la lista delle segnalazioni
+        $messaggi=resultQueryToTable($connection->query($query));
+        
+        $messaggio_collect="<!-- Successivo -->";
+        
+        $messAct="messaggio_action.php?";
+        
+        foreach ($messaggi as $messaggio) {
+            $link=(string)"http://".$host.$uri."/".$messAct."messaggio_id=".$messaggio["id"]."&elimina=";
+            
+            $messaggio_collect=preg_replace("/<!-- Successivo -->/i",
+                '<tr> '
+                .'<td scope="row" class="nome-utente">'.$messaggio["username"].'</td>'
+                .'<td scope="row" class="messaggio-inviato">'.$messaggio["messaggio"].'</td>'
+                .'<td>'
+                .'<form class="post-form post-form-supporto" action="" method="get">'
+                .'<div class="post-holder">'
+                .'<div class="textarea-wrap">'
+                .'<textarea placeholder="inserisci il tuo messaggio" title="inserisci il tuo messaggio" name="messaggio"></textarea>'
+                .'</div>'
+                .'</div>'
+                .'<div class="submit-post">'
+                .'<input class="submit-post-btn" type="submit" value="Invia"/>'
+                .'</div>'
+                .'</form>'
+                .'</td>'
+                .'<td scope="row" class="spazio-eliminazione">'
+                .'<a href="'.$link.'true">'
+                .'<img src="../img/admin/trash.png" class= "elimina-commento" alt="immagine cestino"></img>'
+                .' </a>'
+                .'</td>'
+                .'</tr>'
+                .'<!-- Successivo -->'
+                , $messaggio_collect );
+        }
+                
+        
+        $messaggio_collect=preg_replace("/<!-- Successivo -->/i","" , $messaggio_collect );
+        $amministratore=preg_replace("/<!-- Messaggio -->/i",$messaggio_collect, $amministratore );
+        
         
         $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $amministratore , $output );
         
