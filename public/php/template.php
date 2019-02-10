@@ -107,7 +107,13 @@
         
         
         //Parte standard per tutte le pagine
-        
+        $footer = preg_replace("/refAbout/i", "", $footer );
+        $footer = preg_replace("/refPrivacy/i", "", $footer );
+        $footer = preg_replace("/refFaq/i", "", $footer );
+        $footer = preg_replace("/refSupporto/i", "", $footer );
+        $footer = preg_replace("/refEsplora/i", "", $footer );
+        $footer = preg_replace("/refProfilo/i", "", $footer );
+        $footer = preg_replace("/refPreferiti/i", "", $footer );       
         $footer = preg_replace("/<!-- Script -->/i", $script, $footer );
         
         echo $footer;

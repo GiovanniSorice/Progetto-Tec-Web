@@ -4,7 +4,7 @@
 				<li refFaq><a href="faq.php"><abbr title="Frequently Asked Questions">FAQ</abbr></a></li>
 				<li refSupporto><a href="supporto.php" title="Supporto">Supporto</a></li>
 				<li refPrivacy><a href="privacy.php" title="Privacy"><span lang="EN">Privacy</span></a></li>
-				<li refAbout><a href="about.php title="About"">About</a></li>
+				<li refAbout><a href="about.php" title="About">About</a></li>
 				<!-- Amministrazione -->
 			</ul>	
 		</div>
