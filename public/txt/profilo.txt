@@ -2,16 +2,16 @@
 
 
 			<!-- contenuto effettivo della pagina -->
-			<div>
+			<div class="profilo">
 					<h2>
 						Profilo
 					</h2>
 
-			<div>
-				<img src="<!-- Foto -->" alt="foto profilo dell'utente"/>
-			</div>
+				<div>
+					<img src="<!-- Foto -->" alt="foto profilo dell'utente"/>
+				</div>
 
-			<ul>
+			<ul class="border">
 				<li>Nome: <!-- Nome --> </li>
 				<li>Cognome: <!-- Cognome --> </li>
 				<li>Data di nascita: <!-- Data --> </li>
