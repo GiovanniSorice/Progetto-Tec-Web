@@ -401,9 +401,9 @@ include_once 'DBConnection.php';
                         $side_serie_block );
                         $side_serie_block=preg_replace("/<!-- Voto2 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=2", 
                         $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- Voto3 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=4" , 
+                        $side_serie_block=preg_replace("/<!-- Voto3 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=3" , 
                         $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- Voto4 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=5"  , 
+                        $side_serie_block=preg_replace("/<!-- Voto4 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=4"  , 
                         $side_serie_block );
                         $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/$extra9".$_GET["serie_id"], 
                         $side_serie_block );
@@ -504,12 +504,27 @@ include_once 'DBConnection.php';
         $episodio_collect="<!-- Successivo -->";
         
         foreach ($episodi as $episodio) {
+
+            $query="select visto.id_utente from visto join episodio join utente where visto.id_episodio=".$episodio["id"]." and visto.id_utente=".$_SESSION['user_id']." group by visto.id_utente";
+            $isVisto=resultQueryToTable($connection->query($query));
+
+            if(empty($isVisto)){
+                $isVisto="NO";
+                $visto_nonVisto = "si";
+                $link="http://$host$uri/visto_action.php?id_episodio=".$episodio["id"]."&serie_id=".$_GET["serie_id"];
+            }
+            else{
+                $isVisto="SI";
+                $visto_nonVisto = "no";
+                $link="http://$host$uri/nonVisto_action.php?id_episodio=".$episodio["id"]."&serie_id=".$_GET["serie_id"];
+            }
+
             $episodio_collect=preg_replace("/<!-- Successivo -->/i", 
             '<tr> '
             .'<td>'.$episodio["numero"].'</td>'
-                .'<td><a lang="EN" href="">'.$episodio["titolo"].'</a></td>' //TODO: aggiungere href episodio
+                .'<td>'.$episodio["titolo"].'</td>' //TODO: aggiungere href episodio
             .'<td>'.date("d-m-Y", strtotime($episodio["data"])).'</td>'
-            .'<td>'.($episodio["titolo"]==1?'Si':'NO').'</td>'
+            .'<td>'.'<a href="'.$link.'" title="visto '. $visto_nonVisto.'">'.$isVisto.'</a></td>'
             .'</tr>'
             .'<!-- Successivo -->'
                 , $episodio_collect );

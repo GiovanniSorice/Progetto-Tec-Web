@@ -38,9 +38,10 @@
 
 	            </script>
 
-				<div id="preferito-btn">
+				<div class="preferito" id="preferito-btn">
 						<a href="<!-- Add_Preferitio -->" title="<!-- Add-Rem -->"><!-- Add-Rem --></a>
 				</div>
+
 				<div id="side-bar__attori">
 					<h2>Attori</h2>
 					<ul class="list_no-style list-inline" id="list-attori">
