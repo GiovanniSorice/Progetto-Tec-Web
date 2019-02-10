@@ -135,12 +135,12 @@
 }
 
 #show-page .show-seasons h2{
-	color: #aaa;
+	color: black;
 }
 
 .selettore-stagione {
     background-color: #fac100;
-    color: white;
+    color: black;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -190,7 +190,7 @@
     padding-bottom: 12px;
     text-align: left;
     background-color: #fac100;
-    color: white;
+    color: black;
 }
 
 #stagione tr:nth-child(even){
@@ -260,7 +260,7 @@
 }
 
 .submit-post-btn{
-	color: #555;
+	color: black;
 	text-transform: uppercase;
 	border-radius: 4px;
 	text-align: center;
