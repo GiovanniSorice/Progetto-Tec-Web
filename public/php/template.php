@@ -36,58 +36,68 @@
 
         switch ($namePage) {
             case "esplora":
-                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="espolora.php">Esplora</a>', $output);
+                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="#" class="selezionato">Esplora</a>', $output);
                 $footer = preg_replace("/refEsplora/i", "class=\"selezionato\"", $footer );
                 echo printPageEsplora($output);
             break;
             
             case "serie":
-                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="espolora.php">Esplora</a><span>&#x27AA;</span><a href="serie.php">Esplora</a>', $output);
+                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="espolora.php">Esplora</a><span>&#x27AA;</span><a href="serie.php">Serie</a>', $output);
                 echo printPageSerie($output);
                 $script = implode("",file("../javascript/serie.js"));                
                 break;
                 
             case "about":
+                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="#">Esplora</a>', $output);                
                 $footer = preg_replace("/refAbout/i", "class=\"selezionato\"", $footer );
                 echo printPageAbout($output);
                 break;
 
             case "home":
+                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="#">Home</a>', $output);                
                 echo printPageHome($output);
                 break;
 
             case "privacy":
+                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="#">Privacy</a>', $output);
                 $footer = preg_replace("/refPrivacy/i", "class=\"selezionato\"", $footer );
                 echo printPagePrivacy($output);
                 break;
 
             case "login":
+                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="#">Login</a>', $output);                
                 echo printPageLogin($output);
                 break;
 
             case "signup":
+                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="#">Signup</a>', $output);                
                 echo printPageSignUp($output);
                 break;
 
             case "preferiti":
+                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="#">Preferiti</a>', $output);                
                 $footer = preg_replace("/refPreferiti/i", "class=\"selezionato\"", $footer );
                 echo printPagePreferiti($output);
                 break;
 
              case "profilo":
+                 $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="#">Profilo</a>', $output);
                 $footer = preg_replace("/refProfilo/i", "class=\"selezionato\"", $footer );
                 echo printPageProfilo($output);
                 break;
 
              case "genere":
+                 $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="espolora.php">Esplora</a><span>&#x27AA;</span><a href="#">Genere</a>', $output);
                  echo printPageGenere($output);
                  break;
                  
              case "amministrazione":
+                 $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="#">Amministrazione</a>', $output);                 
                  $footer = preg_replace("/refAdmin/i", "class=\"selezionato\"", $footer );
                  echo printPageAmministrazione($output);
                  break;
              case "faq":
+                 $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="#">FAQ</a>', $output);                 
                  $footer = preg_replace("/refFaq/i", "class=\"selezionato\"", $footer );
                  echo printPageFAQ($output);
                  break;
@@ -97,6 +107,7 @@
                  break;
                  
             case "supporto":
+                $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a href="home.php">Home</a><span>&#x27AA;</span><a href="#">Supporto</a>', $output);                
                 $footer = preg_replace("/refSupporto/i", "class=\"selezionato\"", $footer );
                 echo printPageSupporto($output);
                 break;
