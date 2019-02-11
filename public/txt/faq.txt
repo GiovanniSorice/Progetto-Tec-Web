@@ -21,6 +21,7 @@
 							</picture>
 							
 						</div>
+						
 						<div class = "caption-immagine">
 							Posizione tasto di login.
 						</div>
@@ -34,6 +35,7 @@
 					<h2 class = "risposta"> 
 						Per cercare una serie Tv specifica bisogna inserire all'interno dell'apposita barra di ricerca, posta in alto a sinistra dello schermo,
 						il nome delle serie Tv che si sta cercando. 
+					</h2>
 
 						<div class = "immagine-faq">
 							<picture>
@@ -42,17 +44,20 @@
 							</picture>
 							
 						</div>
+
 						<div class = "caption-immagine">
 							Posizione della search bar.
 						</div>						
 
+					<h2 class = "risposta"> 
 						Inoltre verranno caricati in anteprima, come illustrato nell'immagine, i risultati pi&ugrave simili rispetto alla ricerca che si sta seffettuando. 
-					</h2>
+					<h2>
 
 					<h1 class = "titolo-domanda"> Come posso segnalare un commento? </h1>
 					<h2 class = "risposta"> 
 						I commenti ritenuti offensivi possono essere segnalati tramite l'apposito tasto "Segnale", disponibile 
 						in alto a destra di ogni commento. 
+					</h2>
 
 						<div class = "immagine-faq">
 							<picture>
@@ -60,13 +65,15 @@
 								<img srcset="../img/faq/segnalazioneSmall.PNG" alt="Posizione della segnalazione nei commenti.">
 							</picture>							
 						</div>
+
 						<div class = "caption-immagine">
 							Posizione della segnalazione.
 						</div>	
 
+					<h2 class = "risposta"> 
 						Gli amministratori prenderanno nota delle segnalazioni e se lo riterranno opportuno cancelleranno il commento, bannando in 
 						casi gravi l'utente segnalato.
-					</h2>
+					<h2>
 
 					<!--  TEMPLATE per aggiungere nuove FAQ -->
 

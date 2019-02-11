@@ -15,13 +15,14 @@ L'utente generico registrato ha a disposizione le seguenti azioni:
 \begin{itemize}
 	\item eseguire il \textit{logout};
 	\item navigare nelle pagine \textit{homepage, esplora, serie TV, preferiti, FAQ, supporto, privacy} e \textit{about};
-	\item all'interno della pagina dedicata alle singole serie tv, l'utente potrà:
+	\item all'interno della pagina dedicata alle singole serie TV, l'utente potrà:
 	\begin{itemize}
 		\item consigliare o meno la serie;
 		\item votare la serie con una valutazione da 1 a 5;
 		\item aggiungere la serie ai preferiti; 
 		\item creare post e partecipare a discussioni;
-		\item segnalare i commenti inappropriati degli altri utenti.
+		\item segnalare i commenti inappropriati degli altri utenti;
+		\item segnare una serie TV come visualizzato o non visualizzata.
 	\end{itemize}
 \end{itemize}
 
@@ -30,8 +31,8 @@ L'utente generico registrato ha a disposizione le seguenti azioni:
 I permessi aggiunti agli utenti amministratori permettono di accedere alla pagina di amministrazione.\\
 All'interno dell'area dedicata all'amministrazione è possibile svolgere le seguenti attività:
 \begin{itemize}
-	\item visualizzare in forma tabellare i commenti segnalati dagli utenti. Sarà possibile decidere di ignorare la segnalazione oppure di eliminare il commento segnalato;
-	\item visualizzare in forma tabellare i messaggi ricevuti dagli utenti (inviati dall'apposita sezione "Supporto") e decidere di dare una risposta oppure di eliminare i messaggi.
+	\item visualizzare in forma tabellare i commenti segnalati dagli utenti. Sarà possibile decidere di ignorare la segnalazione oppure di eliminare il commento segnalato, inoltre ha la possibilità di non far vedere un commento esclusivamente all'utente che l'ha segnalato;
+	\item visualizzare in forma tabellare i messaggi ricevuti dagli utenti, inviati dall'apposita sezione "Supporto", e decidere di dare una risposta oppure di eliminare i messaggi.
 \end{itemize}
 
 \subsection{Layout del sito}
@@ -47,11 +48,11 @@ Per ogni pagina o componente sono evidenziate le scelte più interessanti relati
 \subsubsection{Barra di navigazione}
 Che ci si trovi in modalità mobile, tablet o desktop, si potrà navigare all'interno del sito tramite il menù o la barra di navigazione che è sempre resa disponibile nella forma migliore in base alla situazione.\\
 \begin{itemize}
-	\item In \textbf{modalità mobile} la barra di navigazione ed il menù sono divisi. La barra di navigazione si trova sulla parte superiore della pagina. Da qui sarà possibile usare la casella di ricerca oppure, tramite il link \textit{Menu} sarà possibile visualizzare le voci del menù presenti sul fondo della pagina.\\
+	\item In \textbf{modalità mobile} La barra di navigazione ed il menù sono divisi. La barra di navigazione si trova sulla parte superiore della pagina. Da qui sarà possibile usare la casella di ricerca oppure, tramite il link \textit{Menu} sarà possibile visualizzare le voci del menù presenti sul fondo della pagina.\\
 	Questa scelta permette di evitare l'uso di JavaScript per la visualizzazione del menu. Il tasto \textit{Menu} risulta inoltre più intuitivo dell'immagine "ad hamburger" spesso utilizzata per la visualizzazione dei menù mobile che potrebbe rivelarsi disorientante per l'utenza con meno esperienza.\\
 	Sul fondo della pagina è presente il link \textit{Torna su} che permette di tornare facilmente a visualizzare le informazioni contenute nella pagina;
 	
-	\item In \textbf{modalità tablet} la barra di navigazione è divisa in maniera simile alla modalità mobile: sulla parte superiore della pagina è presente la barra con logo, casella di ricerca e tre voci del menù. Nella barra posta sul fondo a piè di pagina sono presenti le voci rimanenti (quelle secondarie) del menù.\\
+	\item In \textbf{modalità tablet} la barra di navigazione è divisa in maniera simile alla modalità mobile: sulla parte superiore della pagina è presente la barra con logo, casella di ricerca e tre voci del menù. Nella barra posta sul fondo a piè di pagina sono presenti le voci rimanenti (quelle secondarie) del menù. \\
 	Entrambe le barre sono posizionate in maniera \textit{fissa}. La barra superiore ha una altezza fissata in \textit{em}.\\
 	
 	\item In \textbf{modalità desktop} la barra di navigazione è posta in verticale sul lato sinistro. Questa ha una \textit{larghezza} del 20\% ed è posta in \textit{posizione} fissa.\\
@@ -74,29 +75,43 @@ In caso di accesso effettuato viene indicato sul lato destro l'username dell'ute
 In caso di utente non autenticato è disponibile il pulsante per effettuare il login, che rimanderà alla pagina di autenticazione.\\
 Sulla parte sinistra, nelle versioni mobile e tablet viene indicato il percorso effettuato per arrivare alla pagina corrente, con la possibilità di muoversi all'indietro. 
 
-\subsubsection{Contenuti statici}
+
+\paragraph{Contenuti statici}
 
 \paragraph{About} 
 ~\\	
-
+La pagina contiene informazioni riguardanti la piattaforma e i membri del gruppo con le relative foto. 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.4]{img/about.png}}
+	\centerline{\includegraphics[scale=0.33]{img/about.png}}
 	\caption{Pagina di About in modalità desktop}
-	\label{fig:addForm}
+	\label{fig:addForm} 
 \end{figure}	
 
+\paragraph{Privacy} 
 ~\\	
-La pagina presenta informazioni riguardanti la piattaforma e i membri del gruppo. Sono poi presenti delle foto dei membri del gruppo che se cliccate portano alla pagina personale degli sviluppatori. 
-
+La pagina presenta le linee guida adottate dalla piattaforma per il trattamento dei dati personali degli utenti.
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.33]{img/privacy.png}}
+	\caption{Pagina di Privacy in modalità desktop}
+	\label{fig:addForm} 
+\end{figure}	
+~\\	
 
 \paragraph{Contenuti dinamici}   
 
 \subparagraph{Preferiti}
+~\\	
+La pagina raccoglie le serie TV che sono state selezionate come preferite dall'utente, queste vengono mostrate e, se cliccate,  portano alla pagina specifica della serie. 
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.33]{img/preferiti.png}}
+	\caption{Pagina di Preferiti in modalità desktop}
+	\label{fig:addForm}
+\end{figure}	
+
 
 \subparagraph{Esplora}
 ~\\	
 La pagina di \textit{esplora} elenca per genere le serie TV che il sito ha nel database. Ogni genere ha il 100\% di spazio in larghezza a disposizione ma qualora questo spazio non dovesse bastare a mostrare tutte le serie appartenenti al genere, l'utente potrà comunque visualizzarle tutte in una pagina dedicata, raggiungibile tramite il link \textit{mostra tutto} presente sul lato destro dell'elenco delle serie.
-
 \begin{figure}[H]
 	\centerline{\includegraphics[scale=0.33]{img/esplora.png}}
 	\caption{Pagina esplora in modalità desktop}
@@ -105,47 +120,30 @@ La pagina di \textit{esplora} elenca per genere le serie TV che il sito ha nel d
 
 \subparagraph{Profilo}
 ~\\
+La pagina profilo presenta: nome, cognome, data di nascita, username e la Email dell'utente registrato. In caso di mancata registrazione il sistema mostrerà una schermata dove darà, tramite un link, la possibilità di registrarsi o di autenticarsi come utente registrato in un'altra pagina. 
+\begin{figure}[H]
+	\centerline{\includegraphics[scale= 0.33]{img/profilo.png}}
+	\caption{Pagina Profilo versione desktop}
+\end{figure}
 
 
 \subparagraph{FAQ} 
 ~\\
+La pagina FAQ presenta 
+\begin{figure}[H]
+	\centerline{\includegraphics[scale= 0.33]{img/faq.png}}
+	\caption{Pagina Faq versione desktop}
+	
+\end{figure}
+
 
 ~\\
 \subparagraph{Privacy}
 ~\\
 
 \begin{figure}[H]
-	\centerline{\includegraphics[scale= 0.4]{img/privacy.png}}
-	\caption{Pagina privacy}
+	\centerline{\includegraphics[scale= 0.33]{img/privacy.png}}
+	\caption{Pagina privacy versione desktop}
 	
 \end{figure}
-La pagina privacy illustra come il sito tratti le informazione sensibili che sono inserite dagli utenti quando effettuano la registrazione e i meccanismi di difesa utilizzati per renderli sicuri ad attacchi esterni. 
-
-
-
-%\subsubsection{Amministrazione}
-%\paragraph{Pannello amministrazione} 
-%\paragraph{Prodotti}
-%~\\
-%\paragraph{Servizi}
-%~\\
-%\paragraph{Amministratori}
-%~\\
-%\paragraph{Clienti}
-%~\\
-
-%\paragraph{Prenotazioni}
-%~\\
-
-%\paragraph{Storico prenotazioni}
-%s~\\
-
-
-
-
-
-
-
-
-
-
+La pagina privacy illustra come il sito tratta le informazione sensibili che sono inserite dagli utenti quando effettuano la registrazione e i meccanismi di difesa utilizzati per renderle sicure.

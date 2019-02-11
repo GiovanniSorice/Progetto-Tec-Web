@@ -16,14 +16,20 @@
 						
 							<strong> Data effettiva: </strong>
 							questa norma della privacy è in vigore ed 
-							è stata aggiornata l'ultima volta il 17 Dicembre 2018. 
+							è stata aggiornata l'ultima volta il 14 Febbraio 2019. 
 						
 					</div>
-					<h3 class = "sezione-privacy"> II. I nostri obiettivi per la tua privacy </h3>
+					<h3 class = "sezione-privacy"> II. I nostri obiettivi per la tua privacy </h>
+
 					<p>
-						<strong>	</strong>
+						<ol>
+							<li>
+								Abbiamo a cuore la tutela delle vostre informazioni. Perciò mettiamo in atto misure idonee per evitare l'uso improprio dei vostri dati personali.			
+							</li>
+						</ol>
 					</p>
-					<h3 class = "sezione-privacy"> III. Informazioni collezionate e come </h3>
+
+					<h3 class = "sezione-privacy"> III. Informazioni collezionate</h3>
 						<ol>
 							<li> 
 								<strong> Informazioni dell'account: </strong> certe funzionalità di sistema ti potrebbero richiedere di creare un account
@@ -31,10 +37,10 @@
 								mail, sesso e data di nascita. 
 							</li>
 							<li>
-							
+								<strong> Da quali terze parti riceviamo i dati:</strong>
+								il sito perrmetterà in futuro il login tramite social network, Facebook e Twitter, oppure tramite Google+.
 							</li>
-						</ol>
-						
+						</ol>						
 				</div>		
 			</div>
 		</div>
