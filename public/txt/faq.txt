@@ -25,7 +25,7 @@
 							Posizione tasto di login.
 						</div>
 
-						In seguito va compilato ogni campo presente facendo attenzione al campo email che deve essere <strong> univoco </strong>. 
+						In seguito va compilato ogni campo presente facendo attenzione al campo username che deve essere <strong> univoco </strong>. 
 						Quindi se ci si &eacute gi&agrave registrati con un email il sistema non completer&agrave la registrazione.
 						Il secondo modo che sar&agrave disponibile in futuro &eacute la registrazione tramite social network.  
 					</h2>
