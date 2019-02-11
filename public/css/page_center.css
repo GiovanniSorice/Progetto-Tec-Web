@@ -12,6 +12,11 @@
 	font-weight: 300;
 }
 
+/*CSS div errore*/
+.errore{
+	    margin: 1em;	
+}
+
 #risultati-ricerca{
     width: 100%;
 }
@@ -27,4 +32,7 @@
 
 
 @media screen and (max-width: 1024px)and (min-width: 751px){
+  .content{
+    margin-bottom: 4em;
+  }
 }

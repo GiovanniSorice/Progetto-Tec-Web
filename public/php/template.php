@@ -87,7 +87,7 @@
                 break;
 
              case "genere":
-                 $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a class="path" href="home.php">Home</a><span>&#x27AA;</span><a href="esplora.php">Esplora</a><span>&#x27AA;</span><a href="#" class="path">Genere</a>', $output);
+                 $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a class="path" href="home.php">Home</a><span>&#x27AA;</span><a href="esplora.php" class="path">Esplora</a><span>&#x27AA;</span><a href="#" class="path">Genere</a>', $output);
                  echo printPageGenere($output);
                  break;
                  
