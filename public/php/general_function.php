@@ -269,7 +269,9 @@ include_once 'DBConnection.php';
         if(count($result)<=0){
             $output = preg_replace("/<!-- Nome_Pagina -->/i", "genere", $output );
             $output = preg_replace("/<!-- Page_Head -->/i", $title, $output );
-            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", "Serie non disponibile", $output );
+            $error_block = implode("",file("../txt/errore.txt"));
+            $error_block = preg_replace("/<!-- Messaggio_Errore -->/i", "Serie non disponibile", $error_block );            
+            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $error_block, $output );
             
             return $output;
         }
@@ -679,7 +681,9 @@ include_once 'DBConnection.php';
     function printPageProfilo($output){
 
         global $connection;
-
+        if(empty($connection))
+            connettiDB();
+            
         $host  = $_SERVER['HTTP_HOST'];
 
         $head_page = implode("", file("../txt/pagehead.txt"));
@@ -725,7 +729,6 @@ include_once 'DBConnection.php';
 
 
     function printPagePrivacy($output){
-        global $connection;
         
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
@@ -741,7 +744,6 @@ include_once 'DBConnection.php';
     }
 
     function printPageAbout($output){
-        global $connection;
         
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
@@ -757,7 +759,6 @@ include_once 'DBConnection.php';
     }
 
     function printPageLogin($output){
-        global $connection;
         
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
@@ -816,8 +817,10 @@ include_once 'DBConnection.php';
         if(count($generi)<=0){
             $output = preg_replace("/<!-- Nome_Pagina -->/i", "genere", $output );
             $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
-            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", "Nessun genere esistente", $output );
-            
+            $error_block = implode("",file("../txt/errore.txt"));
+            $error_block = preg_replace("/<!-- Messaggio_Errore -->/i", "Genere non disponibile, perch&egrave; non  provi a cercarne un altro? :)", $error_block );
+            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $error_block, $output );
+                        
             return $output;
         }
         $genere_show_collect="<!-- Successivo -->";

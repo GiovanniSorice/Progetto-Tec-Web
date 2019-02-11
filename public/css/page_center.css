@@ -12,6 +12,11 @@
 	font-weight: 300;
 }
 
+/*CSS div errore*/
+.errore{
+	    margin: 1em;	
+}
+
 #risultati-ricerca{
     width: 100%;
 }
