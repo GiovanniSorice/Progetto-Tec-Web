@@ -19,15 +19,13 @@
 							è stata aggiornata l'ultima volta il 14 Febbraio 2019. 
 						
 					</div>
-					<h3 class = "sezione-privacy"> II. I nostri obiettivi per la tua privacy </h>
+					<h3 class = "sezione-privacy"> II. I nostri obiettivi per la tua privacy </h3>
 
-					<p>
-						<ol>
+					<ol>
 							<li>
 								Abbiamo a cuore la tutela delle vostre informazioni. Perciò mettiamo in atto misure idonee per evitare l'uso improprio dei vostri dati personali.			
 							</li>
-						</ol>
-					</p>
+					</ol>
 
 					<h3 class = "sezione-privacy"> III. Informazioni collezionate</h3>
 						<ol>
