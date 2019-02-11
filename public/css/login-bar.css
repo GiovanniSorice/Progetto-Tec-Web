@@ -53,6 +53,10 @@
 	text-decoration:none;
 }
 
+.white{
+	display: none;
+	}
+
 .login-bar .user-name a{
 	color: white;
 	text-decoration: none;
@@ -80,6 +84,11 @@
 	.login-bar label{
 		margin-left: 1em;
 	}
+
+	.white{
+	color: white;
+	}
+
 	.login-bar .path{
 		color: white;
 	}
@@ -90,6 +99,11 @@
 		display: flex;	
 		margin-top: 0em;
 	}
+
+	.white{
+	color: white;
+	}
+
 	.link-navigazione, .login-bar label{
 		display: block;
 		color: white
