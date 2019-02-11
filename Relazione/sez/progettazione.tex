@@ -2,19 +2,18 @@
 \section{Progettazione}
 \subsection{Studio dell'utenza finale}
 \subsubsection{Utente generico}
-L'utente generico che in generale visiterà il sito è di profilo informatico medio alto ed è alla ricerca di informazioni riguardanti serie TV.\\ 
-
+L'utente generico che in generale visiterà il sito è di profilo informatico medio alto ed è alla ricerca di informazioni riguardanti serie TV.
 L'utente generico non registrato ha a disposizione le seguenti azioni:
 \begin{itemize}
 	\item eseguire il \textit{login} oppure effettuare l'\textit{iscrizione} al sito;
 	\item navigare nelle pagine \textit{homepage, esplora, serie TV, FAQ, supporto, privacy} e \textit{about};
 	\item effettuare la ricerca di serie TV grazie alla casella di ricerca presente nella barra di navigazione.
 \end{itemize}
-qualora l'utente non registrato tentasse di utilizzare le funzionalità riservate agli utenti registrati, verrà reindirizzato alla pagina di accesso/registrazione.
+Qualora l'utente non registrato tentasse di utilizzare le funzionalità riservate agli utenti registrati, verrà reindirizzato alla pagina di accesso o registrazione.
 
 L'utente generico registrato ha a disposizione le seguenti azioni:
 \begin{itemize}
-	\item eseguire il \textit{logout};\\
+	\item eseguire il \textit{logout};
 	\item navigare nelle pagine \textit{homepage, esplora, serie TV, preferiti, FAQ, supporto, privacy} e \textit{about};
 	\item all'interno della pagina dedicata alle singole serie tv, l'utente potrà:
 	\begin{itemize}
@@ -36,7 +35,7 @@ All'interno dell'area dedicata all'amministrazione è possibile svolgere le segu
 \end{itemize}
 
 \subsection{Layout del sito}
-Il sito TV Hunter è stato sviluppato con l'approccio \textit{mobile first}. Lo stile definito nei file css è quindi strutturato nel seguente modo:
+Il sito TV Hunter è stato sviluppato con l'approccio \textit{mobile first}. Lo stile definito nei file .css è quindi strutturato nel seguente modo:
 \begin{itemize}
 	\item regole di stile per la versione mobile del sito;
 	\item regole di stile in una \textit{media query} per i dispositivi tablet (min-width 751px max-width 1024px);
@@ -56,9 +55,9 @@ Che ci si trovi in modalità mobile, tablet o desktop, si potrà navigare all'in
 	Entrambe le barre sono posizionate in maniera \textit{fissa}. La barra superiore ha una altezza fissata in \textit{em}.\\
 	
 	\item In \textbf{modalità desktop} la barra di navigazione è posta in verticale sul lato sinistro. Questa ha una \textit{larghezza} del 20\% ed è posta in \textit{posizione} fissa.\\
-	nel menù sono elencate le voci principali (\textit{esplora, profilo, preferiti}) nel primo blocco e le voci secondarie (\textit{FAQ, supporto, provacy, about}) in un secondo blocco.\\
+	Nel menù sono elencate le voci principali (\textit{esplora, profilo, preferiti}) nel primo blocco e le voci secondarie (\textit{FAQ, supporto, privacy, about}) in un secondo blocco.\\
 	Alla sinistra delle voci, grazie al selettore \textit{:before}, sono state inserite delle icone che aiutano ad individuare più rapidamente la voce che si sta cercando.\\
-	Nel menù laterale sulla parte superiore è presente lo spazio per la ricerca delle serie tv;
+	Nel menù laterale sulla parte superiore è presente lo spazio per la ricerca delle serie tv.
 \end{itemize}
 	La voce del menù relativa alla pagina in cui ci si trova è evidenziata di colore bianco e non sarà cliccabile per evitare link che puntano alla pagina in cui ci si trova.
 	Sarà poi possibile capire dove ci si trovi all'interno del sito grazie al percorso indicato sulla barra sempre presente nella parte superiore della pagina.
@@ -82,12 +81,12 @@ Sulla parte sinistra, nelle versioni mobile e tablet viene indicato il percorso 
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.4]{img/about.png}}
-	\caption{Pagina di About}
+	\caption{Pagina di About in modalità desktop}
 	\label{fig:addForm}
 \end{figure}	
 
 ~\\	
-La pagina presenta le informazioni riguardanti la piattaforma e dei membri del gruppo. Sono poi presenti delle foto dei membri del gruppo che se cliccate portano alla pagina personale degli sviluppatori. 
+La pagina presenta informazioni riguardanti la piattaforma e i membri del gruppo. Sono poi presenti delle foto dei membri del gruppo che se cliccate portano alla pagina personale degli sviluppatori. 
 
 
 \paragraph{Contenuti dinamici}   
@@ -96,7 +95,7 @@ La pagina presenta le informazioni riguardanti la piattaforma e dei membri del g
 
 \subparagraph{Esplora}
 ~\\	
-La pagina di \textit{esplora} elenca per genere le serie tv che il sito ha nel database. Ogni genere ha il 100\% di spazio in larghezza a disposizione ma qualora questo spazio non dovesse bastare a mostrare tutte le serie appartenenti al genere, l'utente potrà comunque visualizzarle tutte in una pagina dedicata, raggiungibile tramite il link \textit{mostra tutto} presente sul lato destro dell'elenco delle serie.
+La pagina di \textit{esplora} elenca per genere le serie TV che il sito ha nel database. Ogni genere ha il 100\% di spazio in larghezza a disposizione ma qualora questo spazio non dovesse bastare a mostrare tutte le serie appartenenti al genere, l'utente potrà comunque visualizzarle tutte in una pagina dedicata, raggiungibile tramite il link \textit{mostra tutto} presente sul lato destro dell'elenco delle serie.
 
 \begin{figure}[H]
 	\centerline{\includegraphics[scale=0.33]{img/esplora.png}}
