@@ -77,6 +77,9 @@
 		display: block;
 		color: white;
 	}	
+	.login-bar label{
+		margin-left: 1em;
+	}
 	.login-bar .path{
 		color: white;
 	}
@@ -90,6 +93,9 @@
 	.link-navigazione, .login-bar label{
 		display: block;
 		color: white
+	}
+	.login-bar label{
+		margin-left: 1em;
 	}
 	.login-bar .path{
 		color: white;
