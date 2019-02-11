@@ -4,7 +4,9 @@ include_once 'DBConnection.php';
     function executeQuery($query, $parameters, $type ){
         
         global $connection;
-        
+        if(empty($connection))
+            connettiDB();
+            
         if ($stmt = $connection->prepare($query)) {
     
             $params=array_merge($type, $parameters);
@@ -97,6 +99,9 @@ include_once 'DBConnection.php';
     function printPageHome($output){
         global $connection;
         
+        if(empty($connection))
+            connettiDB();
+        
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = 'serie.php?serie_id=';
@@ -156,6 +161,10 @@ include_once 'DBConnection.php';
     
     function printPageEsplora($output){
         global $connection;
+        
+        if(empty($connection))
+            connettiDB();
+            
         
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
@@ -218,6 +227,11 @@ include_once 'DBConnection.php';
     }
     
     function printPageSerie($output){
+        
+        global $connection;
+        if(empty($connection))
+            connettiDB();
+            
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = 'esplora.php';
@@ -239,7 +253,6 @@ include_once 'DBConnection.php';
         
         $_SESSION['serie_id']=$_GET['serie_id'];
         
-        global $connection;
         $side_block = implode("",file("../txt/side_bar.txt"));
         $side_serie_block = implode("",file("../txt/serie/side_bar_serie.txt"));
         $attore_block = implode("",file("../txt/serie/attore.txt"));
@@ -252,6 +265,17 @@ include_once 'DBConnection.php';
 
         $query = "select background from serie where id=".$_GET["serie_id"];
         $result = resultQueryToTable($connection->query($query));
+        
+        if(count($result)<=0){
+            $output = preg_replace("/<!-- Nome_Pagina -->/i", "genere", $output );
+            $output = preg_replace("/<!-- Page_Head -->/i", $title, $output );
+            $error_block = implode("",file("../txt/errore.txt"));
+            $error_block = preg_replace("/<!-- Messaggio_Errore -->/i", "Serie non disponibile", $error_block );            
+            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $error_block, $output );
+            
+            return $output;
+        }
+        
         $title = preg_replace("/<--! Url_Back -->/i", $result[0]["background"], $title);
         $output = preg_replace("/<!-- Page_Head -->/i", $title, $output );
         
@@ -601,6 +625,9 @@ include_once 'DBConnection.php';
 
         global $connection;
 
+        if(empty($connection))
+            connettiDB();
+        
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = 'serie.php?serie_id=';
@@ -654,7 +681,9 @@ include_once 'DBConnection.php';
     function printPageProfilo($output){
 
         global $connection;
-
+        if(empty($connection))
+            connettiDB();
+            
         $host  = $_SERVER['HTTP_HOST'];
 
         $head_page = implode("", file("../txt/pagehead.txt"));
@@ -700,7 +729,6 @@ include_once 'DBConnection.php';
 
 
     function printPagePrivacy($output){
-        global $connection;
         
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
@@ -716,7 +744,6 @@ include_once 'DBConnection.php';
     }
 
     function printPageAbout($output){
-        global $connection;
         
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
@@ -732,7 +759,6 @@ include_once 'DBConnection.php';
     }
 
     function printPageLogin($output){
-        global $connection;
         
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
@@ -754,8 +780,7 @@ include_once 'DBConnection.php';
     }
     
     function printPageSignUp($output){
-        global $connection;
-        
+            
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         
@@ -776,7 +801,9 @@ include_once 'DBConnection.php';
     
     function printPageGenere($output){
         global $connection;
-        
+        if(empty($connection))
+            connettiDB();
+            
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = 'serie.php?serie_id=';
@@ -786,12 +813,14 @@ include_once 'DBConnection.php';
         $show_page = implode("",file("../txt/show.txt"));
         $query="select distinct id, nome from genere where id=".$_GET["genere_id"];
         //Seleziono la lista dei generi già in una tabella
-        $generi=resultQueryToTable($connection->query($query));
+        $generi=resultQueryToTable($connection->query($query));        
         if(count($generi)<=0){
             $output = preg_replace("/<!-- Nome_Pagina -->/i", "genere", $output );
             $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
-            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", "Nessun genere esistente", $output );
-            
+            $error_block = implode("",file("../txt/errore.txt"));
+            $error_block = preg_replace("/<!-- Messaggio_Errore -->/i", "Genere non disponibile, perch&egrave; non  provi a cercarne un altro? :)", $error_block );
+            $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $error_block, $output );
+                        
             return $output;
         }
         $genere_show_collect="<!-- Successivo -->";
@@ -834,9 +863,7 @@ include_once 'DBConnection.php';
         return $output;
         }
 
-   function printPage404($output){
-        global $connection;
-        
+   function printPage404($output){        
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 
@@ -852,6 +879,9 @@ include_once 'DBConnection.php';
     
     function printPageAmministrazione($output){
         global $connection;
+        if(empty($connection))
+            connettiDB();
+            
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra ="login.php";
@@ -957,15 +987,14 @@ include_once 'DBConnection.php';
     }
     
     function printPageFAQ($output){
-        global $connection;
-        
+            
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         
         $head_page = implode("", file("../txt/pagehead.txt"));
         $faq = implode("", file("../txt/faq.txt"));
         
-        $output = preg_replace("/<!-- Nome_Pagina -->/i", "404", $output );
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "FAQ", $output );
         $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
         $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $faq , $output );
         
@@ -975,7 +1004,9 @@ include_once 'DBConnection.php';
     function printPageSupporto($output){
         
         global $connection;
-        
+        if(empty($connection))
+            connettiDB();
+            
         $host  = $_SERVER['HTTP_HOST'];
         
         $head_page = implode("", file("../txt/pagehead.txt"));

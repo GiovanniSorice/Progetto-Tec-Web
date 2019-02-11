@@ -2,8 +2,8 @@
 include_once 'general_function.php';
 
 //TODO: aggiustare password con md5password
-$username=$_GET['username'];
-$password=hash("sha256",$_GET['password']);
+$username=$_POST['username'];
+$password=hash("sha256",$_POST['password']);
 session_start();
 
 $query="select * from utente where username=? and password=?";

@@ -7,7 +7,7 @@
        		</div>
 			
 		  <div id="login__top" class="login">
-        <form action="login_action.php">
+        <form action="login_action.php" method="post">
           <div class="login__riga">
             <h2>Effettua l'accesso con un <span lang="EN">social</span> a scelta oppure manualmente</h2>                   
             <div class="login__colonna">
