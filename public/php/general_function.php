@@ -979,7 +979,7 @@ include_once 'DBConnection.php';
         $host  = $_SERVER['HTTP_HOST'];
         
         $head_page = implode("", file("../txt/pagehead.txt"));
-        $output = preg_replace("/<!-- Nome_Pagina -->/i", "profilo", $output );
+        $output = preg_replace("/<!-- Nome_Pagina -->/i", "supporto", $output );
         $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
         $supporto = implode("", file("../txt/supporto.txt"));
         
