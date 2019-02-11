@@ -13,6 +13,7 @@
 						La registrazione al sito pu&ograve; avvenire in <strong> due modi</strong>, il primo tramite compilazione di un form che 
 						&eacute; 
 						raggiungibile attraverso la sezione di login che si raggiunge cliccando in alto a destra della pagina: 
+					</h2>
 
 						<div class = "immagine-faq">
 							<picture>
@@ -25,7 +26,8 @@
 						<div class = "caption-immagine">
 							Posizione tasto di login.
 						</div>
-
+						
+					<h2 class = "risposta"> 
 						In seguito va compilato ogni campo presente facendo attenzione al campo username che deve essere <strong> univoco </strong>. 
 						Quindi se ci si &eacute; gi&agrave; registrati con un email il sistema non completer&agrave; la registrazione.
 						Il secondo modo che sar&agrave; disponibile in futuro &eacute la registrazione tramite social network.  
