@@ -3,7 +3,7 @@
 }
 
 #footer-responsive-menu{
-height: 100vh;
+/*height: 90vh;*/
 width: 100%;
 background: #14181c url("../img/background-dark.png") 0 -1px repeat-x;
 margin: 0;
@@ -13,7 +13,7 @@ display: flex;
 #footer-responsive-menu ul{
   margin: auto;
   padding: 0; 
-  line-height: 4;
+  line-height: 3;
   text-align: center;
 }
 
@@ -33,7 +33,7 @@ display: flex;
   color: #aaa;
   position: relative;
   left: 0.7em;
-  bottom: 2.5em;
+  bottom: 0;
 }
 
 
