@@ -12,7 +12,7 @@
   /*background-color: #2f4858;*/
   background: #14181c url(../img/background-dark.png) 0 -1px repeat-x;
   border-right: 2px solid black;
-  overflow-y: scroll;
+  overflow-y: auto;
   /*Test*/
   z-index: 999;
 

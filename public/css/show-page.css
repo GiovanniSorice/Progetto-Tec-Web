@@ -7,7 +7,7 @@
 /*Header*/
 
 .header-content h1{
-	font-size: 3em;
+	font-size: 2.5em;
 }
 
 .header-content h2{
@@ -315,29 +315,23 @@
 .votazioni{
   margin: 1em;
   text-align: center;
-  padding-bottom: 3em;
-  position: relative;
-  margin-left: 2em;
-  margin-right: 4em;
+  overflow: hidden;
 }
 
 
 .votazioni h1{
   font-size: 1.5em;
   margin: 0;
-  font-family: serif;
 }
 
 .votazioni ul{
   margin: 0;
-  padding-bottom: 2em
 }
 
 .votazioni li{
   font-size: 1.5em;
   background-color: #ffffa0;
-  float: left;
-  list-style-type: none;
+  width: 20%;
 }
 
 .votazioni li:hover{
@@ -345,17 +339,17 @@
   border-bottom: 0.3em solid #FF831C;
 }
 
-.votazioni a:link{
+.votazioni a{
   text-align: center; 
   text-decoration: none;
-  display: inline-block;
-  padding: 0.5em;
+  padding: 0;
 }
 
 .preferito{
 	font-size: 1em;
 	position: absolute;
     bottom: 10%;
+    margin-left: 1em;
 }
 
 .preferito a:link{

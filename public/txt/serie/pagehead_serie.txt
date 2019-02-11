@@ -1,4 +1,4 @@
-			<div class="header-content">
+			<div class="header-content title">
 				<h1><!-- Titolo --></h1>
 				<div class="text-container">
 					<h2>Voto medio: <span> <!-- Voto -->/5 </span></h2>

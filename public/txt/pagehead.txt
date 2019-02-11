@@ -1,4 +1,4 @@
 
-			<div class="header-content">
+			<div class="header-content title">
 				<h1>Tv Hunter</h1> 
 			</div>

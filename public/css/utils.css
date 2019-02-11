@@ -21,6 +21,20 @@ body{
 }
 
 
+.title h1 {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  text-rendering: optimizeLegibility;
+  color: #2c2c2c !important;
+  background-color: #d5d5d5;
+  letter-spacing: .05em;
+  text-shadow: 
+  1px 1px 0px #d5d5d5, 
+  4px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+}
+
+
+
 @media screen and (max-width: 1024px) and (min-width: 721px){ /*stile tablet*/
 }
 
