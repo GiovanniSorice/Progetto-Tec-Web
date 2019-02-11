@@ -2,12 +2,12 @@
 include_once 'general_function.php';
 
 //TODO: aggiustare password con sha256password
-$username=$_GET['username'];
-$password=hash("sha256",$_GET['password']);
-$email=$_GET['email'];
-$nome=$_GET['nome'];
-$cognome=$_GET['cognome'];
-$datanascita=$_GET['datanascita'];
+$username=$_POST['username'];
+$password=hash("sha256",$_POST['password']);
+$email=$_POST['email'];
+$nome=$_POST['nome'];
+$cognome=$_POST['cognome'];
+$datanascita=$_POST['datanascita'];
 
 $datanascita= date("Y-m-d",strtotime($datanascita));
 session_start();

@@ -1,6 +1,6 @@
 				
 		<div id="signup__top" class="signup">
-		  <form action="signup_action.php">
+		  <form action="signup_action.php" method="post">
 		      <div class="signup__riga">
 		        <div class="signup__colonna">
 					<!-- Errore -->
