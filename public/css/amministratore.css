@@ -1,7 +1,7 @@
 /* Parto con la versione mobile, poi tablet e infine computer */
 
+
 #pagina-amministratore{
-	font-family: "Times New Roman", Times, serif; 
 	margin-top: 1em;
 	margin-right: 1em ;
 	margin-left: 1em;
@@ -16,7 +16,6 @@
 }
 
 #pagina-amministratore h2{
-	font-family: "Times New Roman", Times, serif; 
 	font-size: 0.8em;
 	font-weight: normal;
 	
@@ -34,7 +33,6 @@
 /*	Tabella dei commenti segnalati */
 
 #segnalazioni{	
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   	border-collapse: collapse;
   	width: 90%;	
 }
@@ -104,7 +102,6 @@
 /*  	Tabella dei messaggi ricevuti   	*/
 
 #tabella-messaggi{	
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   	border-collapse: collapse;
   	width: 90%;	
 }

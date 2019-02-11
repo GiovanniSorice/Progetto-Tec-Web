@@ -3,10 +3,7 @@ self.addEventListener('install', function(event) {
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
 
-  '/I TUOI FILE',
-  '/styles/I TUOI FILE.css',
-  '/script/I TUOI FILE.js'
-
+  '../css/utils.css'
 ];
 
 self.addEventListener('fetch', function(event) {

@@ -17,19 +17,8 @@
 <meta name="description" content="Social network per le tue serie TV"/>
 <meta name="theme-color" content="#317EFB"/>
 
+<script src="../javascript/script-sw.js"></script>
 
 
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('../service-worker.js').then(function(registration) {
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-
-</script>
 
 </head>
