@@ -153,6 +153,9 @@
 	#tabella-messaggi th{
 		font-size: 0.75em;
 	}
+	#pagina-amministratore div:last-child{
+		margin-bottom: 3em;
+	}
 }
 
 @media screen and (min-width: 1025px){

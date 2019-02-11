@@ -57,6 +57,9 @@
   #sviluppatori-generale{
     margin-bottom: 3em;
   }
+  #sviluppatori ul li:last-child{
+    margin-bottom: 3em;
+  }
 }
 
 /* Versione desktop  */
