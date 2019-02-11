@@ -75,7 +75,7 @@
 						
 						</li>
 
-  						<li class="show-about">
+  						<li class="sezione-sviluppatore">
 							<div class="paragrafo-sviluppatore">
 								<a href="https://github.com/fraccorzo">
 									<img src="../img/aboutImage/chicco.jpeg" alt="immagine di Francesco Corti"/>
