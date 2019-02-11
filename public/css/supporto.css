@@ -22,7 +22,6 @@
 .tabella .messaggi td{
   	border: 1px solid #ddd; 
   	padding: 8px;
-  	font-size: 0.6em;
 }
 
 .tabella .messaggi tr:nth-child(even){
