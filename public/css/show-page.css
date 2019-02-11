@@ -56,6 +56,10 @@
 	margin-right: 0;
 }
 
+.selected{
+	background-color: #fac100 !important;
+}
+
 #side-bar__consigli #sconsiglia{
 	margin-left: 2%;
 }
