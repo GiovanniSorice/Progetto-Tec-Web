@@ -3,7 +3,7 @@
 				<!-- Page_Head -->
 		</div>
 		<div class="login-bar vertical-center">
-			<label for="link_navigazione">Ti trovi in:</label>
+			<label>Ti trovi in:</label>
 			<div class="link-navigazione">
 			<!-- Link_Navigazione -->
 			</div>
