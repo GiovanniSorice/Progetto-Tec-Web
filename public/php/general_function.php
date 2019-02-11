@@ -294,6 +294,8 @@ include_once 'DBConnection.php';
             $query = "select * from consiglio where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente;
             $isPresent = resultQueryToTable($connection->query($query));
             if(empty($isPresent)){
+                $side_serie_block=preg_replace("/Scons_Color/i", "" , $side_serie_block );
+                $side_serie_block=preg_replace("/Cons_Color/i", "" , $side_serie_block );
                 $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&consigliato=1" , $side_serie_block );
                 $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&consigliato=0" , $side_serie_block );
             }
@@ -302,13 +304,15 @@ include_once 'DBConnection.php';
                 $isConsigliato = resultQueryToTable($connection->query($query));
 
                 if(empty($isConsigliato)){
-                    $side_serie_block=preg_replace("/<!-- Scons_Color -->/i", "#fac100" , $side_serie_block );
+                    $side_serie_block=preg_replace("/Scons_Color/i", " selected" , $side_serie_block );
+                    $side_serie_block=preg_replace("/Cons_Color/i", "" , $side_serie_block );
                     $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra6"."1"."&serie_id=".$_GET["serie_id"] , $side_serie_block );
                     $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra5".$_GET["serie_id"] , 
                         $side_serie_block );
                 }
                 else{
-                    $side_serie_block=preg_replace("/<!-- Cons_Color -->/i", "#fac100" , $side_serie_block );
+                    $side_serie_block=preg_replace("/Scons_Color/i", "" , $side_serie_block );
+                    $side_serie_block=preg_replace("/Cons_Color/i", " selected" , $side_serie_block );
                     $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra5".$_GET["serie_id"] , 
                         $side_serie_block );
                     $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra6"."0"."&serie_id=".
@@ -343,8 +347,7 @@ include_once 'DBConnection.php';
                         $side_serie_block );
                         $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=5" , 
                         $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- voto1_Color -->/i", "#fac100" , $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- voto1_bottom -->/i", "0.3em solid #FF831C" , $side_serie_block );
+                        $side_serie_block=preg_replace("/voto1_Color/i", "class=\"selected\"" , $side_serie_block );
                     }
                         break;
 
@@ -359,8 +362,7 @@ include_once 'DBConnection.php';
                         $side_serie_block );
                         $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=5" , 
                         $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- voto2_Color -->/i", "#fac100" , $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- voto2_bottom -->/i", "0.3em solid #FF831C" , $side_serie_block );
+                        $side_serie_block=preg_replace("/voto2_Color/i", "class=\"selected\"" , $side_serie_block );
                     }
                         break;
 
@@ -375,8 +377,7 @@ include_once 'DBConnection.php';
                         $side_serie_block );
                         $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=5" , 
                         $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- voto3_Color -->/i", "#fac100" , $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- voto3_bottom -->/i", "0.3em solid #FF831C" , $side_serie_block );
+                        $side_serie_block=preg_replace("/voto3_Color/i", "class=\"selected\"" , $side_serie_block );
                     }
                         break;
 
@@ -391,8 +392,7 @@ include_once 'DBConnection.php';
                         $side_serie_block );
                         $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/$extra8".$_GET["serie_id"]."&voto=5" , 
                         $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- voto4_Color -->/i", "#fac100" , $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- voto4_bottom -->/i", "0.3em solid #FF831C" , $side_serie_block );
+                        $side_serie_block=preg_replace("/voto4_Color/i", "class=\"selected\"" , $side_serie_block );
                     }
                         break;
 
@@ -407,8 +407,7 @@ include_once 'DBConnection.php';
                         $side_serie_block );
                         $side_serie_block=preg_replace("/<!-- Voto5 -->/i", "http://$host$uri/$extra9".$_GET["serie_id"], 
                         $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- voto5_Color -->/i", "#fac100" , $side_serie_block );
-                        $side_serie_block=preg_replace("/<!-- voto5_bottom -->/i", "0.3em solid #FF831C" , $side_serie_block );
+                        $side_serie_block=preg_replace("/voto5_Color/i", "class=\"selected\"" , $side_serie_block );
                     }
                         break;
 
@@ -432,6 +431,12 @@ include_once 'DBConnection.php';
             $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/login.php" , $side_serie_block );
             $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/login.php" , $side_serie_block );
         }
+
+        $side_serie_block=preg_replace("/voto1_Color/i", "" , $side_serie_block );
+        $side_serie_block=preg_replace("/voto2_Color/i", "" , $side_serie_block );
+        $side_serie_block=preg_replace("/voto3_Color/i", "" , $side_serie_block );
+        $side_serie_block=preg_replace("/voto4_Color/i", "" , $side_serie_block );
+        $side_serie_block=preg_replace("/voto5_Color/i", "" , $side_serie_block );
 
         $side_serie_block=preg_replace("/<!-- Attore -->/i",$attore_collect , $side_serie_block );
         $side_block = preg_replace("/<!-- Side_Bar_Contnent -->/i", $side_serie_block, $side_block );
