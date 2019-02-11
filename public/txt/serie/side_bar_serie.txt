@@ -15,7 +15,7 @@
 				<div class="votazioni">
 					<h1>Vota la serie</h1>
 					<div class="valori">
-						<ul class="list-inline list_no-style">
+						<ul class="list_no-style">
 							<li voto1_Color><a href="<!-- Voto1 -->" title="Voto 1" >1</a></li>
 							<li voto2_Color><a href="<!-- Voto2 -->" title="Voto 2" >2</a></li>
 							<li voto3_Color><a href="<!-- Voto3 -->" title="Voto 3" >3</a></li>

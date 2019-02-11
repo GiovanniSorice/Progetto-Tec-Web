@@ -6,7 +6,7 @@
 			<div id="info-privacy">
 
 				<div id="titolo">
-					<h1> Norme della privacy </h1>
+					<h2> Norme della privacy </h2>
 				</div>	
 
 				<div id="contenuto-pagina">
