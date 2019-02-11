@@ -6,7 +6,7 @@
 		<div id = "pagina-About">
 
 		 	<div id="titolo-pagina-about">
-				<h3> <span lang="EN">About Tv Hunter</span> :</h3>
+				<h2> <span lang="EN">About Tv Hunter</span> :</h2>
 			</div>			
 
 			<div class="contenuto-about">
@@ -24,7 +24,7 @@
 			<!-- Foto di noi 4 e spiegazione ruoli -->
 
 			<div id="sviluppatori">	
-				<h3 class="titolo-about"> Sviluppatori: </h3>
+				<h2 class="titolo-about"> Sviluppatori: </h2>
 
 				<div class="contenuto-about">
 					<p> 
@@ -39,9 +39,9 @@
 									<img src="../img/aboutImage/davide.jpeg" alt="immagine di Davide Barasti"/>
 								</a>
 								<div class="informazioni-sviluppatore">
-									<h3 class="nome-sviluppatore">
+									<h2 class="nome-sviluppatore">
 										Davide Barasti 
-									</h3>
+									</h2>
 								</div>
 							</div>
 						</li>
@@ -52,9 +52,9 @@
 									<img src="../img/aboutImage/ciruz.jpg" alt="immagine di Giovanni Sorice"/>
 								</a>
 								<div class="informazioni-sviluppatore">
-									<h3 class="nome-sviluppatore">
+									<h2 class="nome-sviluppatore">
 										Giovanni Sorice 
-									</h3>
+									</h2>
 														
 								</div>
 							</div>						
@@ -67,9 +67,9 @@
 								</a>
 							
 								<div class="informazioni-sviluppatore">
-									<h3 class="nome-sviluppatore">
+									<h2 class="nome-sviluppatore">
 										Lorenzo Busin
-									</h3>
+									</h2>
 								</div>						
 							</div>
 						
@@ -81,9 +81,9 @@
 									<img src="../img/aboutImage/chicco.jpeg" alt="immagine di Francesco Corti"/>
 								</a>
 								<div class="informazioni-sviluppatore">
-						      			<h3 class="nome-sviluppatore">
+						      			<h2 class="nome-sviluppatore">
 											Francesco Corti 
-						      			</h3>
+						      			</h2>
 								</div>
 							</div>						
 						</li>

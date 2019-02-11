@@ -22,7 +22,7 @@
 						</div> 
 					</noscript>
 
-					<table id="stagione">
+					<table id="stagione" title="episodi">
 						<tr>
 							<th>Numero Episodio</th>
 							<th>Nome Episodio</th>

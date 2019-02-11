@@ -87,6 +87,7 @@
 
 	.white{
 	color: white;
+	display: inline;
 	}
 
 	.login-bar .path{
@@ -102,6 +103,7 @@
 
 	.white{
 	color: white;
+	display: inline;
 	}
 
 	.link-navigazione, .login-bar label{
