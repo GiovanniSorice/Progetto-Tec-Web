@@ -294,8 +294,6 @@ include_once 'DBConnection.php';
             $query = "select * from consiglio where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente;
             $isPresent = resultQueryToTable($connection->query($query));
             if(empty($isPresent)){
-                $side_serie_block=preg_replace("/Scons_Color/i", "" , $side_serie_block );
-                $side_serie_block=preg_replace("/Cons_Color/i", "" , $side_serie_block );
                 $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&consigliato=1" , $side_serie_block );
                 $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&consigliato=0" , $side_serie_block );
             }
@@ -432,6 +430,9 @@ include_once 'DBConnection.php';
             $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/login.php" , $side_serie_block );
         }
 
+        $side_serie_block=preg_replace("/Scons_Color/i", "" , $side_serie_block );
+        $side_serie_block=preg_replace("/Cons_Color/i", "" , $side_serie_block );
+
         $side_serie_block=preg_replace("/voto1_Color/i", "" , $side_serie_block );
         $side_serie_block=preg_replace("/voto2_Color/i", "" , $side_serie_block );
         $side_serie_block=preg_replace("/voto3_Color/i", "" , $side_serie_block );
@@ -449,7 +450,6 @@ include_once 'DBConnection.php';
         $result = resultQueryToTable($connection->query($query));
 
         if(($result[0]["voto"] - (int)$result[0]["voto"]) == 0){
-            echo ($result[0]["voto"] - (int)$result[0]["voto"]);
             $voto = (int)$result[0]["voto"];
         }
         else
