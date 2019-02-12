@@ -34,6 +34,13 @@ All'interno dell'area dedicata all'amministrazione è possibile svolgere le segu
 	\item visualizzare in forma tabellare i commenti segnalati dagli utenti. Sarà possibile decidere di ignorare la segnalazione oppure di eliminare il commento segnalato, inoltre ha la possibilità di non far vedere un commento esclusivamente all'utente che l'ha segnalato;
 	\item visualizzare in forma tabellare i messaggi ricevuti dagli utenti, inviati dall'apposita sezione "Supporto", e decidere di dare una risposta oppure di eliminare i messaggi.
 \end{itemize}
+Qui di seguito è riportata la schermata che si presenta all'utente amministratore essersi loggato correttamente:
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.45]{img/amministratore.png}}
+	\caption{Pagina amministratore in modalità desktop}
+	\label{fig:navbarGU}
+\end{figure}
+
 
 \subsection{Layout del sito}
 Il sito TV Hunter è stato sviluppato con l'approccio \textit{mobile first}. Lo stile definito nei file .css è quindi strutturato nel seguente modo:
@@ -63,7 +70,7 @@ Che ci si trovi in modalità mobile, tablet o desktop, si potrà navigare all'in
 	La voce del menù relativa alla pagina in cui ci si trova è evidenziata di colore bianco e non sarà cliccabile per evitare link che puntano alla pagina in cui ci si trova.
 	Sarà poi possibile capire dove ci si trovi all'interno del sito grazie al percorso indicato sulla barra sempre presente nella parte superiore della pagina.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centerline{\includegraphics[scale=0.45]{img/nav_bar.png}}
 	\caption{Barra di navigazione per utente generico in modalità desktop}
 	\label{fig:navbarGU}
@@ -80,8 +87,8 @@ Sulla parte sinistra, nelle versioni mobile e tablet viene indicato il percorso 
 
 \paragraph{About} 
 ~\\	
-La pagina contiene informazioni riguardanti la piattaforma e i membri del gruppo con le relative foto. 
-\begin{figure}[h!]
+La pagina di \textit{about} contiene informazioni riguardanti la piattaforma e i membri del gruppo con le relative foto. 
+\begin{figure}[H]
 	\centerline{\includegraphics[scale=0.33]{img/about.png}}
 	\caption{Pagina di About in modalità desktop}
 	\label{fig:addForm} 
@@ -89,20 +96,19 @@ La pagina contiene informazioni riguardanti la piattaforma e i membri del gruppo
 
 \paragraph{Privacy} 
 ~\\	
-La pagina presenta le linee guida adottate dalla piattaforma per il trattamento dei dati personali degli utenti.
+La pagina di \textit{privacy} contiene le linee guida adottate dalla piattaforma per il trattamento dei dati personali degli utenti registrati.
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.33]{img/privacy.png}}
+	\centerline{\includegraphics[scale=0.25]{img/privacy.png}}
 	\caption{Pagina di Privacy in modalità desktop}
 	\label{fig:addForm} 
 \end{figure}	
-~\\	
 
 \paragraph{Contenuti dinamici}   
 
 \subparagraph{Preferiti}
 ~\\	
-La pagina raccoglie le serie TV che sono state selezionate come preferite dall'utente, queste vengono mostrate e, se cliccate,  portano alla pagina specifica della serie. 
-\begin{figure}[h!]
+La pagina di \textit{preferiti} raccoglie le serie TV che sono state selezionate come preferite dall'utente in modo che quest'ultimo in futuro non debba ricercarle. Le serie salvate vengono mostrate in modo ordinato e se non sono presenti serie TV preferite viene visualizzata una pagina vuota. 
+\begin{figure}[H]
 	\centerline{\includegraphics[scale=0.33]{img/preferiti.png}}
 	\caption{Pagina di Preferiti in modalità desktop}
 	\label{fig:addForm}
@@ -120,30 +126,28 @@ La pagina di \textit{esplora} elenca per genere le serie TV che il sito ha nel d
 
 \subparagraph{Profilo}
 ~\\
-La pagina profilo presenta: nome, cognome, data di nascita, username e la Email dell'utente registrato. In caso di mancata registrazione il sistema mostrerà una schermata dove darà, tramite un link, la possibilità di registrarsi o di autenticarsi come utente registrato in un'altra pagina. 
+La pagina di \textit{profilo} presenta: nome, cognome, data di nascita, username e la Email dell'utente registrato attivo. In caso di mancata registrazione il sistema mostrerà una schermata dove darà, tramite un link, la possibilità di registrarsi o di autenticarsi come utente registrat nell'apposita pagina di registrazione. 
 \begin{figure}[H]
 	\centerline{\includegraphics[scale= 0.33]{img/profilo.png}}
-	\caption{Pagina Profilo versione desktop}
+	\caption{Pagina Profilo in modalità desktop}
 \end{figure}
 
 
 \subparagraph{FAQ} 
 ~\\
-La pagina FAQ presenta 
+La pagina di \textit{faq} presenta le domande che più sono state richieste dagli utenti registrati agli amministratori con le relative risposte. Inoltre per ogni domanda è presente, se necessaria, un'immagine che indica il posizionamento di "aree" del sito che ad un'utenza poco esperta potrebbero risultare non familiari o sconosciute.
 \begin{figure}[H]
 	\centerline{\includegraphics[scale= 0.33]{img/faq.png}}
-	\caption{Pagina Faq versione desktop}
+	\caption{Pagina Faq in modalità desktop}
 	
 \end{figure}
 
-
-~\\
 \subparagraph{Privacy}
 ~\\
-
+La pagina di \textit{privacy} illustra come il sito tratti le informazioni sensibili che sono inserite dagli utenti quando effettuano la registrazione e i meccanismi di difesa utilizzati per renderle sicure.
 \begin{figure}[H]
-	\centerline{\includegraphics[scale= 0.33]{img/privacy.png}}
-	\caption{Pagina privacy versione desktop}
+	\centerline{\includegraphics[scale= 0.25]{img/privacy.png}}
+	\caption{Pagina privacy in modalità desktop}
 	
 \end{figure}
-La pagina privacy illustra come il sito tratta le informazione sensibili che sono inserite dagli utenti quando effettuano la registrazione e i meccanismi di difesa utilizzati per renderle sicure.
+
