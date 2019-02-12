@@ -645,7 +645,11 @@ include_once 'DBConnection.php';
         $preferiti = implode("", file("../txt/preferiti.txt"));
         
         if(array_key_exists('user_username',$_SESSION) && !empty($_SESSION['user_username'])){
-
+            $title_pref="<h1 class=\"titolo-genere\">
+                            Preferiti
+                        </h1>
+                        <ul class=\"list-inline list_no-style elenco-serie\">";
+            $preferiti =preg_replace("/<!-- Titolo_Preferiti -->/i", $title_pref, $preferiti);
             $show = implode("", file("../txt/show_preferiti.txt"));
 
             $id_utente = $_SESSION["user_id"];
@@ -663,7 +667,7 @@ include_once 'DBConnection.php';
                 $show_collect=preg_replace("/<!-- Url_Show -->/i","http://$host$uri/$extra".$shows["id"] , $show_collect );  
             }
 
-            $show=preg_replace("/<!-- Successiva -->/i","" , $show );
+            $show=preg_replace("/<!-- Successiva -->/i","</ul>" , $show );
             $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $preferiti , $output );
             $output = preg_replace("/<!-- Registrati -->/i", "" , $output );
             $output = preg_replace("/<!-- Preferiti_Show -->/i" , $show_collect , $output);
