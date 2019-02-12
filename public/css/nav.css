@@ -154,7 +154,7 @@
 }
 
 .nav__ricerca input{
-  width: 85%; 
+  width: 78%; 
   height: 1.8em;
   border: none;
   border-radius: 25px;
@@ -162,6 +162,23 @@
   outline: none; 
   box-shadow: none;    
   background: transparent;
+  float: left;
+}
+
+.nav__ricerca button {
+  float: right;
+  width: 20%;
+  height: 1.5em;
+  border: none;
+   background: transparent;  
+   padding: 0;
+     margin-top: 3px;
+   
+}
+.nav__ricerca .icon-search{
+	content: url("../img/nav/search.png");
+	 height: 100%;
+	
 }
 
 @media screen and (max-width: 1024px)and (min-width: 150px){
