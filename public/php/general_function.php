@@ -824,6 +824,10 @@ include_once 'DBConnection.php';
                     $signup = preg_replace("/<!-- Errore -->/i", "Errore formato cognome. ", $signup );
                 break;
 
+                case '6':
+                    $signup = preg_replace("/<!-- Errore -->/i", "Errore formato data. ", $signup );
+                break;
+
                 default: 
                     $signup = preg_replace("/<!-- Errore -->/i", "Username gi&agrave; in uso, cambiare username. ", $signup );
                 break;

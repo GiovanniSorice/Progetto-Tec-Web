@@ -9,6 +9,11 @@ $cognome=$_GET['cognome'];
 $datanascita=$_GET['datanascita'];
 $flag = 0;
 
+if (!preg_match("/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/",$datanascita)) {
+    $flag = 6;
+}
+
+
 $cognome = test_input($cognome);
 if (!preg_match("/^[a-zA-Z0-9]*$/",$cognome)) {
     $flag = 5;
@@ -101,6 +106,12 @@ else{
 
         case '5':{
             $_SESSION['errore_signup']='5';
+            header("Location: http://$host$uri/$extra");
+        }
+        break;
+
+        case '6':{
+            $_SESSION['errore_signup']='6';
             header("Location: http://$host$uri/$extra");
         }
         break;
