@@ -988,8 +988,8 @@ include_once 'DBConnection.php';
             
             $messaggio_collect=preg_replace("/<!-- Successivo -->/i",
                 '<tr> '
-                .'<td scope="row" class="nome-utente">'.$messaggio["username"].'</td>'
-                .'<td scope="row" class="messaggio-inviato">'.$messaggio["messaggio"].'</td>'
+                .'<td class="nome-utente">'.$messaggio["username"].'</td>'
+                .'<td class="messaggio-inviato">'.$messaggio["messaggio"].'</td>'
                 .'<td>'
                 .'<form class="post-form post-form-supporto" action="messaggio_amministratore_action.php" method="get">'
                 .'<div class="post-holder">'
@@ -1003,7 +1003,7 @@ include_once 'DBConnection.php';
                 .'</div>'
                 .'</form>'
                 .'</td>'
-                .'<td scope="row" class="spazio-eliminazione">'
+                .'<td class="spazio-eliminazione">'
                 .'<a href="'.$link.'true">'
                 .'<img src="../img/admin/trash.png" class= "elimina-commento" alt="immagine cestino"></img>'
                 .' </a>'
@@ -1075,8 +1075,8 @@ include_once 'DBConnection.php';
             
             $messaggio_collect=preg_replace("/<!-- Successivo -->/i",
                 '<tr> '
-                .'<td scope="row" class="messaggio-inviato">'.$messaggio["messaggio"].'</td>'
-                .'<td scope="row" class="messaggio-inviato">'.$messaggio["risposta"].'</td>'
+                .'<td class="messaggio-inviato">'.$messaggio["messaggio"].'</td>'
+                .'<td class="messaggio-inviato">'.$messaggio["risposta"].'</td>'
                 .'</tr>'
                 .'<!-- Successivo -->'
                 , $messaggio_collect );
@@ -1098,9 +1098,9 @@ include_once 'DBConnection.php';
             $azione=$segnalazione["checked"]==$segnalazione["cancellato"]&&$segnalazione["checked"]=="1"?"Cancellato":"Cancellato solo per te";
             $segnalazione_collect=preg_replace("/<!-- Successivo -->/i",
                 '<tr> '
-                .'<td scope="row" class="serie">'.$segnalazione["titolo"].'</td>'
-                .'<td scope="row" class="segnalazione">'.$segnalazione["testo"].'</td>'
-                .'<td scope="row" class="azione">'.$azione.'</td>'
+                .'<td class="serie">'.$segnalazione["titolo"].'</td>'
+                .'<td class="segnalazione">'.$segnalazione["testo"].'</td>'
+                .'<td class="azione">'.$azione.'</td>'
                 .'</tr>'
                 .'<!-- Successivo -->'
                 , $segnalazione_collect );

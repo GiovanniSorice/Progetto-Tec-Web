@@ -126,7 +126,8 @@
         $footer = preg_replace("/refSupporto/i", "", $footer );
         $footer = preg_replace("/refEsplora/i", "", $footer );
         $footer = preg_replace("/refProfilo/i", "", $footer );
-        $footer = preg_replace("/refPreferiti/i", "", $footer );       
+        $footer = preg_replace("/refPreferiti/i", "", $footer );
+        $footer = preg_replace("/refAdmin/i", "", $footer );       
         $footer = preg_replace("/<!-- Script -->/i", $script, $footer );
         
         echo $footer;

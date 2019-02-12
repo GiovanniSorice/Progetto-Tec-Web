@@ -8,8 +8,10 @@
 			<!-- Link_Navigazione -->
 			</div>
 			<div class="non-logged-user align-right">
-				<span class="user-name"> <!-- Nome --> </span>
-				<button onClick="window.location.href='<!-- Url_Log -->'"><!-- Log --></button>
+			<form action="<!-- Url_Log -->">
+					<span class="user-name"> <!-- Nome --> </span>				
+    				<button type="submit"><!-- Log --></button>
+				</form>
 			</div>
 		</div>
 		<div class="content">
