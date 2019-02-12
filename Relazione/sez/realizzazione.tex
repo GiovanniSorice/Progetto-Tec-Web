@@ -1,4 +1,5 @@
-\newpage
+~\\
+
 \section{Realizzazione}
 Per la realizzazione del sito si è fatto riferimento ad alcune linee guida che ci hanno permesso di impostare il lavoro fin da subito, permettendo una scrittura agevole e relativamente semplice del codice.
 
@@ -18,21 +19,22 @@ Ad esempio non sono visualizzati l'header, la barra di navigazione superiore ed 
 
 \subsection{Linguaggi e strumenti}
 
-\subsubsection{XHTML 1.0 Strict}
-Html 5, versione Html 
+\subsubsection{XHTML 5}
+Abbiamo scelto di utilizzare lo standard XHTML 5, versione Html per garantire lo sviluppo in f
 
 \subsubsection{PHP}
-L'utilizzo di PHP è stato esteso soprattutto nella parte dinamica delle pagine, ed è stato in buona parte preferito rispetto a JavaScript per il fatto che esso risiede nel server e non richiede prerequisiti da parte del client che poi vuole fruire la pagina.
+PHP è stato utilizzato per la creazione dinamica di tutte le pagine della piattaforma. Infatti viene generato del codice HTML per ogni pagina che viene sostituito in apposite sezioni caratterizzate da un flag. Il forte utilizzo di PHP ha permesso un interazione tra gli utenti registrati e gli amministratori attraverso \textit{form} per il supporto e per la segnalazione di contenuti presenti nella piattaforma. Inoltre ha permesso di effettuare il caricamento di contenuti preferiti personalizzati per ogni utente e il caricamento della \textit{navbar} personalizzata a seconda della tipologia di utente. 
 
 \subsubsection{JavaScript}
-Utilizzato 
+JavaScript è stato utilizzato per l'aggiornamento in tempo reale di una pagina web, tramite \textit{Ajax}. Questo ha permesso di avere aggiornamenti della pagina senza doverla ricaricare. Infatti è stato utilizzato nella parte di ricerca della serie,  \textit{searchbar}, e nella pagina specifica delle serie dove vengono caricate, se richieste dall'utente, le varie stagioni. 
 
 \subsubsection{Struttura}
-Tutta la parte strutturale è stata mantenuta nei file presenti all'interno della cartella \textit{public}. I files .html sono stati posizionati nella cartella \textit{views}, quelli php invece dentro la cartella \textit{php}. La parte di presentazione invece è stata posta all'interno della cartella \textit{css}, le immagini all'interno della cartella img, mentre tutti gli altri file di utilità sono stati posti in cartelle più specifiche. La struttura scelta dal gruppo è quella gerarchica, in quanto tutte le informazioni sono disponibili a partire da una barra di navigazione sempre visibile.
+Tutta la parte strutturale è stata mantenuta nei file presenti all'interno della cartella \textit{public}. I files .html sono stati posizionati nella cartella \textit{views}, quelli php invece dentro la cartella \textit{php}. La parte di presentazione invece è stata posta all'interno della cartella \textit{css}, le immagini all'interno della cartella \textit{img}, mentre tutti gli altri file di utilità sono stati posti in cartelle più specifiche. La struttura scelta dal gruppo è quella gerarchica, in quanto tutte le informazioni sono disponibili a partire da una barra di navigazione sempre visibile.
 
 \subsection{Presentazione}
-
+Si è cercata, e ottenuta, una completa separazione tra parte presentazionale e parte strutturale. Non sono presenti \textit{tag} di stile all’interno delle pagine HTML
+e tutta la presentazione viene gestita attraverso diversi fogli di stile. 
 \subsection{Comportamento}
 
-Per quanto riguarda la parte dell'utenza generica si è deciso di utilizzare quanto meno possibile elementi JavaScript, prediligendo piuttosto la parte php. Questo ha permesso un comportamento quasi completamente predicibile - in quanto sottoposto a meno variabili di contorno dettate dal client - ed è stato sfruttato principalmente per mostrare a schermo le informazioni contenute nel database.
-\\Per quanto riguarda invece la parte dell'amministrazione entrambi i linguaggi sono stati sfruttati quando necessario per poter generare una fruizione semplificata del sito da parte di un amministratore, evitando i frequenti caricamenti di pagina inevitabilmente generati da una gestione php-side. È stata inoltre predisposta la sanitizzazione e la validazione degli input da parte dell'utente, con una discreta gestione degli errori. Da notare anche l'adozione di un sistema anti-SQL Injection per la compilazione dei form in MySQL.
+Per quanto riguarda la parte dell'utenza generica
+è stata predisposta la validazione degli input da parte dell'utente, con una gestione degli errori. È stato implementato un sistema anti-SQL Injection per la compilazione dei form in MySQL.

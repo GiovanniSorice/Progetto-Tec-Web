@@ -22,6 +22,7 @@
 .tabella .messaggi td{
   	border: 1px solid #ddd; 
   	padding: 8px;
+    word-break: break-all;
 }
 
 .tabella .messaggi tr:nth-child(even){
@@ -40,6 +41,10 @@
 }
 .tabella .azione{
 	width: 13%;
+}
+
+.tabella .messaggi td{
+  word-break: break-all;
 }
 
 .tabella .messaggi caption {
