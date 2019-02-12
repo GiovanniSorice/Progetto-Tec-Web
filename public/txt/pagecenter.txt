@@ -8,8 +8,8 @@
 			<!-- Link_Navigazione -->
 			</div>
 			<div class="non-logged-user align-right">
-				<span class="user-name"> <!-- Nome --> </span>
-				<form action="<!-- Url_Log -->">
+			<form action="<!-- Url_Log -->">
+					<span class="user-name"> <!-- Nome --> </span>				
     				<button type="submit"><!-- Log --></button>
 				</form>
 			</div>
