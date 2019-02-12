@@ -14,7 +14,7 @@ html, body{
 }
 
 .homepage__welcome{
-	height: 50vh;
+	height: 20vh;
 	display: flex;
 	align-items: center;
 	left: 0;
