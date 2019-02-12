@@ -270,9 +270,12 @@ include_once 'DBConnection.php';
 
         //Imposta immagine di background personalizzata
 
-        $query = "select background from serie where id=".$_GET["serie_id"];
-        $result = resultQueryToTable($connection->query($query));
+        $query = "select background from serie where id=?";
         
+        $stmt=executeQuery($query,array(&$_GET["serie_id"]),array("i"));
+        $result=resultQueryToTable($stmt->get_result());
+        $stmt->close();
+                
         if(count($result)<=0){
             $output = preg_replace("/<!-- Nome_Pagina -->/i", "genere", $output );
             $output = preg_replace("/<!-- Page_Head -->/i", $title, $output );
@@ -308,8 +311,11 @@ include_once 'DBConnection.php';
 
         if(array_key_exists('user_username',$_SESSION) && !empty($_SESSION['user_username'])){
             $id_utente = $_SESSION["user_id"];
-            $query = "select * from preferiti where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente;
-            $isPreferito = resultQueryToTable($connection->query($query));
+            $query = "select * from preferiti where id_serie=? and id_utente=".$id_utente;
+            $stmt=executeQuery($query,array(&$_GET["serie_id"]),array("i"));
+            $isPreferito=resultQueryToTable($stmt->get_result());
+            $stmt->close();
+            
             if(empty($isPreferito)){
                 $side_serie_block=preg_replace("/<!-- Add-Rem -->/i", "Aggiungi ai preferiti" , $side_serie_block );
                 $side_serie_block=preg_replace("/<!-- Add_Preferitio -->/i", "http://$host$uri/$extra2".$_GET["serie_id"] , 
@@ -322,16 +328,22 @@ include_once 'DBConnection.php';
             }
 
 
-            $query = "select * from consiglio where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente;
-            $isPresent = resultQueryToTable($connection->query($query));
+            $query = "select * from consiglio where id_serie=? and id_utente=".$id_utente;
+            $stmt=executeQuery($query,array(&$_GET["serie_id"]),array("i"));
+            $isPresent=resultQueryToTable($stmt->get_result());
+            $stmt->close();
+            
+            
             if(empty($isPresent)){
                 $side_serie_block=preg_replace("/<!-- Consigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&consigliato=1" , $side_serie_block );
                 $side_serie_block=preg_replace("/<!-- Sconsigliato -->/i", "http://$host$uri/$extra4".$_GET["serie_id"]."&consigliato=0" , $side_serie_block );
             }
             else{
-                $query = "select * from consiglio where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente." and consigliato=1";
-                $isConsigliato = resultQueryToTable($connection->query($query));
-
+                $query = "select * from consiglio where id_serie=? and id_utente=".$id_utente." and consigliato=1";
+                $stmt=executeQuery($query,array(&$_GET["serie_id"]),array("i"));
+                $isConsigliato=resultQueryToTable($stmt->get_result());
+                $stmt->close();
+                
                 if(empty($isConsigliato)){
                     $side_serie_block=preg_replace("/Scons_Color/i", " selected" , $side_serie_block );
                     $side_serie_block=preg_replace("/Cons_Color/i", "" , $side_serie_block );
@@ -349,8 +361,12 @@ include_once 'DBConnection.php';
                 }
             }
 
-            $query = "select * from voto where id_serie=".$_GET["serie_id"]." and id_utente=".$id_utente;
-            $isVotato = resultQueryToTable($connection->query($query));
+            $query = "select * from voto where id_serie=? and id_utente=".$id_utente;
+            $stmt=executeQuery($query,array(&$_GET["serie_id"]),array("i"));
+            $isVotato=resultQueryToTable($stmt->get_result());
+            $stmt->close();
+            
+            
             if(empty($isVotato)){
                 $side_serie_block=preg_replace("/<!-- Voto1 -->/i", "http://$host$uri/$extra7".$_GET["serie_id"]."&voto=1" , 
                         $side_serie_block );
@@ -477,9 +493,11 @@ include_once 'DBConnection.php';
         //Titolo, voto e consiglio
 
         $output = preg_replace("/<!-- Page_Head -->/i", $title, $output );
-        $query = "select titolo,voto,consigliato,non_consigliato,preferiti,(consigliato)/(consigliato+non_consigliato)*100 AS perc_consigliato from serie where id=".$_GET["serie_id"];
-        $result = resultQueryToTable($connection->query($query));
-
+        $query = "select titolo,voto,consigliato,non_consigliato,preferiti,(consigliato)/(consigliato+non_consigliato)*100 AS perc_consigliato from serie where id=?";
+        $stmt=executeQuery($query,array(&$_GET["serie_id"]),array("i"));
+        $result=resultQueryToTable($stmt->get_result());
+        $stmt->close();
+        
         if(($result[0]["voto"] - (int)$result[0]["voto"]) == 0){
             $voto = (int)$result[0]["voto"];
         }
@@ -497,9 +515,11 @@ include_once 'DBConnection.php';
         
 
         //Parte centro stagioni ed episodi 
-        $query="select miniatura,titolo,distribuzione,descrizione,creatore,consigliato,non_consigliato,voto from serie where id=".$_GET["serie_id"];
-        $serie=resultQueryToTable($connection->query($query));
-        
+        $query="select miniatura,titolo,distribuzione,descrizione,creatore,consigliato,non_consigliato,voto from serie where id=?";
+        $stmt=executeQuery($query,array(&$_GET["serie_id"]),array("i"));
+        $serie=resultQueryToTable($stmt->get_result());
+        $stmt->close();
+                
         $serie_block=preg_replace("/<!-- Descrizione -->/i",$serie[0]["descrizione"] , $serie_block );
         
         $numero_stagioni=mysqli_fetch_assoc(
@@ -598,14 +618,17 @@ include_once 'DBConnection.php';
         
         if(!array_key_exists('user_id',$_SESSION) && empty($_SESSION['user_id'])){
             
-            $query="select b.id, b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where b.cancellato=0 and a.id=".$_GET["serie_id"]." and b.id not in 
+            $query="select b.id, b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where b.cancellato=0 and a.id=? and b.id not in 
             (select id_ref from segnalazione where tipo=1)";
         }else{
-            $query="select b.id, b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where b.cancellato=0 and a.id=".$_GET["serie_id"]." and b.id not in
+            $query="select b.id, b.testo, c.username from (serie a join post b on a.id=b.id_serie) join utente c on b.id_utente=c.id where b.cancellato=0 and a.id=? and b.id not in
             (select id_ref from segnalazione where tipo=1 and id_utente=".$_SESSION["user_id"].")";            
         }
-        $posts=resultQueryToTable($connection->query($query));
         
+        $stmt=executeQuery($query,array(&$_GET["serie_id"]),array("i"));
+        $posts=resultQueryToTable($stmt->get_result());
+        $stmt->close();
+                
         $post_collect="<!-- Successivo -->";
         
         foreach ($posts as $post) {
@@ -853,9 +876,12 @@ include_once 'DBConnection.php';
         $genere_page = implode("",file("../txt/genere.txt"));
         $show_page = implode("",file("../txt/show.txt"));
         
-        $query="select distinct id, nome from genere where id=".$_GET["genere_id"];
+        $query="select distinct id, nome from genere where id=";
         //Seleziono la lista dei generi già in una tabella
-        $generi=resultQueryToTable($connection->query($query));     
+        $stmt=executeQuery($query,array(&$_GET["genere_id"]),array("i"));
+        $generi=resultQueryToTable($stmt->get_result());
+        $stmt->close();
+        
         if(count($generi)<=0){
             $output = preg_replace("/<!-- Nome_Pagina -->/i", "genere", $output );
             $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
