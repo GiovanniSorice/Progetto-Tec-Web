@@ -1,12 +1,10 @@
-~\\
-
 \section{Realizzazione}
 Per la realizzazione del sito si è fatto riferimento ad alcune linee guida che ci hanno permesso di impostare il lavoro fin da subito, permettendo una scrittura agevole e relativamente semplice del codice.
 
 \subsection{Responsive Design}
 TV Hunter è stato sviluppato con un approccio \textbf{mobile first} responsive.\\
 Sono presenti tre breakpoint che permettono una visualizzazione di qualità delle pagine da tutti i tipi di dispositivi comunemente usati per la navigazione.\\
-I breakpoint (indicati con l'intera \textit{media query}) sono i seguenti:
+I breakpoint, indicati con l'intera \textit{media query}, sono i seguenti:
 \begin{itemize}
 	\item \textbf{@media screen and (min-width: 751px) and (max-width: 1024px)} delimita la modalità tablet. Adatta a schemi medio-grandi di tablet o a schermi grandi di smartphone.
 	\item \textbf{@media screen and (min-width: 1025px)} delimita l'inizio della modalità desktop. 
@@ -19,22 +17,22 @@ Ad esempio non sono visualizzati l'header, la barra di navigazione superiore ed 
 
 \subsection{Linguaggi e strumenti}
 
-\subsubsection{XHTML 5}
-Abbiamo scelto di utilizzare lo standard XHTML 5, versione Html per garantire lo sviluppo in f
+\subsubsection{HTML 5}
+Abbiamo scelto di utilizzare lo standard HTML 5, il quale include delle direttive per scrivere codice HTML che viene processato come XML. Questo per permettere di avere un aggiornamento futuro del sistema  semplice e sempre al passo con le tecnologie web moderne.
 
 \subsubsection{PHP}
-PHP è stato utilizzato per la creazione dinamica di tutte le pagine della piattaforma. Infatti viene generato del codice HTML per ogni pagina che viene sostituito in apposite sezioni caratterizzate da un flag. Il forte utilizzo di PHP ha permesso un interazione tra gli utenti registrati e gli amministratori attraverso \textit{form} per il supporto e per la segnalazione di contenuti presenti nella piattaforma. Inoltre ha permesso di effettuare il caricamento di contenuti preferiti personalizzati per ogni utente e il caricamento della \textit{navbar} personalizzata a seconda della tipologia di utente. 
+PHP è stato utilizzato per la creazione dinamica di tutte le pagine della piattaforma. Infatti viene generato del codice HTML per ogni pagina in due modi, dalla lettura di un file .txt univoco per ogni pagina e dall'immissione di parti di HTML templetizzate per tutte le pagine in corrispondenza di flag specifici. Il forte utilizzo di PHP ha permesso un interazione tra gli utenti registrati e gli amministratori attraverso \textit{form} per il supporto e per la segnalazione di contenuti presenti nella piattaforma. Inoltre ha permesso di effettuare il caricamento di contenuti preferiti personalizzati per ogni utente e il caricamento della \textit{navbar} personalizzata a seconda della tipologia di utente. 
 
 \subsubsection{JavaScript}
-JavaScript è stato utilizzato per l'aggiornamento in tempo reale di una pagina web, tramite \textit{Ajax}. Questo ha permesso di avere aggiornamenti della pagina senza doverla ricaricare. Infatti è stato utilizzato nella parte di ricerca della serie,  \textit{searchbar}, e nella pagina specifica delle serie dove vengono caricate, se richieste dall'utente, le varie stagioni. 
+JavaScript è stato utilizzato per l'aggiornamento in tempo reale della pagina web, tramite Ajax. Questo ha permesso di avere aggiornamenti della pagina senza dover effettuare il ricaricamento. Ajax è stato utilizzato nella parte di ricerca della serie, \textit{searchbar}, e nella pagina specifica delle serie dove vengono caricate, se richieste dall'utente, le varie stagioni. 
 
 \subsubsection{Struttura}
 Tutta la parte strutturale è stata mantenuta nei file presenti all'interno della cartella \textit{public}. I files .html sono stati posizionati nella cartella \textit{views}, quelli php invece dentro la cartella \textit{php}. La parte di presentazione invece è stata posta all'interno della cartella \textit{css}, le immagini all'interno della cartella \textit{img}, mentre tutti gli altri file di utilità sono stati posti in cartelle più specifiche. La struttura scelta dal gruppo è quella gerarchica, in quanto tutte le informazioni sono disponibili a partire da una barra di navigazione sempre visibile.
 
 \subsection{Presentazione}
-Si è cercata, e ottenuta, una completa separazione tra parte presentazionale e parte strutturale. Non sono presenti \textit{tag} di stile all’interno delle pagine HTML
-e tutta la presentazione viene gestita attraverso diversi fogli di stile. 
+Si è cercata, e ottenuta, una completa separazione tra parte presentazionale e parte strutturale. Non sono presenti \textit{tag} di stile all’interno dell'HTML che viene generato tramite funzioni scritte in PHP e nemmeno nei file delle pagine in formato .txt che vengono tradotti in codice HTML. 
+Tutta la presentazione viene gestita attraverso fogli di stile diversi. 
+
 \subsection{Comportamento}
 
-Per quanto riguarda la parte dell'utenza generica
-è stata predisposta la validazione degli input da parte dell'utente, con una gestione degli errori. È stato implementato un sistema anti-SQL Injection per la compilazione dei form in MySQL.
+
