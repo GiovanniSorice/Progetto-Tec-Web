@@ -2,10 +2,10 @@
 	            <div class="messaggi">
 					<form class="post-form post-form-supporto" action="messaggio_action.php" method="get">					
 						<div class="top">		
-							<label for="label-messaggio" >Invia un messaggio agli amministratori:</label>																												
+							<span>Invia un messaggio agli amministratori:</span>																												
 							<div class="post-holder">	
 								<div class="textarea-wrap">
-									<textarea placeholder="inserisci il tuo messaggio" title="inserisci il tuo messaggio" name="messaggio" minlength="1" maxlenght="256" required></textarea>
+									<textarea placeholder="inserisci il tuo messaggio" title="inserisci il tuo messaggio" name="messaggio" minlength="1" maxlength="256" required></textarea>
 								</div>
 							</div>
 						</div>
