@@ -32,6 +32,13 @@ include_once 'DBConnection.php';
         return $table;
     }
 
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }   
+
 
     function printNavbar($currentPage){  
         $nav = implode("",file("../txt/nav.txt"));
@@ -789,11 +796,37 @@ include_once 'DBConnection.php';
         
         $output = preg_replace("/<!-- Nome_Pagina -->/i", "signup", $output );
         $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+
         
         if(array_key_exists('errore_signup',$_SESSION) && !empty($_SESSION['errore_signup'])){
-            $signup = preg_replace("/<!-- Errore -->/i", "Usename gi&agrave; in uso, cambiare username. ", $signup );
-            unset($_SESSION['errore_signup']);
+            switch($_SESSION['errore_signup']){
+                case '1':
+                    $signup = preg_replace("/<!-- Errore -->/i", "Errore formato username. ", $signup );
+                break;
+
+                case '2':
+                    $signup = preg_replace("/<!-- Errore -->/i", "Errore formato password. ", $signup );
+                break;
+
+                case '3':
+                    $signup = preg_replace("/<!-- Errore -->/i", "Errore formato email. ", $signup );
+                break;
+
+                case '4':
+                    $signup = preg_replace("/<!-- Errore -->/i", "Errore formato nome. ", $signup );
+                break;
+
+                case '5':
+                    $signup = preg_replace("/<!-- Errore -->/i", "Errore formato cognome. ", $signup );
+                break;
+
+                default: 
+                    $signup = preg_replace("/<!-- Errore -->/i", "Username gi&agrave; in uso, cambiare username. ", $signup );
+                break;
+            }
+            
         }
+        unset($_SESSION['errore_signup']);
         $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $signup , $output );
         
         return $output;

@@ -405,6 +405,10 @@
 	  margin-left: 0;
 	  margin-right: 0;
 	}
+	.votazioni li{
+	  display: inline;
+	   float: left;
+	}
 
 	#show-page{
 		width: 75%;
@@ -466,6 +470,11 @@
 	.votazioni{
 	  margin-left: 0;
 	  margin-right: 0;
+	}
+
+	.votazioni li{
+	  display: inline;
+	   float: left;
 	}
 
 	#show-page{

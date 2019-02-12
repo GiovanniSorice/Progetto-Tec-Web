@@ -27,7 +27,7 @@
 		<div class="nav__social">
 		</div>
 		<div class="nav__icon">
-			<a href="#footer-responsive-menu"><i class=""></i>Menu</a> <!-- TODO: aggiungere pulsante icons -->
+			<a href="#footer-responsive-menu">Menu</a> <!-- TODO: aggiungere pulsante icons -->
 		</div>
 
 	</div>

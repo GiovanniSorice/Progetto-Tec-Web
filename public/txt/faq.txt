@@ -2,7 +2,7 @@
             	<div id="descrizione-FAQ">            
 					<h1> FAQ </h1>					
 					<h2> 
-						La pagina presenta le risposte alle domande che <strong> pi&ugrave frequentemente </strong> sono state
+						La pagina presenta le risposte alle domande che <strong> pi&ugrave; frequentemente </strong> sono state
 						richieste da parte degli utenti registrati agli amministratori. 
 					</h2>					
 				</div>
@@ -10,60 +10,69 @@
 				<div id="lista-domande-risposte">
 					<h1 class = "titolo-domanda"> Come ci si registra al sito? </h1>
 					<h2 class = "risposta"> 
-						La registrazione al sito pu&ograve avvenire in <strong> due modi</strong>, il primo tramite compilazione di un form che 
-						&eacute 
+						La registrazione al sito pu&ograve; avvenire in <strong> due modi</strong>, il primo tramite compilazione di un form che 
+						&eacute; 
 						raggiungibile attraverso la sezione di login che si raggiunge cliccando in alto a destra della pagina: 
+					</h2>
 
 						<div class = "immagine-faq">
 							<picture>
-								<source media="(min-width: 751px)" srcset="../img/faq/login.png">
-								<img srcset= "../img/faq/loginSmall.PNG" alt="Indicazioni posizione login">
+								<source media="(min-width: 751px)" srcset="../img/faq/login.png"/>
+								<img src= "../img/faq/loginSmall.PNG" alt="Indicazioni posizione login"/>
 							</picture>
 							
 						</div>
+						
 						<div class = "caption-immagine">
 							Posizione tasto di login.
 						</div>
-
+						
+					<h2 class = "risposta"> 
 						In seguito va compilato ogni campo presente facendo attenzione al campo username che deve essere <strong> univoco </strong>. 
-						Quindi se ci si &eacute gi&agrave registrati con un email il sistema non completer&agrave la registrazione.
-						Il secondo modo che sar&agrave disponibile in futuro &eacute la registrazione tramite social network.  
+						Quindi se ci si &eacute; gi&agrave; registrati con un email il sistema non completer&agrave; la registrazione.
+						Il secondo modo che sar&agrave; disponibile in futuro &eacute; la registrazione tramite social network.  
 					</h2>
 
 					<h1 class = "titolo-domanda"> Come cerco una serie Tv? </h1>
 					<h2 class = "risposta"> 
 						Per cercare una serie Tv specifica bisogna inserire all'interno dell'apposita barra di ricerca, posta in alto a sinistra dello schermo,
 						il nome delle serie Tv che si sta cercando. 
+					</h2>
 
 						<div class = "immagine-faq">
 							<picture>
-								<source media="(min-width: 751px)" srcset="../img/faq/searchbar.png">
-								<img srcset="../img/faq/searchbarSmall.PNG" alt="Posizione della search bar.">
+								<source media="(min-width: 751px)" srcset="../img/faq/searchbar.png"/>
+								<img src="../img/faq/searchbarSmall.PNG" alt="Posizione della search bar."/>
 							</picture>
 							
 						</div>
+
 						<div class = "caption-immagine">
 							Posizione della search bar.
 						</div>						
 
-						Inoltre verranno caricati in anteprima, come illustrato nell'immagine, i risultati pi&ugrave simili rispetto alla ricerca che si sta seffettuando. 
+					<h2 class = "risposta"> 
+						Inoltre verranno caricati in anteprima, come illustrato nell'immagine, i risultati pi&ugrave; simili rispetto alla ricerca che si sta seffettuando. 
 					</h2>
 
 					<h1 class = "titolo-domanda"> Come posso segnalare un commento? </h1>
 					<h2 class = "risposta"> 
 						I commenti ritenuti offensivi possono essere segnalati tramite l'apposito tasto "Segnale", disponibile 
 						in alto a destra di ogni commento. 
+					</h2>
 
 						<div class = "immagine-faq">
 							<picture>
-								<source media="(min-width: 751px)" srcset="../img/faq/segnalazione.PNG">
-								<img srcset="../img/faq/segnalazioneSmall.PNG" alt="Posizione della segnalazione nei commenti.">
+								<source media="(min-width: 751px)" srcset="../img/faq/segnalazione.PNG"/>
+								<img src="../img/faq/segnalazioneSmall.PNG" alt="Posizione della segnalazione nei commenti."/>
 							</picture>							
 						</div>
+
 						<div class = "caption-immagine">
 							Posizione della segnalazione.
 						</div>	
 
+					<h2 class = "risposta"> 
 						Gli amministratori prenderanno nota delle segnalazioni e se lo riterranno opportuno cancelleranno il commento, bannando in 
 						casi gravi l'utente segnalato.
 					</h2>

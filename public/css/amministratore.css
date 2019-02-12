@@ -2,7 +2,6 @@
 
 #pagina-amministratore{
 	margin: 0.5em;
-	height: 100vh;
 }
 
 #pagina-amministratore h1{
@@ -28,18 +27,11 @@
 	margin-top: 0.5em;
 }
 
-
 /*	Tabella dei commenti segnalati */
 
 #tabella-segnalazioni{	
   	border-collapse: collapse;
   	width: 97%;
-}
-
-#tabella-segnalazioni td{
-  	border: 0.01em solid #ddd; 
-  	padding: 0.1em;
-  	font-size: 0.5em;
 }
 
 #tabella-segnalazioni tr:nth-child(even){
@@ -61,7 +53,10 @@
 }
 
 #tabella-segnalazioni td{
-	font-size: 0.75em;
+  	border: 0.01em solid #ddd; 
+  	padding: 0.1em;
+  	font-size: 0.75em;
+  	word-break: break-all;
 }
 
 .nome-utente{	
@@ -109,6 +104,7 @@
 /*  	Tabella dei messaggi ricevuti   	*/
 
 #tabella-messaggi{	
+
   	border-collapse: collapse;
   	width: 97%;
 }
@@ -131,6 +127,7 @@
   	border: 1px solid #ddd; 
   	padding: 8px;
   	font-size: 0.75em;
+  	word-break: break-all;
 }
 
 #tabella-messaggi tr:nth-child(even){
