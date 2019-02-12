@@ -17,8 +17,8 @@
 
 						<div class = "immagine-faq">
 							<picture>
-								<source media="(min-width: 751px)" srcset="../img/faq/login.png">
-								<img srcset= "../img/faq/loginSmall.PNG" alt="Indicazioni posizione login">
+								<source media="(min-width: 751px)" srcset="../img/faq/login.png"/>
+								<img src= "../img/faq/loginSmall.PNG" alt="Indicazioni posizione login"/>
 							</picture>
 							
 						</div>
@@ -30,7 +30,7 @@
 					<h2 class = "risposta"> 
 						In seguito va compilato ogni campo presente facendo attenzione al campo username che deve essere <strong> univoco </strong>. 
 						Quindi se ci si &eacute; gi&agrave; registrati con un email il sistema non completer&agrave; la registrazione.
-						Il secondo modo che sar&agrave; disponibile in futuro &eacute la registrazione tramite social network.  
+						Il secondo modo che sar&agrave; disponibile in futuro &eacute; la registrazione tramite social network.  
 					</h2>
 
 					<h1 class = "titolo-domanda"> Come cerco una serie Tv? </h1>
@@ -41,8 +41,8 @@
 
 						<div class = "immagine-faq">
 							<picture>
-								<source media="(min-width: 751px)" srcset="../img/faq/searchbar.png">
-								<img srcset="../img/faq/searchbarSmall.PNG" alt="Posizione della search bar.">
+								<source media="(min-width: 751px)" srcset="../img/faq/searchbar.png"/>
+								<img src="../img/faq/searchbarSmall.PNG" alt="Posizione della search bar."/>
 							</picture>
 							
 						</div>
@@ -52,8 +52,8 @@
 						</div>						
 
 					<h2 class = "risposta"> 
-						Inoltre verranno caricati in anteprima, come illustrato nell'immagine, i risultati pi&ugrave simili rispetto alla ricerca che si sta seffettuando. 
-					<h2>
+						Inoltre verranno caricati in anteprima, come illustrato nell'immagine, i risultati pi&ugrave; simili rispetto alla ricerca che si sta seffettuando. 
+					</h2>
 
 					<h1 class = "titolo-domanda"> Come posso segnalare un commento? </h1>
 					<h2 class = "risposta"> 
@@ -63,8 +63,8 @@
 
 						<div class = "immagine-faq">
 							<picture>
-								<source media="(min-width: 751px)" srcset="../img/faq/segnalazione.PNG">
-								<img srcset="../img/faq/segnalazioneSmall.PNG" alt="Posizione della segnalazione nei commenti.">
+								<source media="(min-width: 751px)" srcset="../img/faq/segnalazione.PNG"/>
+								<img src="../img/faq/segnalazioneSmall.PNG" alt="Posizione della segnalazione nei commenti."/>
 							</picture>							
 						</div>
 
@@ -75,7 +75,7 @@
 					<h2 class = "risposta"> 
 						Gli amministratori prenderanno nota delle segnalazioni e se lo riterranno opportuno cancelleranno il commento, bannando in 
 						casi gravi l'utente segnalato.
-					<h2>
+					</h2>
 
 					<!--  TEMPLATE per aggiungere nuove FAQ -->
 
