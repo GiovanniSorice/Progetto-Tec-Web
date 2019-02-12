@@ -8,7 +8,7 @@
 				<div class="show-seasons">
 					<h2>Episodi</h2>
 						<div class="dropdown jsonly" id="dropdownJSSerie">
-						  <button class="selettore-stagione">Stagione</button>
+						  <button class="selettore-stagione" title="seleleziona stagione">Stagione</button>
 						  <div class="dropdown__stagioni">
 							<!-- Stagione -->
 						  </div>
@@ -23,13 +23,17 @@
 					</noscript>
 
 					<table id="stagione" title="episodi">
+					<thead>
 						<tr>
-							<th>Numero Episodio</th>
-							<th>Nome Episodio</th>
-							<th>Data Rilascio</th>
-							<th>Visto</th>
+							<th scope="col">Numero Episodio</th>
+							<th scope="col">Nome Episodio</th>
+							<th scope="col">Data Rilascio</th>
+							<th scope="col">Visto</th>
 						</tr>
+					</thead>
+					<tbody>
 						<!-- Episodio -->
+					</tbody>
 					</table>
 				</div>
 			
