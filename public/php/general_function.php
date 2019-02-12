@@ -848,9 +848,10 @@ include_once 'DBConnection.php';
         $head_page = implode("", file("../txt/pagehead.txt"));
         $genere_page = implode("",file("../txt/genere.txt"));
         $show_page = implode("",file("../txt/show.txt"));
+        
         $query="select distinct id, nome from genere where id=".$_GET["genere_id"];
         //Seleziono la lista dei generi già in una tabella
-        $generi=resultQueryToTable($connection->query($query));        
+        $generi=resultQueryToTable($connection->query($query));     
         if(count($generi)<=0){
             $output = preg_replace("/<!-- Nome_Pagina -->/i", "genere", $output );
             $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
@@ -900,6 +901,70 @@ include_once 'DBConnection.php';
         return $output;
         }
 
+        function printPageRicerca($output){
+            global $connection;
+            if(empty($connection))
+                connettiDB();
+                
+                $host  = $_SERVER['HTTP_HOST'];
+                $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+                $extra = 'serie.php?serie_id=';
+                
+                $head_page = implode("", file("../txt/pagehead.txt"));
+                $genere_page = implode("",file("../txt/genere.txt"));
+                $show_page = implode("",file("../txt/show.txt"));
+                
+                $genere_show_collect="<!-- Successivo -->";
+                
+                $genere_nome="Risultati ricerca";
+                
+                $query="select id,miniatura,titolo, consigliato from serie where titolo like concat('%',?,'%')";
+                //Seleziono la lista dei generi già in una tabella
+                $stmt=executeQuery($query,array(&$_GET["spazio_ricerca"]),array("s"));
+                $series=resultQueryToTable($stmt->get_result());
+                $stmt->close();
+                
+                //Scrivo le serie tv
+                $show="<!-- Successiva -->";
+                
+                if(count($series)<=0){
+                    $output = preg_replace("/<!-- Nome_Pagina -->/i", "genere", $output );
+                    $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+                    $error_block = implode("",file("../txt/errore.txt"));
+                    $error_block = preg_replace("/<!-- Messaggio_Errore -->/i", "Nessuna serie rispetta i parametri di ricerca, perch&egrave; non  provi a cercarne un altro? :)", $error_block );
+                    $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $error_block, $output );
+                    
+                    return $output;
+                }
+                
+                for ($j = 0; $j < count($series); $j++) {
+                    
+                    $show=preg_replace("/<!-- Successiva -->/i",$show_page." <!-- Successiva -->" , $show );
+                    $show=preg_replace("/<!-- Immagine -->/i",$series[$j]["miniatura"] , $show );
+                    $show=preg_replace("/<!-- Id -->/i",$series[$j]["id"] , $show );
+                    $show=preg_replace("/<!-- Titolo -->/i",$series[$j]["titolo"] , $show );
+                    $show=preg_replace("/<!-- Consigliato -->/i",$series[$j]["consigliato"] , $show );
+                    $show=preg_replace("/<!-- Url_Show -->/i","http://$host$uri/$extra".$series[$j]["id"] , $show );
+                    
+                    
+                }
+                $show=preg_replace("/<!-- Successiva -->/i","" , $show );
+                
+                //Inserisco le serie nel div del genere e completo il div con le informazioni mancanti
+                $genere_show_collect=preg_replace("/<!-- Successivo -->/i",$genere_page." <!-- Successivo -->" , $genere_show_collect );
+                $genere_show_collect=preg_replace("/<!-- Genere -->/i",$genere_nome , $genere_show_collect );
+                $genere_show_collect=preg_replace("/<!-- Genere_Titolo -->/i",$genere_nome , $genere_show_collect );
+                $genere_show_collect=preg_replace("/<!-- Show -->/i",$show , $genere_show_collect );
+                
+                $genere_show_collect=preg_replace("/<!-- Successivo -->/i","" , $genere_show_collect );
+                
+                $output = preg_replace("/<!-- Nome_Pagina -->/i", "genere", $output );
+                $output = preg_replace("/<!-- Page_Head -->/i", $head_page, $output );
+                $output = preg_replace("/<!-- Contenuto_Effettivo -->/i", $genere_show_collect, $output );
+                
+                return $output;
+        }
+        
    function printPage404($output){        
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');

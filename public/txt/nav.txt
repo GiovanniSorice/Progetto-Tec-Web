@@ -7,9 +7,9 @@
 		</div>
 		
 		<div class="nav__ricerca">
-			<form action="">
-				<input type="text" title="barra di ricerca" placeholder="Cerca una serie TV" onkeyup="showResult(this.value)"/>
-				<button type="submit"><i class="icon-search"></i></button>
+			<form action="genere.php">
+				<input type="text" title="barra di ricerca" name="spazio_ricerca" placeholder="Cerca una serie TV" onkeyup="showResult(this.value)"/>
+				<button type="submit" title="cerca"><i class="icon-search"></i></button>
 			</form>
 		</div>
 		
