@@ -2,19 +2,19 @@
 \section{Progettazione}
 \subsection{Studio dell'utenza finale}
 \subsubsection{Utente generico}
-L'utente generico che in generale visiterà il sito è di profilo informatico medio alto ed è alla ricerca di informazioni riguardanti serie TV.
+L'utente generico che in generale visiterà il sito è di profilo informatico medio alto, il sito infatti rispetta la struttura moderna dei social network, ed è alla ricerca di informazioni riguardanti serie TV.
 L'utente generico non registrato ha a disposizione le seguenti azioni:
 \begin{itemize}
 	\item eseguire il \textit{login} oppure effettuare l'\textit{iscrizione} al sito;
-	\item navigare nelle pagine \textit{homepage, esplora, serie TV, FAQ, supporto, privacy} e \textit{about};
+	\item navigare nelle pagine \textit{homepage, esplora, serie TV, FAQ, supporto, privacy, genere} e \textit{about};
 	\item effettuare la ricerca di serie TV grazie alla casella di ricerca presente nella barra di navigazione.
 \end{itemize}
-Qualora l'utente non registrato tentasse di utilizzare le funzionalità riservate agli utenti registrati, verrà reindirizzato alla pagina di accesso o registrazione.
+Qualora l'utente non registrato tentasse di utilizzare le funzionalità riservate agli utenti registrati, verrà reindirizzato alla pagina di accesso.
 
 L'utente generico registrato ha a disposizione le seguenti azioni:
 \begin{itemize}
 	\item eseguire il \textit{logout};
-	\item navigare nelle pagine \textit{homepage, esplora, serie TV, preferiti, FAQ, supporto, privacy} e \textit{about};
+	\item navigare nelle pagine \textit{homepage, esplora, serie TV, preferiti, FAQ, supporto, privacy,genere} e \textit{about};
 	\item all'interno della pagina dedicata alle singole serie TV, l'utente potrà:
 	\begin{itemize}
 		\item consigliare o meno la serie;
@@ -22,7 +22,7 @@ L'utente generico registrato ha a disposizione le seguenti azioni:
 		\item aggiungere la serie ai preferiti; 
 		\item creare post e partecipare a discussioni;
 		\item segnalare i commenti inappropriati degli altri utenti;
-		\item segnare una serie TV come visualizzato o non visualizzata.
+		\item segnare un episodio di una serie TV come visualizzato o non visualizzato.
 	\end{itemize}
 \end{itemize}
 
@@ -31,7 +31,7 @@ L'utente generico registrato ha a disposizione le seguenti azioni:
 I permessi aggiunti agli utenti amministratori permettono di accedere alla pagina di amministrazione.\\
 All'interno dell'area dedicata all'amministrazione è possibile svolgere le seguenti attività:
 \begin{itemize}
-	\item visualizzare in forma tabellare i commenti segnalati dagli utenti. Sarà possibile decidere di ignorare la segnalazione oppure di eliminare il commento segnalato, inoltre ha la possibilità di non far vedere un commento esclusivamente all'utente che l'ha segnalato;
+	\item visualizzare in forma tabellare i commenti segnalati dagli utenti. Sarà possibile decidere di ignorare la segnalazione oppure di eliminare il commento segnalato.
 	\item visualizzare in forma tabellare i messaggi ricevuti dagli utenti, inviati dall'apposita sezione "Supporto", e decidere di dare una risposta oppure di eliminare i messaggi.
 \end{itemize}
 Qui di seguito è riportata la schermata che si presenta all'utente amministratore:
@@ -63,7 +63,7 @@ Che ci si trovi in modalità mobile, tablet o desktop, si potrà navigare all'in
 	Entrambe le barre sono posizionate in maniera \textit{fissa}. La barra superiore ha una altezza fissata in \textit{em}.\\
 	
 	\item In \textbf{modalità desktop} la barra di navigazione è posta in verticale sul lato sinistro. Questa ha una \textit{larghezza} del 20\% ed è posta in \textit{posizione} fissa.\\
-	Nel menù sono elencate le voci principali (\textit{esplora, profilo, preferiti}) nel primo blocco e le voci secondarie (\textit{FAQ, supporto, privacy, about}) in un secondo blocco.\\
+	Nel menù sono elencate le voci principali (\textit{esplora, profilo, preferiti}) nel primo blocco e le voci secondarie (\textit{FAQ, supporto, privacy e about}) in un secondo blocco che in caso ci si sia autenticati  come amministratori conterrà anche la pagina \textit{amministrazione}.\\
 	Alla sinistra delle voci, grazie al selettore \textit{:before}, sono state inserite delle icone che aiutano ad individuare più rapidamente la voce che si sta cercando.\\
 	Nel menù laterale sulla parte superiore è presente lo spazio per la ricerca delle serie tv.
 \end{itemize}
@@ -89,7 +89,7 @@ Sulla parte sinistra, nelle versioni mobile e tablet viene indicato il percorso 
 ~\\	
 La pagina di about contiene informazioni riguardanti la piattaforma e i membri del gruppo con le relative foto. 
 \begin{figure}[H]
-	\centerline{\includegraphics[scale=0.33]{img/about.png}}
+	\centerline{\includegraphics[scale=0.16]{img/about.png}}
 	\caption{Pagina di About in modalità desktop}
 	\label{fig:addForm} 
 \end{figure}	
@@ -98,7 +98,7 @@ La pagina di about contiene informazioni riguardanti la piattaforma e i membri d
 ~\\	
 La pagina di privacy contiene le linee guida adottate dalla piattaforma per il trattamento dei dati personali degli utenti registrati.
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.23]{img/privacy.png}}
+	\centerline{\includegraphics[scale=0.16]{img/privacy.png}}
 	\caption{Pagina di Privacy in modalità desktop}
 	\label{fig:addForm} 
 \end{figure}
@@ -107,7 +107,7 @@ La pagina di privacy contiene le linee guida adottate dalla piattaforma per il t
 ~\\
 La pagina di faq presenta le domande che più sono state richieste dagli utenti registrati agli amministratori con le relative risposte. Inoltre per ogni domanda è presente, se necessaria, un'immagine che indica il posizionamento delle "\textit{aree}" del sito che possono non essere state trovate.
 \begin{figure}[H]
-	\centerline{\includegraphics[scale= 0.33]{img/faq.png}}
+	\centerline{\includegraphics[scale= 0.16]{img/faq.png}}
 	\caption{Pagina Faq in modalità desktop}
 	
 \end{figure}
@@ -119,7 +119,7 @@ La pagina di faq presenta le domande che più sono state richieste dagli utenti 
 ~\\	
 La pagina di preferiti raccoglie le serie TV che sono state selezionate come preferite dall'utente in modo tale che in futuro non debbano essere ricercate nuovamente. Le serie salvate vengono mostrate in modo ordinato e se non sono presenti serie TV preferite viene visualizzata una pagina vuota. 
 \begin{figure}[H]
-	\centerline{\includegraphics[scale=0.33]{img/preferiti.png}}
+	\centerline{\includegraphics[scale=0.23]{img/preferiti.png}}
 	\caption{Pagina di Preferiti in modalità desktop}
 	\label{fig:addForm}
 \end{figure}	
@@ -129,7 +129,7 @@ La pagina di preferiti raccoglie le serie TV che sono state selezionate come pre
 ~\\	
 La pagina di esplora elenca per genere le serie TV che il sito ha nel database. Ogni genere ha il 100\% di spazio in larghezza a disposizione ma qualora questo spazio non dovesse bastare a mostrare tutte le serie appartenenti al genere, l'utente potrà comunque visualizzarle tutte in una pagina dedicata, raggiungibile tramite il link \textit{mostra tutto} presente sul lato destro dell'elenco delle serie.
 \begin{figure}[H]
-	\centerline{\includegraphics[scale=0.33]{img/esplora.png}}
+	\centerline{\includegraphics[scale=0.23]{img/esplora.png}}
 	\caption{Pagina esplora in modalità desktop}
 	\label{fig:addForm}
 \end{figure}	
@@ -138,7 +138,7 @@ La pagina di esplora elenca per genere le serie TV che il sito ha nel database. 
 ~\\
 La pagina di profilo contiene: nome, cognome, data di nascita, username e la Email dell'utente registrato. In caso di mancata registrazione il sistema mostrerà una schermata dove darà, tramite un link, la possibilità di registrarsi o di autenticarsi come utente registrato nell'apposita pagina di registrazione. 
 \begin{figure}[H]
-	\centerline{\includegraphics[scale= 0.33]{img/profilo.png}}
+	\centerline{\includegraphics[scale= 0.15]{img/profilo.png}}
 	\caption{Pagina Profilo in modalità desktop}
 \end{figure}
 
@@ -150,7 +150,7 @@ La pagina di profilo contiene: nome, cognome, data di nascita, username e la Ema
 La pagina di serie contiene le informazioni riguardanti una serie TV specifica, il titolo delle serie TV è posto in cima alla pagina e viene caricata nell'\textit{head} l'immagine della serie. È poi presente una sezione \textit{Post} che permette di lasciare un commento che, se inviato, sarà reso visibile agli utenti o visitatori del sito. A lato della pagina è possibile aggiungere la serie ai \textit{preferiti}, viene data la possibilità di selezionare un voto da uno a cinque e di lasciare un \textit{feedback} positivo o negativo tramite la selezione del pollice. Per ogni episodio all'utente registrato è data anche la possibilità  di segnare se è stato visto o meno. 
 
 \begin{figure}[H]
-	\centerline{\includegraphics[scale= 0.33]{img/serie.png}}
+	\centerline{\includegraphics[scale= 0.15]{img/serie.png}}
 	\caption{Pagina serie in modalità desktop}
 	
 \end{figure}
