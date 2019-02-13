@@ -17,28 +17,43 @@
 							<strong> Data effettiva: </strong>
 							questa norma della privacy è in vigore ed 
 							è stata aggiornata l'ultima volta il 14 Febbraio 2019. 
+
 						
 					</div>
 					<h3 class = "sezione-privacy"> II. I nostri obiettivi per la tua privacy </h3>
 
 					<ol>
 							<li>
-								Abbiamo a cuore la tutela delle vostre informazioni. Perciò mettiamo in atto misure idonee per evitare l'uso improprio dei vostri dati personali.			
+								La tua privacy è molto importante per la nostra compagnia, e per tutelarla al meglio ti forniamo queste note in cui troverai indicazioni sul tipo di informazioni raccolte online e sulle varie possibilità che hai di intervenire nella raccolta e nell’utilizzo di tali informazioni in Tv Hunter.	
 							</li>
 					</ol>
 
 					<h3 class = "sezione-privacy"> III. Informazioni collezionate</h3>
 						<ol>
 							<li> 
-								<strong> Informazioni dell'account: </strong> certe funzionalità di sistema ti potrebbero richiedere di creare un account
-								personale. Se crei un account ti verrà chiesto ti fornire informazioni riguardanti il tuo nome, cognome, password, 
-								mail, sesso e data di nascita. 
+								<strong> Informazioni dell'account: </strong> l’invio facoltativo, esplicito e volontario di posta elettronica agli indirizzi indicati su questo sito
+								o attraverso i moduli di invio mail presenti nel sito, comporta la successiva acquisizione dell’indirizzo e-mail del mittente, necessario per rispondere alle richieste, nonché degli eventuali	altri dati personali inseriti – sempre volontariamente dall’utente – nella missiva.
 							</li>
+
+							<li>
+								<strong> Come verranno trattati i tuoi dati? </strong>, dati immessi volontariamente dall'utente verranno trattati nei seguenti modi: creazione di profili relativi ad utenti di Tv Hunter;
+							</li>
+
 							<li>
 								<strong> Da quali terze parti riceviamo i dati:</strong>
 								il sito perrmetterà in futuro il login tramite social network, Facebook e Twitter, oppure tramite Google+.
 							</li>
-						</ol>						
+						</ol>	
+					<h3 class = "sezione-privacy"> IV. Modifiche a Tv Hunter e alle norme della privacy</h3>
+						<ol>
+							<li>
+								Il titolare di Tv Hunter si riserva il diritto di modificare i contenuti del sito in qualsiasi momento e senza alcun preavviso. L’utente accetta di essere vincolato a tali eventuali e future revisioni e si impegna, pertanto, a visitare periodicamente il sito per essere informato su eventuali variazioni.
+							</li>
+
+							<li>
+								Il titolare del trattamento si riserva la facoltà di apportare delle modifiche alla presente pagina. L’utente accetta di essere vincolato a tali eventuali e future revisioni e si impegna, pertanto, a visitare periodicamente questa pagina per essere informato su eventuali variazioni.
+							</li>
+						</ol>
 				</div>		
 			</div>
 		</div>
