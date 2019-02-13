@@ -27,13 +27,24 @@ PHP è stato utilizzato per la creazione dinamica di tutte le pagine della piatt
 JavaScript è stato utilizzato per l'aggiornamento in tempo reale della pagina web, tramite Ajax. Questo ha permesso di avere aggiornamenti della pagina senza dover effettuare il ricaricamento. Ajax è stato utilizzato nella parte di ricerca della serie, \textit{searchbar}, e nella pagina specifica delle serie dove vengono caricate, se richieste dall'utente, le varie stagioni. Qualora JavaScript non fosse disponibile sono state implementate delle funzioni della parti di PHP che permettono comunque il funzionamento del sito.
 
 \subsubsection{Struttura}
-Tutta la parte strutturale è stata mantenuta nei file presenti all'interno della cartella \textit{public}. I files .html sono stati posizionati nella cartella \textit{views}, quelli .php invece dentro la cartella \textit{php}. La parte di presentazione invece è stata posta all'interno della cartella \textit{css}, le immagini all'interno della cartella \textit{img}, mentre tutti gli altri file di utilità sono stati posti in cartelle più specifiche. La struttura scelta dal gruppo è quella gerarchica, in quanto tutte le informazioni sono disponibili a partire da una barra di navigazione sempre visibile.
+Tutta la parte strutturale è stata mantenuta nei file presenti all'interno della cartella \textit{public}. I files .php invece dentro la cartella \textit{php}. La parte di presentazione invece è stata posta all'interno della cartella \textit{css}, le immagini all'interno della cartella \textit{img}, mentre tutti gli altri file di utilità sono stati posti in cartelle più specifiche. La struttura scelta dal gruppo è quella gerarchica, in quanto tutte le informazioni sono disponibili a partire da una barra di navigazione sempre visibile.
+
+\subsubsection{Database}
+
+Il sito ha un database contenente  sedici tabelle che vengono utilizzate per immagazzinare  tutte le informazioni contenute nel sito e le possibili interazioni da parte degli utenti registrati, come il commentare o votare una serie, spedire un messaggio agli admin ecc. Nell'immagine che segue è illustrata la  sua struttura e le connessioni che sono presenti tra le tabelle:
+
+\begin{figure}[H]
+	\centerline{\includegraphics[scale= 0.40]{img/database.jpg}}
+	\caption{Database di Tv Hunter}
+\end{figure}
+
+Ogni tabella presenta almeno un campo chiave per ogni tipo di dato immagazzinato al suo interno, questo permette di non avere contenuti duplicati ed evita quindi la ridondanza tra dati.
 
 \subsection{Presentazione}
 Si è cercata, e ottenuta, una completa separazione tra parte presentazionale e parte strutturale. Non sono presenti \textit{tag} di stile all’interno dell'HTML che viene generato in PHP e nemmeno nei file delle pagine in formato .txt che vengono tradotti in codice HTML. 
 Tutta la presentazione viene gestita attraverso fogli di stile diversi che si adattano, come descritto nel paragrafo 3.1, al tipo di dispositivo usato.
 
 \subsection{Comportamento}
-Sia per l'utente generico che per l'amministratore si è deciso di utlizzare sia elementi di JavaScript che di PHP, questa scelta è dovuta al fatto che il sito cerca il più possibile di coinvolgere l'utente a commentare e valutare i contenuti, ispirandosi quindi al modello dei social network. E' stata inoltre predisposta la validazione degli input da parte dell’utente, con una gestione degli errori per la registrazione nel sistema. Si è scelto di adottare un sistema anti-SQL Injection per la compilazione dei form in MySQL in modo da prevenire l'accesso ai dati sensibili. Inoltre sono stati effettuati dei controlli sull'input attraverso la variabile \textit{pattern} presente in HTML nel client-side e per essere certi della validità dell'input sono stati effettuati dei controlli anche dal lato server tramite PHP.
+Sia per l'utente generico che per l'amministratore si è deciso di utlizzare sia elementi di JavaScript che di PHP, questa scelta è dovuta al fatto che il sito cerca il più possibile di coinvolgere l'utente a commentare e valutare i contenuti, ispirandosi quindi al modello dei social network. È stata inoltre predisposta la validazione degli input da parte dell’utente, con una gestione degli errori per la registrazione nel sistema. Si è scelto di adottare un sistema anti-SQL Injection per la compilazione dei form presenti nel sito in modo da prevenire l'accesso ai dati sensibili. Inoltre sono stati effettuati dei controlli sull'input attraverso la variabile \textit{pattern} presente in HTML nel client-side e per essere certi della validità dell'input sono stati effettuati dei controlli anche dal lato server tramite PHP.
 
 
