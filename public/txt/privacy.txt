@@ -32,16 +32,16 @@
 						<ol>
 							<li> 
 								<strong> Informazioni dell'account: </strong> l’invio facoltativo, esplicito e volontario di posta elettronica agli indirizzi indicati su questo sito
-								o attraverso i moduli di invio mail presenti nel sito, comporta la successiva acquisizione dell’indirizzo e-mail del mittente, necessario per rispondere alle richieste, nonché degli eventuali	altri dati personali inseriti – sempre volontariamente dall’utente – nella missiva.
+								o attraverso i moduli di invio mail presenti nel sito, comporta la successiva acquisizione dell’indirizzo e-mail del mittente, necessario per rispondere alle richieste, nonché degli eventuali	altri dati personali inseriti, sempre volontariamente dall’utente, nella missiva.
 							</li>
 
 							<li>
-								<strong> Come verranno trattati i tuoi dati? </strong>, dati immessi volontariamente dall'utente verranno trattati nei seguenti modi: creazione di profili relativi ad utenti di Tv Hunter;
+								<strong> Come verranno trattati i tuoi dati? </strong> I dati immessi volontariamente dall'utente verranno trattati nei seguenti modi: creazione di profili relativi ad utenti di Tv Hunter.
 							</li>
 
 							<li>
 								<strong> Da quali terze parti riceviamo i dati:</strong>
-								il sito perrmetterà in futuro il login tramite social network, Facebook e Twitter, oppure tramite Google+.
+								il sito perrmetterà in futuro il login tramite social network Facebook e Twitter, oppure tramite Google+.
 							</li>
 						</ol>	
 					<h3 class = "sezione-privacy"> IV. Modifiche a Tv Hunter e alle norme della privacy</h3>
