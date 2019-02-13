@@ -1284,7 +1284,7 @@ display: flex;
 
 /* Contenuti generali presenti nella tabella*/
 .supporto{
-  height: 100vh;
+  min-height: 100vh;
 }
 .tabella .messaggi td{
     border: 1px solid #ddd; 
