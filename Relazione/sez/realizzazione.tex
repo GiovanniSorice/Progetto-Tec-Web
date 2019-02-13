@@ -31,12 +31,14 @@ Tutta la parte strutturale è stata mantenuta nei file presenti all'interno dell
 
 \subsubsection{Database}
 
-Il sito ha un database contenente  sedici tabelle che vengono utilizzate per immagazzinare  tutte le informazioni contenute nel sito e le possibili interazioni da parte degli utenti registrati, come il commentare, votare una serie ecc. Nell'immagine che segue è illustrata la  sua struttura e le connessioni che sono presenti tra le tabelle:
+Il sito ha un database contenente  sedici tabelle che vengono utilizzate per immagazzinare  tutte le informazioni contenute nel sito e le possibili interazioni da parte degli utenti registrati, come il commentare o votare una serie, spedire un messaggio agli admin ecc. Nell'immagine che segue è illustrata la  sua struttura e le connessioni che sono presenti tra le tabelle:
 
 \begin{figure}[H]
 	\centerline{\includegraphics[scale= 0.40]{img/database.jpg}}
 	\caption{Database di Tv Hunter}
 \end{figure}
+
+Ogni tabella presenta almeno un campo chiave per ogni tipo di dato immagazzinato al suo interno, questo permette di non avere contenuti duplicati ed evita quindi la ridondanza tra dati.
 
 \subsection{Presentazione}
 Si è cercata, e ottenuta, una completa separazione tra parte presentazionale e parte strutturale. Non sono presenti \textit{tag} di stile all’interno dell'HTML che viene generato in PHP e nemmeno nei file delle pagine in formato .txt che vengono tradotti in codice HTML. 
