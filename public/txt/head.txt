@@ -4,7 +4,8 @@
 <head>
 <title>Tv Hunter</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../css/styleProva.css"/>
+<link rel="stylesheet" type="text/css" href="../css/nav.css"/>
+<link rel="stylesheet" type="text/css" href="../css/style.css"/>
 
 <link href="//fonts.googleapis.com/css?family=Roboto:500,700" rel="stylesheet" type="text/css">
 <link rel="icon" type="image/png" href="../img/favicomatic/favicon-32x32.png" sizes="32x32" />
