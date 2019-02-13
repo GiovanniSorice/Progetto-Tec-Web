@@ -876,7 +876,7 @@ include_once 'DBConnection.php';
         $genere_page = implode("",file("../txt/genere.txt"));
         $show_page = implode("",file("../txt/show.txt"));
         
-        $query="select distinct id, nome from genere where id=";
+        $query="select distinct id, nome from genere where id=?";
         //Seleziono la lista dei generi già in una tabella
         $stmt=executeQuery($query,array(&$_GET["genere_id"]),array("i"));
         $generi=resultQueryToTable($stmt->get_result());
