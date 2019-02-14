@@ -1,9 +1,9 @@
             <div id="pagina-amministratore">
 				<h1> Amministratore </h1>		
-				<h2> 
+				<p> 
 					Benvenuto nell'area riservata agli amministratori del sito, da qui potrai vedere i commenti che sono stati segnalati 
 					e i messaggi che sono stati spediti dagli utenti.
-				</h2>
+				</p>
 
 				<div class= "parte-segnalazioni">
 					<div id="descrizione-tabella-segnalazioni">

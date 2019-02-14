@@ -1,19 +1,19 @@
             <div class="pagina-FAQ">
             	<div id="descrizione-FAQ">            
 					<h1> FAQ </h1>					
-					<h2> 
+					<p> 
 						La pagina presenta le risposte alle domande che <strong> pi&ugrave; frequentemente </strong> sono state
 						richieste da parte degli utenti registrati agli amministratori. 
-					</h2>					
+					</p>					
 				</div>
 
 				<div id="lista-domande-risposte">
 					<h1 class = "titolo-domanda"> Come ci si registra al sito? </h1>
-					<h2 class = "risposta"> 
+					<p class = "risposta"> 
 						La registrazione al sito pu&ograve; avvenire in <strong> due modi</strong>, il primo tramite compilazione di un form che 
 						&eacute; 
 						raggiungibile attraverso la sezione di login che si raggiunge cliccando in alto a destra della pagina: 
-					</h2>
+					</p>
 
 						<div class = "immagine-faq">
 							<picture>
@@ -27,17 +27,17 @@
 							Posizione tasto di login.
 						</div>
 						
-					<h2 class = "risposta"> 
+					<p class = "risposta"> 
 						In seguito va compilato ogni campo presente facendo attenzione al campo username che deve essere <strong> univoco </strong>. 
 						Quindi se ci si &eacute; gi&agrave; registrati con un email il sistema non completer&agrave; la registrazione.
 						Il secondo modo che sar&agrave; disponibile in futuro &eacute; la registrazione tramite social network.  
-					</h2>
+					</p>
 
 					<h1 class = "titolo-domanda"> Come cerco una serie Tv? </h1>
-					<h2 class = "risposta"> 
+					<p class = "risposta"> 
 						Per cercare una serie Tv specifica bisogna inserire all'interno dell'apposita barra di ricerca, posta in alto a sinistra dello schermo,
 						il nome delle serie Tv che si sta cercando. 
-					</h2>
+					</p>
 
 						<div class = "immagine-faq">
 							<picture>
@@ -51,15 +51,15 @@
 							Posizione della search bar.
 						</div>						
 
-					<h2 class = "risposta"> 
+					<p class = "risposta"> 
 						Inoltre verranno caricati in anteprima, come illustrato nell'immagine, i risultati pi&ugrave; simili rispetto alla ricerca che si sta seffettuando. 
-					</h2>
+					</p>
 
 					<h1 class = "titolo-domanda"> Come posso segnalare un commento? </h1>
-					<h2 class = "risposta"> 
+					<p class = "risposta"> 
 						I commenti ritenuti offensivi possono essere segnalati tramite l'apposito tasto "Segnale", disponibile 
 						in alto a destra di ogni commento. 
-					</h2>
+					</p>
 
 						<div class = "immagine-faq">
 							<picture>
@@ -72,10 +72,10 @@
 							Posizione della segnalazione.
 						</div>	
 
-					<h2 class = "risposta"> 
+					<p class = "risposta"> 
 						Gli amministratori prenderanno nota delle segnalazioni e se lo riterranno opportuno cancelleranno il commento, bannando in 
 						casi gravi l'utente segnalato.
-					</h2>
+					</p>
 
 					<!--  TEMPLATE per aggiungere nuove FAQ -->
 
