@@ -8,8 +8,7 @@ $nome=$_GET['nome'];
 $cognome=$_GET['cognome'];
 $datanascita=$_GET['datanascita'];
 $flag = 0;
-
-if (!preg_match("/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/",$datanascita)) {
+if (!preg_match("/[0-9]{4}-[0-9]{2}-[0-9]{2}/",$datanascita)) {
     $flag = 6;
 }
 
@@ -42,6 +41,7 @@ if (!preg_match("/^[a-zA-Z0-9]*$/",$username)) {
 session_start();
 $datanascita= date("Y-m-d",strtotime($datanascita));
 
+echo " ".$datanascita;
 if($flag==0){
     $query="insert into utente (username,password,email,nome,cognome,data_nascita) values (?,?,?,?,?,?)";
     $stmt=executeQuery($query,array(&$username,&$password,&$email,&$nome,&$cognome,&$datanascita),array("ssssss"));
