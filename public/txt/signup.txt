@@ -1,8 +1,8 @@
 				
 		<div id="signup__top" class="signup">
-		  <form action="signup_action.php">
+		  <form action="signup_action.php" name="form_signup" onsubmit="return validateFormSignup()">
 		      <div class="signup__riga">
-		        <div class="signup__colonna">
+		        <div class="signup__colonna" id="div_errore">
 					<!-- Errore -->
                 </div>
 		      

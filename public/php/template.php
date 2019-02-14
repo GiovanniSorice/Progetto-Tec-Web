@@ -72,6 +72,7 @@
             case "signup":
                 $output = preg_replace("/<!-- Link_Navigazione -->/i",'<a class="path" href="home.php">Home</a><span>&#x27AA;</span><a href="#" class="path">Signup</a>', $output);                
                 echo printPageSignUp($output);
+                $script = implode("",file("../javascript/valida_form_signup.js"));                
                 break;
 
             case "preferiti":
