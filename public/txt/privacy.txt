@@ -5,13 +5,11 @@
 			<!-- contenuto effettivo della pagina -->
 			<div id="info-privacy">
 
-				<div id="titolo">
-					<h2> Norme della privacy </h2>
-				</div>	
+				
+				<h2> Norme della privacy </h2>
+				
 
-				<div id="contenuto-pagina">
-
-					<h3 class= "sezione-privacy"> I. Norme privacy </h3> 
+				<div id="contenuto-pagina">					
 					<div class="contenuto-sezione">
 						
 							<strong> Data effettiva: </strong>

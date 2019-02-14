@@ -1,10 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+  
 
   .titolo-genere{
     padding-left: 1em; 
     float: left;
     margin-top: 1em;
+  }
+
+  h1,h2{
+  	font-weight: 500;
   }
 
   #esplora section > a{
@@ -24,6 +29,13 @@
     height: 354px;  
     clear: both;
   }
+ 		
+  .nome-sviluppatore{  	  
+      text-align: center;
+      margin-top: 0.09em;
+      margin-bottom: 0.8em;    
+  }		
+
 
 
   .elenco-serie li{
@@ -80,13 +92,7 @@
 }
 
 
-#titolo h1{
-  font-size: 1.7em;
-  font-weight:500;
-}
-
 #info-privacy{
-  font-size: 1.4em;
   margin: 2em;
   font-weight: 300;
 }
@@ -475,7 +481,6 @@ body{
 
 
 .header h1 {
-  font-size:4em;
   color: white;
   position: relative;
   text-align: center;
@@ -596,8 +601,6 @@ display: flex;
 }
 
 #titolo-pagina-about{
-  font-size: 1.8em;
-  font-weight: 700;
   color: #333;   
 }
 
@@ -842,10 +845,6 @@ display: flex;
 
 /*Header*/
 
-.header-content h1{
-  font-size: 2.5em;
-}
-
 .header-content h2{
   color: #161616;
   padding: 3px;
@@ -913,10 +912,6 @@ display: flex;
   margin: auto;
   float: right;
   width: 50%;
-}
-
-#side-bar__attori h2{
-  font-size: 1.5em;
 }
 
 #list-attori{
@@ -1156,7 +1151,7 @@ display: flex;
 
 
 .votazioni h1{
-  font-size: 1.5em;
+
   margin: 0;
 }
 
@@ -1207,14 +1202,10 @@ display: flex;
 }
 
 #pagina-amministratore h1{
-  font-size: 1.5em;
-  font-weight: 500;
   margin-bottom: 0.2em;
 }
 
 #pagina-amministratore h2{
-  font-size: 0.8em;
-  font-weight: 300;
   margin-top: 0.2em;
   margin-bottom: 0.3em;
 }
@@ -1349,7 +1340,7 @@ display: flex;
 }
 
 #descrizione-FAQ h1 {
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: 500;
   margin-bottom: 0;
 } 
@@ -1360,7 +1351,7 @@ display: flex;
 
 #descrizione-FAQ h2 {
   font-size: 1em;
-  font-weight:300;
+  font-weight: 300;
   margin-top: 0.7em;
   margin-bottom: 2em;
   margin-left: 1em;
@@ -1750,8 +1741,8 @@ margin-bottom: 0.5em;
   }
 
   .titolo-about{
-      font-size: 1.5em;
       font-weight: 700;
+      font-size: 1.2em; 
       color: #333; 
   }
 
@@ -1769,7 +1760,6 @@ margin-bottom: 0.5em;
      margin-bottom: 2em;
   }
   .nome-sviluppatore{
-      font-weight: 500;
       font-size: 1em; 
       margin-bottom: 0; 
       margin-top: 0; 
@@ -1862,14 +1852,6 @@ margin-bottom: 0.5em;
   margin: 0;
   }
 
-  #pagina-amministratore h1{
-    font-size: 1.65em;
-  }
-
-  #pagina-amministratore h2{
-    font-size: 1.4em;
-  }
-
   #descrizione-tabella-segnalazioni{
     font-size: 1.2em;
   }
@@ -1901,22 +1883,10 @@ margin-bottom: 0.5em;
   .immagine-faq img{
     margin-bottom: 0;
   }
-  #descrizione-FAQ h1{
-    font-size: 2.1em;
-  }
-
-  #descrizione-FAQ h2 {
-    font-size: 1.1em;
-  }
 
   .titolo-domanda {
-    font-size: 1.5em;
-  } 
-
-  .risposta strong{
     font-size: 1.1em;
-  }
-
+  } 
   .risposta{
     font-size: 1em;
   }
@@ -2205,14 +2175,6 @@ margin-bottom: 0.5em;
   display: flex;
   justify-content: center;
   padding-top: 1em;
-  }
-
-  #pagina-amministratore h1{
-    font-size: 1.65em;
-  }
-
-  #pagina-amministratore h2{
-    font-size: 1.4em;
   }
 
   #descrizione-tabella-segnalazioni{
