@@ -8,7 +8,7 @@ $nome=$_GET['nome'];
 $cognome=$_GET['cognome'];
 $datanascita=$_GET['datanascita'];
 $flag = 0;
-if (!preg_match("/[0-9]{4}-[0-9]{2}-[0-9]{2}/",$datanascita)) {
+if (!(preg_match("/[0-9]{4}-[0-9]{2}-[0-9]{2}/",$datanascita) || preg_match("/[0-9]{2}-[0-9]{2}-[0-9]{4}/",$datanascita))) {
     $flag = 6;
 }
 
